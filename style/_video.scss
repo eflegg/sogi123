@@ -1,0 +1,38 @@
+.home-video {
+	background: $black;
+    display: none;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    @include animate(opacity, 1s, 0);
+
+    @include media(lg) {
+	    display: block;
+    }
+
+    video {
+	    background-position: 50%;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    height: auto;
+	    left: 50%;
+	    min-width: 100%;
+	    min-height: 100%;
+	    position: absolute;
+	    top: 50%;
+	    -ms-transform: translate(-50%,-50%);
+	    transform: translate(-50%,-50%);
+	    width: auto;
+	    object-fit: cover;
+    }
+
+
+    &.fading {
+    	opacity: 0;
+    }
+
+    &.hidden {
+    	display: none;
+    }
+}

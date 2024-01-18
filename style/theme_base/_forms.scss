@@ -1,0 +1,32 @@
+form {
+	label {
+		display: none !important;
+	}
+	input, textarea {
+		border-radius: 0 !important;
+		background-color: transparent;
+		box-shadow: none;
+		border: 1px solid $grey !important;
+		color: white !important;
+		&:focus {
+			background-color: transparent !important;
+			border: 1px solid $yellow !important;
+		}
+	}
+	button, .ff-btn, .ff-btn-submit {
+		background-color: $yellow;
+		border-radius: 30px !important;
+		font-weight: 700 !important;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		@include animate(all, 0.1s, 0);
+		&:hover {
+			background-color: $white;
+			opacity: 1 !important;
+		}
+	}
+
+	::placeholder {
+		color: white;
+	}
+}

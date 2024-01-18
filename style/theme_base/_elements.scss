@@ -1,0 +1,19 @@
+.button {
+	a {
+		display: inline-block;
+		margin-bottom: 1rem;
+		@include heading;
+		font-size: 1.07rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: inherit;
+		padding-bottom: 2px;
+		border-bottom: 3px solid;
+		@include animate(all, 0.15s, 0);
+		&:hover {
+			padding-bottom: 0px;
+			margin-bottom: calc( 1rem + 2px );
+			color: $yellow;
+		}
+	}
+}

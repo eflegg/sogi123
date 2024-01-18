@@ -1,0 +1,205 @@
+html, body {
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+
+}
+
+::selection {
+	background-color: $yellow;
+	color: $black;
+}
+
+@mixin filson {
+	font-family: filson-pro, sans-serif;
+	font-weight: 500;
+	font-style: normal;
+}
+
+
+body {
+	@include filson;
+	font-size: 15px;
+	line-height: 1.47em;
+	color: $white;
+}
+
+@mixin heading {
+	line-height: 1.19em;
+	font-weight: 700;
+	hyphens: auto;
+}
+
+h1, .h1 {
+	@include heading;
+	font-size: 2.47rem;
+	@include media(md) {
+		font-size: 3.47rem;
+	}
+}
+
+h2, .h2 {
+	@include heading;
+	font-size: 2.17rem;
+	@include media(md) {
+		font-size: 2.67rem;
+	}
+}
+
+h3, .h3 {
+	font-size: 1.87rem;
+	@include heading;
+}
+
+h4, .h4 {
+	@include heading;
+	font-size: 1.07rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+h5, .h5 {
+	@include heading;
+	font-size: 1.13rem;
+	line-height: 22px;
+}
+
+.content .text {
+
+	h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
+		margin-top: 1rem;
+	}
+
+	h1, h2, h3, .h1, .h2, .h3 {
+		margin-bottom: 0.6rem;
+	}
+
+	strong {
+		font-weight: 700;
+	}
+
+	em {
+		font-style: italic;
+	}
+
+	p, ul, ol {
+		margin-bottom: 1em;
+		a {
+			color: inherit;
+			font-weight: 700;
+			text-decoration: underline;
+			&:hover {
+				color: $sig;
+			}
+		}
+	}
+
+	hr {
+		opacity: 0.5;
+		margin: 4rem 0 3rem;
+	}
+
+}
+
+.rule-list {
+	ul {
+		list-style-type: none;
+		padding: 0;
+		padding-top: 15px;
+
+
+
+		li {
+			padding: 25px 0;
+			position: relative;
+			&:after {
+				content: ' ';
+				display: block;
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				height: 1px;
+				opacity: 0.3;
+				background: rgb(134,133,133);
+				background: linear-gradient(90deg, rgba(134,133,133,0) 0%, rgba(134,133,133,0.5004595588235294) 23%, rgba(175,175,175,1) 50%, rgba(134,133,133,0.5004595588235294) 77%, rgba(134,133,133,0) 100%);
+			}
+
+			@include media(md) {
+				display: flex;
+
+				div:nth-of-type(1) {
+					width: 50%;
+					padding-right: 25px;
+				}
+
+				div:nth-of-type(2) {
+					width: 50%;
+				}
+			}
+
+			@include media(lg) {
+				div:nth-of-type(1) {
+					width: 50%;
+				}
+
+				div:nth-of-type(2) {
+					width: 50%;
+				}
+			}
+
+			@include media(xl) {
+				div:nth-of-type(1) {
+					width: 40%;
+				}
+
+				div:nth-of-type(2) {
+					width: 60%;
+				}
+			}
+
+
+
+
+
+			&:last-of-type {
+				&:after {
+					display: none;
+				}
+			}
+
+
+			h3 {
+				margin-bottom: 5px;
+			}
+
+			p {
+				color: $typegrey;
+			}
+
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

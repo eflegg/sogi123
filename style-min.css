@@ -2631,16 +2631,8 @@ header {
   @media screen and (min-width: 1000px) {
     header {
       height: 240px; } }
-  header h1 a {
-    font-size: 0;
-    display: block;
-    position: absolute;
-    width: 40px;
-    height: 120px;
-    left: 30px;
-    top: 30px; }
-    header h1 a svg {
-      fill: white; }
+  
+    
     @media screen and (min-width: 1000px) {
       header h1 a {
         width: 50px;

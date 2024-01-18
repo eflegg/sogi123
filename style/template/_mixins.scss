@@ -1,0 +1,151 @@
+@mixin img-swap($image, $width, $height) {
+	display: inline-block;
+	width: $width;
+	height: $height;
+	background-image: url($image);
+	background-size: contain;
+	background-repeat: no-repeat;
+	font-size: 0;
+	
+	* {
+		font-size: 0;
+	}
+}
+
+@mixin contain {
+	background-repeat: no-repeat;
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	-o-background-size: contain;
+	background-size: contain;
+}
+
+@mixin animate($property, $duration, $delay){
+	transition-property: $property;
+	transition-duration: $duration;
+	transition-delay: $delay;
+	transition-timing-function: cubic-bezier(.34,.01,.45,1.02);
+	-webkit-backface-visibility: hidden;
+}
+
+@mixin background-image($image, $attachment) {
+	@if $attachment == fixed {
+		background-image: url($image);
+		background-attachment: fixed;
+		background-size: cover;
+		background-position: center center;
+	}
+	
+	@else {
+		background-image: url($image);
+		background-size: $attachment;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+}
+
+@mixin media($point) {
+	@if $point == sm {
+		@media screen and (min-width: 600px) { 
+			@content ; 
+		}
+	}
+	@else if $point == md {
+		@media screen and (min-width: 800px) { 
+			@content ; 
+		}
+	}
+	@else if $point == lg {
+		@media screen and (min-width: 1000px) { 
+			@content ; 
+		}
+	}
+	@else if $point == xl {
+		@media screen and (min-width: 1200px) { 
+			@content ; 
+		}
+	}
+	@else if $point == xxl {
+		@media screen and (min-width: 1400px) { 
+			@content ; 
+		}
+	}
+	@else if $point == xxxl {
+		@media screen and (min-width: 1600px) { 
+			@content ; 
+		}
+	}
+}
+
+@mixin section_pad($smallest) {
+	padding-top: $smallest;
+	padding-bottom: $smallest;
+	
+	@include media(sm) {
+		padding-top: ($smallest * 2);
+		padding-bottom: ($smallest * 2);
+	}
+	
+	@include media(md) {
+		padding-top: ($smallest * 2.5);
+		padding-bottom: ($smallest * 2.5);
+	}
+}
+
+@mixin unset {
+	position: relative;
+	top: auto;
+	left: auto;
+	bottom: auto;
+	right: auto;
+	height: auto;
+	width: auto;
+}
+
+@mixin translate($x, $y) {
+	-moz-transform: translateX($x) translateY($y);
+	-webkit-transform: translateX($x) translateY($y);
+	-o-transform: translateX($x) translateY($y);
+	-ms-transform: translateX($x) translateY($y);
+	transform: translateX($x) translateY($y);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

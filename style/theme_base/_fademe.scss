@@ -1,0 +1,11 @@
+.fade-me {
+	opacity: 0;
+	@include translate(0,30px);
+	@include animate(all, 0.7s, 0);
+	transition-timing-function: ease-out;
+
+	&.faded-in {
+		opacity: 1;
+		@include translate(0,0);
+	}
+}

@@ -1,0 +1,1 @@
+<h3>I'm the share sidebar</h3>
