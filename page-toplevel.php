@@ -45,8 +45,6 @@ get_header(); ?>
                 ?>
             </div>
         <?php endif; ?>
-
-    
     </ul>
 </section>
 

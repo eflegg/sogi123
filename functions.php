@@ -398,5 +398,19 @@ if( function_exists('acf_add_options_page') ) {
 	
 }
 
+//theme support for post excerpts
 add_post_type_support( 'page', 'excerpt' );
+
+//use one single template for resources and questions custom post types
+add_filter( 'template_include', function( $template ) 
+{
+    // your custom post types
+    $my_types = array( 'resource', 'question', 'post' );
+    $post_type = get_post_type();
+
+    if ( ! in_array( $post_type, $my_types ) )
+        return $template;
+
+    return get_stylesheet_directory() . '/single-question.php'; 
+});
 
