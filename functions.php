@@ -405,7 +405,7 @@ add_post_type_support( 'page', 'excerpt' );
 add_filter( 'template_include', function( $template ) 
 {
     // your custom post types
-    $my_types = array( 'resource', 'question', 'post' );
+    $my_types = array( 'resource', 'question' );
     $post_type = get_post_type();
 
     if ( ! in_array( $post_type, $my_types ) )
@@ -414,3 +414,33 @@ add_filter( 'template_include', function( $template )
     return get_stylesheet_directory() . '/single-question.php'; 
 });
 
+
+//resusable custom post filter
+function filter_projects() {
+	$catSlug = $_POST['category'];
+	$postType = $_POST['type'];
+	$postPath = $path;
+  
+	$ajaxposts = new WP_Query([
+	  'post_type' => $postType,
+	  'posts_per_page' => -1,
+	  'category_name' => $catSlug,
+	  'orderby' => 'menu_order', 
+	  'order' => 'desc',
+	]);
+	$response = '';
+  
+	if($ajaxposts->have_posts()) {
+	  while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+		$response .= include($path);
+		//$response .= include '/components/cards/question-card.php';
+	  endwhile;
+	} else {
+	  $response = 'empty';
+	}
+  
+	echo $response;
+	exit;
+  }
+  add_action('wp_ajax_filter_projects', 'filter_projects');
+  add_action('wp_ajax_nopriv_filter_projects', 'filter_projects');

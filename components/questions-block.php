@@ -1,5 +1,10 @@
 
-<div class="three-by-container">
+			
+
+
+			
+			
+			<ul class="card-container">
 	 				<?php
 					$args = array(
 					    'post_type' => 'question',
@@ -12,18 +17,7 @@
 
 					    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-					        <div>
-								<span class="client">
-									<?php the_title(); ?>
-								</span>
-								<div class="content">
-									
-									<span class="button">
-										<a href="<?php the_permalink(); ?>">Learn More</a>
-									</span>
-								</div>
-									
-							</div>
+					    <?php include 'cards/question-card.php';?>
 
 					    <?php endwhile; ?>
 
@@ -31,4 +25,4 @@
 
 					<?php endif; ?>
 						 			    
-				</div>
+			</ul>

@@ -15,12 +15,25 @@ get_header(); ?>
 	if($pageTitle === 'Questions Answered'):?>
 
         <!-- list of questions -->
+
+		<?php 
+			$dataType = "question"; 
+			$category = "Questions";
+			$path = 'components/cards/question-card.php';
+			?>
+		<?php include 'components/reusable-filter.php';?>
         <?php include 'components/questions-block.php';?>
 
                 <?php else:?>
 
                             <!-- list of resources -->
-
+		<?php 
+			$dataType = "resource"; 
+			$category = "Resources";
+			$path = 'components/cards/resource-card.php';
+			
+			?>
+		<?php include 'components/reusable-filter.php';?>
          <?php include 'components/resources-block.php';?>
 
 
