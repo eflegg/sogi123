@@ -416,10 +416,12 @@ add_filter( 'template_include', function( $template )
 
 
 //resusable custom post filter
-function filter_projects() {
+
+
+
+  function filter_projects() {
 	$catSlug = $_POST['category'];
 	$postType = $_POST['type'];
-	$postPath = $path;
   
 	$ajaxposts = new WP_Query([
 	  'post_type' => $postType,
@@ -432,8 +434,7 @@ function filter_projects() {
   
 	if($ajaxposts->have_posts()) {
 	  while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-		$response .= include($path);
-		//$response .= include '/components/cards/question-card.php';
+		$response .= include 'components/cards/question-card.php';
 	  endwhile;
 	} else {
 	  $response = 'empty';

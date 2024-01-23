@@ -19,7 +19,7 @@ get_header(); ?>
 		<?php 
 			$dataType = "question"; 
 			$category = "Questions";
-			$path = 'components/cards/question-card.php';
+			$path = "components/cards/question-card.php";
 			?>
 		<?php include 'components/reusable-filter.php';?>
         <?php include 'components/questions-block.php';?>

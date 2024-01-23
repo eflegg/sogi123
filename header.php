@@ -37,7 +37,18 @@ endif;
 				) );
 				?>
 			</nav>
-			<a href="#" class="menu-toggle">Menu</a>
+			<div class="header-buttons">
+					<!-- language switcher -->
+	<ul><?php pll_the_languages();?></ul>
+				<button class="header-donate">
+					Donate
+				</button>
+				<button-header-search>
+					search
+				</button-header-search>
+
+				<a href="#" class="menu-toggle">Menu</a>
+			</div>
 	
 		</header>
 

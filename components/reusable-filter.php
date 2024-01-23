@@ -13,14 +13,14 @@
 		<?php $child_arg = array( 'hide_empty' => false, 'parent' => $catVal->term_id );
 		$child_cat = get_terms( 'category', $child_arg );?>
 	
-		 <ul class="cat-list">
-		 <li><a class="cat-list_item active" href="#!" data-slug="" data-type=<?php echo $dataType;?>>All <?php echo $catVal->name ;?></a></li>
+		 <ul role="toolbar" class="cat-list <?php echo $dataType;?>">
+		 <li><button><a class="cat-list_item active" href="#!" data-slug="" data-type=<?php echo $dataType;?>>All <?php echo $catVal->name ;?></a></button></li>
 			<?php foreach( $child_cat as $child_term )  :?>
 		<!-- //Child Category -->
-				<li>
+				<li><button>
 					<a class="cat-list_item" href="#!" data-slug="<?= $child_term->slug; ?>" data-type=<?php echo $dataType;?>>
 						<?= $child_term->name; ?>
-					</a>
+					</a></button>
 				</li>
 				<?php endforeach; ?>
 		</ul>

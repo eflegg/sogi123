@@ -1,7 +1,9 @@
-.site {
-	position: relative;
-	width: 100%;
-
+.container-with-sidebar {
+	display: flex;
+	flex-direction: column;
+	@include media(md) {
+		flex-direction: row;
+	}
 }
 
 .drawer {
@@ -38,6 +40,3 @@ body.drawer-open {
 	}
 }
 
-body {
-	background: $blue!important;
-}

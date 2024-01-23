@@ -9,7 +9,7 @@
     <?php 
 			$dataType = "post"; 
 			$category = "Updates";
-			$path = 'components/cards/update-card.php';
+			$path = "components/cards/update-card.php";
 			?>
 		<?php include 'components/reusable-filter.php';?>
 
