@@ -7,6 +7,12 @@ get_header(); ?>
 	<?php while ( have_posts() ) : the_post();
 	?>
 
+<?php 
+$bgImage = 'https://picsum.photos/seed/picsum/1000';
+if(get_field('sig_colour') ):
+	$colour = get_field('sig_colour');
+endif;
+?>
 <?php include 'components/hero.php'; ?>
 
 <!-- does page title NOT = where support? 

@@ -7,6 +7,12 @@ get_header(); ?>
 	<?php while ( have_posts() ) : the_post();
 	?>
 
+<?php 
+$bgImage = 'https://picsum.photos/seed/picsum/1000';
+if(get_field('sig_colour') ):
+	$colour = get_field('sig_colour');
+endif;
+?>
 <?php include 'components/hero.php'; ?>
 
 <section class="subpage-section">
@@ -30,7 +36,9 @@ get_header(); ?>
                 <?php
                 foreach ( $children as $post ) : setup_postdata( $post );
                 ?>
-                <li class="childcell">
+                <?php include 'components/child-page-block.php';?>
+
+                <!-- <li class="childcell">
                     <?php if ( has_post_thumbnail() ) : ?>
                         <div class="thumbnail"><?php the_post_thumbnail( 'small-thumb' ); ?></div>
                     <?php endif; ?>
@@ -38,7 +46,7 @@ get_header(); ?>
                     <span class="desc"><?php echo get_post_meta( get_the_ID(), 'desc', true ); ?></span>
                     <div class="subpage-excerpt"><?php the_excerpt(); ?></div>
                     <a class="subpage-link" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">arrow icon</a>
-                    </li>
+                    </li> -->
                 <?php
             endforeach;
                 wp_reset_postdata();

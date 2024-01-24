@@ -1,4 +1,8 @@
-.button {
+img {
+	position: relative;
+}
+
+button, .button {
 	a {
 		display: inline-block;
 		margin-bottom: 1rem;
@@ -16,4 +20,44 @@
 			color: $yellow;
 		}
 	}
+}
+
+
+button {
+	border: 0px;
+	text-transform: uppercase;
+	margin: 20px 10px;
+	border-radius: 72px;
+	&.btn--fat{
+		width: 185px;
+		height: 94px;
+		padding: 10px;
+		background-color: $mint;
+		color: $white;
+		&:hover {
+			border: 1px solid $mint;
+			color: $mint;
+			background-color: transparent;
+		}
+	}
+	&.btn--round {
+		height: 94px;
+		width: 94px;
+		border-radius: 100px;
+		background-color: $vividBlue;
+		
+	}
+	&.btn--skinny {
+		background-color: $raspberry;
+		width: 148px;
+		height: 52px;
+		text-transform: none;
+		color: $white;
+		&:hover {
+			border: 1px solid $raspberry;
+			color: $raspberry;
+			background-color: transparent;
+		}
+	}
+
 }

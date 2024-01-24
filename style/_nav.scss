@@ -1,34 +1,87 @@
 
 header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 	border: 2px solid $raspberry;
-	@include media(md)
+	@include media(lg)
 		{
 			display: flex;
 			justify-content: space-between;
+			align-items: center;
 		}
 }
-nav {
-	display: none;
-	&.active {
-		display: block;
+
+button[aria-expanded="true"]{
+	svg {
+	  transform: rotate(180deg);
+	  transition: all .25s ease-in;
 	}
-	@include media(md){
-		display: flex;
+  }
+
+nav {
+	&[aria-hidden="true"]{
+		top: 0;
+		left: -200%;
+		opacity: 0;
+		transition: all .5s ease-in-out;
+		background-color: $fandango;
+	}
+	&[aria-hidden="false"]{
+		top: 0;
+		left: 0;
+		opacity: 1;
+		width: 100%;
+		height: 100%;
+		transition: all .5s ease-in-out;
+		background-color: $fandango;
+	}
+	position: fixed;
+	background-color: $fandango;
+	@include media(lg){
+		&[aria-hidden="true"], &[aria-hidden="false"] {
+			top: initial;
+			left: initial;
+			opacity: initial;
+			background-color: initial;
+			transition: none;
+		}
 		
+
+
+		display: flex;
+		position: relative;
 	}
 	border: 2px solid $mint;
 	ul.main {
 		list-style: none;
 		padding-left: 0;
 		border: 2px solid $yellow;
-		@include media(md)
-		{
+		@include media(lg){
 			display: flex
 		}	
+		li {
+			margin: 0 15px;
+			a {
+				color: $white;
+				font-weight: 700;
+				margin-bottom:10px;
+			}
+		}
 	}
 	
 }
-
+.menu-item-has-children {
+	&:after {
+		content: ' \005E';
+	}
+	.menu-item-has-children{
+		&:after{
+			content: "";
+		}
+	}
+}
 .sub-menu  {
   position: absolute;
   left: 0;
@@ -41,6 +94,7 @@ nav {
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   li {
+	
 	.sub-menu {
 		position: relative!important;
 		li {
@@ -55,6 +109,7 @@ nav {
 			width: 10px;
 			background: $white;
 			}
+			
 			a{
 				font-size: 11px;
 			}
@@ -81,7 +136,8 @@ nav {
 	  position: absolute;
 	  z-index: 10;
 	  padding: 0.5rem;
-	  width: 10rem;
+	  left: -15px;
+	  width: 12rem;
 	  max-height: 20rem;
 	 
 	  background: $fandango;
@@ -103,7 +159,8 @@ nav {
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	background-position: center center;
-	@include media(md) {
+	background-color: transparent;
+	@include media(lg) {
 		display: none;
 	}
 }
@@ -111,6 +168,7 @@ nav {
 .header-buttons {
 	border: 2px solid $yellowOrange;
 	display: flex;
+	align-items: center;
 }
 
 

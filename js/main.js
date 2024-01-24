@@ -73,4 +73,52 @@ topLevelLinks.forEach(link => {
   }
   })
 
+
+
+
+
+
+
+  let viewportWidth = window.innerWidth;
+  console.log(viewportWidth);
+  function updateWindowWidth(){
+    if(viewportWidth < 1000){
+      mobileNav.classList.add('mobile-nav');
+      mobileNav.classList.remove('desktop-nav');
+    } else if (viewportWidth >= 1000) {
+      mobileNav.classList.add('desktop-nav');
+      mobileNav.classList.remove('mobile-nav');
+    }
+  }
+  
+  window.addEventListener("resize", updateWindowWidth);
+  
+  const menuToggle = this.querySelector('.menu-toggle');
+  const mobileNav = this.querySelector('nav');
+  
+  
+  
+  menuToggle.addEventListener("click", () => {
+  const expanded = menuToggle.getAttribute("aria-expanded");
+  if (expanded === "false") {
+    mobileNav.setAttribute("aria-hidden", false);
+      menuToggle.setAttribute("aria-expanded", true);
+      menuToggle.setAttribute("aria-label", "Close menu");
+      menuToggle.lastElementChild.textContent = "Close";
+      document.body.style.overflowY = "hidden";
+  } else {
+    mobileNav.setAttribute("aria-hidden", true);
+    menuToggle.setAttribute("aria-expanded", false);
+    menuToggle.setAttribute("aria-label", "Open menu");
+    menuToggle.lastElementChild.textContent = "Menu";
+    document.body.style.overflowY = "initial";
+  }
+  });
+  
+
 });
+
+
+
+
+

@@ -1,16 +1,17 @@
-<section class="hero">
+
+
+<section style="background-image: url('<?php echo $bgImage ?>'); background-size: cover;"class="hero display-flex flex-column justify-end">
  			<div class="container">
- 				<div class="row">
- 					<div class="col-xs-12">
- 						<div class="content">
- 							<div class="text">
- 								<h4><?php echo the_field('hero_superheadline'); ?>Superheadline</h4>
- 								<h1>Headline<?php echo the_field('hero_headline'); ?></h1>
-								<p>some hero content here limited number of characters</p>
- 								<?php echo the_field('hero_content'); ?>
- 							</div>	
- 						</div>
- 					</div>
- 				</div>
+				<div class="content ">
+					<div class="text">
+						<h1>Lorem Ipsum Dolor Sit Amet<?php echo the_field('hero_headline'); ?></h1>
+						<p>Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non semper suscipit posuere a pede.</p>
+						<?php echo the_field('hero_content'); ?>
+						<!-- check for button? render button -->
+						<button class="btn--skinny">
+							Learn More
+					</button>
+					</div>	
+				</div>
  			</div>
  		</section>

@@ -20,6 +20,7 @@ get_header(); ?>
 			$dataType = "question"; 
 			$category = "Questions";
 			$path = "components/cards/question-card.php";
+			$postsPerPage = -1;
 			?>
 		<?php include 'components/reusable-filter.php';?>
         <?php include 'components/questions-block.php';?>

@@ -28,26 +28,30 @@ endif;
         <![endif]-->
 	<div class="site">
 		<header>
-			<h1><a href=<?php site_url();?>>SOGI123</a></h1>
-			<nav>
+			<h1><a href=<?php get_home_url();?>>SOGI 123</a></h1>
+			<nav class="js-navigation"
+				aria-hidden="true"
+				aria-label="Main">
 				<?php
 				wp_nav_menu( array(
 				    'theme_location' => 'main',
 					'menu_class' => 'main'
 				) );
 				?>
-			</nav>
+			</nav >
 			<div class="header-buttons">
 					<!-- language switcher -->
 	<ul><?php pll_the_languages();?></ul>
-				<button class="header-donate">
+				<button class="btn--fat">
 					Donate
 				</button>
-				<button-header-search>
-					search
-				</button-header-search>
+				<button class="btn--round header-search">
+					search icon
+				</button>
 
-				<a href="#" class="menu-toggle">Menu</a>
+				<!-- <a href="#" class="menu-toggle">Menu</a> -->
+				<button  aria-expanded="false"
+       aria-label="Menu" class="menu-toggle">Menu</button>
 			</div>
 	
 		</header>

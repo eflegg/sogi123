@@ -6,6 +6,19 @@
 	}
 }
 
+.section-container {
+	padding: 3.25rem 1rem;
+	@include media(sm){
+		padding: 4.25rem 3rem;
+	}
+	@include media(md){
+		padding: 6.25rem 4rem;
+	}
+	@include media(lg){
+		padding: 12.5rem 8.25rem
+	}
+}
+
 .drawer {
 	touch-action: pan-y;
 	user-select: none;

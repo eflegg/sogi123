@@ -38,6 +38,7 @@ body {
 h1, .h1 {
 	@include heading;
 	font-size: 2.47rem;
+	font-weight: 800;
 	@include media(md) {
 		font-size: 3.47rem;
 	}
@@ -54,6 +55,9 @@ h2, .h2 {
 h3, .h3 {
 	font-size: 1.87rem;
 	@include heading;
+	@include media(lg){
+	font-size:	2.25rem;
+	}
 }
 
 h4, .h4 {
@@ -69,41 +73,42 @@ h5, .h5 {
 	line-height: 22px;
 }
 
-.content .text {
-
-	h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
-		margin-top: 1rem;
-	}
-
-	h1, h2, h3, .h1, .h2, .h3 {
-		margin-bottom: 0.6rem;
-	}
-
-	strong {
-		font-weight: 700;
-	}
-
-	em {
-		font-style: italic;
-	}
-
-	p, ul, ol {
-		margin-bottom: 1em;
-		a {
-			color: inherit;
+.content {
+	.text {
+	
+		h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
+			margin-top: 1rem;
+		}
+	
+		h1, h2, h3, .h1, .h2, .h3 {
+			margin-bottom: 0.6rem;
+		}
+	
+		strong {
 			font-weight: 700;
-			text-decoration: underline;
-			&:hover {
-				color: $sig;
+		}
+	
+		em {
+			font-style: italic;
+		}
+	
+		p, ul, ol {
+			margin-bottom: 1em;
+			a {
+				color: inherit;
+				font-weight: 700;
+				text-decoration: underline;
+				&:hover {
+					color: $sig;
+				}
 			}
 		}
+	
+		hr {
+			opacity: 0.5;
+			margin: 4rem 0 3rem;
+		}
 	}
-
-	hr {
-		opacity: 0.5;
-		margin: 4rem 0 3rem;
-	}
-
 }
 
 .rule-list {

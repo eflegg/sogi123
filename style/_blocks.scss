@@ -1,10 +1,12 @@
 body {
 	background-color: $grey;
 	color: white;
+	width: 100%;
+	
 }
 
 .hero {
-	
+	width: 100%;
 	@include media(md) {
 		
 	}
@@ -34,12 +36,163 @@ body {
 
 .hero {
 	border: 2px solid $turquoise;
-	height: 50vh;
+	height: 100vh;
+	min-height: 600px;
+	.content {
+		max-width: 400px;
+	}
+	.btn--skinny {
+		margin-left: 0;
+	}
+}
+
+// Home - At A Glace
+
+.at-a-glance {
+	background: linear-gradient(180deg, #2F9BF8 0%, #3674D9 100%);
+	@include media(lg){
+		padding: 12.5rem 8.25rem 5.625rem;
+	}
+	.inner {
+		display: flex;
+		flex-direction: column;
+		.left {
+			position: relative;
+			margin-bottom: 5rem;
+			@include media(lg){
+				margin-bottom: 0;
+			}
+		}
+		.image--at-a-glace {
+			position: relative;
+			img {
+				z-index: 20;
+			}
+		}
+		.shape {
+			position: absolute;
+			z-index: 10;
+			top: 1.25rem;
+			left: -1.25rem;
+			clip-path: polygon(0 0, 0% 100%, 100% 100%);
+			width: 100%;
+			height: 100%;
+			background-color: $yellowGreen;
+		}
+		h2 {
+			@include media(lg){
+				position: absolute;
+				top: -7.813rem;
+			}
+			
+		}
+		@include media(lg) {
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: flex-start;
+			
+		
+		}
+	}
+
+}
+
+//Home - Questions we're getting
+
+.questions-getting{
+	background-color: $manila;
+	.view-all {
+		color: $raspberry;
+	}
+	h3{
+		color: $graphite;
+	}
+	.left {
+		@include media(lg){
+			width: 25%;
+		}
+	}
+	.right {
+		@include media(lg){
+			width: 75%;
+		}
+	}
+	.inner {
+		display: flex;
+		flex-direction: column;
+		@include media(lg) {
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+		}
+	}
 }
 
 
 //Cards
 
+
+//Question card
+
+.card-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding-left: 0rem;
+}
+.question-card {
+	.question--text{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		width: 80%;
+	}
+	margin: .5rem;
+	position: relative;
+	width: 18rem;
+	align-self: start;          /* desired width */
+	&:before {
+		content: "";
+		display: block;
+		padding-top: 100%;    /* initial ratio of 1:1*/
+	}
+	background-color: $tangelo;
+	border-radius: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: $white;
+}
+
+
+.child-page-block {
+	list-style: none;
+	border-bottom: 1px solid $white;
+	padding: 2.5rem 0rem;
+	&:last-child {
+		border-bottom: 0px;
+		padding-bottom: 0px;
+	}
+	&:first-child {
+		padding-top: 0px;
+	}
+	.left {
+		width: 80%;
+		h3{
+			margin-bottom: 9px;
+		}
+	}
+	.right {
+		width: 55px;
+		height: 55px;
+		border-radius: 100px;
+		border: 1px solid $white;
+	}
+}
 
 
 

@@ -8,8 +8,10 @@
 					$args = array(
 					    'post_type' => 'question',
 					    'orderby' => 'menu_order',
-					    'order' => 'ASC'
+					    'order' => 'ASC',
+						'posts_per_page' => $postsPerPage
 					);
+
 					$the_query = new WP_Query( $args ); ?>
 
 					<?php if ( $the_query->have_posts() ) : ?>
