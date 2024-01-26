@@ -28,7 +28,7 @@ endif;
         <![endif]-->
 	<div class="site">
 		<header>
-			<h1><a href=<?php get_home_url();?>>SOGI 123</a></h1>
+			<h1><a href=<?php home_url();?>>SOGI 123</a></h1>
 			<nav class="js-navigation"
 				aria-hidden="true"
 				aria-label="Main">

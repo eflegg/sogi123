@@ -5,6 +5,10 @@ body {
 	
 }
 
+.subpages--list {
+	padding: 0 4rem;
+}
+
 .hero {
 	width: 100%;
 	@include media(md) {
@@ -36,7 +40,7 @@ body {
 
 .hero {
 	border: 2px solid $turquoise;
-	height: 100vh;
+	height: 90vh;
 	min-height: 600px;
 	.content {
 		max-width: 400px;
@@ -51,7 +55,7 @@ body {
 .at-a-glance {
 	background: linear-gradient(180deg, #2F9BF8 0%, #3674D9 100%);
 	@include media(lg){
-		padding: 12.5rem 8.25rem 5.625rem;
+		padding: 20rem 13.2rem 9rem;
 	}
 	.inner {
 		display: flex;
@@ -64,22 +68,28 @@ body {
 			}
 		}
 		.image--at-a-glace {
+			margin: 0 auto;
+			width: 85%;
 			position: relative;
 			img {
 				z-index: 20;
+			}
+			@include media(lg){
+				width: initial;
 			}
 		}
 		.shape {
 			position: absolute;
 			z-index: 10;
-			top: 1.25rem;
-			left: -1.25rem;
+			top: 2rem;
+			left: -2rem;
 			clip-path: polygon(0 0, 0% 100%, 100% 100%);
 			width: 100%;
 			height: 100%;
 			background-color: $yellowGreen;
 		}
 		h2 {
+			margin-bottom: 3rem;
 			@include media(lg){
 				position: absolute;
 				top: -7.813rem;
@@ -149,10 +159,11 @@ body {
 		transform: translate(-50%, -50%);
 		text-align: center;
 		width: 80%;
+		color: $white;
 	}
 	margin: .5rem;
 	position: relative;
-	width: 18rem;
+	width: 28.8rem;
 	align-self: start;          /* desired width */
 	&:before {
 		content: "";
@@ -168,6 +179,168 @@ body {
 	color: $white;
 }
 
+// Updates card
+
+.update-card {
+	position: relative;
+	color: black;
+	list-style: none;
+	width: 95%;
+	// @include media(sm){
+	// 	width: 48%;
+	// }
+	// @include media(lg){
+	// 	width: 32%;
+	// }
+	height: 100%;
+	margin: 0 auto;
+	height: 30rem;
+	
+	z-index: 10;
+	transition: left .4s cubic-bezier(.47,.13,.15,.89);
+	
+
+	&:nth-child(2n){
+		color: $tangelo;
+	}
+	&:nth-child(4n){
+		color: $veronica;
+	}
+	&:hover{
+		.tab, .inner {
+			background-color: $deepBlue;
+		}
+		h4, p, a {
+			color: $white;
+		}
+	}
+	.inner {
+		padding: 3.6rem;
+		z-index: 10;
+		position: relative;
+		width: 100%;
+		background-color: $manila;
+		border-radius: 2.1rem 0 2.1rem 2.1rem;
+		height: 85%;
+		h4{
+			margin-bottom: 1rem;
+		}
+		.post-date {
+			text-transform: uppercase;
+			margin-bottom: 4rem;
+		}
+		.content {
+			margin-bottom: 1.8rem;
+		}
+	}
+	.tab {
+		position:relative;
+		background-color: $manila;
+		position: relative;
+		height: 15%;
+		margin-left: auto;
+		width: 38%;
+		border-radius: 5rem 2rem 0 0;
+		top: 2.2rem;
+	}
+}
+
+
+
+// Updates Carousel
+
+.updates-section {
+	border: 2px solid brown;
+	
+	height: auto;
+	background-color: $violet;
+	@include media(lg){
+		padding: 8rem 4.8rem 9.5rem;
+	}
+	.slide {
+		position: absolute;
+		@include media(sm){
+			max-width: 48%;
+		}
+		@include media(lg){
+			max-width: 32%;
+		}
+	}
+	.controls {
+		cursor: pointer;
+		position: absolute;
+		&.prev {
+			top: 50%;
+			transform: translateY(-50%);
+			left: -3rem;
+		}&.next {
+			bottom: 50%;
+			transform: translateY(50%);
+			right: -3rem;
+		}
+	}
+	.carousel {
+		position: relative;
+		width: 90%;
+		height: 35rem; 
+		margin: 0 auto;
+	}
+	.carousel-content{
+		position: relative;
+		overflow: hidden;
+		transition: width .4s;
+		height: 100%;
+		padding-left: 0;
+	
+	}
+}
+
+
+
+//Filter
+
+.filter-by-category {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 75%;
+	transform: translateY(-60%);
+
+	@include media(md){
+		width: 50%;
+	}
+	@include media(lg){
+		width: 35%;
+		padding: 4rem;
+	}
+	 position: absolute;
+	 right: 0;
+	 top: 0;
+	background: $deepBlue;
+	&:before {
+		content: "";
+		display: block;
+		padding-top: 10%;    /* initial ratio of 1:1*/
+	}
+	
+	select {
+		@include media(lg){
+			padding: 1rem 2rem;
+		}
+		@include media(xl){
+			padding: 1.5rem 2.6rem;
+		}
+		color: $deepBlue;
+		border-radius: 100px;
+		border: 0px;
+	}
+	h2{
+		margin-bottom: 1.8rem;
+	}
+}
+
+
+//Child Page Block
 
 .child-page-block {
 	list-style: none;
@@ -193,19 +366,6 @@ body {
 		border: 1px solid $white;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

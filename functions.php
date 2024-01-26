@@ -445,3 +445,78 @@ add_filter( 'template_include', function( $template )
   }
   add_action('wp_ajax_filter_projects', 'filter_projects');
   add_action('wp_ajax_nopriv_filter_projects', 'filter_projects');
+
+
+
+
+
+
+function rudr_ajax_filter_by_category() {
+
+
+	$obj = json_decode( file_get_contents( "php://input" ), true );
+	$catSlug = $obj['cat'];
+	$postType =$obj['dataType'];
+	// print_r($obj);
+	// print_r($catSlug);
+	// print_r($postType);
+  
+	$ajaxposts = new WP_Query([
+	  'post_type' => $postType,
+	  'posts_per_page' => -1,
+	  'category_name' => $catSlug,
+	  'orderby' => 'menu_order', 
+	  'order' => 'desc',
+	]);
+	$response = '';
+  
+
+	
+	if($ajaxposts->have_posts()) {
+	  while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+	  if($postType == 'question'){
+		  $response .= include 'components/cards/question-card.php';
+	  } else if($postType == 'resource'){
+		$response .= include 'components/cards/resource-card.php';
+	  }else {
+		$response .= include 'components/cards/update-card.php';
+	  }
+		
+		
+	  endwhile;
+	} else {
+	  $response = 'empty';
+	}
+  
+	echo $response;
+
+	exit;
+
+	// $args = json_decode( file_get_contents( "php://input" ), true );
+
+	// query_posts( $args );
+	
+	// $i = 0;
+
+	// while( have_posts() ) {
+
+	// 	the_post();
+
+	// 	include 'components/cards/question-card.php';
+
+	// }
+
+	// die;
+
+}
+add_action( 'wp_ajax_ajaxfilter', 'rudr_ajax_filter_by_category' );
+add_action( 'wp_ajax_nopriv_ajaxfilter', 'rudr_ajax_filter_by_category' );
+
+
+//this is what makes the ajaxurl variable available site wide
+add_action('wp_head', 'myplugin_ajaxurl');
+function myplugin_ajaxurl() {
+    echo '<script type="text/javascript">
+           var ajaxurl = "' . admin_url('admin-ajax.php') . '";
+         </script>';
+}

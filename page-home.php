@@ -77,7 +77,7 @@ if ( ! empty( $children ) ) :
     <div class="inner">
         <div class="left">
             <h3>Questions We're Getting</h3>
-            <p class="view-all">View all -></p>
+            <a href='<?php echo home_url('/our-work/questions-answered'); ?>' class="view-all">View all -></a>
         </div>
         <div class="right">
             <?php
