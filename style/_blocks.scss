@@ -39,7 +39,13 @@ body {
 //Heros
 
 .hero {
-	border: 2px solid $turquoise;
+	padding: 2rem 0 2rem 4rem;
+	@include media(md){
+
+	}
+	@include media(lg){
+		padding: 8rem 0 8rem 12rem;
+	}
 	height: 90vh;
 	min-height: 600px;
 	.content {
@@ -104,8 +110,9 @@ body {
 		
 		}
 	}
-
 }
+
+
 
 //Home - Questions we're getting
 
@@ -140,6 +147,12 @@ body {
 
 
 //Cards
+
+ul.card--categories {
+	list-style:none;
+	padding-left: 0;
+	margin-top: 1.5rem;
+}
 
 
 //Question card
@@ -177,6 +190,47 @@ body {
 	align-items: center;
 	justify-content: center;
 	color: $white;
+	.the-answer {
+		display: none;
+		visibility: hidden;
+		opacity: 0;
+		transition: all 0.3s ease-in-out;
+	}
+	transition: all 0.3s ease-in-out;
+	.continue-reading {
+		display: none;
+		visibility: hidden;
+		opacity: 0;
+		font-size: 1.2rem;
+	}
+	&:hover {
+		background-color: $white;
+		color: $tangelo;
+		transition: all 0.3s ease-in-out;
+		.the-answer {
+			display: block;
+			visibility: visible;
+			opacity: 1;
+			transition: all 0.3s ease-in-out;
+		}
+		.question--text{
+			color: $tangelo;
+		}
+		.card--categories {
+			display: none;
+			visibility: hidden;
+			opacity: 0;
+		}
+		.continue-reading {
+			display: block;
+			visibility: visible;
+			opacity: 1;
+			a {
+				color: $tangelo;
+			}
+
+		}
+	}
 }
 
 // Updates card
@@ -303,9 +357,13 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width: 75%;
 	transform: translateY(-60%);
-
+	padding: 2rem;
+	width: 100%;
+	@include media(sm){
+		position: absolute;
+		width: 50%;
+	}
 	@include media(md){
 		width: 50%;
 	}
@@ -313,7 +371,7 @@ body {
 		width: 35%;
 		padding: 4rem;
 	}
-	 position: absolute;
+	 position: relative;
 	 right: 0;
 	 top: 0;
 	background: $deepBlue;
@@ -336,6 +394,24 @@ body {
 	}
 	h2{
 		margin-bottom: 1.8rem;
+	}
+}
+.cat-list{
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	padding-left: 0;
+	transform: translateY(-20%);
+	@include media (sm){
+		position: absolute;
+		top: 7rem;
+		left: 0;
+		width: 60%;
+	}
+	@include media(lg){
+		left: 3rem;
+		top: 3rem;
 	}
 }
 

@@ -35,24 +35,24 @@
 
 
 
-		<!-- <ul role="toolbar" class="cat-list <?php echo $dataType;?>">
-		 <li>
-			<button>
-				<a class="cat-list_item active" href="#!" data-slug="" data-type=<?php echo $dataType;?>>All <?php echo $catVal->name ;?>
+<ul role="toolbar" class="cat-list <?php echo $dataType;?>">
+		 <li class="btn--category lg">
+			<button class="button btn--category btn--category lg">
+				<a class="cat-list_item active" href="#!" data-slug="" data-type=<?php echo $dataType;?>>All
 			</a>
 		</button>
 	</li>
 
 			<?php foreach( $child_cat as $child_term )  :?>
 
-				<li>
-					<button>
+				<li class="btn--category lg">
+					<button class="button btn--category btn--category lg">
 						<a class="cat-list_item" href="#!" data-slug="<?= $child_term->slug; ?>" data-type=<?php echo $dataType;?>>
 							<?php echo $child_term->name; ?>
 						</a>
 					</button>
 				</li>
 				<?php endforeach; ?>
-			</ul>  -->
+			</ul> 
 
 	

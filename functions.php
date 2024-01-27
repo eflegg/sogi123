@@ -492,21 +492,7 @@ function rudr_ajax_filter_by_category() {
 
 	exit;
 
-	// $args = json_decode( file_get_contents( "php://input" ), true );
 
-	// query_posts( $args );
-	
-	// $i = 0;
-
-	// while( have_posts() ) {
-
-	// 	the_post();
-
-	// 	include 'components/cards/question-card.php';
-
-	// }
-
-	// die;
 
 }
 add_action( 'wp_ajax_ajaxfilter', 'rudr_ajax_filter_by_category' );

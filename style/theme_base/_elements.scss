@@ -2,28 +2,11 @@ img {
 	position: relative;
 }
 
+
+
+
 button, .button {
-	a {
-		display: inline-block;
-		margin-bottom: 1rem;
-		@include heading;
-		font-size: 1.07rem;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		color: inherit;
-		padding-bottom: 2px;
-		border-bottom: 3px solid;
-		@include animate(all, 0.15s, 0);
-		&:hover {
-			padding-bottom: 0px;
-			margin-bottom: calc( 1rem + 2px );
-			color: $yellow;
-		}
-	}
-}
-
-
-button {
+	display: table;
 	border: 0px;
 	text-transform: uppercase;
 	margin: 20px 10px;
@@ -41,9 +24,9 @@ button {
 		}
 	}
 	&.btn--round {
-		height: 94px;
-		width: 94px;
-		border-radius: 100px;
+		height: 9.4rem;
+		width: 9.4rem;
+		border-radius: 100%;
 		background-color: $vividBlue;
 		
 	}
@@ -59,5 +42,24 @@ button {
 			background-color: transparent;
 		}
 	}
-
+	&.btn--category{
+	border: 1px solid $white;
+	background: transparent;
+	font-size: 12px;
+	margin: 5px;
+	text-transform: none;
+	padding: 2px 5px;
+	display: inline-block;
+	}
+	&.lg {
+		font-size: 1.6rem;
+		padding: 0.8rem 1.8rem;
+		color: $fandango;
+		border: 2px solid $fandango;
+		color: $fandango;
+		a {
+			color: $fandango
+		}
+	}
 }
+

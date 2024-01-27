@@ -1,12 +1,35 @@
 <li class="question-card">
     <div class="question--text">
-        <span class="client">
+        <span class="the-question">
             <?php the_title(); ?>
         </span>
-        I'm a question card
-        <span class="button">
-            <a href="<?php the_permalink(); ?>">Learn More</a>
+        
+       <span class="the-answer">
+        I'm the answer to the question
+       </span>
+      
+    
+    <?php
+    $category_out=array();
+    $categories = get_the_category();?>
+<?php
+    foreach ($categories as $category_one) {
+        if (empty(get_term_children($category_one->term_id,$category_one->taxonomy))){
+        $category_out[] ='<li class="button btn--category">' .$category_one->name.'</li>';
+        }
+    }
+
+    $category_out = implode( '', $category_out);
+    
+    ?>
+<ul class="card--categories">
+    <?php echo $category_out;?>
+</ul>
+<span class="continue-reading">
+            <a href="<?php the_permalink(); ?>">Continue reading &#10142;</a>
         </span>
+
+
     </div>
         
 </li>
