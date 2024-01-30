@@ -35,8 +35,8 @@ $bgImage = 'https://picsum.photos/seed/picsum/1000';
 
                 <?php else:?>
 
-                            <!-- list of resources -->
-		<section class="resource-container">
+	<!-- list of resources -->
+	<section style="background-color: #FFFCE3; position: relative;" class="question-container section-container">
 
 	
 		<?php 

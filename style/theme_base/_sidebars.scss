@@ -1,0 +1,49 @@
+
+aside {
+	position: relative;
+	.shape {
+		clip-path: circle(69.1% at 3% 5%);
+		top: 55%;
+		left: -40%;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		background-color: $yellowGreen;
+	 }
+}
+
+
+.share-sidebar {
+position: relative;
+z-index: 10;
+ background-color: $vividBlue;   
+ padding: 2.5rem;
+ @include media(md){
+    padding: 3.5rem;
+ }
+ @include media(lg){
+    padding: 5rem;
+ }
+ h3 {
+    color: $white;
+    font-weight: 700;
+    margin: 2rem 0 1.3rem;
+ }
+ p {
+    line-height: 160%;
+    color: $white;
+    &.share-this{
+        font-weight: 800;
+        margin-top: 1.7rem;
+        margin-bottom: 1rem;
+    }
+ }
+ .share--inner{
+    position: relative;
+ }
+
+}
+
+.resources-sidebar {
+    order: 2;
+}

@@ -1,1 +1,1 @@
-<h3>I'm the resources sidebar</h3>
+<h3 class="resources-sidebar">I'm the resources sidebar</h3>

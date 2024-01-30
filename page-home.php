@@ -24,7 +24,7 @@ endif;
         <h2 class="h3">SOGI 123 <br>At a Glance</h2>
         <div class="image--at-a-glace">
             <div class="image-item">
-<img src="https://picsum.photos/seed/picsum/1000" alt="">
+        <img src="https://picsum.photos/seed/picsum/1000" alt="">
             </div>
             <div class="shape">
 
@@ -65,12 +65,6 @@ if ( ! empty( $children ) ) :
 
     </div>
     </div>
-
-
-
-
-
-
 </section>
 
 <section class="questions-getting section-container">

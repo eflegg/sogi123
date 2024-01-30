@@ -283,6 +283,46 @@
       "oAP" : "\/build\/components\/sidebars\/sidebar-picker.php",
       "oF" : 0
     },
+    "\/components\/svg\/circle-chevron.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/components\/svg\/circle-chevron.php",
+      "oF" : 0
+    },
+    "\/components\/svg\/globe-logo.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/components\/svg\/globe-logo.php",
+      "oF" : 0
+    },
+    "\/components\/svg\/header-search-icon.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/components\/svg\/header-search-icon.php",
+      "oF" : 0
+    },
+    "\/components\/svg\/logo-colour.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/components\/svg\/logo-colour.php",
+      "oF" : 0
+    },
+    "\/components\/svg\/logo-white.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/components\/svg\/logo-white.php",
+      "oF" : 0
+    },
     "\/components\/update-carousel.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1900,6 +1940,21 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/build\/style\/theme_base\/_forms.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/style\/theme_base\/_sidebars.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 0,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/build\/style\/theme_base\/_sidebars.css",
       "oF" : 0,
       "oS" : 3,
       "pg" : 0,

@@ -1,15 +1,26 @@
 
 header {
+	.home-logo {
+		width: 19rem;
+		height: auto;
+	}
+	
+	padding-left: 2rem;
+	padding-top: 2rem;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
-	border: 2px solid $raspberry;
 	@include media(lg)
-		{
+	{
+			padding-left: 3rem;
+			padding-top: initial;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+		}
+		@include media(xl){
+			padding-left: 5rem;
 		}
 		button[aria-expanded="true"]{
 			svg {
@@ -51,11 +62,11 @@ header {
 				display: flex;
 				position: relative;
 			}
-			border: 2px solid $mint;
+		
 			ul.main {
 				list-style: none;
 				padding-left: 0;
-				border: 2px solid $yellow;
+				
 				@include media(lg){
 					display: flex
 				}	
@@ -158,7 +169,7 @@ header {
 			display: block;
 			position: absolute;
 			right: 0;
-			top: 0;
+			top: -2.5rem;
 			width: 90px;
 			height: 90px;
 			font-size: 0;
@@ -176,7 +187,7 @@ header {
 
 
 .header-buttons {
-	border: 2px solid $yellowOrange;
+
 	display: flex;
 	align-items: center;
 }

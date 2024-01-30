@@ -9,7 +9,7 @@
             <div class="subpage-excerpt"><?php the_excerpt(); ?></div>
         </div>
         <div class="right--child">
-            <a class="subpage-link" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">icon</a>
+            <a class="subpage-link" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php include 'svg/circle-chevron.php';?></a>
         </div>
     </div>
 </li>

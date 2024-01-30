@@ -64,11 +64,11 @@ endif;
 			</ul>
 		</section>
 		<?php else:?>
-			<div class="page-container">
+			<div class="page-container container-with-sidebar section-container default">
 				<aside class="sidebar-container">
 				<?php
-					$sidebarType = 'resources';
-						if($sidebarType && $sidebarType === "share") :?>
+					$sidebarType = 'share';
+						if($sidebarType && $sidebarType === "resources") :?>
 						<?php include "components/sidebars/share-sidebar.php"; ?>
 
 							<?php elseif ($sidebarType && $sidebarType === "resources"):?>

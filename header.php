@@ -28,7 +28,16 @@ endif;
         <![endif]-->
 	<div class="site">
 		<header>
-			<h1><a href=<?php home_url();?>>SOGI 123</a></h1>
+			<a class="home-logo" href=<?php home_url();?>>
+				<?php
+				$pageTitle = get_the_title();
+				if ($pageTitle == "Home Page") {
+					include 'components/svg/logo-colour.php';
+				} else {
+					include 'components/svg/logo-white.php';
+				}
+				?>
+			</a>
 			<nav class="js-navigation"
 				aria-hidden="true"
 				aria-label="Main">
@@ -41,13 +50,16 @@ endif;
 			</nav >
 			<div class="header-buttons">
 					<!-- language switcher -->
-	<ul><?php pll_the_languages();?></ul>
+					<div class="lang-switcher display-flex align-items-center">
+<?php include 'components/svg/globe-logo.php';?>
+<ul><?php pll_the_languages();?></ul>
+</div>
 				<button class="btn--fat">
 					Donate
 				</button>
-				<button class="btn--round header-search">
-					search icon
-				</button>
+				<span role="button" class="header-search">
+				<?php include 'components/svg/header-search-icon.php';?>
+				</span>
 
 				<!-- <a href="#" class="menu-toggle">Menu</a> -->
 				<button  aria-expanded="false"

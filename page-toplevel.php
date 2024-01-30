@@ -12,13 +12,25 @@ $bgImage = 'https://picsum.photos/seed/picsum/1000';
 if(get_field('sig_colour') ):
 	$colour = get_field('sig_colour');
 endif;
+
 ?>
 <?php include 'components/hero.php'; ?>
 
-<section class="subpage-section">
-<h2>subpage section</h2>
-    <div class="subpages--image"></div>
+<section class="top-level-section section-container">
+    <div class="inner">
+    <div class="left">
+        <div class="image--top-level">
+            <div class="image-item">
+             <img src="https://picsum.photos/seed/picsum/1000" alt="">
+            </div>
+            <div class="shape">
 
+            </div>
+        </div>
+
+    </div>
+
+    <div class="right">
     <ul class="subpages--list">
 
         <?php
@@ -37,16 +49,6 @@ endif;
                 foreach ( $children as $post ) : setup_postdata( $post );
                 ?>
                 <?php include 'components/child-page-block.php';?>
-
-                <!-- <li class="childcell">
-                    <?php if ( has_post_thumbnail() ) : ?>
-                        <div class="thumbnail"><?php the_post_thumbnail( 'small-thumb' ); ?></div>
-                    <?php endif; ?>
-                    <div class="subpage-title"><?php the_title(); ?></div>
-                    <span class="desc"><?php echo get_post_meta( get_the_ID(), 'desc', true ); ?></span>
-                    <div class="subpage-excerpt"><?php the_excerpt(); ?></div>
-                    <a class="subpage-link" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">arrow icon</a>
-                    </li> -->
                 <?php
             endforeach;
                 wp_reset_postdata();
@@ -54,6 +56,8 @@ endif;
             </div>
         <?php endif; ?>
     </ul>
+    </div>
+    </div>
 </section>
 
 
