@@ -28,6 +28,14 @@ if( have_rows('flexible_content_picker') ):
             if($image):
        include 'image-display.php';
     endif;
+   // Case: Text Editor.
+   elseif( get_row_layout() == 'text_editor' ): 
+    $text = get_sub_field('flexible_text');
+    // Do something...
+    if($text):
+    echo $text;
+endif;
+
         endif;
 
     // End loop.

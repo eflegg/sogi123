@@ -1,4 +1,4 @@
-<li class="question-card card-color">
+<li class="card card-color">
     <div class="question--text">
         <span class="the-question">
             <?php echo $question ?>

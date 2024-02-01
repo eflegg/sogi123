@@ -217,6 +217,11 @@ ul.card--categories {
 }
 
 
+.resource-card {
+
+}
+
+
 //Question card
 
 .card-container {
@@ -226,7 +231,10 @@ ul.card--categories {
 	align-items: center;
 	padding-left: 0rem;
 }
-.question-card {
+.card {
+	&.square {
+		border-radius: 70px;
+	}
 	.question--text{
 		position: absolute;
 		top: 50%;
@@ -234,7 +242,9 @@ ul.card--categories {
 		transform: translate(-50%, -50%);
 		text-align: center;
 		width: 80%;
-		color: $white;
+		p{
+			color: $white;
+		}
 	}
 	margin: .5rem;
 	position: relative;
@@ -303,7 +313,6 @@ ul.card--categories {
 
 .update-card {
 	position: relative;
-	color: black;
 	list-style: none;
 	width: 95%;
 	// @include media(sm){

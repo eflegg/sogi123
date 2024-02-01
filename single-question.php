@@ -32,7 +32,7 @@ $bgImage = 'https://picsum.photos/seed/picsum/1000';
 
         <div class="flexible-content">
 				<?php echo the_content(); ?>
-					<h2>I am the content and flexible content section</h2>
+				<?php include 'components/flexible-content/flexible-content.php';?>
           </div>
          
 
@@ -44,43 +44,6 @@ $bgImage = 'https://picsum.photos/seed/picsum/1000';
 
 
 
-
-	<!-- <section class="intro-w-image">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-lg-4">
-					<?php 
-				$image = get_field('thumbnail_image');
-				if( !empty( $image ) ): ?>
-				    <img class="img-responsive" src="<?php echo $image ?>"/>
-				<?php endif; ?>
-				</div>
-				<div class="col-xs-12 col-lg-8">
-					<div class="text">
-						<?php echo the_content(); ?>
-
-						<?php
-						$featured_posts = get_field('author');
-						if( $posts ): ?>
-						    <?php foreach( $posts as $post ): 
-
-						        // Setup this post for WP functions (variable must be named $post).
-						        setup_postdata($post); ?>
-						        <div class="author">
-									<img src="<?php echo the_field('cropped_headshot'); ?>">
-									<p>Written by <span class="author-name"><a href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a></span></p>
-								</div>
-						    <?php endforeach; ?>
-						    <?php 
-						    // Reset the global post object so that the rest of the page works correctly.
-						    wp_reset_postdata(); ?>
-						<?php endif; ?>
-												
-					</div>
-				</div>
-			</div>		
-		</div>
-	</section> -->
 
 
 
