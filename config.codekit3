@@ -203,6 +203,22 @@
       "oAP" : "\/build\/components\/child-page-block.php",
       "oF" : 0
     },
+    "\/components\/flexible-content\/flexible-content.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/components\/flexible-content\/flexible-content.php",
+      "oF" : 0
+    },
+    "\/components\/flexible-content\/image-display.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/components\/flexible-content\/image-display.php",
+      "oF" : 0
+    },
     "\/components\/flexible-content\/tabs.php" : {
       "cB" : 0,
       "ft" : 8192,

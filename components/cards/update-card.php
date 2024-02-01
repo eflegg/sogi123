@@ -1,4 +1,4 @@
-<li class="update-card slide">
+<li class="update-card slide update-color">
     <div class="tab">
 
     </div>

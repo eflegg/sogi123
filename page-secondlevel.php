@@ -54,6 +54,9 @@ $sidebarType = 'donate';
 			<?php endif; ?>
 			</ul>
 		</section>
+
+		
+
 		<?php else:?>
 
 			<?php
@@ -61,7 +64,12 @@ $sidebarType = 'donate';
         if ($sidebarSettings):?>
 		<?php
 		$sidebarType = $sidebarSettings['sidebar_type'];?>
-			<section class="container-with-sidebar section-container default-type <?php echo $sidebarType;?>">
+		<?php $parent = get_the_title( $post->post_parent ); ?>
+<?php if($parent === "Where We Support"):?>
+	<?php $typeColor = 'blue';?>
+	<?php endif; ?>
+	
+			<section class="container-with-sidebar section-container default-type <?php echo $typeColor;?> <?php echo $sidebarType;?>">
 				<aside class="sidebar-container">
 				<?php include 'components/sidebars/sidebar-picker.php';?>
 
@@ -69,8 +77,16 @@ $sidebarType = 'donate';
 
 				</aside>
 				<div class="flexible-content">
+
 				<?php echo the_content(); ?>
-					<h2>I am the content and flexible content section</h2>
+
+
+<?php include 'components/flexible-content/flexible-content.php'; ?>
+
+
+
+			
+
 						</div>
 						</section>
 	

@@ -1,0 +1,21 @@
+<?php
+    if (!empty($image)):
+    $size = 'full'; ?>
+
+<figure class="full-width">
+    <?php
+    if ($image) {
+        echo wp_get_attachment_image($image['ID'], $size, $attr['class'] = 'full-width__image');
+    }
+    ?>
+</figure>
+
+<?php endif;?>
+
+
+
+
+
+
+
+

@@ -55,7 +55,7 @@ selectElem.addEventListener( 'change', event => {
 		}
 	
 		//console.log( response );
-    console.log(postType);
+    // console.log(postType);
     
    
 
@@ -140,21 +140,21 @@ topLevelLinks.forEach(link => {
   //wordy but does the trick
 
   var carousel = document.querySelector('.carousel');
-  console.log('carousel: ', carousel);
+
   var carouselContent = document.querySelector('.carousel-content');
-  console.log('carousel content: ', carouselContent);
+
   var slides = document.querySelectorAll('.slide');
-  console.log('slides: ', slides);
+
   var arrayOfSlides = Array.prototype.slice.call(slides);
-  console.log('array of slides: ', arrayOfSlides);
+
   var carouselDisplaying;
   var screenSize;
   setScreenSize();
 
-  console.log('carousel: ', carousel);
-  console.log('carousel content: ', carouselContent);
-  console.log('slides: ', slides);
-  console.log('array of slides: ', arrayOfSlides);
+  // console.log('carousel: ', carousel);
+  // console.log('carousel content: ', carouselContent);
+  // console.log('slides: ', slides);
+  // console.log('array of slides: ', arrayOfSlides);
 
 
 
@@ -319,17 +319,37 @@ function moveBasedOnMouse(e) {
 
 
 //tabs
+
+//add active class to first child of dynamic list, both panes and tabs
+const firstTabPanel = document.querySelector('.tab-content').firstElementChild;
+firstTabPanel.classList.add('active-tab');
+
+const firstTab = document.querySelector('.tab-nav').firstElementChild;
+firstTab.classList.add('active-tab');
+
 function onTabClick(event) {
-  let activeTabs = document.querySelectorAll('.active');
+  let activeTabs = document.querySelectorAll('.active-tab');
+  console.log('active tabs: ', activeTabs);
 
   // deactivate existing active tab and panel 
   activeTabs.forEach(function(tab) {
-    tab.className = tab.className.replace('active', '');
+    tab.className = tab.className.replace('active-tab', '');
   });
 
-  // activate new tab and panel
-  event.target.parentElement.className += ' active';
-  document.getElementById(event.target.href.split('#')[1]).className += ' active';
+  // find closes li to clicked item and either remove or add active class
+  event.target.closest('li').className += ' active-tab';
+  console.log(event.target.closest('li'));
+ 
+
+  console.log( document.getElementById(event.target.getAttribute('data-link')));
+
+  console.log(event.target.getAttribute('data-link'));
+
+   // get the element with the id that matches the data attr of clicked item
+  document.getElementById(event.target.getAttribute('data-link')).className += ' active-tab';
+
+ 
+
 }
 
 const element = document.getElementById('nav-tab');

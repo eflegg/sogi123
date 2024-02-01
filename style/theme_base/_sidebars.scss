@@ -3,6 +3,7 @@
 	flex-direction: column;
 	@include media(md) {
 		flex-direction: row;
+		align-items: flex-start;
 		&.Resources {
 			flex-direction: row-reverse;
 		}
@@ -51,7 +52,7 @@ z-index: 10;
     padding: 5rem;
  }
  h3 {
-    color: $white;
+    color: $white!important;
     font-weight: 700;
     margin: 2rem 0 1.3rem;
  }
