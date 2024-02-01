@@ -69,13 +69,6 @@ selectElem.addEventListener( 'change', event => {
 
 
 
-
-
-
-
-
-
-
 //accessiblie hover nav, adds focus state to li, removes it on blur. 
 //works going forward, drops to bottom of submenu when going backward
 const topLevelLinks = document.querySelectorAll('.menu-item > a')
@@ -147,12 +140,22 @@ topLevelLinks.forEach(link => {
   //wordy but does the trick
 
   var carousel = document.querySelector('.carousel');
+  console.log('carousel: ', carousel);
   var carouselContent = document.querySelector('.carousel-content');
+  console.log('carousel content: ', carouselContent);
   var slides = document.querySelectorAll('.slide');
+  console.log('slides: ', slides);
   var arrayOfSlides = Array.prototype.slice.call(slides);
+  console.log('array of slides: ', arrayOfSlides);
   var carouselDisplaying;
   var screenSize;
   setScreenSize();
+
+  console.log('carousel: ', carousel);
+  console.log('carousel content: ', carouselContent);
+  console.log('slides: ', slides);
+  console.log('array of slides: ', arrayOfSlides);
+
 
 
 
@@ -314,6 +317,24 @@ function moveBasedOnMouse(e) {
   carouselContent.removeEventListener('mousemove', slightMove);
 }
 
+
+//tabs
+function onTabClick(event) {
+  let activeTabs = document.querySelectorAll('.active');
+
+  // deactivate existing active tab and panel 
+  activeTabs.forEach(function(tab) {
+    tab.className = tab.className.replace('active', '');
+  });
+
+  // activate new tab and panel
+  event.target.parentElement.className += ' active';
+  document.getElementById(event.target.href.split('#')[1]).className += ' active';
+}
+
+const element = document.getElementById('nav-tab');
+
+element.addEventListener('click', onTabClick, false);
 
 });
 

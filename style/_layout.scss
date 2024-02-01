@@ -254,32 +254,28 @@ footer {
 }
 
 
-
+.display-none{
+	display: none;
+	visibility:hidden;
+}
 
 .is-loading {
 	opacity: 0.5;
 	transition: all .5s ease-in-out;
 }
 
-.container-with-sidebar {
-	display: flex;
-	flex-direction: column;
-	@include media(md) {
-		flex-direction: row;
-		justify-content: space-around;
-		aside {
-			width: 40%;
-			@include media(lg){
-				width: 35%;
-			}
-		}
-		.flexible-content {
-			width: 55%;
-			@include media(lg){
-				width: 60%;
-			}
-		}
+.intro {
+	width: 100%;
+	margin-bottom: 2rem;
+	@include media(md){
+		width: 75%;
+		margin-bottom: 5rem;
 	}
+	@include media(lg){
+		width: 60%;
+		margin-bottom: 7rem;
+	}
+
 }
 
 
@@ -294,7 +290,7 @@ footer {
 	@include media(lg){
 		padding: 12.5rem 8.25rem
 	}
-	&.question-container{
+	&.has-filter-container{
 		padding-top: 16rem;
 		
 		@include media(lg){

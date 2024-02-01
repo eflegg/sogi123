@@ -9,6 +9,7 @@ $blue: slateblue;
 
 $manila: #FFFCE3;
 $graphite:#333333;
+$white: #fff;
 $redPurple: #A71679;
 $raspberry:#E1125C;
 $tangelo: #F65300; 
@@ -26,7 +27,21 @@ $violetBlue: #3D52B9;
 $violet: #6F46C3;
 $veronica: #A13ACC;
 $fandango:#A428A3;
-$white: #fff, 
 
 
+$cardColors: #E1125C, #61D06F, #F77400, #2F96F8, #A13ACC,#1CC5C4,#6F46C3, #1EBB8A, #FF9900, #25B3FC, #F65300, #A71679;
 
+$cardColorsLength: length($cardColors);
+
+.card-color {
+    @for $i from 1 through $cardColorsLength {
+      &:nth-of-type(#{$cardColorsLength}n+#{$i}) {
+        background-color: nth($cardColors, $i);
+        &:hover {
+            *{
+                color: nth($cardColors, $i);
+            }
+        }
+      }
+    }
+  }

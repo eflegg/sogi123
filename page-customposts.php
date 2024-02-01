@@ -18,7 +18,7 @@ $bgImage = 'https://picsum.photos/seed/picsum/1000';
 	$pageTitle = get_the_title();
 	if($pageTitle === 'Questions Answered'):?>
 
-	<section style="background-color: #FFFCE3; position: relative;" class="question-container section-container">
+	<section style="background-color: #FFFCE3; position: relative;" class="has-filter-container section-container">
 
 		
 		<!-- list of questions -->
@@ -36,7 +36,7 @@ $bgImage = 'https://picsum.photos/seed/picsum/1000';
                 <?php else:?>
 
 	<!-- list of resources -->
-	<section style="background-color: #FFFCE3; position: relative;" class="question-container section-container">
+	<section style="background-color: #FFFCE3; position: relative;" class="has-filter-container section-container">
 
 	
 		<?php 

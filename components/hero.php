@@ -8,9 +8,15 @@
 						<p>Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non semper suscipit posuere a pede.</p>
 						<?php echo the_field('hero_content'); ?>
 						<!-- check for button? render button -->
-						<button class="btn--skinny">
+						<?php if(is_front_page()){
+							echo '<button class="btn--skinny">
 							Learn More
-					</button>
+					</button>';}
+					
+				;?>
+						<!-- <button class="btn--skinny">
+							Learn More
+					</button> -->
 					</div>	
 			
  			</div>

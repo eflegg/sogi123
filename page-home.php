@@ -74,14 +74,37 @@ if ( ! empty( $children ) ) :
             <a href='<?php echo home_url('/our-work/questions-answered'); ?>' class="view-all">View all -></a>
         </div>
         <div class="right">
-            <?php
+        <?php
             $postsPerPage = 3;
             ?>
+        <?php 
+        $questions_getting = get_field('questions_were_getting');
+        if($questions_getting):?>
+        <ul class="card-container">
+            <?php foreach( $questions_getting as $post ): 
+            	$the_question = get_field('questions');
+                if($the_question):?>
+                    <?php $question = $the_question['question'];?>
+                    <?php $answer = $the_question['answer'];
+                    endif;
+
+                // Setup this post for WP functions (variable must be named $post).
+                setup_postdata($post); ?>
+            <?php include 'components/cards/question-card.php';?>
+            <?php endforeach; ?>
+            </ul>
+            <?php 
+            // Reset the global post object so that the rest of the page works correctly.
+            wp_reset_postdata(); ?>
+
+          <?php else:?>  
             <?php include 'components/questions-block.php';?>
+        <?php endif;?>
 
         </div>
     </div>
 </section>
+
 
 <?php include 'components/update-carousel.php'; ?>
 

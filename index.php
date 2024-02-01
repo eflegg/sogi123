@@ -18,8 +18,6 @@ endif;
 
 
 
-
-
     <div class="updates--inner">
 
  
@@ -50,6 +48,7 @@ endif;
             </div>
 
             </section>
+			
 <!-- 
             <?php while ( have_posts() ) : the_post();
 	?>

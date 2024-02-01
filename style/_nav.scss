@@ -99,6 +99,7 @@ header {
 			.menu-item-has-children{
 				&:after{
 					content: "";
+					display: none;
 				}
 			}
 		}
@@ -113,8 +114,10 @@ header {
 		  transition: max-height .75s ease-in-out;
 		  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 		  clip: rect(1px, 1px, 1px, 1px);
+		  &:after {
+			  content: ""!important;
+		  }
 		  li {
-			
 			.sub-menu {
 				position: relative!important;
 				li {
@@ -129,6 +132,7 @@ header {
 					width: 10px;
 					background: $white;
 					}
+				
 					
 					a{
 						font-size: 11px;
@@ -157,7 +161,7 @@ header {
 			  z-index: 10;
 			  padding: 0.8rem;
 			  left: -1.5rem;
-			  width: 19.2rem;
+			  width: 20rem;
 			  max-height: 32rem;
 			  background: $fandango;
 			  clip: auto;

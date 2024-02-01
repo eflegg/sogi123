@@ -269,6 +269,10 @@ ul.card--categories {
 		background-color: $white;
 		color: $tangelo;
 		transition: all 0.3s ease-in-out;
+		.the-question {
+			display: none;
+			visibility: hidden;
+		}
 		.the-answer {
 			display: block;
 			visibility: visible;
@@ -287,9 +291,9 @@ ul.card--categories {
 			display: block;
 			visibility: visible;
 			opacity: 1;
-			a {
-				color: $tangelo;
-			}
+			// a {
+			// 	color: $tangelo;
+			// }
 
 		}
 	}
@@ -506,9 +510,61 @@ ul.card--categories {
 }
 
 
+// Flexible content
 
+//Tabs
 
-
+.tab-container {
+	max-width: 800px;
+	margin: 0 auto;
+	ul {
+	  list-style: none;
+	  padding: 0;
+	
+	  li {
+		width: 13.2rem;
+		height: 4.9rem;
+		background-image: url('http://sogi123.local/wp-content/uploads/2024/02/tab-top.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+		display: inline-flex;
+	
+		a {
+		  text-decoration: none;
+		  color: darkgray;
+		  width: 100%;
+		  height: 100%;
+		  border: 2px solid $raspberry;
+		  transition: all .3s ease-in-out;
+		  border-bottom: 1px solid transparent;
+		  margin: 0;
+		  &:hover {
+			color: gray;
+		  }
+		}
+	  }
+	}
+	.nav .active a { 
+	  color: slateblue; 
+	  border-bottom: 1px solid slateblue;
+	  &:hover {
+		border-color: transparent;
+		background: slateblue;
+		color: white;
+	  }
+	}
+	
+	.tab-pane { 
+	  display: none;
+	}
+	
+	.tab-pane.active { 
+	  display: block; 
+	  background-color: $violetBlue;
+	}
+  }
+  
+  
 
 
 

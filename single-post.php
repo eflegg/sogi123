@@ -7,22 +7,32 @@ Template Name: Single Post
 get_header(); ?>
 	<?php while ( have_posts() ) : the_post();?>
 
-		<section class="hero">
- 			<div class="container">
- 				<div class="row">
- 					<div class="col-xs-12">
- 						<div class="content">
- 							<div class="text">
- 								<h4>Perspective</h4>
- 								<h1><?php echo the_title(); ?></h1>
- 							</div>	
- 						</div>
- 					</div>
- 				</div>
- 			</div>
- 		</section>
+	<?php 
+$bgImage = 'https://picsum.photos/seed/picsum/1000';
+?>
+<?php include 'components/hero.php'; ?>
 
-	<section class="intro-w-image">
+<section class="section-container default-type">
+
+<?php echo get_the_content();?>
+
+<?php include 'components/flexible-content/tabs.php';?>
+
+</section>
+
+
+<?php include 'components/update-carousel.php';?>
+
+
+	<?php			
+	endwhile;
+	?>
+<?php get_footer(); ?>
+
+
+
+
+<!-- <section class="intro-w-image">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-lg-4">
@@ -57,9 +67,4 @@ get_header(); ?>
 				</div>
 			</div>		
 		</div>
-	</section>
-
-	<?php			
-	endwhile;
-	?>
-<?php get_footer(); ?>
+	</section> -->

@@ -1,11 +1,11 @@
-<li class="question-card">
+<li class="question-card card-color">
     <div class="question--text">
         <span class="the-question">
-            <?php the_title(); ?>
+            <?php echo $question ?>
         </span>
         
        <span class="the-answer">
-        I'm the answer to the question
+       <?php echo $answer;?>
        </span>
       
     

@@ -28,7 +28,7 @@ endif;
         <![endif]-->
 	<div class="site">
 		<header>
-			<a class="home-logo" href=<?php home_url();?>>
+			<a class="home-logo" href=<?php echo home_url();?>>
 				<?php
 				$pageTitle = get_the_title();
 				if ($pageTitle == "Home Page") {
@@ -54,8 +54,9 @@ endif;
 <?php include 'components/svg/globe-logo.php';?>
 <ul><?php pll_the_languages();?></ul>
 </div>
-				<button class="btn--fat">
-					Donate
+<button class="btn--fat">
+        <a href='<?php echo home_url('/donate'); ?>' class="">Donate</a>
+					
 				</button>
 				<span role="button" class="header-search">
 				<?php include 'components/svg/header-search-icon.php';?>

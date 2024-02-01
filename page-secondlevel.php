@@ -9,27 +9,24 @@ get_header(); ?>
 
 <?php 
 $bgImage = 'https://picsum.photos/seed/picsum/1000';
-if(get_field('sig_colour') ):
-	$colour = get_field('sig_colour');
-endif;
 ?>
 <?php include 'components/hero.php'; ?>
 
-<!-- does page title NOT = where support? 
-  render sidebar and content 
-  else 
-  render support content  -->
+
+<?php
+$sidebarType = 'donate';
+?>
+
 
  
   <?php
 	$pageTitle = get_the_title();
 	if($pageTitle === 'Where We Support'):?>
-	<?php echo $pageTitle; ?>
-	<section class="intro">
-		<h2>Intro text</h2>
-		<p>intro description</p>
-	</section>
-	<section class="province-list">
+	<section style="background-color: #3D52B9;" class="section-container province-list">
+		<div class="intro">
+			<h2>Intro text</h2>
+			<p class="white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non semper suscipit posuere a pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.</p>
+		</div>
 		<ul class="subpages--list">
 			<?php
 			global $post;
@@ -46,15 +43,9 @@ endif;
 					<?php
 					foreach ( $children as $post ) : setup_postdata( $post );
 					?>
-					<li class="childcell">
-						<?php if ( has_post_thumbnail() ) : ?>
-							<div class="thumbnail"><?php the_post_thumbnail( 'small-thumb' ); ?></div>
-						<?php endif; ?>
-						<div class="subpage-title"><?php the_title(); ?></div>
-						<span class="desc"><?php echo get_post_meta( get_the_ID(), 'desc', true ); ?></span>
-						<div class="subpage-excerpt"><?php the_excerpt(); ?></div>
-						<a class="subpage-link" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">arrow icon</a>
-						</li>
+
+					<?php include 'components/child-page-block.php';?>
+
 					<?php
 				endforeach;
 					wp_reset_postdata();
@@ -64,60 +55,27 @@ endif;
 			</ul>
 		</section>
 		<?php else:?>
-			<div class="page-container container-with-sidebar section-container default">
-				<aside class="sidebar-container">
-				<?php
-					$sidebarType = 'share';
-						if($sidebarType && $sidebarType === "resources") :?>
-						<?php include "components/sidebars/share-sidebar.php"; ?>
 
-							<?php elseif ($sidebarType && $sidebarType === "resources"):?>
-						<?php include "components/sidebars/resource-sidebar.php"; ?>
-
-						<?php elseif ($sidebarType && $sidebarType === "donate"):?>
-						<?php include "components/sidebars/donate-sidebar.php"; ?>
-
-						<?php else:?>
-						<?php echo '<p>sidebar</p>'; ?>
-						
-
-					<?php endif; ?>
-				</aside>
-				<section class="flexible-content">
-				<?php echo the_content(); ?>
-					<h2>I am the content and flexible content section</h2>
-				</section>
-			</div>
-	
-	<?php endif;
-	?>
-
-
-
-	<!-- <?php
+			<?php
         $sidebarSettings = get_field('sidebar_settings');
         if ($sidebarSettings):?>
 		<?php
-		$sidebarType = $sidebarSettings['sidebar_type'];
-			if($sidebarType && $sidebarType == "share") :?>
-        	<?php include "components/sidebars/share-sidebar.php"; ?>
+		$sidebarType = $sidebarSettings['sidebar_type'];?>
+			<section class="container-with-sidebar section-container default-type <?php echo $sidebarType;?>">
+				<aside class="sidebar-container">
+				<?php include 'components/sidebars/sidebar-picker.php';?>
 
-		  	<?php elseif ($sidebarType && $sidebarType == "resources"):?>
-			<?php include "components/sidebars/share-resources.php"; ?>
+				<?php endif; ?>
 
-			<?php elseif ($sidebarType && $sidebarType == "donate"):?>
-			<?php include "components/sidebars/share-donate.php"; ?>
-
-			<?php else:?>
-			 <?php echo '<p>sidebar</p>'; ?>
-			
-		<?php endif; ?>
-	<?php endif; ?> -->
-
-
-		
-
-
+				</aside>
+				<div class="flexible-content">
+				<?php echo the_content(); ?>
+					<h2>I am the content and flexible content section</h2>
+						</div>
+						</section>
+	
+	<?php endif;
+	?>
 
 
 
@@ -132,3 +90,5 @@ endif;
 	endwhile;
 	?>
 <?php get_footer(); ?>
+
+

@@ -13,7 +13,7 @@ endif;
 ?>
 <?php include 'components/hero.php'; ?>
 
-<section class="section-container default">
+<section class="section-container default-type">
 
 <?php echo get_the_content();?>
 
@@ -36,7 +36,9 @@ endif;
 			</div>	
 		</div>
 	</section> -->
+
 </section>
+<?php include 'components/update-carousel.php'; ?>
 
 
 	

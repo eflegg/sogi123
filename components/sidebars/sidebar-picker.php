@@ -1,20 +1,18 @@
 
 	<?php
-        $sidebarSettings = get_field('sidebar_settings');
-        if ($sidebarSettings):?>
-		<?php
-		$sidebarType = $sidebarSettings['sidebar_type'];
+   
+
+		
 			if($sidebarType && $sidebarType == "Share") :?>
         	<?php include "share-sidebar.php"; ?>
 
 		  	<?php elseif ($sidebarType && $sidebarType == "Resources"):?>
-			<?php include "share-resources.php"; ?>
+			<?php include "resource-sidebar.php"; ?>
 
 			<?php elseif ($sidebarType && $sidebarType == "Donate"):?>
-			<?php include "share-donate.php"; ?>
+			<?php include "donate-sidebar.php"; ?>
 
 			<?php else:?>
-			 <?php echo '<p>sidebar</p>'; ?>
+				<?php include "share-sidebar.php"; ?>
 			
 		<?php endif; ?>
-	<?php endif; ?> 

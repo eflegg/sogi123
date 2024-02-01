@@ -1,5 +1,5 @@
 
-<div class="ajax-filters filter-by-category">
+<div class="ajax-filters filter-by-category <?php echo $filterClass;?>">
 	<form class="category-form" id="ajax-filter">
 		<h2>Filter by Category</h2>
 
@@ -18,7 +18,7 @@
 		<?php $child_arg = array( 'hide_empty' => false, 'parent' => $catVal->term_id );
 		$child_cat = get_terms( 'category', $child_arg );?>
 		<select data-type=<?php echo $dataType;?> class="cat-select" name="categories" id="cat-select">
-		<option data-slug="" data-type=<?php echo $dataType;?> class="cat-list_item" value="Choose a category">Category</option>
+		<!-- <option data-slug="" data-type=<?php echo $dataType;?> class="cat-list_item" value="Choose a category">Category</option> -->
 		<option data-slug="" data-type=<?php echo $dataType;?> class="cat-list_item active" value="<?php echo $catVal->slug; ?>">All categories</option>
 		<?php foreach($child_cat as $child_term):?>
 			<option data-type=<?php echo $dataType;?> data-slug="<?= $child_term->slug; ?>" class="cat-list_item"  value="<?php echo $child_term->slug; ?>"><?php echo $child_term->name; ?></option>
@@ -34,7 +34,7 @@
 
 
 
-
+<!-- 
 <ul role="toolbar" class="cat-list <?php echo $dataType;?>">
 		 <li class="btn--category lg">
 			<button class="button btn--category btn--category lg">
@@ -53,6 +53,6 @@
 					</button>
 				</li>
 				<?php endforeach; ?>
-			</ul> 
+			</ul>  -->
 
 	

@@ -1,5 +1,30 @@
+.container-with-sidebar {
+	display: flex;
+	flex-direction: column;
+	@include media(md) {
+		flex-direction: row;
+		&.Resources {
+			flex-direction: row-reverse;
+		}
+		justify-content: space-around;
+		aside {
+			width: 40%;
+			@include media(lg){
+				width: 35%;
+			}
+		}
+		.flexible-content {
+			width: 55%;
+			@include media(lg){
+				width: 60%;
+			}
+		}
+	}
+}
+
 
 aside {
+ 
 	position: relative;
 	.shape {
 		clip-path: circle(69.1% at 3% 5%);
@@ -14,6 +39,7 @@ aside {
 
 
 .share-sidebar {
+
 position: relative;
 z-index: 10;
  background-color: $vividBlue;   
@@ -45,5 +71,19 @@ z-index: 10;
 }
 
 .resources-sidebar {
-    order: 2;
+    padding-left: 2.2rem;
+    h3{
+      color:#3674D9;
+      ;
+    }
+    ul {
+      padding-left: 0;
+    }
+    li {
+      list-style: none;
+      a{
+         color:#3674D9;
+      }
+    }
+    border-left: 1px solid #3674D9;
 }

@@ -39,6 +39,7 @@ body {
 
 p{
 	color: $graphite;
+	margin: 2rem 0;
 }
 
 h1, .h1 {
@@ -81,9 +82,21 @@ h5, .h5 {
 	font-size: 1.13rem;
 	line-height: 22px;
 }
-
-.default {
+.white {
+	color: $white;
+}
+.graphite {
 	color: $graphite;
+}
+
+.default-type {
+	color: $graphite;
+	&.resources {
+		h1, h2, h3, h4, h5, h6 {
+			color: #3674D9;
+		}
+		
+	}
 	h1, h2, h3, h4, h5, h6 {
 		color: $fandango;
 	}

@@ -1,8 +1,3 @@
-<?php
-	$pageTitle = get_the_title();?>
-	
-
-
 
 <div class="shape "></div>
 <div class="share-sidebar <?php echo $sidebarType;?>">

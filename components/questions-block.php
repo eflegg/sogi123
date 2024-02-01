@@ -17,8 +17,14 @@
 					<?php if ( $the_query->have_posts() ) : ?>
 
 					    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+						<?php $the_question = get_field('questions');
+					if($the_question):?>
+						<?php $question = $the_question['question'];?>
+						<?php $answer = $the_question['answer'];?>
 
 					    <?php include 'cards/question-card.php';?>
+
+						<?php endif;?>
 
 					    <?php endwhile; ?>
 

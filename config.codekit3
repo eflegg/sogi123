@@ -203,6 +203,14 @@
       "oAP" : "\/build\/components\/child-page-block.php",
       "oF" : 0
     },
+    "\/components\/flexible-content\/tabs.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/components\/flexible-content\/tabs.php",
+      "oF" : 0
+    },
     "\/components\/hero.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -606,6 +614,19 @@
       "opt" : 0,
       "plM" : 52780316221407,
       "prP" : 0
+    },
+    "\/images\/svg\/tab-top.png" : {
+      "ft" : 32768,
+      "iS" : 1779,
+      "oA" : 0,
+      "oAP" : "\/build\/images\/svg\/tab-top.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 1,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
     },
     "\/images\/temp\/banana.jpg" : {
       "ft" : 16384,
