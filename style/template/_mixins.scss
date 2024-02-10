@@ -45,7 +45,12 @@
 }
 
 @mixin media($point) {
-	@if $point == sm {
+	@if $point == xs {
+		@media screen and (min-width: 400px) { 
+			@content ; 
+		}
+	}
+	@else if $point == sm {
 		@media screen and (min-width: 600px) { 
 			@content ; 
 		}

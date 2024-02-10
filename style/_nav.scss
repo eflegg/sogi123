@@ -1,8 +1,34 @@
 
 header {
+	.skiplink{
+		position: absolute;
+		background-color: $manila;
+		border-radius: 72px;
+		z-index: 3;
+		left: 0;
+		top: 0;
+		padding: 20px;
+		font-size: 1.25rem;
+		transform: translateX(-100%);
+		&:focus {
+			transform: translateX(0%);
+		}
+	}
+	z-index: 20;
 	.home-logo {
-		width: 19rem;
+		width: 18rem;
 		height: auto;
+		@include media(sm){
+			margin-right: 2rem;
+		}
+		@include media(md){
+			margin-right: 1rem;
+		
+		}
+		@include media(lg){
+			margin-right: 0.5rem;
+			width: 19rem;
+		}
 	}
 	
 	padding-left: 2rem;
@@ -11,8 +37,12 @@ header {
 	top: 0;
 	left: 0;
 	width: 100%;
-	@include media(lg)
-	{
+	@include media(sm){
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	@include media(lg){
 			padding-left: 3rem;
 			padding-top: initial;
 			display: flex;
@@ -20,20 +50,21 @@ header {
 			align-items: center;
 		}
 		@include media(xl){
-			padding-left: 5rem;
+			padding: 1rem 5rem 0 5rem;
 		}
-		button[aria-expanded="true"]{
-			svg {
-			  transform: rotate(180deg);
-			  transition: all .25s ease-in;
-			}
-		  }
+		.menu-toggle[aria-expanded="true"]{
+			position: fixed;	
+		}
+	
 		
-		nav {
+	nav {
+			z-index: 30;
 			&[aria-hidden="true"]{
 				top: 0;
 				left: -200%;
 				opacity: 0;
+				display: none;
+				visibility: hidden;
 				transition: all .5s ease-in-out;
 				background-color: $fandango;
 			}
@@ -41,13 +72,18 @@ header {
 				top: 0;
 				left: 0;
 				opacity: 1;
+				visibility: visible;
+				display: block;
 				width: 100%;
 				height: 100%;
 				transition: all .5s ease-in-out;
 				background-color: $fandango;
 			}
 			position: fixed;
+			overflow: scroll;
 			background-color: $fandango;
+			
+			//resetting nav styles
 			@include media(lg){
 				&[aria-hidden="true"], &[aria-hidden="false"] {
 					top: initial;
@@ -55,23 +91,53 @@ header {
 					opacity: initial;
 					background-color: initial;
 					transition: none;
+					width: initial;
+					overflow: initial;
+					visibility: visible;
+					display: block;
 				}
 				
 		
-		
+				overflow: initial;
 				display: flex;
 				position: relative;
 			}
+			.menu-main-menu-container{
+				height: 100%;
+				
+			}
 		
-			ul.main {
+			.main {
+				overflow: scroll;
 				list-style: none;
 				padding-left: 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: flex-start;
+				margin-top: 5rem;
+				height: 100%;
+				width: 100%;
+				position: relative;
+				z-index: 30;
 				
 				@include media(lg){
-					display: flex
+					overflow: visible;
+					margin-top: initial;
+					display: flex;
+					position: relative;
+					flex-direction: row;
 				}	
 				li {
-					margin: 0 15px;
+					
+					width: 80%;
+					
+					font-size: 2.4rem;
+					@include media(lg){
+						font-size: 1.6rem;
+						width: initial;
+					}
+					margin: 1.5rem;
 					a {
 						color: $white;
 						font-weight: 700;
@@ -79,99 +145,130 @@ header {
 					}
 				}
 			}
+			.top-level-subnav {
+				li {
+					margin: 1rem 0.5rem;
+				}
+			}
+			.second-level-subnav {
+				margin-top: .5rem;
+				padding-left: 1rem;
+				li {
+					margin: 0;
+				}
+			}
 			
 		}
 		.menu-item-has-children {
-		
-			&:after {
+			button {
 				content: '';
+				border-color: white;
 				border-style: solid;
 				border-width: 0.25rem 0.25rem 0 0;
+				border-radius:0px;
+				background-color: transparent;
 				display: inline-block;
-				height: 0.9rem;
+				height: 1.3rem;
 				left: 0.15rem;
 				position: relative;
-				vertical-align: center;
+				vertical-align: middle;
 				width: 0.9rem;
 				top: -0.3rem;
 				transform: rotate(135deg);
-			}
-			.menu-item-has-children{
-				&:after{
-					content: "";
-					display: none;
+				margin:0;
+				left: 1rem;
+				@include media(lg){
+					margin-left: 0;
 				}
 			}
 		}
-		.sub-menu  {
-		  position: absolute;
-		  left: 0;
-		  padding: 0;
-		  list-style: none;
-		  max-height: 1px;
-		  width: 1px;
-		  overflow: hidden;
-		  transition: max-height .75s ease-in-out;
-		  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-		  clip: rect(1px, 1px, 1px, 1px);
-		  &:after {
-			  content: ""!important;
-		  }
-		  li {
-			.sub-menu {
-				position: relative!important;
-				li {
-					&:before {
-					position: relative;
-					top: -4px;
-					left: 0;
-					margin-right: 4px;
-					content: "";
-					display: inline-block;
-					height: 2px;
-					width: 10px;
-					background: $white;
-					}
-				
-					
-					a{
-						font-size: 11px;
-					}
-				}
-			}
-		  }
-		
-		  a {
-			color: $white;
-			font-size: 14px;
-		  }
-		  .sub-menu {
-			padding-left: 1.6rem;
-		  }
-		}
-		.menu-item{
+	
+		.menu-item {
 			position: relative;
-			&.focus {
-				border: 1px solid $violet;
+		}
+		.top-level-subnav{
+			position: absolute;
+			visibility: hidden;
+			left: 0;
+			padding: 0;
+			list-style: none;
+			max-height: 1px;
+			width: 1px;
+			transition: max-height .75s ease-in-out;
+			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+			list-style: none;
+			@for $i from 1 to 10 {
+				li:nth-child(#{$i}) { 
+					opacity: 0;
+					transition: opacity $i * 0.25s ease-in-out;
+				}
+			  }
+			&[aria-hidden="false"] {
+				position: relative;
+				visibility: visible;
+				width: 100%;
+				max-height: 60rem;
+				z-index: 10;
+				padding: 0.8rem;
+				clip: auto;
+				transition: max-height .75s ease-in-out;
+				@for $i from 1 to 10 {
+					li:nth-child(#{$i}) { 
+						opacity: 1;
+						transition: opacity $i * 0.25s ease-in-out;
+					}
+				  }
+				// li {
+				// 	opacity: 1;
+				// 	transition: opacity .75s ease-in-out;
+				// }
+				@include media(lg){
+					position: absolute;
+					left: -1.5rem;
+					width: 20rem;
+					.second-level-subnav{
+						width: 19rem;
+					}
+					max-height: 32rem;
+					background: $fandango;
+				}
+			}
+			a {
+			  color: $white;
+			  font-size: 2rem;
+			  @include media(lg){
+				  font-size: 1.4rem;
+				//   margin: 0.5rem 1.5rem!important; 
+			  }
 			}
 		}
-		.menu-item:hover, .menu-item.focus {
-			.sub-menu {
-			  position: absolute;
-			  z-index: 10;
-			  padding: 0.8rem;
-			  left: -1.5rem;
-			  width: 20rem;
-			  max-height: 32rem;
-			  background: $fandango;
-			  clip: auto;
-			  transition: max-height .75s ease-in-out;
+		.second-level-subnav {
+			list-style: none;
+			position: relative!important;
+			padding-left: 0;
+			li {
+				&:before {
+				position: relative;
+				top: -4px;
+				left: 0;
+				margin-right: 4px;
+				content: "";
+				display: inline-block;
+				height: 2px;
+				width: 10px;
+				background: $white;
+				}
+				a {
+					font-size: 1.4rem;
+				}
 			}
 		}
 		
 		.menu-toggle {
 			display: block;
 			position: absolute;
+			z-index: 30;
 			right: 0;
 			top: -2.5rem;
 			width: 90px;
@@ -191,7 +288,7 @@ header {
 
 
 .header-buttons {
-
+	z-index: -1;
 	display: flex;
 	align-items: center;
 }

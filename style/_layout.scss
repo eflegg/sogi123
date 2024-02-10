@@ -14,19 +14,59 @@
 		margin: 0 auto;
 	}
 	.card-container {
+	
 		display: grid;
-		grid-template-columns: repeat(auto-fill,minmax(33%, 1fr));
+		max-width: 119rem;
+		margin: 0 auto;
+		grid-template-columns: repeat(auto-fill,minmax(30rem, 1fr));
 	}
 
 }
 
+//Search results page
+
+.search-results {
+	.results-list {
+		color: $graphite;
+		p{
+			margin-top: 1rem;
+		}
+		a {
+			text-decoration: underline;
+			color: $fandango;
+			p {
+				color: $fandango;
+			
+			}
+		}
+		h2 {
+			margin-bottom: 5rem;
+		}
+	}
+	.new-search {
+		margin: 5rem 0 0;
+		h4 {
+			color: $graphite;
+			padding-top: 2rem;
+		}
+		.header-search-container{
+			display: table;
+		}
+		.custom-searchform{
+			position: relative;
+			transform:translateY(0%);
+			bottom: 0;
+			margin: 3rem 0;
+		
+		}
+	}
+}
 
 //Footer
 
 footer {
 	.decorative {
 		background-color: $yellowOrange;
-		height: 13.1rem;
 	}
 	.logo {
 		svg path {
@@ -56,13 +96,8 @@ footer {
 	.our-impact {
 		position: relative;
 		z-index: 10;
-		width: 100%;         /* desired width */
-		// &:before {
-		// content: "";
-		// display: block;
-		// padding-top: 60%;    /*  ratio of 2:1*/
-	//}
-		padding: 7rem 0;
+		width: 100%;        		
+		padding: 9rem 0;
 		@include media(lg){
 			padding: 12rem 0;
 		}
@@ -83,7 +118,9 @@ footer {
 				width: 50%;
 			}
 			.eyebrow, .attribution {
-				font-size: 1.6rem;
+				.name {
+					text-transform: none;
+				}
 				color: $white;
 				text-transform: uppercase;
 			}
@@ -126,7 +163,7 @@ footer {
 			display: flex;
 			flex-direction: column;
 			align-items: start;
-			z-index: 20;
+			z-index: 10;
 			background-color: $fandango;
 			// right: 8%;
 			margin-left: auto;
@@ -211,7 +248,7 @@ footer {
 	a {
 		color: $graphite!important;
 	}
-	.main {
+	.footer {
 		display: flex;
 		padding-left: 0;
 		flex-wrap: wrap;
@@ -219,7 +256,7 @@ footer {
 			flex-wrap: nowrap;
 		}
 	}
-	.main>li{
+	.footer>li{
 		margin-right: 2rem;
 		
 		min-width: 150px;
@@ -232,7 +269,7 @@ footer {
 			// margin-right: 11.5rem;
 		}
 	}
-	.main>li>a {
+	.footer>li>a {
 		font-weight: 800;
 	}
 	.sub-menu {
@@ -280,6 +317,7 @@ footer {
 
 
 .section-container {
+	position: relative;
 	padding: 3.25rem 1rem;
 	@include media(sm){
 		padding: 6rem 3rem;

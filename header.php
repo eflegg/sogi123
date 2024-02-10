@@ -27,7 +27,8 @@ endif;
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 	<div class="site">
-		<header>
+		<header id="header">
+		<a href="#main"class="skiplink">Skip to content</a>
 			<a class="home-logo" href=<?php echo home_url();?>>
 				<?php
 				$pageTitle = get_the_title();
@@ -51,20 +52,32 @@ endif;
 			<div class="header-buttons">
 					<!-- language switcher -->
 					<div class="lang-switcher display-flex align-items-center">
-<?php include 'components/svg/globe-logo.php';?>
-<ul><?php pll_the_languages();?></ul>
-</div>
-<button class="btn--fat">
-        <a href='<?php echo home_url('/donate'); ?>' class="">Donate</a>
+					<?php include 'components/svg/globe-logo.php';?>
+				
+					<?php pll_the_languages( array( 'dropdown' => 1 ) ); ?>
+					</div>
+			
+							<a href='<?php echo home_url('/donate'); ?>' class="btn--fat button  text-center"><span>Donate</span></a>
 					
-				</button>
-				<span role="button" class="header-search">
+		
+				<button  id="header-search" class="header-search no-btn">
 				<?php include 'components/svg/header-search-icon.php';?>
-				</span>
+			
+				</button>
+				<div class="header-search-container"
+				>
+				<?php get_search_form(); ?>
+			</div>
 
-				<!-- <a href="#" class="menu-toggle">Menu</a> -->
-				<button  aria-expanded="false"
-       aria-label="Menu" class="menu-toggle">Menu</button>
+		
+			</div>
+			<div class="js-hamburger-menu">
+				<button  
+				aria-expanded="false"
+					aria-label="Menu"
+					class="button button--red js-menu-button menu-toggle">
+					Menu
+				</button>
 			</div>
 	
 		</header>
@@ -84,6 +97,7 @@ endif;
 
 
 
+	
 
 
 

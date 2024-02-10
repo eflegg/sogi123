@@ -1,9 +1,17 @@
 .container-with-sidebar {
 	display: flex;
 	flex-direction: column;
+	.flexible-content {
+		margin-top: 5rem;
+		position: relative;
+		z-index: 10;
+	}
 	@include media(md) {
 		flex-direction: row;
 		align-items: flex-start;
+		.flexible-content {
+			margin-top: 0rem;
+		}
 		&.Resources {
 			flex-direction: row-reverse;
 		}
@@ -30,11 +38,14 @@ aside {
 	.shape {
 		clip-path: circle(69.1% at 3% 5%);
 		top: 55%;
-		left: -40%;
+		left: -43%;
 		height: 100%;
 		width: 100%;
 		position: absolute;
 		background-color: $yellowGreen;
+		@include media(md){
+			left: -40%;
+		}
 	 }
 }
 
@@ -67,6 +78,16 @@ z-index: 10;
  }
  .share--inner{
     position: relative;
+ }
+ .a2a_svg {
+	background-color: $yellow!important;
+	width: 2.8rem;
+	height: 2.8rem;
+	svg {
+		path{
+			fill: $vividBlue;
+		}
+	}
  }
 
 }

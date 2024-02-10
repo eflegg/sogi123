@@ -1,0 +1,14 @@
+
+
+<svg class="position-absolute type-path" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 459 455" style="enable-background:new 0 0 459 455;" xml:space="preserve">
+<style type="text/css">
+	
+</style>
+<path id="quarter-circle" class="st0" d="M45,453.9C45,225.9,229.9,41,457.9,41c0,0,1.1,186,1.1,414"/>
+<text width="459">
+    <textPath xlink:href="#quarter-circle">
+      What are you looking for?
+    </textPath>
+  </text>
+</svg>

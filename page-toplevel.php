@@ -7,21 +7,35 @@ get_header(); ?>
 	<?php while ( have_posts() ) : the_post();
 	?>
 
-<?php 
-$bgImage = 'https://picsum.photos/seed/picsum/1000';
-if(get_field('sig_colour') ):
-	$colour = get_field('sig_colour');
-endif;
 
+<main id="main" class="site-main" role="main">
+<?php 
+$bgImage = get_field('hero_image');
+$defaultImage = 'http://sogi123.local/wp-content/uploads/2024/02/banner_hot.jpg';
+$heroHeadline = get_field('hero_headline');
+$heroContent = get_field('hero_content');
 ?>
 <?php include 'components/hero.php'; ?>
 
 <section class="top-level-section section-container">
+<article class="top-level__shape position-absolute">
+<div class="triangle">
+    <div class="top"></div>
+    <div class="bottom"></div>
+</div>
+
+    <div class="circle"></div>
+
+</article>
+
+
     <div class="inner">
     <div class="left">
         <div class="image--top-level">
             <div class="image-item">
-             <img src="https://picsum.photos/seed/picsum/1000" alt="">
+                <?php $image = get_field('circle_image');?>
+                <?php include 'components/flexible-content/image-display.php';?>
+    
             </div>
             <div class="shape">
 
@@ -61,10 +75,10 @@ endif;
 </section>
 
 
-<?php include 'components/update-carousel.php'; ?>
+<?php include 'components/update-carouselNEWTRY.php';?>
 
 
-
+</main>
 
     <?php			
 	    endwhile;

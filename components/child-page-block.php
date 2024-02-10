@@ -4,12 +4,12 @@
             <?php if ( has_post_thumbnail() ) : ?>
                 <div class="thumbnail"><?php the_post_thumbnail( 'small-thumb' ); ?></div>
             <?php endif; ?>
-            <h3 class="subpage-title"><?php the_title(); ?></h3>
-            <span class="desc"><?php echo get_post_meta( get_the_ID(), 'desc', true ); ?></span>
+            <h3 class="fade-me subpage-title"><?php the_title(); ?></h3>
+            <span class="desc fade-me"><?php echo get_post_meta( get_the_ID(), 'desc', true ); ?></span>
             <div class="subpage-excerpt"><?php the_excerpt(); ?></div>
         </div>
         <div class="right--child">
-            <a class="subpage-link" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php include 'svg/circle-chevron.php';?></a>
+            <a class="subpage-link fade-me" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php include 'svg/circle-chevron.php';?></a>
         </div>
     </div>
 </li>

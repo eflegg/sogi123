@@ -39,11 +39,6 @@ $cardColorsLength: length($cardColors);
     @for $i from 1 through $cardColorsLength {
       &:nth-of-type(#{$cardColorsLength}n+#{$i}) {
         background-color: nth($cardColors, $i);
-        &:hover {
-            *{
-                color: nth($cardColors, $i);
-            }
-        }
       }
     }
   }

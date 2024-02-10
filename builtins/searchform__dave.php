@@ -12,3 +12,4 @@
 	</label>
 	<input type="submit" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'davedeveau' ); ?>">
 </form>
+

@@ -1,11 +1,11 @@
 <?php get_header(); ?>
+<main id="main" class="site-main" role="main">
 <?php 
-$bgImage = 'https://picsum.photos/seed/picsum/1000';
-if(get_field('sig_colour') ):
-	$colour = get_field('sig_colour');
-endif;
+$bgImage = get_field('hero_image');
+$defaultImage = 'http://sogi123.local/wp-content/uploads/2024/02/banner_hot.jpg';
+$heroHeadline = "Updates";
+$heroContent = get_field('hero_content');
 ?>
-
 <?php include 'components/hero.php'; ?>
 
 <section class="updates-page section-container">
@@ -49,12 +49,7 @@ endif;
 
             </section>
 			
-<!-- 
-            <?php while ( have_posts() ) : the_post();
-	?>
-    <?php			
-	endwhile;
-	?> -->
 
+			</main>
 
 <?php get_footer(); ?>

@@ -7,13 +7,15 @@
   margin: 0;
 }
 
-html, body {
+html {
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+ 
 }
 
 img, picture, video, canvas, svg {

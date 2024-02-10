@@ -6,7 +6,7 @@
         <h4 class="resource-title">
         <?php the_title(); ?>
 </h4>
-        <p><?php echo the_excerpt();?></p>
+        <p class=""><?php echo the_excerpt();?></p>
       
     
     <?php

@@ -18,6 +18,8 @@ $heroContent = get_field('hero_content');
 
 <?php echo get_the_content();?>
 
+<h2>Oops, nothing here</h2>
+
 	<!-- <section class="wide-copy default">
 		<div class="container">
 			<div class="row">
@@ -42,7 +44,7 @@ $heroContent = get_field('hero_content');
 <?php include 'components/update-carousel.php'; ?>
 
 
-</main>
+	</main
 	<?php			
 	endwhile;
 	?>

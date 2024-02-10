@@ -86,9 +86,13 @@ add_action( 'widgets_init', 'themename_widgets_init' );
 /**
  * Enqueue scripts and styles
  */
+
+
+
 function themename_scripts() {
 	wp_enqueue_style( 'themename-style', get_stylesheet_uri() );
-
+	
+	wp_register_script( 'addToAny', 'https://static.addtoany.com/menu/page.js', null, null, true );
 	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/js/lazysizes.min.js', array('jquery') );
 	wp_enqueue_script( 'lity-js', get_template_directory_uri() . '/js/jquery.waypoints.min.js', array('jquery') );
 
@@ -341,17 +345,6 @@ add_action( 'init', 'installation_post_type', 0 );
 
 
 //Register Fonts:
-function theme_typekit() {
-    wp_enqueue_script( 'theme_typekit', '//use.typekit.net/yon0ywo.js');
-}
-add_action( 'wp_enqueue_scripts', 'theme_typekit' );
-
-function theme_typekit_inline() {
-  if ( wp_script_is( 'theme_typekit', 'done' ) ) { ?>
-  	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<?php }
-}
-add_action( 'wp_head', 'theme_typekit_inline' );
 
 function excerpt($limit) {
   $excerpt = explode(' ', get_the_excerpt(), $limit);
@@ -419,32 +412,32 @@ add_filter( 'template_include', function( $template )
 
 
 
-  function filter_projects() {
-	$catSlug = $_POST['category'];
-	$postType = $_POST['type'];
+//   function filter_projects() {
+// 	$catSlug = $_POST['category'];
+// 	$postType = $_POST['type'];
   
-	$ajaxposts = new WP_Query([
-	  'post_type' => $postType,
-	  'posts_per_page' => -1,
-	  'category_name' => $catSlug,
-	  'orderby' => 'menu_order', 
-	  'order' => 'desc',
-	]);
-	$response = '';
+// 	$ajaxposts = new WP_Query([
+// 	  'post_type' => $postType,
+// 	  'posts_per_page' => -1,
+// 	  'category_name' => $catSlug,
+// 	  'orderby' => 'menu_order', 
+// 	  'order' => 'desc',
+// 	]);
+// 	$response = '';
   
-	if($ajaxposts->have_posts()) {
-	  while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-		$response .= include 'components/cards/question-card.php';
-	  endwhile;
-	} else {
-	  $response = 'empty';
-	}
+// 	if($ajaxposts->have_posts()) {
+// 	  while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+// 		$response .= include 'components/cards/question-card.php';
+// 	  endwhile;
+// 	} else {
+// 	  $response = 'empty';
+// 	}
   
-	echo $response;
-	exit;
-  }
-  add_action('wp_ajax_filter_projects', 'filter_projects');
-  add_action('wp_ajax_nopriv_filter_projects', 'filter_projects');
+// 	echo $response;
+// 	exit;
+//   }
+//   add_action('wp_ajax_filter_projects', 'filter_projects');
+//   add_action('wp_ajax_nopriv_filter_projects', 'filter_projects');
 
 
 
@@ -478,25 +471,31 @@ function rudr_ajax_filter_by_category() {
 		  $response .= include 'components/cards/question-card.php';
 	  } else if($postType == 'resource'){
 		$response .= include 'components/cards/resource-card.php';
-	  }else {
+	  }else if ($postType == 'post') {
 		$response .= include 'components/cards/update-card.php';
-	  }
+	  } 
 		
 		
 	  endwhile;
-	} else {
+	  wp_reset_postdata();
+	} 
+	else {
 	  $response = 'empty';
 	}
   
 	echo $response;
 
-	exit;
+	// exit;
+	die;
 
 
 
 }
 add_action( 'wp_ajax_ajaxfilter', 'rudr_ajax_filter_by_category' );
 add_action( 'wp_ajax_nopriv_ajaxfilter', 'rudr_ajax_filter_by_category' );
+
+//ensures languages are displayed in short form (en, fr)
+add_filter( 'pll_the_languages_args', function( $args ) { $args['display_names_as'] = 'slug'; return $args; } );
 
 
 //this is what makes the ajaxurl variable available site wide

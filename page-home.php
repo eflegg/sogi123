@@ -7,24 +7,43 @@ get_header(); ?>
 	<?php while ( have_posts() ) : the_post();
 	?>
 
-
+<main id="main" class="site-main" role="main">
 <?php 
-$bgImage = 'https://picsum.photos/seed/picsum/1000';
-if(get_field('sig_colour') ):
-	$colour = get_field('sig_colour');
-endif;
+$bgImage = get_field('hero_image');
+$defaultImage = 'https://picsum.photos/seed/picsum/1000';
+$heroHeadline = get_field('hero_headline');
+$heroContent = get_field('hero_content');
 ?>
 <?php include 'components/hero.php'; ?>
 
+
+
 <section class="at-a-glance section-container">
+
+   
+
+
+    <div class="search-circle">
+        <div class="search-inner">
+            <?php get_search_form(); ?>
+        </div>
+    </div>
+
+
+
+    
+
     <div class="inner">
 
    
     <div class="left">
-        <h2 class="h3">SOGI 123 <br>At a Glance</h2>
+        <h2 class="h3 fade-me">SOGI 123 <br>At a Glance</h2>
         <div class="image--at-a-glace">
             <div class="image-item">
-        <img src="https://picsum.photos/seed/picsum/1000" alt="">
+
+            <?php $image = get_field('at_a_glance_image');
+            include 'components/flexible-content/image-display.php';?>
+      
             </div>
             <div class="shape">
 
@@ -70,8 +89,8 @@ if ( ! empty( $children ) ) :
 <section class="questions-getting section-container">
     <div class="inner">
         <div class="left">
-            <h3>Questions We're Getting</h3>
-            <a href='<?php echo home_url('/our-work/questions-answered'); ?>' class="view-all">View all -></a>
+            <h3 class="fade-me">Questions We're Getting</h3>
+            <a href='<?php echo home_url('/our-work/questions-answered'); ?>' class="view-all fade-me">View all -></a>
         </div>
         <div class="right">
         <?php
@@ -106,12 +125,12 @@ if ( ! empty( $children ) ) :
 </section>
 
 
-<?php include 'components/update-carousel.php'; ?>
+<?php include 'components/update-carouselNEWTRY.php';?>
 
 
 
 
-
+          </main>
 
 <?php			
 	endwhile;

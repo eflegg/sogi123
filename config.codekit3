@@ -17,6 +17,14 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/404.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/404.php",
+      "oF" : 0
+    },
     "\/build" : {
       "ft" : 65536,
       "oA" : 1,
@@ -139,20 +147,12 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/builtins\/search.php" : {
+    "\/builtins\/searchform__dave.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/build\/builtins\/search.php",
-      "oF" : 0
-    },
-    "\/builtins\/searchform.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/builtins\/searchform.php",
+      "oAP" : "\/build\/builtins\/searchform__dave.php",
       "oF" : 0
     },
     "\/builtins\/sidebar.php" : {
@@ -307,6 +307,14 @@
       "oAP" : "\/build\/components\/sidebars\/sidebar-picker.php",
       "oF" : 0
     },
+    "\/components\/svg\/black-search-icon.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/components\/svg\/black-search-icon.php",
+      "oF" : 0
+    },
     "\/components\/svg\/circle-chevron.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -347,12 +355,30 @@
       "oAP" : "\/build\/components\/svg\/logo-white.php",
       "oF" : 0
     },
+    "\/components\/svg\/type-circle.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/build\/components\/svg\/type-circle.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/components\/update-carousel.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/build\/components\/update-carousel.php",
+      "oF" : 0
+    },
+    "\/components\/update-carouselNEWTRY.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/components\/update-carouselNEWTRY.php",
       "oF" : 0
     },
     "\/crossdomain.xml" : {
@@ -451,6 +477,162 @@
       "oAP" : "\/build\/humans.txt",
       "oF" : 0
     },
+    "\/images\/Asset-3@3x.png" : {
+      "ft" : 32768,
+      "iS" : 19965,
+      "oA" : 0,
+      "oAP" : "\/build\/images\/Asset-3@3x.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 1,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/images\/banner_asexflag.jpg" : {
+      "ft" : 16384,
+      "iS" : 176829,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/images\/banner_asexflag.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/images\/banner_cool.jpg" : {
+      "ft" : 16384,
+      "iS" : 149291,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/images\/banner_cool.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/images\/banner_hot.jpg" : {
+      "ft" : 16384,
+      "iS" : 148799,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/images\/banner_hot.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/images\/banner_poc.jpg" : {
+      "ft" : 16384,
+      "iS" : 121115,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/images\/banner_poc.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/images\/banner_transflag.jpg" : {
+      "ft" : 16384,
+      "iS" : 157373,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/images\/banner_transflag.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/images\/footer.jpg" : {
+      "ft" : 16384,
+      "iS" : 77232,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/images\/footer.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/images\/svg\/2x\/Asset 1@2x.png" : {
+      "ft" : 32768,
+      "iS" : 8197,
+      "oA" : 0,
+      "oAP" : "\/build\/images\/svg\/2x\/Asset 1@2x.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/images\/svg\/2x\/Asset 2@2x.png" : {
+      "ft" : 32768,
+      "iS" : 14786,
+      "oA" : 0,
+      "oAP" : "\/build\/images\/svg\/2x\/Asset 2@2x.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/images\/svg\/2x\/Asset 3@2x.png" : {
+      "ft" : 32768,
+      "iS" : 12436,
+      "oA" : 0,
+      "oAP" : "\/build\/images\/svg\/2x\/Asset 3@2x.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/images\/svg\/3x\/Asset 1@3x.png" : {
+      "ft" : 32768,
+      "iS" : 14140,
+      "oA" : 0,
+      "oAP" : "\/build\/images\/svg\/3x\/Asset 1@3x.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/images\/svg\/black-search-icon.png" : {
+      "ft" : 32768,
+      "iS" : 4397,
+      "oA" : 0,
+      "oAP" : "\/build\/images\/svg\/black-search-icon.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 1,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/images\/svg\/clearer.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -476,6 +658,16 @@
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/build\/images\/svg\/creative.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/images\/svg\/graphite-search.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/build\/images\/svg\/graphite-search.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -561,6 +753,16 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/images\/svg\/home-hero-shape.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/build\/images\/svg\/home-hero-shape.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/images\/svg\/insta_black.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -631,6 +833,16 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/images\/svg\/SVG\/Asset 3.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/build\/images\/svg\/SVG\/Asset 3.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/images\/svg\/tab-top.png" : {
       "ft" : 32768,
       "iS" : 1779,
@@ -643,6 +855,16 @@
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
+    },
+    "\/images\/svg\/what-you-looking-for.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/build\/images\/svg\/what-you-looking-for.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
     },
     "\/images\/temp\/banana.jpg" : {
       "ft" : 16384,
@@ -705,6 +927,19 @@
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/images\/what-you-looking-for.png" : {
+      "ft" : 32768,
+      "iS" : 24089,
+      "oA" : 0,
+      "oAP" : "\/build\/images\/what-you-looking-for.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 1,
+      "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -1489,6 +1724,22 @@
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
+    },
+    "\/search.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/search.php",
+      "oF" : 0
+    },
+    "\/searchform.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/searchform.php",
+      "oF" : 0
     },
     "\/single-post.php" : {
       "cB" : 0,

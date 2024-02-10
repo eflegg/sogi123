@@ -7,15 +7,18 @@ get_header(); ?>
 	<?php while ( have_posts() ) : the_post();
 	?>
 
+<main id="main" class="site-main" role="main">
+
 <?php 
-$bgImage = 'https://picsum.photos/seed/picsum/1000';
+$bgImage = get_field('hero_image');
+$defaultImage = 'http://sogi123.local/wp-content/uploads/2024/02/banner_cool.jpg';
+$heroHeadline = get_field('hero_headline');
+$heroContent = get_field('hero_content');
 ?>
 <?php include 'components/hero.php'; ?>
 
 
-<?php
-$sidebarType = 'donate';
-?>
+
 
 
  
@@ -95,12 +98,12 @@ $sidebarType = 'donate';
 
 
 
-<?php include 'components/update-carousel.php'; ?>
+<?php include 'components/update-carouselNEWTRY.php';?>
 
 
 
 
-
+</main>
 
 <?php			
 	endwhile;

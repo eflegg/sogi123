@@ -1,7 +1,7 @@
 
 <div class="ajax-filters filter-by-category <?php echo $filterClass;?>">
 	<form class="category-form" id="ajax-filter">
-		<h2>Filter by Category</h2>
+		<h2 class="h3">Filter by Category</h2>
 
 <?php
 	$parent_cat_arg = array('hide_empty' => false, 'parent' => 0 ); // get all categories that are parents, even the empty ones
@@ -34,25 +34,5 @@
 
 
 
-<!-- 
-<ul role="toolbar" class="cat-list <?php echo $dataType;?>">
-		 <li class="btn--category lg">
-			<button class="button btn--category btn--category lg">
-				<a class="cat-list_item active" href="#!" data-slug="" data-type=<?php echo $dataType;?>>All
-			</a>
-		</button>
-	</li>
-
-			<?php foreach( $child_cat as $child_term )  :?>
-
-				<li class="btn--category lg">
-					<button class="button btn--category btn--category lg">
-						<a class="cat-list_item" href="#!" data-slug="<?= $child_term->slug; ?>" data-type=<?php echo $dataType;?>>
-							<?php echo $child_term->name; ?>
-						</a>
-					</button>
-				</li>
-				<?php endforeach; ?>
-			</ul>  -->
 
 	

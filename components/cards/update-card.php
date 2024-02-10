@@ -1,4 +1,5 @@
-<li class="update-card slide update-color">
+<li class="update-card-container  update-color  single-slide fade-me">
+    <div class="update-card">
     <div class="tab">
 
     </div>
@@ -10,10 +11,10 @@
         </h4>
         <div class="content">
            <?php the_excerpt(); ?>
+           <a class="learn-button" href="<?php the_permalink(); ?>">Learn More</a>
         </div>
-            <span class="button">
-                <a href="<?php the_permalink(); ?>">Learn More</a>
-            </span>
+       
+         
+    </div>  
     </div>
-        
 </li>

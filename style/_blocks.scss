@@ -1,25 +1,18 @@
 body {
-	background-color: $grey;
+	background-color: $manila;
 	color: white;
 	width: 100%;
-	
+
 }
 
 .subpages--list {
-	padding: 0 4rem;
-}
-
-.hero {
-	width: 100%;
-	@include media(md) {
-		
-	}
-	@include media(lg) {
-		
+	padding: 0 2rem;
+	@include media(sm){
+		padding: 0rem 4rem;
 	}
 
-
 }
+
 
 // Filters
 
@@ -28,9 +21,7 @@ body {
 		display: flex;
 		ul {
 			list-style: none;
-			button {
-				border: 1px solid seagreen;
-			}
+			
 		}
 	}
 }
@@ -39,20 +30,26 @@ body {
 //Heros
 
 .hero {
-	padding: 2rem 0 2rem 4rem;
-	@include media(md){
+	width: 100%;
 
-	}
+	padding: 2rem 2rem 2rem 4rem;
+	position: relative;
 	@include media(lg){
 		padding: 8rem 0 8rem 12rem;
 	}
-	height: 100vh;
+	height: 80vh;
 	min-height: 600px;
 	.content {
-		max-width: 400px;
+		max-width: 600px;
+		position: relative;
+		z-index: 10;
+	
 	}
 	.btn--skinny {
 		margin-left: 0;
+	}
+	a{
+		display: table;
 	}
 }
 
@@ -61,6 +58,7 @@ body {
 // Top Level - Child page section
 
 .top-level-section {
+	
 	background: linear-gradient(180deg, #E1125C 0%, #CF004A 100%);
 	@include media(lg){
 		padding: 20rem 13.2rem 9rem;
@@ -75,7 +73,12 @@ body {
 			margin-bottom: 5rem;
 			@include media(lg){
 				margin-bottom: 0;
-				width: initial;
+				width: 50%;
+			}
+		}
+		.right {
+			@include media(lg){
+				width: 50%;
 			}
 		}
 		.image--top-level {
@@ -83,7 +86,7 @@ body {
 			// width: 85%;
 			position: relative;
 			img {
-				z-index: 20;
+				z-index: 10;
 				border-radius: 100%;
 			}
 			@include media(lg){
@@ -92,7 +95,7 @@ body {
 		}
 		.shape {
 			position: absolute;
-			z-index: 10;
+			z-index: 1;
 			top: 2rem;
 			left: -2rem;
 			border-radius: 100%;
@@ -130,9 +133,17 @@ body {
 		flex-direction: column;
 		.left {
 			position: relative;
+			margin: 0 auto;
 			margin-bottom: 5rem;
+			width: 85%;
 			@include media(lg){
 				margin-bottom: 0;
+				width: 50%;
+			}
+		}
+		.right {
+			@include media(lg){
+				width: 50%;
 			}
 		}
 		.image--at-a-glace {
@@ -140,7 +151,7 @@ body {
 			width: 85%;
 			position: relative;
 			img {
-				z-index: 20;
+				z-index: 10;
 			}
 			@include media(lg){
 				width: initial;
@@ -148,7 +159,7 @@ body {
 		}
 		.shape {
 			position: absolute;
-			z-index: 10;
+			z-index: 1;
 			top: 2rem;
 			left: -2rem;
 			clip-path: polygon(0 0, 0% 100%, 100% 100%);
@@ -160,7 +171,7 @@ body {
 			margin-bottom: 3rem;
 			@include media(lg){
 				position: absolute;
-				top: -7.813rem;
+				top: -10rem;
 			}
 			
 		}
@@ -182,6 +193,13 @@ body {
 	background-color: $manila;
 	.view-all {
 		color: $raspberry;
+		font-size: 1.6rem;
+		padding: 1.5rem 0 2rem 1.5rem;
+		position: relative;
+		top: 1.5rem;
+		@include media(lg){
+			padding-left: 0;
+		}
 	}
 	h3{
 		color: $graphite;
@@ -242,6 +260,7 @@ ul.card--categories {
 		transform: translate(-50%, -50%);
 		text-align: center;
 		width: 80%;
+		font-weight: 700;
 		p{
 			color: $white;
 		}
@@ -275,11 +294,15 @@ ul.card--categories {
 		opacity: 0;
 		font-size: 1.2rem;
 	}
-	&:hover {
-		background-color: $white;
-		color: $tangelo;
+	&:hover, &:focus-within {
+		background-color: $graphite;
+		color: $white;
+		a{
+			color: $white;
+		}
 		transition: all 0.3s ease-in-out;
 		.the-question {
+			font-weight: 700;
 			display: none;
 			visibility: hidden;
 		}
@@ -289,9 +312,9 @@ ul.card--categories {
 			opacity: 1;
 			transition: all 0.3s ease-in-out;
 		}
-		.question--text{
-			color: $tangelo;
-		}
+		// .question--text{
+		// 	color: $tangelo;
+		// }
 		.card--categories {
 			display: none;
 			visibility: hidden;
@@ -315,21 +338,12 @@ ul.card--categories {
 	position: relative;
 	list-style: none;
 	width: 95%;
-	// @include media(sm){
-	// 	width: 48%;
-	// }
-	// @include media(lg){
-	// 	width: 32%;
-	// }
 	height: 100%;
 	margin: 0 auto;
 	height: 30rem;
 
 	z-index: 10;
 	transition: left .4s cubic-bezier(.47,.13,.15,.89);
-	
-
-
 	.inner {
 		padding: 3.6rem;
 		z-index: 10;
@@ -351,8 +365,10 @@ ul.card--categories {
 			margin-bottom: 1.8rem;
 			font-size: 1.4rem;
 		}
-		.button {
+		.learn-button {
 			margin-left: 0;
+			text-decoration: underline;
+			text-transform: uppercase;
 		}
 	}
 	.tab {
@@ -374,45 +390,72 @@ ul.card--categories {
 .updates-section {	
 	height: auto;
 	background-color: $violet;
+	width: 100%;
 	@include media(lg){
 		padding: 8rem 4.8rem 9.5rem;
 	}
-	.slide {
-		position: absolute;
-		@include media(sm){
-			max-width: 48%;
-		}
-		@include media(lg){
-			max-width: 32%;
-		}
-	}
+	// .slide {
+	// 	position: absolute;
+	// 	max-width: 98%;
+	// 	// max-width: 30rem;
+	// 	@include media(sm){
+	// 		max-width: 48%;
+	// 	}
+	
+	// 	@include media(md){
+	// 		max-width: 32%;
+	// 	}
+	// }
 	.controls {
 		cursor: pointer;
 		position: absolute;
 		&.prev {
 			top: 50%;
 			transform: translateY(-50%);
-			left: -3rem;
-		}&.next {
+			left: -3.5rem;
+			@include media(sm){
+				left: -4rem;
+			}
+			@include media(md){
+				left: -5rem;
+			}
+			@include media(lg){
+				left: -7rem;
+			}
+		}
+		&.next {
 			bottom: 50%;
 			transform: translateY(50%);
-			right: -3rem;
+			right: -3.5rem;
+			@include media(sm){
+				right: -4rem;
+			}
+			@include media(md){
+				right: -5rem;
+			}
+			@include media(lg){
+				right: -7rem;
+			}
 		}
 	}
-	.carousel {
-		position: relative;
-		width: 90%;
-		height: 35rem; 
-		margin: 0 auto;
-	}
-	.carousel-content{
-		position: relative;
-		overflow: hidden;
-		transition: width .4s;
-		height: 100%;
-		padding-left: 0;
+	// .carousel {
+	// 	position: relative;
+	// 	width: 80%;
+	// 	height: 35rem; 
+	// 	margin: 0 auto;
+	// 	padding-left: 0.7rem;
+	// 	@include media(md){
+	// 		padding-left: 0.5rem;
+	// 	}
+	// }
+	// .carousel-content{
+	// 	position: relative;
+	// 	overflow: hidden;
+	// 	transition: width .4s;
+	// 	height: 100%;
+	// 	padding-left: 0;
 	
-	}
+	// }
 }
 
 
@@ -448,8 +491,11 @@ ul.card--categories {
 	}
 	
 	select {
+		padding: 1rem 2rem;
+		width: 75%;
 		@include media(lg){
 			padding: 1rem 2rem;
+			width: initial;
 		}
 		@include media(xl){
 			padding: 1.5rem 2.6rem;
@@ -523,23 +569,35 @@ ul.card--categories {
 	ul {
 	  list-style: none;
 	  padding: 0;
-	
+	  height: 100px;
 	  li {
-		width: 13.2rem;
-		height: 7.2rem;
+		path {
+			&:focus {
+				outline: 4px solid $vividBlue;
+			}
+		}
 		overflow: hidden;
 		margin-right: -2.1rem;
 		display: inline-flex;
 		position: relative;
-		top: 3.1rem;
 		@for $i from 1 through 10 {
 			&:nth-child(#{$i}) {
 			  z-index: #{10 - $i};
 			}
 		 }
-		 
+		width: 7rem;
+		height: 5.6rem;
+		top: 5.25rem;
+		width: calc(100% / 4 + 1.3rem)!important;
+		max-width: 13.2rem;
+		 @include media(md){
+			width: 13.2rem;
+			height: 7.2rem;
+		
+		 }
 
 		 span {
+			top: 1.5rem;
 			position: absolute;
 			text-align: center;
 			color: $white;
@@ -547,6 +605,9 @@ ul.card--categories {
 			width: 95%;
 			line-height: 100%;
 			font-size: 1.4rem;
+			@include media(sm){
+				top: 0.5rem;
+			}
 		 }
 		&.active-tab {
 			z-index: 10;
@@ -557,13 +618,18 @@ ul.card--categories {
 	.tab-pane { 
 		z-index: 10;
 		position: relative;
-	  display: none;
+	
+		display: none;
+	  visibility: hidden;
 	  padding: 10rem 5rem 5rem 5rem;
+
 	}
 	
 	.tab-pane.active-tab { 
 	  display: block; 
 	
+	visibility: visible;
+
 	}
   }
   
