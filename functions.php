@@ -471,7 +471,7 @@ function rudr_ajax_filter_by_category() {
 		  $response .= include 'components/cards/question-card.php';
 	  } else if($postType == 'resource'){
 		$response .= include 'components/cards/resource-card.php';
-	  }else if ($postType == 'post') {
+	  } else if ($postType == 'post') {
 		$response .= include 'components/cards/update-card.php';
 	  } 
 		

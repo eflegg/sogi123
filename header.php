@@ -32,11 +32,8 @@ endif;
 			<a class="home-logo" href=<?php echo home_url();?>>
 				<?php
 				$pageTitle = get_the_title();
-				if ($pageTitle == "Home Page") {
-					include 'components/svg/logo-colour.php';
-				} else {
-					include 'components/svg/logo-white.php';
-				}
+				include 'components/svg/logo-white.php';
+			
 				?>
 			</a>
 			<nav class="js-navigation"

@@ -9,13 +9,6 @@ get_header(); ?>
 
 
 
-<?php 
-
-if(get_field('sig_colour') ):
-	$colour = get_field('sig_colour');
-endif;
-?>
-
 <main id="main" class="site-main" role="main">
 
 <?php 
@@ -81,7 +74,7 @@ $searchTermHeader = get_search_query();
 			<?php davedeveau_content_nav( 'nav-below' ); ?>
 
 		<?php else : ?>
-
+<h2 class="h3">Sorry, we can't seem to find anything that matches your search</h2>
 			<?php get_template_part( 'no-results', 'search' ); ?>
 
 		<?php endif; ?>
@@ -94,6 +87,9 @@ $searchTermHeader = get_search_query();
 	</section>
 
 	</section><!-- #primary -->
+
+	<?php include 'components/update-carouselNEWTRY.php';?>
 	</main>
+
 
 <?php get_footer(); ?>

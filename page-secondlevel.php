@@ -26,9 +26,9 @@ $heroContent = get_field('hero_content');
 	$pageTitle = get_the_title();
 	if($pageTitle === 'Where We Support'):?>
 	<section style="background-color: #3D52B9;" class="section-container province-list">
-		<div class="intro">
-			<h2>Intro text</h2>
-			<p class="white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non semper suscipit posuere a pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.</p>
+		<div class="intro fade-me">
+			<h2 ><?php the_field('where_we_support_title');?></h2>
+			<p class="white"><?php the_field('where_we_support_intro');?></p>
 		</div>
 		<ul class="subpages--list">
 			<?php
@@ -42,7 +42,7 @@ $heroContent = get_field('hero_content');
 
 			if ( ! empty( $children ) ) :
 				?>
-				<div class="childcells"> 
+				<!-- <div class="childcells">  -->
 					<?php
 					foreach ( $children as $post ) : setup_postdata( $post );
 					?>
@@ -53,7 +53,7 @@ $heroContent = get_field('hero_content');
 				endforeach;
 					wp_reset_postdata();
 					?>
-				</div>
+				<!-- </div> -->
 			<?php endif; ?>
 			</ul>
 		</section>

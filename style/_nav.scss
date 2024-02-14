@@ -29,6 +29,23 @@ header {
 			margin-right: 0.5rem;
 			width: 19rem;
 		}
+		&:hover {
+			svg {
+				path {
+					&:nth-child(5){
+					
+							fill: #FF9900;
+						
+					}
+					&:nth-child(6){
+						fill: #E1125C;
+					}
+					&:nth-child(7){
+						fill: #A428A3;
+					}
+				}
+			}
+		}
 	}
 	
 	padding-left: 2rem;
@@ -198,12 +215,15 @@ header {
 			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 			list-style: none;
-			@for $i from 1 to 10 {
-				li:nth-child(#{$i}) { 
-					opacity: 0;
-					transition: opacity $i * 0.25s ease-in-out;
-				}
-			  }
+			li {
+				opacity: 0;
+			}
+			// @for $i from 1 to 10 {
+			// 	li:nth-child(#{$i}) { 
+			// 		opacity: 0;
+			// 		transition: opacity $i * .5s ease-in-out;
+			// 	}
+			//   }
 			&[aria-hidden="false"] {
 				position: relative;
 				visibility: visible;
@@ -216,13 +236,11 @@ header {
 				@for $i from 1 to 10 {
 					li:nth-child(#{$i}) { 
 						opacity: 1;
-						transition: opacity $i * 0.25s ease-in-out;
+						transition: opacity .5s ease-in-out;
+						transition-delay: $i * .15s;
 					}
 				  }
-				// li {
-				// 	opacity: 1;
-				// 	transition: opacity .75s ease-in-out;
-				// }
+			
 				@include media(lg){
 					position: absolute;
 					left: -1.5rem;
@@ -267,6 +285,8 @@ header {
 		
 		.menu-toggle {
 			display: block;
+		
+			border: 0px;
 			position: absolute;
 			z-index: 30;
 			right: 0;
@@ -280,6 +300,10 @@ header {
 			background-position: 50% 50%;
 			background-position: center center;
 			background-color: transparent;
+			&:hover {
+				background-color: transparent;
+				border: 0px;
+			}
 			@include media(lg) {
 				display: none;
 			}

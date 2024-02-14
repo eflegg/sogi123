@@ -4,8 +4,7 @@ img {
 	height: 100%;
 	object-fit: cover;
 }
-a {
-
+a, button {
 	cursor: pointer;
 }
 
@@ -16,6 +15,7 @@ a {
 		padding-left: 1rem;
 	}
 	.pll-switcher-select{
+		cursor: pointer;
 		background-color: transparent;
 		color: $white;
 		text-transform: uppercase;
@@ -24,8 +24,8 @@ a {
 }
 .circle-chevron {
 	width: 55px;
-height: 54.984px;
-flex-shrink: 0;
+	height: 54.984px;
+	flex-shrink: 0;
 }
 .header-search-icon {
 	position: relative;
@@ -40,56 +40,72 @@ flex-shrink: 0;
 	@include media(xl){
 		height: 11rem;
 	}
+
+	.mag-glass {	
+		transition: all .15s ease-in-out;
+		fill: $vividBlue;
+	}
+	.header-search-icon__path{
+		transition: all .15s ease-in-out;
+		stroke: $vividBlue;
+		fill: $vividBlue;
+	}
+	&:hover {
+		.mag-glass {	
+			transition: all .15s ease-in-out;
+			fill: $graphite;
+		}
+		.header-search-icon__path{
+			transition: all .15s ease-in-out;
+			stroke: $white;
+			fill: $graphite;
+		}
+	}
+	
 }
 
 
 button, .button {
 	cursor: pointer;
 	display: table;
-	border: 0px;
 	text-transform: uppercase;
 	margin: 20px 10px;
 	border-radius: 72px;
-	&.btn--fat{
-			box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.05);
+	font-weight: 700;
+	&.btn--fat {
+		letter-spacing: 0.05rem;
+		box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.05);
+		width: 16rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		// height: 8rem;
+		// padding: 1rem;
+		padding: 2rem 0rem;
+		@include media(sm){
+			width: 13rem;
+			// padding: 0.75rem;
+		}
+		@include media(md){
 			width: 16rem;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			// height: 8rem;
+			height: 8rem;
 			// padding: 1rem;
-			padding: 2rem 0rem;
-			@include media(sm){
-				width: 13rem;
-				// padding: 0.75rem;
-			}
-			@include media(md){
-				width: 16rem;
-				height: 8rem;
-				// padding: 1rem;
-			}
-			@include media(lg){
-				width: 13rem;
-				height: 6rem;
-				// padding: 1rem;
-			}
-			@include media(xl){
-				width: 18.5rem;
-				height: 9.4rem;
-				padding: 1rem;
-			}
+		}
+		@include media(lg){
+			width: 13rem;
+			height: 6rem;
+			// padding: 1rem;
+		}
+		@include media(xl){
+			width: 18.5rem;
+			height: 9.4rem;
+			padding: 1rem;
+		}
 		background-color: $mint;
+		border: 2px solid $mint;
 		color: $white;
 		a {
 			color: $white;
-		}
-		&:hover {
-			border: 1px solid $mint;
-			color: $mint;
-			background-color: $manila;
-			a {
-				color: $mint;
-			}
 		}
 	}
 	&.btn--round {
@@ -97,30 +113,33 @@ button, .button {
 		width: 9.4rem;
 		border-radius: 100%;
 		background-color: $vividBlue;
-		
 	}
 	&.no-btn{
 		background-color: transparent;
+		border: 0px;
 		display: table;
 		margin: 0;
+		&:hover {
+			background-color: transparent;
+			border: 0px;	
+		}
+		
 	}
 	&.btn--skinny {
+		line-height: 1;
 		background-color: $raspberry;
-		width: 148px;
-		height: 52px;
+		border: 2px solid $raspberry;
+		// width: 148px;
+		// height: 52px;
+		padding: 1.6rem 3.8rem;
 		text-transform: none;
 		color: $white;
 		display: flex;
-			justify-content: center;
-			align-items: center;
-		&:hover {
-			border: 1px solid $raspberry;
-			color: $raspberry;
-			background-color: $manila;
-		}
+		justify-content: center;
+		align-items: center;
 	}
 	&.btn--category{
-	border: 1px solid $white;
+	border: 2px solid $white;
 	background: transparent;
 	font-size: 12px;
 	margin: 5px;
@@ -138,6 +157,15 @@ button, .button {
 			color: $fandango
 		}
 	}
+	transition: all .15s ease-in-out;
+	&:hover {
+		transition: all .15s ease-in-out;
+		background-color: $graphite;
+		a {
+			color: $white;
+		}
+		border: 2px solid $white;
+	}
 }
 
 .search-circle {
@@ -150,6 +178,25 @@ button, .button {
 	top: 0;
 	right: 0;
 	margin: 0 auto 3rem;
+	background-image: url('images/Asset-3@3x.png');
+	background-size: cover;
+	background-origin: padding-box;
+	padding: 2rem;
+	padding-top: 2.1rem;
+	background-origin: content-box;
+	background-repeat: no-repeat;
+	.type-path {
+		width: 50%;
+		top: 1.2rem;
+		left: 1.2rem;
+		path {
+			fill: transparent;
+		}
+		text {
+			font-size: 5rem;
+			color: $graphite;
+		}
+	}
 	.search-inner {
 		position: absolute;
 	top: 50%;
@@ -171,28 +218,6 @@ button, .button {
 		}
 		max-width: 41.6rem;
 		
-	}
-}
-
-.search-circle {
-	background-image: url('images/Asset-3@3x.png');
-	background-size: cover;
-	background-origin: padding-box;
-	padding: 2rem;
-	padding-top: 2.1rem;
-	background-origin: content-box;
-	background-repeat: no-repeat;
-	.type-path {
-		width: 50%;
-		top: 1.2rem;
-		left: 1.2rem;
-		path {
-			fill: transparent;
-		}
-		text {
-			font-size: 5rem;
-			color: $graphite;
-		}
 	}
 	.custom-searchform {
 		width: 95%;
@@ -229,6 +254,7 @@ button, .button {
 		}
 	}
 }
+
 .custom-search__submit{
 	background: transparent;
 	margin: 0;
@@ -239,9 +265,7 @@ button, .button {
 	img {
 		object-fit: contain;
 	}
-	&:hover {
-		background: $yellowGreen;
-	}
+
 }
 
 @keyframes cursorBlink {
@@ -253,7 +277,9 @@ button, .button {
 
 
 .header-search-container {
+	
 	.custom-searchform {
+		box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.05);
 		hr {
 			display: none;
 		}

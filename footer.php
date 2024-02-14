@@ -17,14 +17,19 @@ $bgImage = get_field('footer_image', 'options');
 			</section>
 
 			<section class="main-footer">
-				<div class="support-our-work">
+				<!-- <div class="support-our-work">
+					<h4 class="fade-me">Support Our Work</h4>
+					<p><?php echo the_field('support_our_work_text', 'options');?></p>
+					<a class="button btn--skinny fade-me" href='<?php echo home_url('/donate'); ?>'>Donate</a>
+				</div> -->
+
+				<div class="footer-nav--section">
+					<div class="inner">
+					<div class="support-our-work">
 					<h4 class="fade-me">Support Our Work</h4>
 					<p><?php echo the_field('support_our_work_text', 'options');?></p>
 					<a class="button btn--skinny fade-me" href='<?php echo home_url('/donate'); ?>'>Donate</a>
 				</div>
-
-				<div class="footer-nav--section">
-					<div class="inner">
 
 						<div class="logo"><?php include 'components/svg/logo-colour.php';?></div>
 						<div class="footer-nav--container display-flex">
@@ -85,8 +90,8 @@ $bgImage = get_field('footer_image', 'options');
 				<div class="legal">
 					<div class="legal-inner">
 
-						<p class="fade-me">&copy; SOGI 123 <?php the_time('Y'); ?> </p>
-						<p class="harc-attribution fade-me">Site Design by Harc Creative</p>
+						<p class="">&copy; SOGI 123 <?php the_time('Y'); ?> </p>
+						<p class="harc-attribution">Site Design by Harc Creative</p>
 					</div>
 				
 				</div>

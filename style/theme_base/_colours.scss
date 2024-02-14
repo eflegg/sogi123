@@ -12,7 +12,8 @@ $graphite:#333333;
 $white: #fff;
 $redPurple: #A71679;
 $raspberry:#E1125C;
-$tangelo: #F65300; 
+// $tangelo: #F65300; old 
+$tangelo: #EB6D00;
 $orange: #F77400;
 $yellowOrange: #FF9900;
 $yellow: #FFC700;
@@ -21,7 +22,7 @@ $emerald: #61D06F;
 $mint:#1EBB8A;
 $turquoise: #1CC5C4;
 $skyBlue: #1ACFFF;
-$vividBlue: #25B3FC;
+$vividBlue: #0394DD;
 $deepBlue: #2F96F8;
 $violetBlue: #3D52B9;
 $violet: #6F46C3;
@@ -47,10 +48,16 @@ $cardColorsLength: length($cardColors);
       &:nth-of-type(#{$cardColorsLength}n+#{$i}) {
         * {
           color: nth($cardColors, $i)!important;
+          .learn-button {
+            border-bottom: 2px solid nth($cardColors, $i);
+          }
         }
         &:hover {
           .inner, .tab {
             background-color: nth($cardColors, $i)!important;
+          }
+          .learn-button {
+            border-bottom: 2px solid white;
           }
               *{
                 color: $white!important;

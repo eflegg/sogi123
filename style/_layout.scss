@@ -23,6 +23,12 @@
 
 }
 
+.province-list {
+	.subpages--list {
+padding: 0;
+	}
+}
+
 //Search results page
 
 .search-results {
@@ -32,7 +38,8 @@
 			margin-top: 1rem;
 		}
 		a {
-			text-decoration: underline;
+			text-decoration: none;
+			border-bottom: 2px solid $fandango;
 			color: $fandango;
 			p {
 				color: $fandango;
@@ -53,6 +60,8 @@
 			display: table;
 		}
 		.custom-searchform{
+			display: flex;
+			visibility: visible;
 			position: relative;
 			transform:translateY(0%);
 			bottom: 0;
@@ -97,12 +106,12 @@ footer {
 		position: relative;
 		z-index: 10;
 		width: 100%;        		
-		padding: 9rem 0;
+		padding: 11rem 0;
 		@include media(lg){
-			padding: 12rem 0;
+			padding: 14rem 0;
 		}
 		@include media(xl){
-			padding: 14rem 0;
+			padding: 16rem 0;
 		}
 		.text {
 			z-index: 30;
@@ -117,12 +126,14 @@ footer {
 			@include media(md){
 				width: 50%;
 			}
-			.eyebrow, .attribution {
-				.name {
-					text-transform: none;
-				}
+			.eyebrow {
 				color: $white;
 				text-transform: uppercase;
+				margin-bottom: 2rem;
+			}
+			.attribution{
+				color: $white;
+				padding-top: 2rem;
 			}
 			.testimonial{
 				font-size: 2rem;
@@ -136,10 +147,11 @@ footer {
 				}
 				text-transform: capitalize;
 				color: $white;
-				.name {
-					text-transform: uppercase;
-					color: $white;
-				}
+				
+			}
+			.name {
+				text-transform: uppercase;
+				color: $white;
 			}
 		}
 		.blue-triangle {
@@ -165,56 +177,71 @@ footer {
 			align-items: start;
 			z-index: 10;
 			background-color: $fandango;
-			// right: 8%;
+			margin-bottom: 5rem;
 			margin-left: auto;
 			top: 0;
-			transform: translateY(-20%);
-			width: 80%;
+			right: 0;
+			width: 100%;
 			h4, p {
 				color: $white;
 			}
 			@include media(md){
+				margin-bottom: 0;
+				position: absolute;
 				width: 65%;
+				right: 9%;
+				transform: translateY(-91%);
 			}
 			@include media(lg){
-				position: absolute;
-				right: 8%;
 				width: 50%;
 			}
 			.button {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				color: $white;
-				padding: 1rem 2rem;
-				margin-left: 0;
-				margin-bottom: 0;
+				margin: 0;
 				background-color: $yellowOrange;
-				transition: all .25s ease-in-out;
+				border: 2px solid $yellowOrange;
+				transition: all .15s ease-in-out;
+				text-transform: uppercase;
+				font-weight: 700;
+				line-height: 1;
+				letter-spacing: 0.05rem;
 				&:hover {
-					color: $yellowOrange;
-					background-color: $white;
-					transition: all .25s ease-in-out;
-					border: 0;
+					transition: all .15s ease-in-out;
+					background-color: $graphite;
+					a {
+						color: $white;
+					}
+					border: 2px solid $white;
 				}
 			}
 			
 		}
 		.footer-nav--section{
+
 			width: 100%;
 			padding-bottom: 6rem;
-			&:before {
-				content: "";
-				display: block;
-				@include media(lg){
-					padding-top: 20%;    /*  ratio */
-				}
+			padding-top: 5rem;
+			@include media(md){
+				padding-top: 22rem;
 			}
+			@include media(xl){
+				padding-top: 20rem;
+			}
+			// &:before {
+			// 	content: "";
+			// 	display: block;
+			// 	@include media(lg){
+			// 		padding-top: 20%;    /*  ratio */
+			// 	}
+			// }
 			.inner {
 				width: 90%;
-				padding-right: 8%;
 				margin-left: auto;
-	
+				margin: 0 auto;
+				position: relative;
+				@include media(md){
+					padding-right: 8%;
+					margin: 0 0 0 auto;
+				}
 			}
 			.footer-nav--container{
 				margin-top: 5rem;
@@ -237,7 +264,7 @@ footer {
 					margin-bottom: 0;
 				}
 				.social {
-					margin-right: .2rem;
+					margin-left: 0.7rem;
 				}
 			}
 		}
@@ -258,7 +285,7 @@ footer {
 	}
 	.footer>li{
 		margin-right: 2rem;
-		
+	
 		min-width: 150px;
 		margin-bottom: 2rem;
 		@include media(md){
@@ -271,6 +298,7 @@ footer {
 	}
 	.footer>li>a {
 		font-weight: 800;
+		text-transform: uppercase;
 	}
 	.sub-menu {
 		display: block;
