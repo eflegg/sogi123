@@ -50,7 +50,8 @@ $heroContent = get_field('hero_content');
 			$path = 'components/cards/resource-card.php';
 			
 			?>
-		<?php include 'components/reusable-filter.php';?>
+
+		<?php include 'components/resource-filters.php';?>
          <?php include 'components/resources-block.php';?>
 
 		 </section>

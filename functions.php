@@ -441,7 +441,13 @@ add_filter( 'template_include', function( $template )
 
 
 
-
+//this is what makes the ajaxurl variable available site wide
+add_action('wp_head', 'myplugin_ajaxurl');
+function myplugin_ajaxurl() {
+    echo '<script type="text/javascript">
+           var ajaxurl = "' . admin_url('admin-ajax.php') . '";
+         </script>';
+}
 
 
 function rudr_ajax_filter_by_category() {
@@ -473,12 +479,13 @@ function rudr_ajax_filter_by_category() {
 		$response .= include 'components/cards/resource-card.php';
 	  } else if ($postType == 'post') {
 		$response .= include 'components/cards/update-card.php';
-	  } 
+	  } else null;
+	  
 		
 		
 	  endwhile;
 	  wp_reset_postdata();
-	} 
+	}  
 	else {
 	  $response = 'empty';
 	}
@@ -494,14 +501,10 @@ function rudr_ajax_filter_by_category() {
 add_action( 'wp_ajax_ajaxfilter', 'rudr_ajax_filter_by_category' );
 add_action( 'wp_ajax_nopriv_ajaxfilter', 'rudr_ajax_filter_by_category' );
 
+
 //ensures languages are displayed in short form (en, fr)
 add_filter( 'pll_the_languages_args', function( $args ) { $args['display_names_as'] = 'slug'; return $args; } );
 
 
-//this is what makes the ajaxurl variable available site wide
-add_action('wp_head', 'myplugin_ajaxurl');
-function myplugin_ajaxurl() {
-    echo '<script type="text/javascript">
-           var ajaxurl = "' . admin_url('admin-ajax.php') . '";
-         </script>';
-}
+
+

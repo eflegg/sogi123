@@ -1,4 +1,4 @@
-<li class="update-card-container  update-color  single-slide fade-me">
+<li class="update-card-container  update-color  single-slide">
     <div class="update-card">
     <div class="tab">
 

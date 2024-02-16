@@ -31,45 +31,60 @@ $('nav .cta').click(function() {
 
 
 
-const ajaxFilter = document.getElementById( 'ajax-filter' )
-const cardContainer = document.querySelector( '.card-container' )
-const selectElem = ajaxFilter.querySelector('select');
-const postType = selectElem.getAttribute('data-type');
 
-selectElem.addEventListener( 'change', event => {
-	
-	fetch( ajaxurl + '?action=ajaxfilter', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify( { 
-			'cat' : event.target.value,
-      'dataType' : postType, 
-      
-		} ),
+
+  //better carousel
+
+
+  const imageList = document.querySelector(".slider-wrapper .image-list");
+  const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
+  const singleSlides = document.querySelectorAll(".single-slide");
+  
+  const initSlider = () => {
+  
+  console.log(singleSlides);  
+  console.log(imageList.clientWidth/3);
+  
+  const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
+  
+  
+  //set slide width
+  singleSlides.forEach(single =>{
+    if(window.innerWidth < 600){
+      single.style.width = (imageList.clientWidth ) + 'px';
+    } else if(window.innerWidth < 800){
+      single.style.width = (imageList.clientWidth ) / 2 + 'px';
+    } else {
+      single.style.width = (imageList.clientWidth ) / 3 + 'px';
+    }
+  })
     
-	}).then( response => {
-		return response.text()
-	}).then( response => {
+    // Slide images according to the slide button clicks
+    slideButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const direction = button.id === "prev-slide" ? -1 : 1;
+            const scrollAmount = imageList.clientWidth * direction;
+            imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        });
+    });
+     // Show or hide slide buttons based on scroll position
+    const handleSlideButtons = () => {
+        slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
+        slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
+    }
+  
+    // Call these two functions when image list scrolls
+    imageList.addEventListener("scroll", () => {
+        handleSlideButtons();
+    });
+  }
+  
+  window.addEventListener("resize", initSlider );
+  window.addEventListener("load", initSlider);
 
-		if( response ) {
-			cardContainer.innerHTML = response;
-		}
-	
-		console.log( response );
-    console.log(postType);
-    
-   
-
-	}).catch( error => {
-		console.log( error )
-	})
-
-} )
 
 
-
+ //header search func 
 const el = document.querySelector(".header-search");
 const headerSearchBar = document.querySelector('.header-search-container>.custom-searchform');
 
@@ -83,6 +98,7 @@ document.addEventListener("keydown", (event) => {
     headerSearchBar.classList.remove("search-visible");
 	}
 });
+
 
 
 
@@ -107,9 +123,7 @@ secondSubnavs.forEach(sub => {
   sub.classList.add('second-level-subnav');
 })
 
-//first attempt at adding the click funtionality and proper tab direction behaviour
-
-
+// click funtionality and proper tab direction behaviour
 
 const menuItems = document.querySelectorAll(".main>.menu-item-has-children");
 let expandedItem = null;
@@ -309,60 +323,53 @@ document.addEventListener("keydown", (event) => {
   }
   });
 
- 
-
-  //better carousel
 
 
-const imageList = document.querySelector(".slider-wrapper .image-list");
-const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
-const singleSlides = document.querySelectorAll(".single-slide");
-
-const initSlider = () => {
-
-console.log(singleSlides);  
-console.log(imageList.clientWidth/3);
-
-const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
 
 
-//set slide width
-singleSlides.forEach(single =>{
-  if(window.innerWidth < 600){
-    single.style.width = (imageList.clientWidth ) + 'px';
-  } else if(window.innerWidth < 800){
-    single.style.width = (imageList.clientWidth ) / 2 + 'px';
-  } else {
-    single.style.width = (imageList.clientWidth ) / 3 + 'px';
-  }
-})
-  
-  // Slide images according to the slide button clicks
-  slideButtons.forEach(button => {
-      button.addEventListener("click", () => {
-          const direction = button.id === "prev-slide" ? -1 : 1;
-          const scrollAmount = imageList.clientWidth * direction;
-          imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      });
-  });
-   // Show or hide slide buttons based on scroll position
-  const handleSlideButtons = () => {
-      slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
-      slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
-  }
 
-  // Call these two functions when image list scrolls
-  imageList.addEventListener("scroll", () => {
-      handleSlideButtons();
-  });
-}
+ //single filter
+const ajaxFilter = document.getElementById( 'ajax-filter' )
+console.log(ajaxFilter);
+const cardContainer = document.querySelector( '.card-container' )
+console.log(cardContainer);
+const selectElem = ajaxFilter.querySelector('select');
+console.log(selectElem);
+const postType = selectElem.getAttribute('data-type');
+console.log(postType);
 
-window.addEventListener("resize", initSlider );
-window.addEventListener("load", initSlider);
+selectElem.addEventListener( 'change', event => {
+	
+	fetch( ajaxurl +'?action=ajaxfilter', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+    // body: JSON.stringify( Object.fromEntries( formData.entries(),  ) ),
+		body: JSON.stringify( { 
+			'cat' : event.target.value,
+      'dataType' : postType
+      
+		} ),
+    
+	}).then( response => {
+		return response.text()
+	}).then( response => {
 
+		if( response ) {
+			cardContainer.innerHTML = response;
+		}
+	
+		console.log( response );
+    console.log(postType);
+    
+   
 
-  
+	}).catch( error => {
+		console.log( error )
+	})
 
+} )
 
 
 //tabs
@@ -396,11 +403,6 @@ const element = document.getElementById('nav-tab');
 
 element.addEventListener('focusin', onTabClick, false);
 element.addEventListener('click', onTabClick, false);
-
-
-
-
-
 
 
 
@@ -588,7 +590,5 @@ element.addEventListener('click', onTabClick, false);
 //   document.removeEventListener('mouseup', moveBasedOnMouse);
 //   carouselContent.removeEventListener('mousemove', slightMove);
 // }
-
-
 
 

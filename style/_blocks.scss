@@ -332,6 +332,11 @@ ul.card--categories {
 
 // Updates card
 
+.update-card-container {
+	height: 30rem;
+	min-width: 21.5rem;
+
+}
 .update-card {
 	cursor: pointer;
 	position: relative;
@@ -339,8 +344,7 @@ ul.card--categories {
 	width: 95%;
 	height: 100%;
 	margin: 0 auto;
-	height: 30rem;
-	min-width: 21.5rem;
+	
 	z-index: 10;
 	transition: left .4s cubic-bezier(.47,.13,.15,.89);
 	.inner {
@@ -362,7 +366,10 @@ ul.card--categories {
 		}
 		.content {
 			margin-bottom: 1.8rem;
-			font-size: 1.4rem;
+			a, p {
+				font-size: 1.4rem;
+				line-height: 115%;
+			}
 		}
 		.learn-button {
 			margin-left: 0;
@@ -462,6 +469,26 @@ ul.card--categories {
 
 //Filter
 
+.filter-by-category__resources {
+	border: 2px solid blueviolet;
+	display: flex;
+	overflow-x: scroll;
+	.category-form{
+		margin-bottom: 3rem;
+		@include media(md){
+			margin-bottom: 5rem;
+		}
+		.cat-select{
+			margin-right: 1rem;
+			@include media(md){
+				margin-right: 3rem;
+			}
+			min-width: 19rem;
+		}
+	}
+
+}
+
 .filter-by-category {
 	display: flex;
 	flex-direction: column;
@@ -490,23 +517,24 @@ ul.card--categories {
 		padding-top: 10%;    /* initial ratio of 1:1*/
 	}
 	
-	select {
-		padding: 1rem 2rem;
-		width: 75%;
-		@include media(lg){
-			padding: 1rem 2rem;
-			width: initial;
-		}
-		@include media(xl){
-			padding: 1.5rem 2.6rem;
-		}
-		color: $deepBlue;
-		border-radius: 100px;
-		border: 0px;
-	}
+
 	h2{
 		margin-bottom: 1.8rem;
 	}
+}
+.cat-select {
+	padding: 1rem 2rem;
+	width: 75%;
+	@include media(lg){
+		padding: 1rem 2rem;
+		width: initial;
+	}
+	@include media(xl){
+		padding: 1.5rem 2.6rem;
+	}
+	color: $deepBlue;
+	border-radius: 100px;
+	border: 2px solid $deepBlue;
 }
 .cat-list{
 	position: relative;

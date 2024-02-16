@@ -9,7 +9,7 @@
 	$parent_cat = get_terms('category','$parent_cat_arg');?>  
 
 <!-- don't really need the foreach, it's just one category i need -->
-<?php foreach ($parent_cat as $catVal) :?> 
+<!-- <?php foreach ($parent_cat as $catVal) :?>  -->
 
 	<?php if($catVal->name == $category) :?>
 
@@ -27,7 +27,7 @@
 
 
 		<?php endif;?>
-		<?php endforeach; ?>
+		<!-- <?php endforeach; ?> -->
 
 		</form>
 	</div>

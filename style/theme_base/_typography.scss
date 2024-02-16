@@ -43,8 +43,11 @@ p {
 	margin: 2rem 0;
 	font-size: 1.6rem;
 	@include media(lg){
-		font-size: 1.8rem;
+		font-size: 1.6rem;
 	}
+}
+#text{
+	color: $manila;
 }
 
 h1, .h1 {

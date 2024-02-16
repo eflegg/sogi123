@@ -259,6 +259,14 @@
       "oAP" : "\/build\/components\/questions-block.php",
       "oF" : 0
     },
+    "\/components\/resource-filters.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/components\/resource-filters.php",
+      "oF" : 0
+    },
     "\/components\/resources-block.php" : {
       "cB" : 0,
       "ft" : 8192,

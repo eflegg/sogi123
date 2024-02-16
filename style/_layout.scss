@@ -369,37 +369,4 @@ footer {
 
 
 
-// .drawer {
-// 	touch-action: pan-y;
-// 	user-select: none;
-// 	-webkit-user-drag: none;
-// 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-// 	right: 0;
-// 	z-index: 103;
-// 	height: 100%;
-// 	position: fixed;
-// 	top: 0;
-// 	visibility: hidden;
-// 	width: 100%;
-// 	.drawer-wrap {
-// 		height: 100%;
-// 		-webkit-overflow-scrolling: touch;
-// 		overflow-x: hidden;
-// 		overflow-y: scroll;
-// 		position: absolute;
-// 		right: -100%;
-// 		top: 0;
-// 		width: 100%;
-// 		@include animate(all, 0.3s, 0);
-// 	}
-// }
-
-// body.drawer-open {
-// 	.drawer {
-// 		visibility: visible;
-// 		.drawer-wrap {
-// 			right: 0;
-// 		}
-// 	}
-// }
 
