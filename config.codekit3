@@ -267,6 +267,14 @@
       "oAP" : "\/build\/components\/resource-filters.php",
       "oF" : 0
     },
+    "\/components\/resource-filtersOLD.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/components\/resource-filtersOLD.php",
+      "oF" : 0
+    },
     "\/components\/resources-block.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1208,6 +1216,17 @@
       "sC" : 3,
       "tS" : 0
     },
+    "\/js\/multi-filter.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/build\/js\/multi-filter-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/js\/navigation.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -1230,6 +1249,17 @@
       "sC" : 3,
       "tS" : 0
     },
+    "\/js\/single-filter.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/build\/js\/single-filter-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/js\/skip-link-focus-fix.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -1248,6 +1278,17 @@
       "mi" : 1,
       "oA" : 0,
       "oAP" : "\/build\/js\/slick-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/js\/tab-block-func.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/build\/js\/tab-block-func-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0

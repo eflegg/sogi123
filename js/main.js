@@ -42,8 +42,8 @@ $('nav .cta').click(function() {
   
   const initSlider = () => {
   
-  console.log(singleSlides);  
-  console.log(imageList.clientWidth/3);
+  // console.log(singleSlides);  
+  // console.log(imageList.clientWidth/3);
   
   const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
   
@@ -174,15 +174,15 @@ document.addEventListener("keydown", (event) => {
 		if (!expandedItem) {
 			return;
 		}
-    console.log(expandedItem);
+   
 		const subMenu = expandedItem.querySelector(".second-level-subnav");
 
 		const focusedElement = expandedItem.querySelector(":focus");
-    console.log(focusedElement);
+ 
 		const firstFocusableElement = expandedItem.querySelector("a");
-    console.log(firstFocusableElement);
+  
 		const lastFocusableElement = subMenu.lastElementChild.querySelector("a");
-    console.log(lastFocusableElement);
+  
 
 		if (!event.shiftKey && focusedElement === lastFocusableElement) {
 			collapseSubMenu(expandedItem);
@@ -243,13 +243,13 @@ document.addEventListener("keydown", (event) => {
 
   
   function focusTrap(element, removeButton, handleClose) {
-    console.log('element: ', element);
+
 
     
     const focusable =
       'button:not(#header-search, #searchsubmit2),  a:not(.skiplink, .btn--fat, .home-logo)';
     const focusableElements = element.querySelectorAll(focusable);
-    console.log(focusableElements);
+
     const firstFocusableElement = focusableElements[0];
     const lastFocusableElement = focusableElements[focusableElements.length - 1];
     firstFocusableElement.focus();
@@ -325,270 +325,172 @@ document.addEventListener("keydown", (event) => {
 
 
 
+//Multi filter
 
+// const activeFilter = document.querySelector('.filters').getAttribute('data-filter');
+// console.log(activeFilter);
 
+// new Vue({
+//   el: '#directoryApp',
+//   data() {
+//     return {
+//       items: null,
+//       itemFilterNames: null,
+//       itemFilters: [],
+//       filteredItems: this.items,
+//       selected: activeFilter ? activeFilter : 'all',
+//       selectedRegion: 'all',
+//       selectedAge: activeFilter ? activeFilter : 'all',
+//       selectedSeason: 'all',
+//       selectedType: 'all',
+//       selectedDelivery: 'all',
+//       selectedAvailability: 'all',
+//       currentPage: 1,
+//       lastPage: false,
+//       totalPages: 1,
+//       loading: true,
+//       showFilters: false,
+//       perPage: 9, 
+//       totalItems: null,
+//     }
+//   },
+//   mounted () {
+//     //fetch programs
+//     const url = this.selected !== 'all' ? '/wp-json/wp/v2/programs?_embed&per_page=' + this.perPage + '&acf_format=standard&program_age=' + this.selected : '/wp-json/wp/v2/programs?_embed&per_page=' + this.perPage + '&acf_format=standard';
+//     axios
+//       .get(url)
+//       .then(response => {
+//         this.items = response.data
 
- //single filter
-const ajaxFilter = document.getElementById( 'ajax-filter' )
-console.log(ajaxFilter);
-const cardContainer = document.querySelector( '.card-container' )
-console.log(cardContainer);
-const selectElem = ajaxFilter.querySelector('select');
-console.log(selectElem);
-const postType = selectElem.getAttribute('data-type');
-console.log(postType);
+//         this.filteredItems = this.items;
+//         this.totalPages = Number(response.headers['x-wp-totalpages']);
+//         this.totalItems = Number(response.headers['x-wp-total']);
 
-selectElem.addEventListener( 'change', event => {
-	
-	fetch( ajaxurl +'?action=ajaxfilter', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-    // body: JSON.stringify( Object.fromEntries( formData.entries(),  ) ),
-		body: JSON.stringify( { 
-			'cat' : event.target.value,
-      'dataType' : postType
+//         this.refreshTotalPages();
+//       })
+//       .catch(error => {
+//         console.log(error)
+//         this.errored = true
+//       })
+//       .finally(() => this.loading = false)
+//   },
+//   methods: {
+//     clearFilters() {
+//       this.selectedRegion = 'all';
+//       this.selectedAge = 'all';
+//       this.selectedSeason = 'all';
+//       this.selectedType = 'all';
+//       this.selectedAvailability = 'all';
+//       this.selectedDelivery = 'all';
+
+//       this.getFilters();
+//     },
+//     refreshTotalPages() {
+//       const totalPagesNum = Number(this.totalPages)
+//       this.lastPage = this.currentPage >= totalPagesNum;
+//     },
+//     filterProjects() {
+//       this.loading = true;
+//       this.getFilters();   
+//     },
+//     getFilters() {
+//       console.log('selected: ' + this.selected);
+
+//       let program_region = this.selectedRegion !== 'all' ? '&program_region=' + Number(this.selectedRegion) : '';
+//       let program_age = this.selectedAge !== 'all' ? '&program_age=' + Number(this.selectedAge) : '';
+//       let program_season = this.selectedSeason !== 'all' ? '&program_season=' + Number(this.selectedSeason) : '';
+//       let program_type = this.selectedType !== 'all' ? '&program_type=' + Number(this.selectedType) : '';
+//       let program_availability = this.selectedAvailability !== 'all' ? '&program_availability=' + Number(this.selectedAvailability) : '';
+//       let program_delivery = this.selectedDelivery !== 'all' ? '&program_delivery=' + Number(this.selectedDelivery) : '';
+ 
+//       // let filters = program_region + program_age + program_season + program_type + program_availability + program_delivery;
       
-		} ),
-    
-	}).then( response => {
-		return response.text()
-	}).then( response => {
+//       let filters = [
+//         program_region, 
+//         program_age, 
+//         program_season, 
+//         program_type, 
+//         program_availability, 
+//         program_delivery
+//       ].join('');
 
-		if( response ) {
-			cardContainer.innerHTML = response;
-		}
-	
-		console.log( response );
-    console.log(postType);
-    
-   
+//       console.log(filters);
 
-	}).catch( error => {
-		console.log( error )
-	})
+//       this.selected = filters !== '' ? filters : 'all';
+//       // console.log(filters);
+//       this.getFilteredProjects(filters);
+//     },
+//     getFilteredProjects(filters) {
+//       const url = '/wp-json/wp/v2/programs?_embed&per_page=' + this.perPage + '&acf_format=standard' + filters;
+//       console.log(url);
+//         axios
+//         .get(url)
+//         .then(response => {
+//           this.items = response.data
+//           this.filteredItems = this.items
+//           this.totalPages = Number(response.headers['x-wp-totalpages']);
+//           this.totalItems = Number(response.headers['x-wp-total']);
+//           this.refreshTotalPages();
+//         })
+//         .catch(error => {
+//           console.log(error)
+//           this.errored = true
+//         })
+//         .finally(() => this.loading = false)
+//     },
+//     loadMore() {
+//       if( this.loading === false ) {
+//         this.loading = true;
+//         this.currentPage = this.currentPage + 1;
+//         const currentPage = this.currentPage;
+//         const url = this.selected !== 'all' ? '/wp-json/wp/v2/programs?_embed&per_page=' + this.perPage + '&acf_format=standard' + filters + '&page=' + currentPage : '/wp-json/wp/v2/programs?_embed&per_page=' + this.perPage + '&acf_format=standard&page=' + currentPage ;
 
-} )
+//         axios
+//         .get(url)
+//         .then(response => {
+//           const newItems = response.data;
+//           for(item of newItems){
+//             this.items.push(item);
+//           }
+//           this.filteredItems = this.items
+//         })
+//         .catch(error => {
+//           console.log(error)
+//           this.errored = true
+//         })
+//         .finally(() => this.loading = false)
+
+//         this.refreshTotalPages()
+//       }
+//     },
+//   },
+//   filters: {
+//     capitalize: function (value) {
+//       if (!value) return ''
+//       value = value.toString();
+//       value = value.replaceAll('program_', '');
+//       return value.charAt(0).toUpperCase() + value.slice(1);
+//     },
+//   }
+// })
 
 
-//tabs
-
-//add active class to first child of dynamic list, both panes and tabs
-const firstTabPanel = document.querySelector('.tab-content').firstElementChild;
-firstTabPanel.classList.add('active-tab');
-
-const firstTab = document.querySelector('.tab-nav').firstElementChild;
-firstTab.classList.add('active-tab');
-
-function onTabClick(event) {
-  let activeTabs = document.querySelectorAll('.active-tab');
 
 
-  // deactivate existing active tab and panel 
-  activeTabs.forEach(function(tab) {
-    tab.className = tab.className.replace('active-tab', '');
-  });
-
-  // find closes li to clicked item and either remove or add active class
-  event.target.closest('li').className += ' active-tab';
-
-   // get the element with the id that matches the data attr of clicked item
-  document.getElementById(event.target.getAttribute('data-link')).className += ' active-tab';
 
 
-}
 
-const element = document.getElementById('nav-tab');
 
-element.addEventListener('focusin', onTabClick, false);
-element.addEventListener('click', onTabClick, false);
+
+
+
+
+
 
 
 
 });
 
 
-
-
-//worse update carousel
-
-//   var carousel = document.querySelector('.carousel');
-
-//   var carouselContent = document.querySelector('.carousel-content');
-
-//   var slides = document.querySelectorAll('.slide');
-
-//   var arrayOfSlides = Array.prototype.slice.call(slides);
-
-//   var carouselDisplaying;
-//   var screenSize;
-//   setScreenSize();
-
-//   // console.log('carousel: ', carousel);
-//   // console.log('carousel content: ', carouselContent);
-//   // console.log('slides: ', slides);
-//   // console.log('array of slides: ', arrayOfSlides);
-
-
-
-
-//   function addClone() {
-//     var lastSlide = carouselContent.lastElementChild.cloneNode(true);
-//     lastSlide.style.left = (-lengthOfSlide) + "px";
-//     carouselContent.insertBefore(lastSlide, carouselContent.firstChild);
-//  }
-
-//  function removeClone() {
-//   var firstSlide = carouselContent.firstElementChild;
-//   firstSlide.parentNode.removeChild(firstSlide);
-// }
-
-// function moveSlidesRight() {
-//   var slides = document.querySelectorAll('.slide');
-//   var slidesArray = Array.prototype.slice.call(slides);
-//   var width = 0;
-//   slidesArray.forEach(function(el, i){
-//     el.style.left = width + "px";
-//     width += lengthOfSlide;
-//   });
-//   addClone();
-// }
-// moveSlidesRight();
-
-// function moveSlidesLeft() {
-//   var slides = document.querySelectorAll('.slide');
-//   var slidesArray = Array.prototype.slice.call(slides);
-//   slidesArray = slidesArray.reverse();
-//   var maxWidth = (slidesArray.length - 1) * lengthOfSlide;
-
-//   slidesArray.forEach(function(el, i){
-//     maxWidth -= lengthOfSlide;
-//     el.style.left = maxWidth + "px";
-//   });
-// }
-
-// window.addEventListener('resize', setScreenSize);
-// function setScreenSize() {
-//   if ( window.innerWidth >= 800 ) {
-//     carouselDisplaying = 3;
-//   } else if ( window.innerWidth >= 600 ) {
-  
-//     carouselDisplaying = 2;
-//   } else {
-//     carouselDisplaying = 1;
-//   }
-//   getScreenSize();
-// }
-// function getScreenSize() {
-//   var slides = document.querySelectorAll('.slide');
-//   var slidesArray = Array.prototype.slice.call(slides);
-//   lengthOfSlide = ( carousel.offsetWidth  / carouselDisplaying );
-//   var initialWidth = -lengthOfSlide;
-//   slidesArray.forEach(function(el) {
-//     el.style.width = lengthOfSlide + "px";
-//     el.style.left = initialWidth + "px";
-//     initialWidth += lengthOfSlide;
-//   });
-// }
-
-// var rightNav = document.querySelector('.nav-right');
-// rightNav.addEventListener('click', moveLeft);
-
-// var moving = true;
-// function moveRight() {
-//   if ( moving ) {
-//     moving = false;
-//     var lastSlide = carouselContent.lastElementChild;
-//     lastSlide.parentNode.removeChild(lastSlide);
-//     carouselContent.insertBefore(lastSlide, carouselContent.firstChild);
-//     removeClone();
-//     var firstSlide = carouselContent.firstElementChild;
-//     firstSlide.addEventListener('transitionend', activateAgain);
-//     moveSlidesRight();
-//   }
-// }
-
-// function activateAgain() {
-//   var firstSlide = carouselContent.firstElementChild;
-//   moving = true;
-//   firstSlide.removeEventListener('transitionend', activateAgain);
-// }
-
-// var leftNav = document.querySelector('.nav-left');
-// leftNav.addEventListener('click', moveRight);
-
-// function moveLeft() {
-//   if ( moving ) {
-//     moving = false;
-//     removeClone();
-//     var firstSlide = carouselContent.firstElementChild;
-//     firstSlide.addEventListener('transitionend', replaceToEnd);
-//     moveSlidesLeft();
-//   }
-// }
-
-// function replaceToEnd() {
-//   var firstSlide = carouselContent.firstElementChild;
-//   firstSlide.parentNode.removeChild(firstSlide);
-//   carouselContent.appendChild(firstSlide);
-//   firstSlide.style.left = ( (arrayOfSlides.length -1) * lengthOfSlide) + "px";
-//   addClone();
-//   moving = true;
-//   firstSlide.removeEventListener('transitionend', replaceToEnd);
-// }
-
-
-
-// carouselContent.addEventListener('mousedown', seeMovement);
-
-// var initialX;
-// var initialPos;
-// function seeMovement(e) {
-//   initialX = e.clientX;
-//   getInitialPos();
-//   carouselContent.addEventListener('mousemove', slightMove);
-//   document.addEventListener('mouseup', moveBasedOnMouse);
-// }
-
-// function slightMove(e) {
-//   if ( moving ) {
-//     var movingX = e.clientX;
-//     var difference = initialX - movingX;
-//     if ( Math.abs(difference) < (lengthOfSlide/4) ) {
-//       slightMoveSlides(difference);
-//     }  
-//   }
-// }
-
-// function getInitialPos() {
-//   var slides = document.querySelectorAll('.slide');
-//   var slidesArray = Array.prototype.slice.call(slides);
-//   initialPos = [];
-//   slidesArray.forEach(function(el){
-//     var left = Math.floor( parseInt( el.style.left.slice(0, -2 ) ) ); 
-//     initialPos.push( left );
-//   });
-// }
-
-// function slightMoveSlides(newX) {
-//   var slides = document.querySelectorAll('.slide');
-//   var slidesArray = Array.prototype.slice.call(slides);
-//   slidesArray.forEach(function(el, i){
-//     var oldLeft = initialPos[i];
-//     el.style.left = (oldLeft + newX) + "px";
-//   });
-// }
-
-// function moveBasedOnMouse(e) { 
-//   var finalX = e.clientX;
-//   if ( initialX - finalX > 0) {
-//     moveRight();
-//   } else if ( initialX - finalX < 0 ) {
-//     moveLeft();
-//   }
-//   document.removeEventListener('mouseup', moveBasedOnMouse);
-//   carouselContent.removeEventListener('mousemove', slightMove);
-// }
 
 

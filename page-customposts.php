@@ -51,7 +51,7 @@ $heroContent = get_field('hero_content');
 			
 			?>
 
-		<?php include 'components/resource-filters.php';?>
+		<?php include 'components/resource-filtersOLD.php';?>
          <?php include 'components/resources-block.php';?>
 
 		 </section>
