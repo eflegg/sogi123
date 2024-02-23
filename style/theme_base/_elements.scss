@@ -30,12 +30,12 @@ a, button {
 .header-search-icon {
 	position: relative;
 	top: 0.2rem;
-	height: 11rem;
+	height: 7.5rem;
 	@include media(sm){
-		height: 10rem;
+		height: 7.6rem;
 	}
 	@include media(lg){
-		height: 7rem;
+		height: 7.6rem;
 	}
 	@include media(xl){
 		height: 11rem;
@@ -75,31 +75,26 @@ button, .button {
 	&.btn--fat {
 		letter-spacing: 0.05rem;
 		box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.05);
-		width: 16rem;
+		// width: 16rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		// height: 8rem;
 		// padding: 1rem;
-		padding: 2rem 0rem;
+		padding: 1.6rem 3.8rem;
 		@include media(sm){
 			width: 13rem;
 			// padding: 0.75rem;
 		}
 		@include media(md){
-			width: 16rem;
-			height: 8rem;
-			// padding: 1rem;
+			
+		
 		}
 		@include media(lg){
-			width: 13rem;
-			height: 6rem;
-			// padding: 1rem;
+		
 		}
 		@include media(xl){
-			width: 18.5rem;
-			height: 9.4rem;
-			padding: 1rem;
+			padding: 3rem 7.8rem;
 		}
 		background-color: $mint;
 		border: 2px solid $mint;

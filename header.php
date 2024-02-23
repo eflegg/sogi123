@@ -69,11 +69,16 @@ endif;
 		
 			</div>
 			<div class="js-hamburger-menu">
-				<button  
-				aria-expanded="false"
+				<button 
+				class="button btn-nav  button--red js-menu-button menu-toggle" 
+					aria-expanded="false"
 					aria-label="Menu"
-					class="button button--red js-menu-button menu-toggle">
+					>
 					Menu
+					<span class="burger-1"></span>
+					<span class="burger-2"></span>
+					<span class="burger-3"></span>
+			
 				</button>
 			</div>
 	
@@ -87,8 +92,8 @@ endif;
 
 
 
-
-
+<!-- 
+		 -->
 
 
 

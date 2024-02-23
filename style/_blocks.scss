@@ -31,7 +31,7 @@ body {
 
 .hero {
 	width: 100%;
-
+	z-index: 1;
 	padding: 2rem 2rem 2rem 4rem;
 	position: relative;
 	@include media(lg){
@@ -124,6 +124,7 @@ body {
 // Home - At A Glace
 
 .at-a-glance {
+	z-index: 2;
 	background: linear-gradient(180deg, #2F9BF8 0%, #3674D9 100%);
 	@include media(lg){
 		padding: 20rem 13.2rem 9rem;
@@ -151,7 +152,7 @@ body {
 			width: 85%;
 			position: relative;
 			img {
-				z-index: 10;
+				z-index: 5;
 			}
 			@include media(lg){
 				width: initial;
@@ -247,7 +248,7 @@ ul.card--categories {
 .card {
 	cursor: pointer;
 	&.square {
-		border-radius: 70px;
+		border-radius: 4rem;
 	}
 	.question--text{
 		position: absolute;
@@ -281,9 +282,9 @@ ul.card--categories {
 		display: none;
 		visibility: hidden;
 		opacity: 0;
-		transition: all 0.3s ease-in-out;
+		transition: all 0.15s ease-in-out;
 	}
-	transition: all 0.3s ease-in-out;
+	transition: all 0.15s ease-in-out;
 	.continue-reading {
 		display: none;
 		visibility: hidden;
@@ -297,7 +298,7 @@ ul.card--categories {
 		a{
 			color: $white;
 		}
-		transition: all 0.3s ease-in-out;
+		transition: all 0.15s ease-in-out;
 		.the-question {
 			font-weight: 700;
 			display: none;
@@ -307,7 +308,7 @@ ul.card--categories {
 			display: block;
 			visibility: visible;
 			opacity: 1;
-			transition: all 0.3s ease-in-out;
+			transition: all 0.15s ease-in-out;
 		}
 		// .question--text{
 		// 	color: $tangelo;

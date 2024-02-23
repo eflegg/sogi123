@@ -295,6 +295,7 @@ document.addEventListener("keydown", (event) => {
   
   //toggle mobile nav open using aria-labels connected to css
   const headerButtons = document.querySelector('.header-buttons');
+  const header = document.querySelector('header');
   menuButton.addEventListener("click", () => {
   const expanded = menuButton.getAttribute("aria-expanded");
   if (expanded === "false") {
@@ -302,15 +303,16 @@ document.addEventListener("keydown", (event) => {
       menuButton.setAttribute("aria-expanded", true);
       menuButton.setAttribute("aria-label", "Close menu");
       // menuButton.lastElementChild.textContent = "Close";
-      document.body.style.overflowY = "hidden";
-      headerButtons.style.display = "none";
+      document.body.style.overflow = "hidden";
+
+      header.style.position = "fixed";
       focusTrap(trapContainer, menuButton, handleHamburgerClose);
       if (mobileScreen){
         mobileScreen.style.overflowY = "hidden";
 
       } else {
-        document.body.style.overflowY = "hidden";
-     
+        document.body.style.overflow = "hidden";
+        document.body.style.height = "120vh";
       
       }
   } else {
@@ -319,160 +321,14 @@ document.addEventListener("keydown", (event) => {
     menuButton.setAttribute("aria-label", "Open menu");
     // menuButton.lastElementChild.textContent = "Menu";
     document.body.style.overflowY = "initial";
-    headerButtons.style.display = "flex";
+    document.body.style.height = "100%";
+    header.style.position = "absolute";
   }
   });
 
 
 
-//Multi filter
 
-// const activeFilter = document.querySelector('.filters').getAttribute('data-filter');
-// console.log(activeFilter);
-
-// new Vue({
-//   el: '#directoryApp',
-//   data() {
-//     return {
-//       items: null,
-//       itemFilterNames: null,
-//       itemFilters: [],
-//       filteredItems: this.items,
-//       selected: activeFilter ? activeFilter : 'all',
-//       selectedRegion: 'all',
-//       selectedAge: activeFilter ? activeFilter : 'all',
-//       selectedSeason: 'all',
-//       selectedType: 'all',
-//       selectedDelivery: 'all',
-//       selectedAvailability: 'all',
-//       currentPage: 1,
-//       lastPage: false,
-//       totalPages: 1,
-//       loading: true,
-//       showFilters: false,
-//       perPage: 9, 
-//       totalItems: null,
-//     }
-//   },
-//   mounted () {
-//     //fetch programs
-//     const url = this.selected !== 'all' ? '/wp-json/wp/v2/programs?_embed&per_page=' + this.perPage + '&acf_format=standard&program_age=' + this.selected : '/wp-json/wp/v2/programs?_embed&per_page=' + this.perPage + '&acf_format=standard';
-//     axios
-//       .get(url)
-//       .then(response => {
-//         this.items = response.data
-
-//         this.filteredItems = this.items;
-//         this.totalPages = Number(response.headers['x-wp-totalpages']);
-//         this.totalItems = Number(response.headers['x-wp-total']);
-
-//         this.refreshTotalPages();
-//       })
-//       .catch(error => {
-//         console.log(error)
-//         this.errored = true
-//       })
-//       .finally(() => this.loading = false)
-//   },
-//   methods: {
-//     clearFilters() {
-//       this.selectedRegion = 'all';
-//       this.selectedAge = 'all';
-//       this.selectedSeason = 'all';
-//       this.selectedType = 'all';
-//       this.selectedAvailability = 'all';
-//       this.selectedDelivery = 'all';
-
-//       this.getFilters();
-//     },
-//     refreshTotalPages() {
-//       const totalPagesNum = Number(this.totalPages)
-//       this.lastPage = this.currentPage >= totalPagesNum;
-//     },
-//     filterProjects() {
-//       this.loading = true;
-//       this.getFilters();   
-//     },
-//     getFilters() {
-//       console.log('selected: ' + this.selected);
-
-//       let program_region = this.selectedRegion !== 'all' ? '&program_region=' + Number(this.selectedRegion) : '';
-//       let program_age = this.selectedAge !== 'all' ? '&program_age=' + Number(this.selectedAge) : '';
-//       let program_season = this.selectedSeason !== 'all' ? '&program_season=' + Number(this.selectedSeason) : '';
-//       let program_type = this.selectedType !== 'all' ? '&program_type=' + Number(this.selectedType) : '';
-//       let program_availability = this.selectedAvailability !== 'all' ? '&program_availability=' + Number(this.selectedAvailability) : '';
-//       let program_delivery = this.selectedDelivery !== 'all' ? '&program_delivery=' + Number(this.selectedDelivery) : '';
- 
-//       // let filters = program_region + program_age + program_season + program_type + program_availability + program_delivery;
-      
-//       let filters = [
-//         program_region, 
-//         program_age, 
-//         program_season, 
-//         program_type, 
-//         program_availability, 
-//         program_delivery
-//       ].join('');
-
-//       console.log(filters);
-
-//       this.selected = filters !== '' ? filters : 'all';
-//       // console.log(filters);
-//       this.getFilteredProjects(filters);
-//     },
-//     getFilteredProjects(filters) {
-//       const url = '/wp-json/wp/v2/programs?_embed&per_page=' + this.perPage + '&acf_format=standard' + filters;
-//       console.log(url);
-//         axios
-//         .get(url)
-//         .then(response => {
-//           this.items = response.data
-//           this.filteredItems = this.items
-//           this.totalPages = Number(response.headers['x-wp-totalpages']);
-//           this.totalItems = Number(response.headers['x-wp-total']);
-//           this.refreshTotalPages();
-//         })
-//         .catch(error => {
-//           console.log(error)
-//           this.errored = true
-//         })
-//         .finally(() => this.loading = false)
-//     },
-//     loadMore() {
-//       if( this.loading === false ) {
-//         this.loading = true;
-//         this.currentPage = this.currentPage + 1;
-//         const currentPage = this.currentPage;
-//         const url = this.selected !== 'all' ? '/wp-json/wp/v2/programs?_embed&per_page=' + this.perPage + '&acf_format=standard' + filters + '&page=' + currentPage : '/wp-json/wp/v2/programs?_embed&per_page=' + this.perPage + '&acf_format=standard&page=' + currentPage ;
-
-//         axios
-//         .get(url)
-//         .then(response => {
-//           const newItems = response.data;
-//           for(item of newItems){
-//             this.items.push(item);
-//           }
-//           this.filteredItems = this.items
-//         })
-//         .catch(error => {
-//           console.log(error)
-//           this.errored = true
-//         })
-//         .finally(() => this.loading = false)
-
-//         this.refreshTotalPages()
-//       }
-//     },
-//   },
-//   filters: {
-//     capitalize: function (value) {
-//       if (!value) return ''
-//       value = value.toString();
-//       value = value.replaceAll('program_', '');
-//       return value.charAt(0).toUpperCase() + value.slice(1);
-//     },
-//   }
-// })
 
 
 

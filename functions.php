@@ -483,12 +483,12 @@ function rudr_ajax_search_filter() {
 	$form_data = json_decode( file_get_contents( "php://input" ), true );
 	// print_r($form_data);
 
-	$filtered_form_data = array_filter($form_data);
-
+	//this is how you implode an array with numerical values
 	// $imploded_filtered = implode(", ", array_map('intval', $filtered_form_data));
 
-
-$imploded_cat_names = implode( '+', $filtered_form_data);
+	//removes empty values
+	$filtered_form_data = array_filter($form_data);
+	$imploded_cat_names = implode( '+', $filtered_form_data);
 
 
 	print_r($imploded_cat_names);
@@ -497,9 +497,8 @@ $imploded_cat_names = implode( '+', $filtered_form_data);
   
 	$ajaxpostsMulti = new WP_Query(array(
 	  'post_type' => "resource",
- 		'posts_per_page' => -1,
-		// 'category__and' => $imploded_filtered,
-		'category_name' => $imploded_cat_names,
+ 	  'posts_per_page' => -1,
+	  'category_name' => $imploded_cat_names,
 	  'orderby' => 'menu_order', 
 	  'order' => 'desc',
 	));

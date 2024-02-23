@@ -1,10 +1,17 @@
 
 
+<?php
+$darken = get_field('add_darkening_overlay');
+if($darken =='Yes'):
+	$opacity = get_field('opacity_value');
+else: $opacity = 0;
+endif;
+
+?>
 
 
 
-
-<section style="background-image: url('<?php if(!$bgImage): echo $defaultImage;  else: echo $bgImage;  endif;  ?>'); background-size: cover;" class="hero display-flex flex-column justify-end">
+<section style="background-image: url('<?php if(!$bgImage): echo $defaultImage;  else: echo $bgImage;  endif;  ?>'); background-size: cover; box-shadow: inset 0 0 0 1000px rgba(0,0,0,.<?php echo $opacity;?>);" class="hero display-flex flex-column justify-end">
  		
 				<div class="content">
 					<div class="text">
