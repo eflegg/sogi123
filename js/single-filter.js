@@ -1,5 +1,7 @@
  
  document.addEventListener("DOMContentLoaded", function() {
+
+    console.log('single filter');
  
  //single filter
  const ajaxFilter = document.getElementById( 'ajax-filter' )

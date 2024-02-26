@@ -94,17 +94,27 @@ function themename_scripts() {
 	if(is_page_template('page-secondlevel.php') ) {
 		wp_enqueue_script('tab-block-func', get_template_directory_uri() . '/js/tab-block-func.js');
 	}
+	if(is_page_template('single-post.php') ) {
+		wp_enqueue_script('tab-block-func', get_template_directory_uri() . '/js/tab-block-func.js');
+	}
+	if(is_page_template('single-question.php') ) {
+		wp_enqueue_script('tab-block-func', get_template_directory_uri() . '/js/tab-block-func.js');
+	}
+
 
 	if(is_page('resources') ) {
 		wp_enqueue_script('multi-filter', get_template_directory_uri() . '/js/multi-filter.js');
 	}
-	if(is_page('resources') ) {
-		wp_enqueue_script('multi-filter', get_template_directory_uri() . '/js/multi-filter.js');
-	}
+
 	if(is_page('questions-answered') ) {
 		wp_enqueue_script('single-filter', get_template_directory_uri() . '/js/single-filter.js');
 	}
-
+	// if(is_home()) {
+	// 	wp_enqueue_script('single-filter', get_template_directory_uri() . '/js/single-filter.js');
+	//}
+	if(is_page_template('page-updates.php') ) {
+		wp_enqueue_script('single-filter', get_template_directory_uri() . '/js/single-filter.js');
+	}
 
 	wp_enqueue_style( 'themename-style', get_stylesheet_uri() );
 	
@@ -491,7 +501,7 @@ function rudr_ajax_search_filter() {
 	$imploded_cat_names = implode( '+', $filtered_form_data);
 
 
-	print_r($imploded_cat_names);
+	// print_r($imploded_cat_names);
 	
 	
   
@@ -518,7 +528,7 @@ function rudr_ajax_search_filter() {
 	  $response = 'empty multi';
 	}
   
-	echo $response;
+	// echo $response;
 
 
 	die;

@@ -1571,6 +1571,14 @@
       "oAP" : "\/build\/page-toplevel.php",
       "oF" : 0
     },
+    "\/page-updates.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/page-updates.php",
+      "oF" : 0
+    },
     "\/page.php" : {
       "cB" : 0,
       "ft" : 8192,

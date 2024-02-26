@@ -133,6 +133,12 @@ button, .button {
 		justify-content: center;
 		align-items: center;
 	}
+	&.clear-filters {
+	   margin: 0px;
+	   position: absolute;
+	   top: -8rem;
+	   left: 0;
+	}
 	&.btn--category{
 	border: 2px solid $white;
 	background: transparent;
@@ -156,10 +162,16 @@ button, .button {
 	&:hover {
 		transition: all .15s ease-in-out;
 		background-color: $graphite;
+
 		a {
 			color: $white;
 		}
 		border: 2px solid $white;
+	}
+}
+form > button {
+	&:hover {
+		background-color: $graphite!important;
 	}
 }
 
@@ -301,6 +313,7 @@ button, .button {
 		opacity: 0;
 		transform: translateY(110%);
 		transition: all .25s ease-in-out;
+	
 		&.search-visible {
 			visibility: visible;
 			display: flex;
@@ -318,6 +331,13 @@ button, .button {
 			bottom: 2rem;
 			opacity: 1;
 			transition: all .25s ease-in-out;
+		}
+		&.resource-search {
+			margin-left: auto;
+			.custom-searchform {
+				background-color: $white;
+				border: 2px solid $deepBlue;
+			}
 		}
 	}
 }

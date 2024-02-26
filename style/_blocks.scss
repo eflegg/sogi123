@@ -31,7 +31,7 @@ body {
 
 .hero {
 	width: 100%;
-	z-index: 1;
+	// z-index: 1;
 	padding: 2rem 2rem 2rem 4rem;
 	position: relative;
 	@include media(lg){
@@ -470,25 +470,25 @@ ul.card--categories {
 
 //Filter
 
-.filter-by-category__resources {
-	border: 2px solid blueviolet;
-	display: flex;
-	overflow-x: scroll;
-	.category-form{
+
+	.ajax-filter-multi{
+		display: flex;
+		overflow-x: scroll;
 		margin-bottom: 3rem;
 		@include media(md){
 			margin-bottom: 5rem;
 		}
 		.cat-select{
+			width: 200px;
 			margin-right: 1rem;
 			@include media(md){
-				margin-right: 3rem;
+			
 			}
 			min-width: 19rem;
 		}
 	}
 
-}
+
 
 .filter-by-category {
 	display: flex;
@@ -524,6 +524,7 @@ ul.card--categories {
 	}
 }
 .cat-select {
+	display: table;
 	padding: 1rem 2rem;
 	width: 75%;
 	@include media(lg){
@@ -536,6 +537,28 @@ ul.card--categories {
 	color: $deepBlue;
 	border-radius: 100px;
 	border: 2px solid $deepBlue;
+&.resource-search {
+	// height: 5rem;
+
+	// display: flex;
+}
+	// .custom-searchform{
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	border-bottom: 2px solid $deepBlue;
+	// 	input {
+	// 		width: 100%;
+	// 		border: 0px!important;
+	// 		border-left
+	// 		&:placeholder {
+	// 			color: $graphite!important;
+	// 		}
+	// 	}
+	// }
+	.search-vert-line{
+		display: none;
+	
+	}
 }
 .cat-list{
 	position: relative;

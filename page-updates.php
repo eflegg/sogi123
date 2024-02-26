@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Updates Page
+*/
+?>
+
 <?php get_header(); ?>
 <main id="main" class="site-main" role="main">
 <?php 
@@ -51,5 +57,7 @@ $heroContent = get_field('hero_content');
 			
 
 			</main>
+
+          
 
 <?php get_footer(); ?>
