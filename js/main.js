@@ -36,51 +36,51 @@ $('nav .cta').click(function() {
   //better carousel
 
 
-  const imageList = document.querySelector(".slider-wrapper .image-list");
-  const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
-  const singleSlides = document.querySelectorAll(".single-slide");
+  // const imageList = document.querySelector(".slider-wrapper .image-list");
+  // const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
+  // const singleSlides = document.querySelectorAll(".single-slide");
   
-  const initSlider = () => {
+  // const initSlider = () => {
   
-  // console.log(singleSlides);  
-  // console.log(imageList.clientWidth/3);
+  // // console.log(singleSlides);  
+  // // console.log(imageList.clientWidth/3);
   
-  const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
+  // const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
   
   
-  //set slide width
-  singleSlides.forEach(single =>{
-    if(window.innerWidth < 600){
-      single.style.width = (imageList.clientWidth ) + 'px';
-    } else if(window.innerWidth < 800){
-      single.style.width = (imageList.clientWidth ) / 2 + 'px';
-    } else {
-      single.style.width = (imageList.clientWidth ) / 3 + 'px';
-    }
-  })
+  // //set slide width
+  // singleSlides.forEach(single =>{
+  //   if(window.innerWidth < 600){
+  //     single.style.width = (imageList.clientWidth ) + 'px';
+  //   } else if(window.innerWidth < 800){
+  //     single.style.width = (imageList.clientWidth ) / 2 + 'px';
+  //   } else {
+  //     single.style.width = (imageList.clientWidth ) / 3 + 'px';
+  //   }
+  // })
     
-    // Slide images according to the slide button clicks
-    slideButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            const direction = button.id === "prev-slide" ? -1 : 1;
-            const scrollAmount = imageList.clientWidth * direction;
-            imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
-        });
-    });
-     // Show or hide slide buttons based on scroll position
-    const handleSlideButtons = () => {
-        slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
-        slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
-    }
+  //   // Slide images according to the slide button clicks
+  //   slideButtons.forEach(button => {
+  //       button.addEventListener("click", () => {
+  //           const direction = button.id === "prev-slide" ? -1 : 1;
+  //           const scrollAmount = imageList.clientWidth * direction;
+  //           imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  //       });
+  //   });
+  //    // Show or hide slide buttons based on scroll position
+  //   const handleSlideButtons = () => {
+  //       slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
+  //       slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
+  //   }
   
-    // Call these two functions when image list scrolls
-    imageList.addEventListener("scroll", () => {
-        handleSlideButtons();
-    });
-  }
+  //   // Call these two functions when image list scrolls
+  //   imageList.addEventListener("scroll", () => {
+  //       handleSlideButtons();
+  //   });
+  // }
   
-  window.addEventListener("resize", initSlider );
-  window.addEventListener("load", initSlider);
+  // window.addEventListener("resize", initSlider );
+  // window.addEventListener("load", initSlider);
 
 
 
@@ -176,11 +176,8 @@ document.addEventListener("keydown", (event) => {
 		}
    
 		const subMenu = expandedItem.querySelector(".second-level-subnav");
-
 		const focusedElement = expandedItem.querySelector(":focus");
- 
 		const firstFocusableElement = expandedItem.querySelector("a");
-  
 		const lastFocusableElement = subMenu.lastElementChild.querySelector("a");
   
 
@@ -200,9 +197,6 @@ document.addEventListener("keydown", (event) => {
 	}
 });
 
-
-
-
 //check viewport width on resize
   let viewportWidth = window.innerWidth;
 
@@ -217,7 +211,6 @@ document.addEventListener("keydown", (event) => {
   }
   
   window.addEventListener("resize", updateWindowWidth);
-
 
   const mobileScreen = document.querySelector(".mobile-nav");
   const menuButton = document.querySelector(".js-menu-button");

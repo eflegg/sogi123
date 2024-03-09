@@ -127,9 +127,19 @@ body {
 	z-index: 2;
 	background: linear-gradient(180deg, #2F9BF8 0%, #3674D9 100%);
 	@include media(lg){
-		padding: 20rem 13.2rem 9rem;
+		padding: 9.6rem 13.2rem 9rem;
+	}
+	h2 {
+		margin-bottom: 4.3rem; 
+		margin-left: 2rem;
+		@include media(lg){
+			max-width: 30rem;
+
+		}
+		
 	}
 	.inner {
+		
 		display: flex;
 		flex-direction: column;
 		.left {
@@ -139,12 +149,18 @@ body {
 			width: 85%;
 			@include media(lg){
 				margin-bottom: 0;
-				width: 50%;
+				width: 30%;
 			}
 		}
 		.right {
 			@include media(lg){
-				width: 50%;
+				width: 55%;
+			}
+		}
+		.empty-col{
+			@include media(lg){
+				width: 10%;
+				// border: 1px solid yellow;
 			}
 		}
 		.image--at-a-glace {
@@ -168,14 +184,7 @@ body {
 			height: 100%;
 			background-color: $yellowGreen;
 		}
-		h2 {
-			margin-bottom: 3rem;
-			@include media(lg){
-				position: absolute;
-				top: -10rem;
-			}
-			
-		}
+		
 		@include media(lg) {
 			flex-direction: row;
 			justify-content: space-around;
@@ -195,11 +204,28 @@ body {
 	.view-all {
 		color: $raspberry;
 		font-size: 1.6rem;
-		padding: 1.5rem 0 2rem 1.5rem;
+		padding: 1.5rem 0 2rem 0;
+		margin-left: 1.5rem;
 		position: relative;
 		top: 1.5rem;
 		@include media(lg){
 			padding-left: 0;
+		}
+		&:hover {
+			&:after {
+				transition: all 0.2s ease-in-out;
+				width: 100%;
+			}
+		}
+		&:after {
+			transition: all 0.2s ease-in-out;
+			position: absolute;
+			content: "";
+			height: 2px;
+			width: 0%;
+			background-color: $raspberry;
+			left: 0;
+			transform: translateY(2rem);
 		}
 	}
 	h3{
@@ -229,8 +255,35 @@ body {
 
 //Cards
 
+//resource card
+
+.resource-card{
+	
+	padding: 3.6rem;
+	cursor: pointer;
+	border-radius: 4rem;
+	margin: .5rem;
+	position: relative;
+	width: 28.8rem;
+	align-self: stretch;  
+	display: flex;
+
+	.resource--text {
+		p {
+			color: $white;
+		}
+	}
+	.continue-reading {
+		display: block;
+		a {
+
+			color: white;
+		}
+	}
+}
+
 ul.card--categories {
-	list-style:none;
+	list-style: none;
 	padding-left: 0;
 	margin-top: 1.5rem;
 }
@@ -242,8 +295,13 @@ ul.card--categories {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	align-items: center;
+	// align-items: center;
+	align-items: stretch;
 	padding-left: 0rem;
+}
+.question-card {
+	height: 30rem;
+	width: 30rem;
 }
 .card {
 	cursor: pointer;
@@ -257,6 +315,8 @@ ul.card--categories {
 		transform: translate(-50%, -50%);
 		text-align: center;
 		width: 80%;
+		font-size: 2.4rem;
+		line-height: 2.88rem;
 		font-weight: 700;
 		p{
 			color: $white;
@@ -266,11 +326,7 @@ ul.card--categories {
 	position: relative;
 	width: 28.8rem;
 	align-self: start;          /* desired width */
-	&:before {
-		content: "";
-		display: block;
-		padding-top: 100%;    /* initial ratio of 1:1*/
-	}
+
 	background-color: $tangelo;
 	border-radius: 100%;
 	display: flex;
@@ -283,6 +339,8 @@ ul.card--categories {
 		visibility: hidden;
 		opacity: 0;
 		transition: all 0.15s ease-in-out;
+		font-size: 2.4rem;
+		line-height: 2.88rem;
 	}
 	transition: all 0.15s ease-in-out;
 	.continue-reading {
@@ -333,9 +391,36 @@ ul.card--categories {
 
 // Updates card
 
+.more-updates {
+
+	text-align: center;
+	margin-top: 3rem;
+	a{
+		position: relative;
+		color: $manila;
+		&:hover {
+			&:after {
+				transition: all 0.2s ease-in-out;
+				width: 100%;
+			}
+		}
+		&:after {
+			transition: all 0.2s ease-in-out;
+			position: absolute;
+			content: "";
+			height: 2px;
+			width: 0%;
+			background-color: $manila;
+			left: 0;
+			transform: translateY(2rem);
+		}
+	}
+
+}
 .update-card-container {
-	height: 30rem;
+	align-items: stretch;
 	min-width: 21.5rem;
+
 
 }
 .update-card {
@@ -343,9 +428,11 @@ ul.card--categories {
 	position: relative;
 	list-style: none;
 	width: 95%;
-	height: 100%;
+	width: 28.8rem;
+	align-self: stretch;  
 	margin: 0 auto;
-	
+	margin: 0.5rem;
+height: 100%;
 	z-index: 10;
 	transition: left .4s cubic-bezier(.47,.13,.15,.89);
 	.inner {
@@ -355,7 +442,7 @@ ul.card--categories {
 		width: 100%;
 		background-color: $manila;
 		border-radius: 2.1rem 0 2.1rem 2.1rem;
-		height: 85%;
+	height: 85%;
 		h4{
 			margin-bottom: 1rem;
 		}
@@ -384,6 +471,7 @@ ul.card--categories {
 		background-color: $manila;
 		position: relative;
 		height: 15%;
+		height: 4.7rem;
 		margin-left: auto;
 		width: 38%;
 		border-radius: 5rem 2rem 0 0;
@@ -402,68 +490,9 @@ ul.card--categories {
 	@include media(lg){
 		padding: 8rem 4.8rem 9.5rem;
 	}
-	// .slide {
-	// 	position: absolute;
-	// 	max-width: 98%;
-	// 	// max-width: 30rem;
-	// 	@include media(sm){
-	// 		max-width: 48%;
-	// 	}
-	
-	// 	@include media(md){
-	// 		max-width: 32%;
-	// 	}
-	// }
-	.controls {
-		cursor: pointer;
-		position: absolute;
-		&.prev {
-			top: 50%;
-			transform: translateY(-50%);
-			left: -3.5rem;
-			@include media(sm){
-				left: -4rem;
-			}
-			@include media(md){
-				left: -5rem;
-			}
-			@include media(lg){
-				left: -7rem;
-			}
-		}
-		&.next {
-			bottom: 50%;
-			transform: translateY(50%);
-			right: -3.5rem;
-			@include media(sm){
-				right: -4rem;
-			}
-			@include media(md){
-				right: -5rem;
-			}
-			@include media(lg){
-				right: -7rem;
-			}
-		}
-	}
-	// .carousel {
-	// 	position: relative;
-	// 	width: 80%;
-	// 	height: 35rem; 
-	// 	margin: 0 auto;
-	// 	padding-left: 0.7rem;
-	// 	@include media(md){
-	// 		padding-left: 0.5rem;
-	// 	}
-	// }
-	// .carousel-content{
-	// 	position: relative;
-	// 	overflow: hidden;
-	// 	transition: width .4s;
-	// 	height: 100%;
-	// 	padding-left: 0;
-	
-	// }
+
+
+
 }
 
 
@@ -494,10 +523,10 @@ ul.card--categories {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	transform: translateY(-60%);
 	padding: 2rem;
 	width: 100%;
 	@include media(sm){
+		transform: translateY(-60%);
 		position: absolute;
 		width: 50%;
 	}
@@ -521,6 +550,7 @@ ul.card--categories {
 
 	h2{
 		margin-bottom: 1.8rem;
+		font-size: 3.6rem;
 	}
 }
 .cat-select {

@@ -17,7 +17,7 @@
     <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'davedeveau' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s">
    
 
-    <button type="submit" name="submit" class="custom-search__submit no-btn" id="searchsubmit2" value="<?php echo esc_attr_x( 'Search', 'submit button', 'davedeveau' ); ?>">
+    <button type="submit" name="submit" class="no-btn custom-search__submit " id="searchsubmit2" value="<?php echo esc_attr_x( 'Search', 'submit button', 'davedeveau' ); ?>">
     <img src="<?php bloginfo('template_url'); ?>/images/svg/graphite-search.svg" />
     </button>
 

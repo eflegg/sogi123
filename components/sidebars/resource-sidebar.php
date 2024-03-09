@@ -4,7 +4,7 @@ $featured_resources = $sidebarSettings['featured_resources'];?>
 
 <div class="resources-sidebar <?php echo $sidebarType;?>">
     <div class="share--inner">
-        <h3>Featured Resources</h3>
+        <h3 class="resource-sidebar__title">Featured Resources</h3>
 
 
 
@@ -14,7 +14,7 @@ $featured_resources = $sidebarSettings['featured_resources'];?>
         // Setup this post for WP functions (variable must be named $post).
         setup_postdata($post); ?>
         <li>
-            <a href="<?php the_permalink(); ?>">- <?php the_title(); ?></a>
+            <a href="<?php the_permalink(); ?>">&mdash;&nbsp;&nbsp; <?php the_title(); ?></a>
           
         </li>
     <?php endforeach; ?>

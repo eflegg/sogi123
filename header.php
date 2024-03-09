@@ -74,7 +74,7 @@ endif;
 					aria-expanded="false"
 					aria-label="Menu"
 					>
-					Menu
+					<span class="screen-reader-text">Menu</span>
 					<span class="burger-1"></span>
 					<span class="burger-2"></span>
 					<span class="burger-3"></span>

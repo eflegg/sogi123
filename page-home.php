@@ -18,10 +18,10 @@ $heroContent = get_field('hero_content');
 
 
 
-<section class="at-a-glance section-container">
+<section class="at-a-glance section-container ">
 
    
-
+    <div class="custom-container">
 
     <div class="search-circle">
         <div class="search-inner">
@@ -33,11 +33,9 @@ $heroContent = get_field('hero_content');
 
     
 
+    <h2 class="h3 fade-me">SOGI 123 <br>At a Glance</h2>
     <div class="inner">
-
-   
     <div class="left">
-        <h2 class="h3 fade-me">SOGI 123 <br>At a Glance</h2>
         <div class="image--at-a-glace">
             <div class="image-item">
 
@@ -53,44 +51,49 @@ $heroContent = get_field('hero_content');
     </div>
     <div class="right">
 
-    <ul class="subpages--list">
-
-<?php
-global $post;
-$args = array(
-    'parent'      => $post->ID,
-    'post_type'   => 'page',
-    'post_status' => 'publish'
-); 
-$children = get_pages( $args );
-
-if ( ! empty( $children ) ) :
-    ?>
-    <div class="childcells"> 
-        <?php
-        foreach ( $children as $post ) : setup_postdata( $post );
-        ?>
-
-<?php include 'components/child-page-block.php';?>
-
+        <ul class="subpages--list">
 
         <?php
-    endforeach;
-        wp_reset_postdata();
-        ?>
+        global $post;
+        $args = array(
+            'parent'      => $post->ID,
+            'post_type'   => 'page',
+            'post_status' => 'publish'
+        ); 
+        $children = get_pages( $args );
+
+        if ( ! empty( $children ) ) :
+            ?>
+            <div class="childcells"> 
+                <?php
+                foreach ( $children as $post ) : setup_postdata( $post );
+                ?>
+
+        <?php include 'components/child-page-block.php';?>
+
+
+                <?php
+            endforeach;
+                wp_reset_postdata();
+                ?>
+            </div>
+        <?php endif; ?>    
+        </ul>
+
     </div>
-<?php endif; ?>    
-</ul>
+    <div class="empty-col">
 
     </div>
     </div>
+
+    </div> 
 </section>
 
 <section class="questions-getting section-container">
-    <div class="inner">
-        <div class="left">
-            <h3 class="fade-me">Questions We're Getting</h3>
-            <a href='<?php echo home_url('/our-work/questions-answered'); ?>' class="view-all fade-me">View all -></a>
+    <div class="inner custom-container">
+        <div class="left fade-me">
+            <h3 class="">Questions <br />We're <br />Getting</h3>
+            <a href='<?php echo home_url('/our-work/questions-answered'); ?>' class="view-all fade-me">View all <span class="arrow">&rarr;</span></a>
         </div>
         <div class="right">
         <?php

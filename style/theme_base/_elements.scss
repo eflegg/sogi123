@@ -5,7 +5,7 @@ img {
 	object-fit: cover;
 }
 a, button {
-	cursor: pointer;
+	cursor: pointer!important;
 }
 
 
@@ -126,7 +126,7 @@ button, .button {
 		border: 2px solid $raspberry;
 		// width: 148px;
 		// height: 52px;
-		padding: 1.6rem 3.8rem;
+		padding: 1.6rem 2.5rem;
 		text-transform: none;
 		color: $white;
 		display: flex;
@@ -261,8 +261,11 @@ form > button {
 		}
 	}
 }
-
+.header-search-container .custom-search__submit {
+	display: none!important;
+}
 .custom-search__submit{
+	
 	background: transparent;
 	margin: 0;
 	padding: 0;
@@ -418,30 +421,20 @@ form > button {
 	width: 85%;
   }
 
-  .slider-wrapper .slide-button#prev-slide {	
-	display: none;
-  }
+
   .slider-wrapper {
-	position: relative;
-		// border: 3px solid blue;
-		overflow: visible;
+
 	  .image-list {
-		scroll-snap-type: x mandatory;
-		// border: 3px solid yellow;
+		
+		padding-left: 0;
 		display: flex;
-		display: grid;
-		grid-template-columns: repeat(10, 1fr);
+		flex-wrap: wrap;
+		justify-content: space-between;
 		max-width: 120rem;
-		width: 90rem;
 		width: 100%;
 		font-size: 0;
 		list-style: none;
-		overflow-x: auto;
-		overflow-y: visible;
-		scrollbar-width: none;
-		padding-left: 0;
-		@include media(lg){
-		}
+		
 	  }
   }
 
@@ -449,9 +442,20 @@ form > button {
 	display: none;
   }
   .slider-wrapper .image-list .single-slide {
-
 	width: 100%;
-	height: auto;
-	object-fit: cover;
-	// border: 3px solid springgreen;
+	max-width: 28.8rem;
+	margin: 0 auto;
+	@include media(sm){
+		width: 49%
+	}
+	@include media(md){
+		width: 32%
+		
+	}
+	.update-card {
+		width: 100%;
+	margin: 0;
+	}
+
+
   }

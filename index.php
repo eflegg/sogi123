@@ -18,7 +18,7 @@ $heroContent = get_field('hero_content');
 
 
 
-    <div class="updates--inner">
+    <div class="updates--inner custom-container">
 
  
         <ul class="card-container">

@@ -30,7 +30,7 @@ $heroContent = get_field('hero_content');
 			<h2 ><?php the_field('where_we_support_title');?></h2>
 			<p class="white"><?php the_field('where_we_support_intro');?></p>
 		</div>
-		<ul class="subpages--list">
+		<ul class="subpages--list custom-container">
 			<?php
 			global $post;
 			$args = array(
@@ -81,17 +81,17 @@ $heroContent = get_field('hero_content');
 				</aside>
 				<div class="flexible-content">
 
-				<?php echo the_content(); ?>
+					<?php echo the_content(); ?>
 
 
-<?php include 'components/flexible-content/flexible-content.php'; ?>
+					<?php include 'components/flexible-content/flexible-content.php'; ?>
 
 
 
 			
 
-						</div>
-						</section>
+					</div>
+			</section>
 	
 	<?php endif;
 	?>

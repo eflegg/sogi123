@@ -1,4 +1,6 @@
 .container-with-sidebar {
+	max-width: 140rem;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	.flexible-content {
@@ -96,7 +98,8 @@ z-index: 10;
     padding-left: 2.2rem;
     h3{
       color:#3674D9;
-      ;
+      font-size: 2.4rem;
+	  margin-bottom: 1rem;
     }
     ul {
       padding-left: 0;
@@ -107,5 +110,6 @@ z-index: 10;
          color:#3674D9;
       }
     }
-    border-left: 1px solid #3674D9;
+    border-left: 2px solid #3674D9;
+	
 }

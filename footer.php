@@ -25,16 +25,20 @@ $bgImage = get_field('footer_image', 'options');
 
 				<div class="footer-nav--section">
 					<div class="inner">
-					<div class="support-our-work">
-					<h4 class="fade-me">Support Our Work</h4>
-					<p><?php echo the_field('support_our_work_text', 'options');?></p>
-					<a class="button btn--skinny fade-me" href='<?php echo home_url('/donate'); ?>'>Donate</a>
-				</div>
+						<div class="support-our-work ">
+							<div class="fade-me">
+
+						
+						<h4 class="">Support Our Work</h4>
+						<p><?php echo the_field('support_our_work_text', 'options');?></p>
+						<a class="button btn--skinny" href='<?php echo home_url('/donate'); ?>'>Donate</a>
+						</div>
+						</div>
 
 						<div class="logo"><?php include 'components/svg/logo-colour.php';?></div>
 						<div class="footer-nav--container display-flex">
 							<div class="footer-nav">
-								<nav class="footer-nav fade-me"
+								<nav class="footer-nav"
 							
 								aria-label="Footer Menu">
 								<?php
@@ -46,7 +50,7 @@ $bgImage = get_field('footer_image', 'options');
 								</nav >
 							</div>
 						<div class="socials">
-							<div class="social fade-me">
+							<div class="social">
 								<?php $facebookLink = get_field('facebook_link', 'options');
 								if($facebookLink):?>
 								<a href="<?php echo $facebookLink;?>">
@@ -56,7 +60,7 @@ $bgImage = get_field('footer_image', 'options');
 								</a>
 								<?php endif;?>
 							</div>
-							<div class="social fade-me">
+							<div class="social">
 							<?php $instaLink = get_field('instagram_link', 'options');
 								if($instaLink):?>
 							<a href="<?php echo $instaLink;?>">
@@ -68,7 +72,7 @@ $bgImage = get_field('footer_image', 'options');
 								</a>
 								<?php endif;?>
 							</div>
-							<div class="social fade-me">
+							<div class="social">
 							<?php $youtubeLink = get_field('youtube_link', 'options');
 								if($youtubeLink):?>
 							<a href="<?php echo $youtubeLink;?>">

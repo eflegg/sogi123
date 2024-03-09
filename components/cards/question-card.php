@@ -3,10 +3,10 @@
 <?php $question = $the_question['question'];?>
 <?php $answer = $the_question['answer'];?>
 
-<li tabIndex="0" class="card card-color">
+<li tabIndex="0" class="card question-card card-color">
     <div  class="question--text">
         <span class="the-question">
-            <?php echo $question ?>
+            "<?php echo $question ?>"
         </span>
         
        <span class="the-answer">
@@ -14,7 +14,7 @@
        </span>
       
     
-        <?php
+        <!-- <?php
         $category_out=array();
         $categories = get_the_category();?>
         <?php
@@ -29,7 +29,7 @@
             ?>
             <ul class="card--categories">
                 <?php echo $category_out;?>
-            </ul>
+            </ul> -->
 
             <a tabIndex="0" class="continue-reading" href="<?php the_permalink(); ?>">Continue reading &#10142;</a>
 
