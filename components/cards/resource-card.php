@@ -6,10 +6,21 @@
         <h4 class="resource-title">
         <?php the_title(); ?>
 </h4>
-        <p class=""><?php echo the_excerpt();?></p>
+      <?php the_excerpt();?>
       
     
-    <!-- <?php
+ 
+<div class="continue-reading">
+            <a href="<?php the_permalink(); ?>">Continue reading &#10142;</a>
+</div>
+
+
+    </div>
+        
+</li>
+
+
+   <!-- <?php
     $category_out=array();
     $categories = get_the_category();?>
 <?php
@@ -25,11 +36,3 @@
 <ul class="card--categories">
     <?php echo $category_out;?>
 </ul> -->
-<span class="continue-reading">
-            <a href="<?php the_permalink(); ?>">Continue reading &#10142;</a>
-        </span>
-
-
-    </div>
-        
-</li>

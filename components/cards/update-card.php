@@ -9,8 +9,8 @@
         <h4 class="post-title">
             <?php the_title(); ?>
         </h4>
+        <?php the_excerpt(); ?>
         <div class="content">
-           <?php the_excerpt(); ?>
            <a class="learn-button" href="<?php the_permalink(); ?>">Learn More</a>
         </div>
        

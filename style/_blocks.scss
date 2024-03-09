@@ -269,11 +269,15 @@ body {
 	display: flex;
 
 	.resource--text {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
 		p {
 			color: $white;
 		}
 	}
 	.continue-reading {
+		margin-top: auto;
 		display: block;
 		a {
 
@@ -436,6 +440,10 @@ height: 100%;
 	z-index: 10;
 	transition: left .4s cubic-bezier(.47,.13,.15,.89);
 	.inner {
+	
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
 		padding: 3.6rem;
 		z-index: 10;
 		position: relative;
@@ -453,13 +461,16 @@ height: 100%;
 			margin-top: 0;
 		}
 		.content {
-			margin-bottom: 1.8rem;
+			// margin-bottom: 1.8rem;
+			margin-top: auto;
+		
 			a, p {
 				font-size: 1.4rem;
 				line-height: 115%;
 			}
 		}
 		.learn-button {
+		
 			margin-left: 0;
 			font-weight: 800;
 			text-transform: uppercase;

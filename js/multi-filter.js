@@ -8,7 +8,7 @@ console.log('multi filter form: ', ajaxFilterMulti );
 
 ajaxFilterMulti.addEventListener( 'change', event => {
 	console.log('fired');
-	// event.preventDefault();
+	event.preventDefault();
 
 
 
