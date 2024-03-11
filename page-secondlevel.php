@@ -25,12 +25,15 @@ $heroContent = get_field('hero_content');
   <?php
 	$pageTitle = get_the_title();
 	if($pageTitle === 'Where We Support'):?>
-	<section style="background-color: #3D52B9;" class="section-container province-list">
+	<section style="background-color: #3D52B9;" class="section-container province-list ">
+	<div class="custom-container">
+
+	
 		<div class="intro fade-me">
 			<h2 ><?php the_field('where_we_support_title');?></h2>
 			<p class="white"><?php the_field('where_we_support_intro');?></p>
 		</div>
-		<ul class="subpages--list custom-container">
+		<ul class="subpages--list ">
 			<?php
 			global $post;
 			$args = array(
@@ -56,6 +59,7 @@ $heroContent = get_field('hero_content');
 				<!-- </div> -->
 			<?php endif; ?>
 			</ul>
+			</div>
 		</section>
 
 		

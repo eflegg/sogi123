@@ -464,6 +464,12 @@ header {
 		display: none;
 	}
 }
+.js-hamburger-menu {
+	display: block;
+	@include media(lg) {
+		display: none;
+	}
+}
 	// .menu-toggle {
 	// 	.burger-1 {
 	// 		background-color: blue;

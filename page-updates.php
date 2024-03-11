@@ -14,7 +14,11 @@ $heroContent = get_field('hero_content');
 ?>
 <?php include 'components/hero.php'; ?>
 
-<section class="updates-page section-container">
+<div style="background-color: #6F46C3;">
+<section class="updates-page section-container custom-container">
+	
+
+	
     <?php 
             $dataType = "post"; 
             $category = "Updates";
@@ -52,8 +56,9 @@ $heroContent = get_field('hero_content');
 						 			    
 			</ul>
             </div>
-
-            </section>
+	
+</section>
+</div>
 			
 
 			</main>

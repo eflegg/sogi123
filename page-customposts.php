@@ -23,7 +23,7 @@ $heroContent = get_field('hero_content');
 	$pageTitle = get_the_title();
 	if($pageTitle === 'Questions Answered'):?>
 
-	<section style="background-color: #FFFCE3; position: relative;" class="has-filter-container section-container">
+	<section style="background-color: #FFFCE3; position: relative;" class="has-filter-container section-container custom-container">
 
 		
 		<!-- list of questions -->
@@ -41,7 +41,7 @@ $heroContent = get_field('hero_content');
                 <?php else:?>
 
 	<!-- list of resources -->
-	<section style="background-color: #FFFCE3; position: relative;" class="has-filter-container section-container">
+	<section style="background-color: #FFFCE3; position: relative;" class="has-filter-container section-container custom-container">
 
 	
 		<?php 

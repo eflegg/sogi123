@@ -425,12 +425,12 @@ form > button {
   .slider-wrapper {
 
 	  .image-list {
-		
+		margin: 0 auto;
 		padding-left: 0;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		max-width: 120rem;
+		max-width: 90rem;
 		width: 100%;
 		font-size: 0;
 		list-style: none;

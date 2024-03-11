@@ -18,6 +18,9 @@ $heroContent = get_field('hero_content');
 <?php include 'components/hero.php'; ?>
 
 <section class="top-level-section section-container">
+    <div class="custom-container">
+
+   
 <article class="top-level__shape position-absolute">
 <div class="triangle">
     <div class="top"></div>
@@ -70,6 +73,7 @@ $heroContent = get_field('hero_content');
             </div>
         <?php endif; ?>
     </ul>
+    </div>
     </div>
     </div>
 </section>
