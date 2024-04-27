@@ -1,6 +1,6 @@
-
-
 <?php
+$searchTermHeader = get_search_query();
+
 $darken = get_field('add_darkening_overlay');
 if($darken =='Yes'):
 	$opacity = get_field('opacity_value');
@@ -15,7 +15,7 @@ endif;
  		
 				<div class="content">
 					<div class="text">
-						<h1 class="fade-me"><?php echo $heroHeadline; ?><?php if(!$searchTermHeader): null; else: echo $searchTermHeader; endif;?></h1>
+						<h1 class="fade-me"><?php echo $heroHeadline; ?><?php echo $searchTermHeader ? $searchTermHeader : null; ?></h1>
 						<p class="white fade-me">
 						<?php echo $heroContent; ?>
 					</p>

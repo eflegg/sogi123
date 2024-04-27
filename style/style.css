@@ -4053,17 +4053,6 @@ form > button:hover {
   margin: 0;
 }
 
-button.header-search svg {
-  width: 60px;
-  height: 60px;
-}
-@media screen and (min-width: 1200px) {
-  button.header-search svg {
-    width: 88px;
-    height: 88px;
-  }
-}
-
 .fade-me {
   opacity: 0;
   -moz-transform: translateX(0) translateY(30px);
@@ -4587,32 +4576,32 @@ header .home-logo {
 }
 header .home-logo svg path:nth-child(5) {
   fill: white;
-  transition: all 0.15s cubic-bezier(0.34, 0.01, 0.45, 1.02);
-  transition-delay: 0.3s;
+  transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+  transition-delay: 0;
 }
 header .home-logo svg path:nth-child(6) {
   fill: white;
-  transition: all 0.15s cubic-bezier(0.34, 0.01, 0.45, 1.02);
-  transition-delay: 0.15s;
+  transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+  transition-delay: 0;
 }
 header .home-logo svg path:nth-child(7) {
   fill: white;
-  transition: all 0.15s cubic-bezier(0.34, 0.01, 0.45, 1.02);
-  transition-delay: 0ms;
+  transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+  transition-delay: 0;
 }
 header .home-logo:hover svg path:nth-child(5) {
   fill: #FF9900;
-  transition: all 0.15s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+  transition: all 0.5s ease-in;
   transition-delay: 0ms;
 }
 header .home-logo:hover svg path:nth-child(6) {
   fill: #E1125C;
-  transition: all 0.15s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+  transition: all 0.15s ease-in;
   transition-delay: 0.15s;
 }
 header .home-logo:hover svg path:nth-child(7) {
   fill: #A428A3;
-  transition: all 0.15s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+  transition: all 0.15s ease-in;
   transition-delay: 0.3s;
 }
 header nav {
@@ -4701,7 +4690,7 @@ header nav[aria-hidden=false] .menu-item:nth-child(9) {
     opacity: initial;
     background-color: initial;
     transition: none;
-    width: 50%;
+    width: initial;
     overflow: initial;
     visibility: visible;
     display: block;
@@ -4749,14 +4738,10 @@ header nav ul.main li a {
   color: #fff;
   font-weight: 700;
   margin-bottom: 10px;
-  width: auto;
 }
 header nav .main > li:hover > a:after {
   transition: all 0.2s ease-in-out;
   width: 100%;
-}
-header nav .main > li > a {
-  position: relative;
 }
 header nav .main > li > a:after {
   transition: all 0.2s ease-in-out;
@@ -4775,9 +4760,6 @@ header nav .main > li > a:after {
 }
 header nav .top-level-subnav li {
   margin: 1rem 0.5rem;
-}
-header nav .top-level-subnav li a {
-  position: relative;
 }
 header nav .top-level-subnav li a:after {
   transition: all 0.2s ease-in-out;
@@ -4950,8 +4932,8 @@ header .second-level-subnav li a {
   width: 5rem;
   height: 5rem;
   z-index: 50;
-  right: 20px;
-  top: 15px;
+  right: 0;
+  top: -1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -4965,8 +4947,8 @@ header .second-level-subnav li a {
   position: relative;
   border: 3px solid #fff;
   display: block;
-  width: 5rem;
-  height: 0.4rem;
+  width: 4rem;
+  height: 0.6rem;
   border-radius: 0.5rem;
   margin-bottom: 0.6rem;
   margin-top: 0.6rem;
@@ -5003,12 +4985,6 @@ header .second-level-subnav li a {
   transform: rotate(0deg);
   transition: all 0.2s ease-in-out;
 }
-@media screen and (min-width: 600px) {
-  .btn-nav {
-    right: 20px;
-    top: 15px;
-  }
-}
 @media screen and (min-width: 1000px) {
   .btn-nav {
     display: none;
@@ -5028,11 +5004,6 @@ header .second-level-subnav li a {
   position: relative;
   display: flex;
   align-items: center;
-}
-
-.header-buttons .button {
-  margin-left: 35px;
-  margin-right: 10px;
 }
 
 .home-video {

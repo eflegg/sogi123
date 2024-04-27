@@ -459,3 +459,16 @@ form > button {
 
 
   }
+
+button.header-search {
+		svg {
+			width: 60px;
+			height: 60px
+		}
+	@include media(xl) {
+		svg {
+			width: 88px;
+			height: 88px
+		}		
+	}
+}

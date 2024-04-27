@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
- 
-
-
 setTimeout(function(){
     $('.home-video').addClass('fading');
 }, 3300);
@@ -27,11 +24,6 @@ $('nav .cta').click(function() {
     });
     return false;
 });
-
-
-
-
-
 
   //better carousel
 
@@ -98,11 +90,6 @@ document.addEventListener("keydown", (event) => {
     headerSearchBar.classList.remove("search-visible");
 	}
 });
-
-
-
-
-
 
 
 //add classes to subnav for easier styling

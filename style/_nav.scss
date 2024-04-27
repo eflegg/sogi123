@@ -62,17 +62,17 @@ header {
 			path {
 				&:nth-child(5){
 					fill: white;
-					transition: all .15s ease-in;
+					transition: all .15s cubic-bezier(0.34, 0.01, 0.45, 1.02);;
 					transition-delay: .3s;	
 				}
 				&:nth-child(6){
 					fill: white;
-					transition: all .15s ease-in;
+					transition: all .15s cubic-bezier(0.34, 0.01, 0.45, 1.02);;
 					transition-delay: .15s;
 				}
 				&:nth-child(7){
 					fill: white;
-					transition: all .15s ease-in;
+					transition: all .15s cubic-bezier(0.34, 0.01, 0.45, 1.02);;
 					transition-delay: 0ms;
 				}
 			}
@@ -83,17 +83,17 @@ header {
 				path {
 					&:nth-child(5){
 						fill: #FF9900;
-						transition: all .5s ease-in;
+						transition: all .15s cubic-bezier(0.34, 0.01, 0.45, 1.02);
 						transition-delay: 0ms;
 					}
 					&:nth-child(6){
 						fill: #E1125C;
-						transition: all .15s ease-in;
+						transition: all .15s cubic-bezier(0.34, 0.01, 0.45, 1.02);
 						transition-delay: .15s;
 					}
 					&:nth-child(7){
 						fill: #A428A3;
-						transition: all .15s ease-in;
+						transition: all .15s cubic-bezier(0.34, 0.01, 0.45, 1.02);
 						transition-delay: .3s;
 					}
 				}
@@ -105,7 +105,7 @@ header {
 	
 		
 	nav {
-		
+
 			// overflow: scroll;
 	
 			&[aria-hidden="true"]{
@@ -156,7 +156,7 @@ header {
 					opacity: initial;
 					background-color: initial;
 					transition: none;
-					width: initial;
+					width: 50%;
 					overflow: initial;
 					visibility: visible;
 					display: block;
@@ -203,6 +203,7 @@ header {
 						color: $white;
 						font-weight: 700;
 						margin-bottom:10px;
+						width: auto;
 					}
 				
 				}
@@ -214,6 +215,7 @@ header {
 				}
 			}
 			.main>li>a {
+				position: relative;
 				
 					&:after {
 						transition: all 0.2s ease-in-out;
@@ -235,6 +237,8 @@ header {
 					margin: 1rem 0.5rem;
 					
 					a {
+						position: relative;
+
 						&:after {
 							transition: all 0.2s ease-in-out;
 							position: absolute;
@@ -402,8 +406,8 @@ header {
 	width: 5rem;
 	height: 5rem;
 	z-index: 50;
-	right: 0;
-	top: -1rem;
+	right: 20px;
+	top: 15px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -416,8 +420,8 @@ header {
 		position: relative;
 		border: 3px solid $white;
 		display: block;
-		width: 4rem;
-		height: 0.6rem;
+		width: 5rem;
+		height: 0.4rem;
 		border-radius: .5rem;
 		margin-bottom: .6rem;
 		margin-top: 0.6rem;
@@ -460,6 +464,12 @@ header {
 			transition: all 0.2s ease-in-out;
 		}
 	}
+
+	@include media(sm) {
+		right: 20px;
+		top: 15px;
+	}
+	
 	@include media(lg) {
 		display: none;
 	}
@@ -505,6 +515,11 @@ header {
 	position: relative;
 	display: flex;
 	align-items: center;
+}
+
+.header-buttons .button {
+	margin-left: 35px;
+	margin-right: 10px;
 }
 
 
