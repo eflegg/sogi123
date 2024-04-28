@@ -28,5 +28,12 @@
 		</div>	
 	</div>
 	</div>
-
+	<div class="header-buttons header-buttons-small-screens">
+		<!-- language switcher -->
+		<div class="lang-switcher display-flex align-items-center">
+			<?php include(get_template_directory() . "/components/svg/globe-logo.php");?>
+			<?php pll_the_languages( array( 'dropdown' => 1 ) ); ?>
+		</div>
+		<a href='<?php echo home_url('/donate'); ?>' class="btn--fat button  text-center"><span>Donate</span></a>
+	</div>
 </nav><!-- #site-navigation -->

@@ -4,7 +4,7 @@ Theme URI: http://www.harccreative.com
 Author: Parker McLean
 Author URI: http://www.harccreative.com
 Description: Description
-Version: 1.0
+Version: 1.1
 License: GNU General Public License
 License URI: license.txt
 Text Domain: Parker McLean
@@ -4671,9 +4671,41 @@ header .home-logo:hover svg path:nth-child(7) {
   opacity: 0.8;
 }
 
+.header-buttons-small-screens {
+  display: none;
+}
+
 @media (max-width: 1099px) {
   .header-buttons {
-    justify-content: center;
+    justify-content: flex-end;
+  }
+  .header-buttons-small-screens {
+    display: flex;
+    position: absolute;
+    right: 80px;
+    top: 6px;
+  }
+  .header-buttons-small-screens .btn--fat {
+    margin-left: 10px;
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 640px) {
+  .header-buttons-small-screens {
+    right: 80px;
+  }
+  .header-buttons-small-screens .btn--fat {
+    margin-left: 10px;
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 540px) {
+  .header-buttons-small-screens {
+    right: 80px;
+    top: 38px;
+  }
+  .header-buttons-small-screens .btn--fat {
+    display: none;
   }
 }
 /*Navigation*/
