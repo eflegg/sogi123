@@ -205,7 +205,7 @@ body {
 		color: $raspberry;
 		font-size: 1.6rem;
 		padding: 1.5rem 0 2rem 0;
-		margin-left: 1.5rem;
+		margin-left: 0;
 		position: relative;
 		top: 1.5rem;
 		@include media(lg){
@@ -442,20 +442,24 @@ ul.card--categories {
 }
 .update-card-container {
 	align-items: stretch;
-	min-width: 21.5rem;
+	width: 100%;
 
-
+	@include media (md) {
+		width: 33.333%
+	}
+	// min-width: 21.5rem;
 }
+
 .update-card {
 	cursor: pointer;
 	position: relative;
 	list-style: none;
 	width: 95%;
-	width: 28.8rem;
+	// width: 28.8rem;
 	align-self: stretch;  
 	margin: 0 auto;
 	margin: 0.5rem;
-height: 100%;
+	height: 100%;
 	z-index: 10;
 	transition: left .4s cubic-bezier(.47,.13,.15,.89);
 	.inner {
@@ -469,7 +473,7 @@ height: 100%;
 		width: 100%;
 		background-color: $manila;
 		border-radius: 2.1rem 0 2.1rem 2.1rem;
-	height: 85%;
+		height: 85%;
 		h4{
 			margin-bottom: 1rem;
 		}

@@ -1,8 +1,3 @@
-
-
-
-
-
 <?php
 $parent = get_the_title( $post->post_parent ); ?>
 <?php if($parent === "Where We Support"):?>

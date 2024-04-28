@@ -7,10 +7,10 @@ get_header(); ?>
 
 <main id="main" class="site-main" role="main">
 <?php 
-$bgImage = get_field('hero_image');
-$defaultImage = 'https://picsum.photos/seed/picsum/1000';
-$heroHeadline = get_field('hero_headline');
-$heroContent = get_field('hero_content');
+// $bgImage = get_field('hero_image');
+// $defaultImage = 'https://picsum.photos/seed/picsum/1000';
+// $heroHeadline = get_field('hero_headline');
+// $heroContent = get_field('hero_content');
 ?>
 <?php include 'components/hero.php'; ?>
 

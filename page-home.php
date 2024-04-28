@@ -9,29 +9,17 @@ get_header(); ?>
 
 <main id="main" class="site-main" role="main">
 <?php 
-$bgImage = get_field('hero_image');
-$defaultImage = 'https://picsum.photos/seed/picsum/1000';
-$heroHeadline = get_field('hero_headline');
-$heroContent = get_field('hero_content');
+
 ?>
 <?php include 'components/hero.php'; ?>
 
-
-
 <section class="at-a-glance section-container ">
-
-   
     <div class="custom-container">
-
     <div class="search-circle">
         <div class="search-inner">
             <?php get_search_form(); ?>
         </div>
     </div>
-
-
-
-    
 
     <h2 class="h3 fade-me">SOGI 123 <br>At a Glance</h2>
     <div class="inner">

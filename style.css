@@ -5271,7 +5271,7 @@ body {
   color: #E1125C;
   font-size: 1.6rem;
   padding: 1.5rem 0 2rem 0;
-  margin-left: 1.5rem;
+  margin-left: 0;
   position: relative;
   top: 1.5rem;
 }
@@ -5483,7 +5483,12 @@ ul.card--categories {
 
 .update-card-container {
   align-items: stretch;
-  min-width: 21.5rem;
+  width: 100%;
+}
+@media screen and (min-width: 800px) {
+  .update-card-container {
+    width: 33.333%;
+  }
 }
 
 .update-card {
@@ -5491,7 +5496,6 @@ ul.card--categories {
   position: relative;
   list-style: none;
   width: 95%;
-  width: 28.8rem;
   align-self: stretch;
   margin: 0 auto;
   margin: 0.5rem;

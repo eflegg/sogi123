@@ -19,9 +19,6 @@ $heroContent = get_field('hero_content');
 $searchTermHeader = get_search_query();
 ?>
 
-
-
-
 <?php include 'components/hero.php'; ?>
 
 	<section id="primary" class="section-container search-results default-type">
