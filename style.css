@@ -180,8 +180,16 @@ a {
 }
 
 a:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
+  outline: thin dotted white;
+  outline-offset: -2px;
+}
+
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus-visible {
+  outline: thin dotted white;
   outline-offset: -2px;
 }
 
@@ -3463,6 +3471,15 @@ h5, .h5 {
   line-height: 150%;
 }
 
+.default-type blockquote,
+.default-type blockquote p {
+  color: #E1125C;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 150%;
+  margin: 22px 0;
+}
+
 .content .text h1, .content .text h2, .content .text h3, .content .text h4, .content .text h5, .content .text .h1, .content .text .h2, .content .text .h3, .content .text .h4, .content .text .h5 {
   margin-top: 1rem;
 }
@@ -3753,7 +3770,7 @@ button.btn--skinny, .button.btn--skinny {
 button.clear-filters, .button.clear-filters {
   margin: 0px;
   position: absolute;
-  top: -8rem;
+  bottom: 0;
   left: 0;
 }
 button.btn--category, .button.btn--category {
@@ -3777,7 +3794,7 @@ button.lg a, .button.lg a {
 }
 button:hover, .button:hover {
   transition: all 0.15s ease-in-out;
-  background-color: #333333;
+  background-color: transparent;
   border: 2px solid #fff;
 }
 button:hover a, .button:hover a {
@@ -3789,8 +3806,10 @@ form > button:hover {
 }
 
 .search-circle {
-  height: 30rem;
+  height: auto;
   width: 30rem;
+  max-width: 100%;
+  aspect-ratio: 1;
   border-radius: 100%;
   position: relative;
   background-color: #FFC700;
@@ -4023,7 +4042,7 @@ form > button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 90rem;
+  max-width: 100%;
   width: 100%;
   font-size: 0;
   list-style: none;
@@ -4035,7 +4054,6 @@ form > button:hover {
 
 .slider-wrapper .image-list .single-slide {
   width: 100%;
-  max-width: 28.8rem;
   margin: 0 auto;
 }
 @media screen and (min-width: 600px) {
@@ -4099,7 +4117,14 @@ form input, form textarea {
 }
 form input:focus, form textarea:focus {
   background-color: transparent !important;
-  border: 1px solid #FFC700 !important;
+  outline: thin dotted;
+}
+form input:focus:not(:focus-visible), form textarea:focus:not(:focus-visible) {
+  outline: none;
+}
+form input:focus-visible, form textarea:focus-visible {
+  outline: thin dotted;
+  color: var(--color-text-link-hover);
 }
 form button, form .ff-btn, form .ff-btn-submit {
   background-color: #FFC700;
@@ -4159,7 +4184,7 @@ form ::placeholder {
 }
 
 .new-search {
-  margin: 5rem 0 0;
+  margin: 0;
 }
 .new-search h4 {
   color: #333333;
@@ -4205,7 +4230,7 @@ footer .our-impact {
   position: relative;
   z-index: 10;
   width: 100%;
-  padding: 11rem 0;
+  padding: 11rem 9%;
 }
 @media screen and (min-width: 1000px) {
   footer .our-impact {
@@ -4214,25 +4239,26 @@ footer .our-impact {
 }
 @media screen and (min-width: 1200px) {
   footer .our-impact {
-    padding: 16rem 0;
+    padding: 16rem 9%;
   }
 }
 footer .our-impact .text {
   z-index: 30;
   color: #fff;
   position: relative;
-  right: 8%;
-  margin-left: auto;
+  margin-left: 0;
+  margin-right: 0;
   width: 80%;
 }
 @media screen and (min-width: 800px) {
   footer .our-impact .text {
     width: 65%;
+    margin-left: auto;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
   footer .our-impact .text {
-    width: 50%;
+    width: 54%;
   }
 }
 footer .our-impact .text .eyebrow {
@@ -4398,6 +4424,7 @@ footer .main-footer .footer-nav--section .socials .social:hover svg path {
 }
 
 .footer-nav a {
+  position: relative;
   color: #333333 !important;
 }
 .footer-nav a:hover:after {
@@ -4425,7 +4452,8 @@ footer .main-footer .footer-nav--section .socials .social:hover svg path {
 }
 .footer-nav .footer > li {
   margin-right: 2rem;
-  min-width: 150px;
+  min-width: 200px;
+  max-width: 100%;
   margin-bottom: 2rem;
 }
 @media screen and (min-width: 800px) {
@@ -4490,7 +4518,7 @@ footer .main-footer .footer-nav--section .socials .social:hover svg path {
 
 .section-container {
   position: relative;
-  padding: 3.25rem 1rem;
+  padding: 3.25rem 30px;
 }
 @media screen and (min-width: 600px) {
   .section-container {
@@ -4513,6 +4541,15 @@ footer .main-footer .footer-nav--section .socials .social:hover svg path {
 @media screen and (min-width: 1000px) {
   .section-container.has-filter-container {
     padding: 12.5rem 8.25rem;
+  }
+}
+
+.page-template-page-customposts .section-container.has-filter-container.resources-page {
+  padding-top: 4px;
+}
+@media screen and (min-width: 1000px) {
+  .page-template-page-customposts .section-container.has-filter-container.resources-page {
+    padding: 4rem 8.25rem;
   }
 }
 
@@ -4554,7 +4591,7 @@ header {
 }
 @media screen and (min-width: 1200px) {
   header {
-    padding: 1rem 5rem 0 5rem;
+    padding: 0 5rem 0 5rem;
   }
 }
 @media (max-width: 1099px) {
@@ -4628,6 +4665,10 @@ header .home-logo:hover svg path:nth-child(7) {
 .header-buttons .button {
   margin-left: 35px;
   margin-right: 10px;
+}
+
+.header-buttons .header-search:hover {
+  opacity: 0.8;
 }
 
 @media (max-width: 1099px) {
@@ -4725,15 +4766,15 @@ nav ul {
   background-size: 100% 2px;
 }
 
-.menu-item-has-children > a {
+.main-navigation .menu-item-has-children > a {
   margin-bottom: 24px;
 }
-.menu-item-has-children > a::after {
+.main-navigation .menu-item-has-children > a::after {
   content: url("images/svg/nav-down-arrow.svg");
   padding-left: 10px;
 }
 
-.menu-item-has-children ul .menu-item-has-children > a::after {
+.main-navigation .menu-item-has-children ul .menu-item-has-children > a::after {
   display: none;
 }
 
@@ -5028,9 +5069,18 @@ body {
   }
 }
 .hero .content {
-  max-width: 600px;
+  max-width: 640px;
   position: relative;
   z-index: 10;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 150%;
+}
+.hero .content p {
+  max-width: 400px;
+}
+.hero .content h1 {
+  max-width: 640px;
 }
 .hero .btn--skinny {
   margin-left: 0;
@@ -5044,7 +5094,7 @@ body {
 }
 @media screen and (min-width: 1000px) {
   .top-level-section {
-    padding: 20rem 13.2rem 9rem;
+    padding: 10rem 13.2rem 9rem;
   }
 }
 .top-level-section .inner {
@@ -5059,13 +5109,15 @@ body {
 }
 @media screen and (min-width: 1000px) {
   .top-level-section .inner .left {
+    margin: 0;
     margin-bottom: 0;
-    width: 50%;
+    width: 33.333%;
+    padding-right: 40px;
   }
 }
 @media screen and (min-width: 1000px) {
   .top-level-section .inner .right {
-    width: 50%;
+    width: 55%;
   }
 }
 .top-level-section .inner .image--top-level {
@@ -5102,7 +5154,7 @@ body {
 @media screen and (min-width: 1000px) {
   .top-level-section .inner {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: flex-start;
   }
 }
@@ -5185,6 +5237,10 @@ body {
 .questions-getting {
   background-color: #FFFCE3;
 }
+.questions-getting.section-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 .questions-getting .view-all {
   color: #E1125C;
   font-size: 1.6rem;
@@ -5223,6 +5279,12 @@ body {
 @media screen and (min-width: 1000px) {
   .questions-getting .right {
     width: 75%;
+    padding-left: 40px;
+  }
+}
+@media screen and (min-width: 800px) {
+  .questions-getting .right {
+    width: 100%;
   }
 }
 .questions-getting .inner {
@@ -5238,14 +5300,24 @@ body {
 }
 
 .resource-card {
-  padding: 3.6rem;
+  padding: 3.6rem 3.6rem 4.6rem;
   cursor: pointer;
   border-radius: 4rem;
-  margin: 0.5rem;
   position: relative;
-  width: 28.8rem;
+  width: 100%;
+  margin-bottom: 30px;
   align-self: stretch;
   display: flex;
+}
+@media screen and (min-width: 800px) {
+  .resource-card {
+    width: calc(50% - 15px);
+  }
+}
+@media screen and (min-width: 1000px) {
+  .resource-card {
+    width: calc(33.333% - 15px);
+  }
 }
 .resource-card .resource--text {
   display: flex;
@@ -5256,10 +5328,10 @@ body {
   color: #fff;
 }
 .resource-card .continue-reading {
-  margin-top: auto;
+  margin-top: 20px;
 }
 .resource-card .continue-reading:hover > a:after {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
   width: 100%;
 }
 .resource-card .continue-reading a {
@@ -5268,13 +5340,14 @@ body {
   color: white;
 }
 .resource-card .continue-reading a:after {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
   position: absolute;
   content: "";
   height: 2px;
   width: 0%;
   background-color: white;
   left: 0;
+  top: -4px;
   transform: translateY(3rem);
 }
 
@@ -5287,21 +5360,42 @@ ul.card--categories {
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: stretch;
   padding-left: 0rem;
+  margin-top: 40px;
+}
+.card-container::after {
+  content: "";
+  width: 33.333%;
+  height: 0;
 }
 
-.question-card {
-  height: 30rem;
-  width: 30rem;
+.card.question-card {
+  height: auto;
+  width: 100%;
+  aspect-ratio: 1;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 600px) {
+  .card.question-card {
+    width: calc(50% - 15px);
+    aspect-ratio: 1;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .card.question-card {
+    width: calc(33.333% - 15px);
+    aspect-ratio: 1;
+  }
 }
 
 .card {
   cursor: pointer;
-  margin: 0.5rem;
+  transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
   position: relative;
-  width: 28.8rem;
+  width: calc(33.333% - 15px);
+  height: auto;
   align-self: start; /* desired width */
   background-color: #EB6D00;
   border-radius: 100%;
@@ -5310,24 +5404,35 @@ ul.card--categories {
   align-items: center;
   justify-content: center;
   color: #fff;
-  transition: all 0.15s ease-in-out;
 }
 .card.square {
   border-radius: 4rem;
 }
 .card .question--text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  padding: 20px;
   text-align: center;
-  width: 80%;
-  font-size: 2.4rem;
-  line-height: 2.88rem;
+  width: 100%;
+  font-size: 18px;
+  line-height: 120%;
   font-weight: 700;
+  display: block;
+  transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+@media screen and (min-width: 1200px) {
+  .card .question--text {
+    font-size: 24px;
+    line-height: 2.88rem;
+    font-weight: 700;
+  }
 }
 .card .question--text p {
   color: #fff;
+}
+.card .the-question {
+  width: 100%;
 }
 .card .the-answer {
   display: none;
@@ -5336,13 +5441,18 @@ ul.card--categories {
   transition: all 0.15s ease-in-out;
   font-size: 2.4rem;
   line-height: 2.88rem;
+  transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
 }
 .card .continue-reading {
-  display: none;
   visibility: hidden;
   opacity: 0;
   font-size: 1.2rem;
   height: 4.15rem;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
 }
 .card:hover, .card:focus-within {
   background-color: #333333;
@@ -5356,6 +5466,7 @@ ul.card--categories {
   font-weight: 700;
   display: none;
   visibility: hidden;
+  width: 100%;
 }
 .card:hover .the-answer, .card:focus-within .the-answer {
   display: block;
@@ -5434,7 +5545,11 @@ ul.card--categories {
   height: 85%;
 }
 .update-card .inner h4 {
-  margin-bottom: 1rem;
+  margin-bottom: 18px;
+  margin-top: 20px;
+}
+.update-card .inner P {
+  margin-top: 0;
 }
 .update-card .inner .post-date {
   text-transform: uppercase;
@@ -5470,6 +5585,7 @@ ul.card--categories {
   height: auto;
   background-color: #6F46C3;
   width: 100%;
+  padding: 8rem 3rem 9.5rem;
 }
 @media screen and (min-width: 1000px) {
   .updates-section {
@@ -5481,6 +5597,8 @@ ul.card--categories {
   display: flex;
   overflow-x: scroll;
   margin-bottom: 3rem;
+  padding-bottom: 66px;
+  position: relative;
 }
 @media screen and (min-width: 800px) {
   .ajax-filter-multi {
@@ -5488,9 +5606,10 @@ ul.card--categories {
   }
 }
 .ajax-filter-multi .cat-select {
-  width: 200px;
+  min-width: 200px;
   margin-right: 1rem;
   min-width: 19rem;
+  width: 100%;
 }
 .filter-by-category {
   display: flex;
@@ -5527,27 +5646,37 @@ ul.card--categories {
   padding-top: 10%; /* initial ratio of 1:1*/
 }
 .filter-by-category h2 {
-  margin-bottom: 1.8rem;
+  margin-bottom: 2rem;
   font-size: 3.6rem;
+}
+.filter-by-category .cat-select {
+  width: 100%;
 }
 
 .cat-select {
   display: table;
-  padding: 1rem 2rem;
+  padding: 1rem 4.6rem 1rem 2rem;
   width: 75%;
+  background-image: url("images/svg/select-arrow-down.svg");
+  background-position: center right 16px;
+  background-repeat: no-repeat;
+  background-size: 22px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   color: #2F96F8;
   border-radius: 100px;
   border: 2px solid #2F96F8;
 }
 @media screen and (min-width: 1000px) {
   .cat-select {
-    padding: 1rem 2rem;
+    padding: 1rem 4.6rem 1rem 2rem;
     width: initial;
   }
 }
 @media screen and (min-width: 1200px) {
   .cat-select {
-    padding: 1.5rem 2.6rem;
+    padding: 1.5rem 4.6rem 1.5rem 2.6rem;
   }
 }
 .cat-select .search-vert-line {
@@ -5602,6 +5731,14 @@ ul.card--categories {
   width: 55px;
 }
 
+.tab-container {
+  margin-bottom: 60px;
+}
+@media screen and (min-width: 1000px) {
+  .tab-container {
+    margin-bottom: 80px;
+  }
+}
 .tab-container h4, .tab-container p {
   color: #fff;
 }
@@ -5722,7 +5859,7 @@ ul.card--categories {
   .container-with-sidebar {
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .container-with-sidebar .flexible-content {
     margin-top: 0rem;
@@ -5739,6 +5876,12 @@ ul.card--categories {
     width: 35%;
   }
 }
+@media screen and (min-width: 800px) and (min-width: 1200px) {
+  .container-with-sidebar aside {
+    width: 35%;
+    max-width: 390px;
+  }
+}
 @media screen and (min-width: 800px) {
   .container-with-sidebar .flexible-content {
     width: 55%;
@@ -5747,6 +5890,7 @@ ul.card--categories {
 @media screen and (min-width: 800px) and (min-width: 1000px) {
   .container-with-sidebar .flexible-content {
     width: 60%;
+    max-width: 640px;
   }
 }
 

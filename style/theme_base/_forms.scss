@@ -10,7 +10,14 @@ form {
 		color: white !important;
 		&:focus {
 			background-color: transparent !important;
-			border: 1px solid $yellow !important;
+			outline: thin dotted;
+		}
+		&:focus:not(:focus-visible) {
+			outline: none;
+		}
+		&:focus-visible {
+			outline: thin dotted;
+			color: var(--color-text-link-hover);
 		}
 	}
 	button, .ff-btn, .ff-btn-submit {

@@ -8,9 +8,7 @@
 	</section>
 	
 	<form id="ajax-filter-multi" class="ajax-filter-multi ">
-		
-		<button class="clear-filters btn--skinny" type="submit" value="Resources">Clear Filters</button>
-		
+			
 		<!-- <select name="city">
 			<option value="">Select city...</option>
 			<option value="athens">Athens</option>
@@ -46,7 +44,8 @@
 				</select>
 
 				<?php endforeach; ?>
-	
+			<button class="clear-filters btn--skinny" type="submit" value="Resources">Clear Filters</button>
+
 
 	</form>
 

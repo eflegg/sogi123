@@ -17,17 +17,23 @@
 		&.Resources {
 			flex-direction: row-reverse;
 		}
-		justify-content: space-around;
+		justify-content: space-between;
 		aside {
 			width: 40%;
 			@include media(lg){
 				width: 35%;
+			}
+
+			@include media(xl){
+				width: 35%;
+				max-width: 390px;
 			}
 		}
 		.flexible-content {
 			width: 55%;
 			@include media(lg){
 				width: 60%;
+				max-width: 640px;
 			}
 		}
 	}
@@ -35,7 +41,6 @@
 
 
 aside {
- 
 	position: relative;
 	.shape {
 		clip-path: circle(69.1% at 3% 5%);

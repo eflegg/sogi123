@@ -40,10 +40,19 @@ body {
 	height: 80vh;
 	min-height: 600px;
 	.content {
-		max-width: 600px;
+		max-width: 640px;
 		position: relative;
 		z-index: 10;
-	
+
+		font-weight: 600;
+		font-size: 15px;
+		line-height: 150%;
+	}
+	.content p {
+		max-width: 400px;
+	}
+	.content h1 {
+		max-width: 640px;
 	}
 	.btn--skinny {
 		margin-left: 0;
@@ -61,7 +70,7 @@ body {
 	
 	background: linear-gradient(180deg, #E1125C 0%, #CF004A 100%);
 	@include media(lg){
-		padding: 20rem 13.2rem 9rem;
+		padding: 10rem 13.2rem 9rem;
 	}
 	.inner {
 		display: flex;
@@ -72,13 +81,15 @@ body {
 			margin: 0 auto;
 			margin-bottom: 5rem;
 			@include media(lg){
+				margin: 0;
 				margin-bottom: 0;
-				width: 50%;
+				width: 33.333%;
+				padding-right: 40px;
 			}
 		}
 		.right {
 			@include media(lg){
-				width: 50%;
+				width: 55%;
 			}
 		}
 		.image--top-level {
@@ -113,7 +124,7 @@ body {
 		}
 		@include media(lg) {
 			flex-direction: row;
-			justify-content: space-around;
+			justify-content: flex-start;
 			align-items: flex-start;
 			
 		
@@ -201,6 +212,10 @@ body {
 
 .questions-getting {
 	background-color: $manila;
+	&.section-container {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
 	.view-all {
 		color: $raspberry;
 		font-size: 1.6rem;
@@ -239,6 +254,10 @@ body {
 	.right {
 		@include media(lg){
 			width: 75%;
+			padding-left: 40px;
+		}
+		@include media(md) {
+			width: 100%;
 		}
 	}
 	.inner {
@@ -259,14 +278,24 @@ body {
 
 .resource-card{
 	
-	padding: 3.6rem;
+	padding: 3.6rem 3.6rem 4.6rem;
 	cursor: pointer;
 	border-radius: 4rem;
-	margin: .5rem;
+	// margin: .5rem;
 	position: relative;
-	width: 28.8rem;
+	// width: 28.8rem;
+	width: 100%;
+	margin-bottom: 30px;
 	align-self: stretch;  
 	display: flex;
+
+	@include media(md) {
+		width: calc(50% - 15px);
+	}
+
+	@include media(lg) {
+		width: calc(33.333% - 15px);
+	}
 
 	.resource--text {
 		display: flex;
@@ -277,11 +306,11 @@ body {
 		}
 	}
 	.continue-reading {
-		margin-top: auto;
+		margin-top: 20px;
 		
 		&:hover>a {
 			&:after {
-				transition: all 0.2s ease-in-out;
+				transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
 				width: 100%;
 			}
 		}
@@ -289,13 +318,14 @@ body {
 			display: table;
 			position: relative;
 			&:after {
-				transition: all 0.2s ease-in-out;
+				transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
 				position: absolute;
 				content: "";
 				height: 2px;
 				width: 0%;
 				background-color: white;
 				left: 0;
+				top: -4px;
 				transform: translateY(3rem);
 			}
 			color: white;
@@ -315,37 +345,73 @@ ul.card--categories {
 .card-container {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-between;
 	// align-items: center;
 	align-items: stretch;
 	padding-left: 0rem;
+	margin-top: 40px;
+
+	//pseudo element to fix layout if only two items in row.
+	&::after {
+		content: '';
+		width: 33.333%;
+		height: 0;
+	}
 }
-.question-card {
-	height: 30rem;
-	width: 30rem;
+.card.question-card {
+	height: auto;
+	width: 100%;
+	aspect-ratio: 1;
+	margin-bottom: 20px;
+
+	@include media(sm) {
+		width: calc(50% - 15px);
+		aspect-ratio: 1;
+	}
+
+	@include media(lg) {
+		width: calc(33.333% - 15px);
+		aspect-ratio: 1;
+	}
 }
 .card {
 	cursor: pointer;
+	transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
 	&.square {
 		border-radius: 4rem;
 	}
 	.question--text{
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+		// position: absolute;
+		// top: 50%;
+		// left: 50%;
+		// transform: translate(-50%, -50%);
+		padding: 20px;
 		text-align: center;
-		width: 80%;
-		font-size: 2.4rem;
-		line-height: 2.88rem;
+		width: 100%;
+		font-size: 18px;
+		line-height: 120%;
 		font-weight: 700;
+		display: block;
+
+		transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+		display: flex;
+		align-items: center;
+		height: 100%;
+
+		@include media(xl) {
+			font-size: 24px;
+			line-height: 2.88rem;
+			font-weight: 700;
+		}
+
 		p{
 			color: $white;
 		}
 	}
-	margin: .5rem;
+	// margin: .5rem;
 	position: relative;
-	width: 28.8rem;
+	width: calc(33.333% - 15px);
+	height: auto;
 	align-self: start;          /* desired width */
 
 	background-color: $tangelo;
@@ -355,6 +421,10 @@ ul.card--categories {
 	align-items: center;
 	justify-content: center;
 	color: $white;
+
+	.the-question {
+		width: 100%;
+	}
 	.the-answer {
 		display: none;
 		visibility: hidden;
@@ -362,14 +432,20 @@ ul.card--categories {
 		transition: all 0.15s ease-in-out;
 		font-size: 2.4rem;
 		line-height: 2.88rem;
+		transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
 	}
-	transition: all 0.15s ease-in-out;
+	// transition: all 0.15s ease-in-out;
 	.continue-reading {
-		display: none;
+		// display: none;
 		visibility: hidden;
 		opacity: 0;
 		font-size: 1.2rem;
 		height: 4.15rem;
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		width: 100%;
+		transform: translateX(-50%);
 	}
 	&:hover, &:focus-within {
 		background-color: $graphite;
@@ -382,6 +458,7 @@ ul.card--categories {
 			font-weight: 700;
 			display: none;
 			visibility: hidden;
+			width: 100%;
 		}
 		.the-answer {
 			display: block;
@@ -475,7 +552,11 @@ ul.card--categories {
 		border-radius: 2.1rem 0 2.1rem 2.1rem;
 		height: 85%;
 		h4{
-			margin-bottom: 1rem;
+			margin-bottom: 18px;
+			margin-top: 20px;
+		}
+		P{
+			margin-top: 0;
 		}
 		.post-date {
 			text-transform: uppercase;
@@ -521,12 +602,11 @@ ul.card--categories {
 	height: auto;
 	background-color: $violet;
 	width: 100%;
+	padding: 8rem 3rem 9.5rem;
+
 	@include media(lg){
 		padding: 8rem 4.8rem 9.5rem;
 	}
-
-
-
 }
 
 
@@ -538,16 +618,21 @@ ul.card--categories {
 		display: flex;
 		overflow-x: scroll;
 		margin-bottom: 3rem;
+		padding-bottom: 66px;
+		position: relative;
+
 		@include media(md){
 			margin-bottom: 5rem;
 		}
 		.cat-select{
-			width: 200px;
+			min-width: 200px;
 			margin-right: 1rem;
+
 			@include media(md){
 			
 			}
 			min-width: 19rem;
+			width: 100%;
 		}
 	}
 
@@ -581,22 +666,35 @@ ul.card--categories {
 		padding-top: 10%;    /* initial ratio of 1:1*/
 	}
 	
-
 	h2{
-		margin-bottom: 1.8rem;
+		margin-bottom: 2rem;
 		font-size: 3.6rem;
 	}
+
+	.cat-select {
+		width: 100%;
+	}
 }
+
 .cat-select {
 	display: table;
-	padding: 1rem 2rem;
+	padding: 1rem 4.6rem 1rem 2rem;
 	width: 75%;
+	background-image: url('images/svg/select-arrow-down.svg');
+  background-position: center right 16px;
+  background-repeat: no-repeat;
+  background-size: 22px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
 	@include media(lg){
-		padding: 1rem 2rem;
+		padding: 1rem 4.6rem 1rem 2rem;
 		width: initial;
 	}
 	@include media(xl){
-		padding: 1.5rem 2.6rem;
+		padding: 1.5rem 4.6rem 1.5rem 2.6rem;
 	}
 	color: $deepBlue;
 	border-radius: 100px;
@@ -679,6 +777,12 @@ ul.card--categories {
 //Tabs
 
 .tab-container {
+	margin-bottom: 60px;
+
+	@include media(lg) {
+		margin-bottom: 80px;
+	}
+
 	h4, p {
 		color: $white;
 	}

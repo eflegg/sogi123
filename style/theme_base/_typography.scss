@@ -161,6 +161,15 @@ h5, .h5 {
 	}
 }
 
+.default-type blockquote,
+.default-type blockquote p {
+	color: $raspberry;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 150%;
+	margin: 22px 0;
+}
+
 .content {
 	.text {
 	

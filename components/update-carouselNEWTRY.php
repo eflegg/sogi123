@@ -8,7 +8,7 @@ $parent = get_the_title( $post->post_parent ); ?>
 
 
 <section style="background-color: <?php echo $bgColor;?>" class="updates-section carousel-container">
-      <div class="new-container">
+      <div class="custom-container">
             <div class="slider-wrapper">
                         <!-- <button id="prev-slide" class="prev nav-left controls no-btn slide-button">
                               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="50" viewBox="0 0 28 50" fill="none">

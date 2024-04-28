@@ -136,7 +136,7 @@ button, .button {
 	&.clear-filters {
 	   margin: 0px;
 	   position: absolute;
-	   top: -8rem;
+	   bottom: 0;
 	   left: 0;
 	}
 	&.btn--category{
@@ -161,7 +161,7 @@ button, .button {
 	transition: all .15s ease-in-out;
 	&:hover {
 		transition: all .15s ease-in-out;
-		background-color: $graphite;
+		background-color: transparent;
 
 		a {
 			color: $white;
@@ -176,8 +176,10 @@ form > button {
 }
 
 .search-circle {
-	height: 30rem;
+	height: auto;
 	width: 30rem;
+	max-width: 100%;
+	aspect-ratio: 1;
 	border-radius: 100%;
 	position: relative;
 	background-color: $yellow;
@@ -430,7 +432,7 @@ form > button {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		max-width: 90rem;
+		max-width: 100%;
 		width: 100%;
 		font-size: 0;
 		list-style: none;
@@ -443,7 +445,7 @@ form > button {
   }
   .slider-wrapper .image-list .single-slide {
 	width: 100%;
-	max-width: 28.8rem;
+	// max-width: 28.8rem;
 	margin: 0 auto;
 	@include media(sm){
 		width: 49%

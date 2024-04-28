@@ -41,7 +41,7 @@ get_header(); ?>
                 <?php else:?>
 
 	<!-- list of resources -->
-	<section style="background-color: #FFFCE3; position: relative;" class="has-filter-container section-container custom-container">
+	<section style="background-color: #FFFCE3; position: relative;" class="has-filter-container section-container custom-container resources-page">
 
 	
 		<?php 
