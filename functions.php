@@ -91,6 +91,8 @@ add_action( 'widgets_init', 'themename_widgets_init' );
 
 function themename_scripts() {
 
+	wp_enqueue_script( 'inclusionbc-navigation', get_template_directory_uri() . '/js/navigation.js', array(), 1, true );
+
 	if(is_page_template('page-secondlevel.php') ) {
 		wp_enqueue_script('tab-block-func', get_template_directory_uri() . '/js/tab-block-func.js');
 	}

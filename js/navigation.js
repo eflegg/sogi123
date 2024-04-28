@@ -1,21 +1,26 @@
 /**
- * navigation.js
+ * File navigation.js.
  *
- * Handles toggling the navigation menu for small screens.
+ * Handles toggling the navigation menu for small screens and enables TAB key
+ * navigation support for dropdown menus.
  */
-
 ( function() {
-	var container, button, menu;
+	const siteNavigation = document.getElementById( 'site-navigation' );
+	const docHTML = document.getElementsByTagName('html')[0];
 
-	container = document.getElementById( 'site-navigation' );
-	if ( ! container )
+	// Return early if the navigation doesn't exist.
+	if ( ! siteNavigation ) {
 		return;
+	}
 
-	button = container.getElementsByTagName( 'h1' )[0];
-	if ( 'undefined' === typeof button )
+	const button = siteNavigation.getElementsByTagName( 'button' )[ 0 ];
+
+	// Return early if the button doesn't exist.
+	if ( 'undefined' === typeof button ) {
 		return;
+	}
 
-	menu = container.getElementsByTagName( 'ul' )[0];
+	const menu = siteNavigation.getElementsByTagName( 'ul' )[ 0 ];
 
 	// Hide menu toggle button if menu is empty and return early.
 	if ( 'undefined' === typeof menu ) {
@@ -23,13 +28,122 @@
 		return;
 	}
 
-	if ( -1 === menu.className.indexOf( 'nav-menu' ) )
-		menu.className += ' nav-menu';
+	if ( ! menu.classList.contains( 'nav-menu' ) ) {
+		menu.classList.add( 'nav-menu' );
+	}
 
-	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) )
-			container.className = container.className.replace( ' toggled', '' );
-		else
-			container.className += ' toggled';
-	};
-} )();
+	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
+	button.addEventListener( 'click', function() {
+		siteNavigation.classList.toggle( 'toggled' );
+		docHTML.classList.toggle('no-scroll');
+		document.body.classList.toggle('nav-toggled');
+
+		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
+			button.setAttribute( 'aria-expanded', 'false' );
+		} else {
+			button.setAttribute( 'aria-expanded', 'true' );
+		}
+	} );
+
+	// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
+	document.addEventListener( 'click', function( event ) {
+		const isClickInside = siteNavigation.contains( event.target );
+
+		if ( ! isClickInside ) {
+			siteNavigation.classList.remove( 'toggled' );
+			docHTML.classList.remove('no-scroll');
+			document.body.classList.remove('nav-toggled');
+			button.setAttribute( 'aria-expanded', 'false' );
+		}
+	} );
+
+	// Get all the link elements within the menu.
+	const links = menu.getElementsByTagName( 'a' );
+
+	// Get all the link elements with children within the menu.
+	const linksWithChildren = menu.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
+
+	// Toggle focus each time a menu link is focused or blurred.
+	for ( const link of links ) {
+		link.addEventListener( 'focus', toggleFocus, true );
+		link.addEventListener( 'blur', toggleFocus, true );
+	}
+
+	// Toggle focus each time a menu link with children receive a touch event.
+	for ( const link of linksWithChildren ) {
+		link.addEventListener( 'click', toggleFocus, false );
+	}
+
+	/**
+	 * Sets or removes .focus class on an element.
+	 */
+	function toggleFocus() {
+		if ( event.type === 'focus' || event.type === 'blur' ) {
+			let self = this;
+			// Move up through the ancestors of the current link until we hit .nav-menu.
+			while ( ! self.classList.contains( 'nav-menu' ) ) {
+				// On li elements toggle the class .focus.
+				if ( 'li' === self.tagName.toLowerCase() ) {
+					if(!document.body.classList.contains('nav-toggled')) {
+						self.classList.toggle( 'focus' );
+					}
+				}
+				self = self.parentNode;
+			}
+		}
+
+		if ( event.type === 'click' ) {
+			const menuItem = this.parentNode;
+			if(document.body.classList.contains('nav-toggled')) {
+				event.preventDefault();
+				for ( const link of menuItem.parentNode.children ) {
+					if ( menuItem !== link ) {
+						link.classList.remove( 'focus' );
+					}
+				}
+				menuItem.classList.toggle( 'focus' );
+		}
+		}
+	}
+}() );
+
+
+
+
+/**
+ * navigation.js
+ *
+ * Handles toggling the navigation menu for small screens.
+ */
+
+// ( function() {
+// 	var container, button, menu;
+
+// 	container = document.getElementById( 'site-navigation' );
+// 	if ( ! container )
+// 		return;
+
+// 	button = container.getElementsByTagName( 'h1' )[0];
+// 	if ( 'undefined' === typeof button )
+// 		return;
+
+// 	menu = container.getElementsByTagName( 'ul' )[0];
+
+// 	// Hide menu toggle button if menu is empty and return early.
+// 	if ( 'undefined' === typeof menu ) {
+// 		button.style.display = 'none';
+// 		return;
+// 	}
+
+// 	if ( -1 === menu.className.indexOf( 'nav-menu' ) )
+// 		menu.className += ' nav-menu';
+
+// 	button.onclick = function() {
+// 		if ( -1 !== container.className.indexOf( 'toggled' ) )
+// 			container.className = container.className.replace( ' toggled', '' );
+// 		else
+// 			container.className += ' toggled';
+// 	};
+// } )();
+
+
