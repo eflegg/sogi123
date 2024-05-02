@@ -790,7 +790,33 @@ ul.card--categories {
 	}
 	list-style: none;
 	border-bottom: 1px solid $white;
-	padding: 2.5rem 0rem;
+
+	a {
+		color: white;
+		display: block;
+		padding: 2.5rem 2rem;
+		transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+
+		.circle-chevron {
+			transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+			stroke: white;
+		}
+	}
+
+	a:hover {
+		color: $graphite;
+		h3,
+		p {
+			color: $graphite;
+		}
+		background-color: $yellowGreen;
+
+		.circle-chevron {
+			transform: translateX(10px);
+			stroke: $graphite;
+		}
+	}
+
 	&:last-child {
 		border-bottom: 0px;
 		padding-bottom: 0px;
@@ -806,8 +832,21 @@ ul.card--categories {
 	}
 	.right--child {
 		width: 55px;
-	
-		
+	}
+
+	.page-template-page-toplevel & {
+		a:hover {
+			background-color: $yellowOrange;
+			color: $white;
+			h3,
+			p {
+				color: $white;
+			}
+
+			.circle-chevron {
+				stroke: white;
+			}
+		}
 	}
 }
 

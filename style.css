@@ -5815,10 +5815,31 @@ ul.card--categories {
 .child-page-block {
   list-style: none;
   border-bottom: 1px solid #fff;
-  padding: 2.5rem 0rem;
 }
 .child-page-block p {
   color: #fff;
+}
+.child-page-block a {
+  color: white;
+  display: block;
+  padding: 2.5rem 2rem;
+  transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+}
+.child-page-block a .circle-chevron {
+  transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+  stroke: white;
+}
+.child-page-block a:hover {
+  color: #333333;
+  background-color: #A4E453;
+}
+.child-page-block a:hover h3,
+.child-page-block a:hover p {
+  color: #333333;
+}
+.child-page-block a:hover .circle-chevron {
+  transform: translateX(10px);
+  stroke: #333333;
 }
 .child-page-block:last-child {
   border-bottom: 0px;
@@ -5835,6 +5856,17 @@ ul.card--categories {
 }
 .child-page-block .right--child {
   width: 55px;
+}
+.page-template-page-toplevel .child-page-block a:hover {
+  background-color: #FF9900;
+  color: #fff;
+}
+.page-template-page-toplevel .child-page-block a:hover h3,
+.page-template-page-toplevel .child-page-block a:hover p {
+  color: #fff;
+}
+.page-template-page-toplevel .child-page-block a:hover .circle-chevron {
+  stroke: white;
 }
 
 .tab-container {

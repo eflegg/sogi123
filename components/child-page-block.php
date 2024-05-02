@@ -1,6 +1,8 @@
 <li class="childcell child-page-block fade-me">
+    <a class="subpage-link" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
     <div class="display-flex align-items-center justify-space-between">
-        <div class="left--child">
+        
+            <div class="left--child">
             <?php if ( has_post_thumbnail() ) : ?>
                 <div class="thumbnail"><?php the_post_thumbnail( 'small-thumb' ); ?></div>
             <?php endif; ?>
@@ -9,7 +11,9 @@
             <div class="subpage-excerpt"><?php the_excerpt(); ?></div>
         </div>
         <div class="right--child">
-            <a class="subpage-link" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php include 'svg/circle-chevron.php';?></a>
+            <?php include 'svg/circle-chevron.php';?>
         </div>
+        
     </div>
+    </a>
 </li>
