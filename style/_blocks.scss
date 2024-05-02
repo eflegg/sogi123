@@ -32,15 +32,15 @@ body {
 .hero {
 	width: 100%;
 	// z-index: 1;
-	padding: 2rem 2rem 2rem 4rem;
+	padding: 15rem 2rem 2rem 4rem;
 	position: relative;
 	@include media(lg){
-		padding: 8rem 0 8rem 12rem;
+		padding: 15rem 0 6rem 12rem;
 	}
-	height: 80vh;
-	min-height: 600px;
+	min-height: 80vh;
+	// min-height: 600px;
 	.content {
-		max-width: 640px;
+		max-width: 740px;
 		position: relative;
 		z-index: 10;
 
@@ -52,7 +52,7 @@ body {
 		max-width: 400px;
 	}
 	.content h1 {
-		max-width: 640px;
+		max-width: 740px;
 	}
 	.btn--skinny {
 		margin-left: 0;
@@ -396,6 +396,10 @@ ul.card--categories {
 	width: 100%;
 	aspect-ratio: 1;
 	margin-bottom: 20px;
+
+	a {
+		color: white;
+	}
 
 	@include media(sm) {
 		width: calc(50% - 15px);

@@ -5128,18 +5128,17 @@ body {
 
 .hero {
   width: 100%;
-  padding: 2rem 2rem 2rem 4rem;
+  padding: 15rem 2rem 2rem 4rem;
   position: relative;
-  height: 80vh;
-  min-height: 600px;
+  min-height: 80vh;
 }
 @media screen and (min-width: 1000px) {
   .hero {
-    padding: 8rem 0 8rem 12rem;
+    padding: 15rem 0 6rem 12rem;
   }
 }
 .hero .content {
-  max-width: 640px;
+  max-width: 740px;
   position: relative;
   z-index: 10;
   font-weight: 600;
@@ -5150,7 +5149,7 @@ body {
   max-width: 400px;
 }
 .hero .content h1 {
-  max-width: 640px;
+  max-width: 740px;
 }
 .hero .btn--skinny {
   margin-left: 0;
@@ -5474,6 +5473,9 @@ ul.card--categories {
   width: 100%;
   aspect-ratio: 1;
   margin-bottom: 20px;
+}
+.card.question-card a {
+  color: white;
 }
 @media screen and (min-width: 600px) {
   .card.question-card {
