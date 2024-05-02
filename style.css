@@ -3107,6 +3107,10 @@ ul.ff_coupon_responses .ff_success {
   background-color: #A71679;
 }
 
+.update-color .update-card .inner,
+.update-color .update-card .tab {
+  transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+}
 .update-color:nth-of-type(12n+1) * {
   color: #E1125C !important;
 }
@@ -3803,6 +3807,7 @@ button:hover a, .button:hover a {
 
 form > button:hover {
   background-color: #333333 !important;
+  border: 2px solid #333333;
 }
 
 .search-circle {
@@ -3963,10 +3968,43 @@ form > button:hover {
   margin-left: auto;
 }
 .header-search-container.search-visible.resource-search .custom-searchform {
-  background-color: #fff;
-  border: 2px solid #2F96F8;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  width: 100%;
+  padding-left: 0;
+}
+@media screen and (min-width: 1000px) {
+  .header-search-container.search-visible.resource-search {
+    margin-top: -180px;
+    margin-bottom: 100px;
+    color: white;
+  }
+  .header-search-container.search-visible.resource-search .custom-searchform {
+    width: 35rem;
+  }
+  .header-search-container.search-visible.resource-search .custom-searchform input {
+    border-bottom: 2px solid white !important;
+    color: white !important;
+  }
+  .header-search-container.search-visible.resource-search .custom-searchform input::placeholder {
+    color: white;
+  }
+  .header-search-container.search-visible.resource-search .custom-searchform input:focus::placeholder {
+    color: transparent;
+  }
 }
 
+@media screen and (min-width: 600px) {
+  .header-search-container.search-visible.resource-search .custom-searchform {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .header-search-container.search-visible.resource-search .custom-searchform {
+    width: 35rem;
+  }
+}
 .top-level__shape {
   display: flex;
   left: 0;
@@ -4265,13 +4303,13 @@ footer .our-impact .text .eyebrow {
   color: #fff;
   text-transform: uppercase;
   margin-bottom: 2rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 800;
 }
 footer .our-impact .text .attribution {
   color: #fff;
   padding-top: 2rem;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 800;
 }
 footer .our-impact .text .testimonial {
@@ -5332,14 +5370,39 @@ body {
 }
 
 .resource-card {
-  padding: 3.6rem 3.6rem 4.6rem;
+  padding: 3.6rem 3.6rem 7.6rem;
   cursor: pointer;
-  border-radius: 4rem;
+  border-radius: 0;
   position: relative;
   width: 100%;
   margin-bottom: 30px;
   align-self: stretch;
   display: flex;
+  transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+}
+.resource-card a {
+  color: white;
+}
+.resource-card .continue-reading {
+  position: relative;
+}
+.resource-card .continue-reading:after {
+  transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 0%;
+  background-color: white;
+  left: 0;
+  top: -4px;
+  transform: translateY(3rem);
+}
+.resource-card:hover {
+  background-color: #333333;
+}
+.resource-card:hover .continue-reading:after {
+  transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+  width: 100%;
 }
 @media screen and (min-width: 800px) {
   .resource-card {
@@ -5361,12 +5424,15 @@ body {
 }
 .resource-card .continue-reading {
   margin-top: 20px;
+  position: absolute;
+  bottom: 3rem;
 }
 .resource-card .continue-reading:hover > a:after {
   transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
   width: 100%;
 }
 .resource-card .continue-reading a {
+  color: white;
   display: table;
   position: relative;
   color: white;
@@ -5545,6 +5611,7 @@ ul.card--categories {
 .update-card-container {
   align-items: stretch;
   width: 100%;
+  transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
 }
 @media screen and (min-width: 800px) {
   .update-card-container {
@@ -5568,7 +5635,7 @@ ul.card--categories {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 3.6rem;
+  padding: 3.6rem 3.6rem 8.6rem;
   z-index: 10;
   position: relative;
   width: 100%;
@@ -5600,6 +5667,8 @@ ul.card--categories {
   margin-left: 0;
   font-weight: 800;
   text-transform: uppercase;
+  position: absolute;
+  bottom: 4rem;
 }
 .update-card .tab {
   position: relative;
@@ -5640,6 +5709,11 @@ ul.card--categories {
 .ajax-filter-multi .cat-select {
   min-width: 200px;
   margin-right: 1rem;
+  color: #A428A3;
+  background-color: transparent;
+  border-radius: 100px;
+  border: 2px solid #A428A3;
+  background-image: url("images/svg/select-arrow-down-purple.svg");
   min-width: 19rem;
   width: 100%;
 }
@@ -5853,7 +5927,7 @@ ul.card--categories {
   position: relative;
   display: none;
   visibility: hidden;
-  padding: 10rem 5rem 5rem 5rem;
+  padding: 6rem 5rem 5rem 5rem;
 }
 .tab-container .tab-pane.active-tab {
   display: block;

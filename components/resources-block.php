@@ -1,5 +1,5 @@
-		<ul class="card-container">
-			<?php
+<ul class="card-container">
+	<?php
 		$args = array(
 		    'post_type' => 'resource',
 		    'orderby' => 'menu_order',

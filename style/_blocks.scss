@@ -278,9 +278,9 @@ body {
 
 .resource-card{
 	
-	padding: 3.6rem 3.6rem 4.6rem;
+	padding: 3.6rem 3.6rem 7.6rem;
 	cursor: pointer;
-	border-radius: 4rem;
+	border-radius: 0;
 	// margin: .5rem;
 	position: relative;
 	// width: 28.8rem;
@@ -288,6 +288,36 @@ body {
 	margin-bottom: 30px;
 	align-self: stretch;  
 	display: flex;
+	transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+
+	a {
+		color: white;
+	}
+
+	.continue-reading {
+		position: relative;
+
+		&:after {
+			transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+			position: absolute;
+			content: "";
+			height: 2px;
+			width: 0%;
+			background-color: white;
+			left: 0;
+			top: -4px;
+			transform: translateY(3rem);
+		}
+	}
+
+	&:hover {
+		background-color: $graphite;
+
+		.continue-reading:after {
+			transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+			width: 100%;
+		}
+	}
 
 	@include media(md) {
 		width: calc(50% - 15px);
@@ -307,6 +337,8 @@ body {
 	}
 	.continue-reading {
 		margin-top: 20px;
+		position: absolute;
+		bottom: 3rem;
 		
 		&:hover>a {
 			&:after {
@@ -315,6 +347,7 @@ body {
 			}
 		}
 		a {
+			color: white;
 			display: table;
 			position: relative;
 			&:after {
@@ -520,6 +553,7 @@ ul.card--categories {
 .update-card-container {
 	align-items: stretch;
 	width: 100%;
+	transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02); 
 
 	@include media (md) {
 		width: 33.333%
@@ -539,12 +573,12 @@ ul.card--categories {
 	height: 100%;
 	z-index: 10;
 	transition: left .4s cubic-bezier(.47,.13,.15,.89);
-	.inner {
 	
+	.inner {
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
-		padding: 3.6rem;
+		padding: 3.6rem 3.6rem 8.6rem;
 		z-index: 10;
 		position: relative;
 		width: 100%;
@@ -574,10 +608,11 @@ ul.card--categories {
 			}
 		}
 		.learn-button {
-		
 			margin-left: 0;
 			font-weight: 800;
 			text-transform: uppercase;
+			position: absolute;
+			bottom: 4rem;
 		}
 	}
 	.tab {
@@ -627,6 +662,11 @@ ul.card--categories {
 		.cat-select{
 			min-width: 200px;
 			margin-right: 1rem;
+			color: $fandango;
+			background-color: transparent;
+    	border-radius: 100px;
+    	border: 2px solid $fandango;
+    	background-image: url('images/svg/select-arrow-down-purple.svg');
 
 			@include media(md){
 			
@@ -842,7 +882,7 @@ ul.card--categories {
 	
 		display: none;
 	  visibility: hidden;
-	  padding: 10rem 5rem 5rem 5rem;
+	  padding: 6rem 5rem 5rem 5rem;
 
 	}
 	

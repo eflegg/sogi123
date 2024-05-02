@@ -44,6 +44,12 @@ $cardColorsLength: length($cardColors);
     }
   }
   .update-color {
+    .update-card .inner,
+    .update-card .tab {
+      transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+    }
+    
+
     @for $i from 1 through $cardColorsLength {
       &:nth-of-type(#{$cardColorsLength}n+#{$i}) {
         * {

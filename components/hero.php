@@ -19,7 +19,7 @@ endif;
 
 if(is_search()):
 	$bgImage = get_field('hero_image');
-	$defaultImage = 'https://picsum.photos/seed/picsum/1000';
+	$defaultImage = get_field('hero_default_image', 'options');
 	$heroHeadline = 'Search Results for: ';
 	$heroContent = get_field('hero_content');
 	$searchTermHeader = get_search_query();

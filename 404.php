@@ -41,7 +41,7 @@ $heroContent = get_field('hero_content');
 	</section> -->
 
 </section>
-<?php include 'components/update-carousel.php'; ?>
+<?php include 'components/update-carouselNEWTRY.php';?>
 
 
 	</main
