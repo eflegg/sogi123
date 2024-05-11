@@ -8,7 +8,7 @@
 		position: relative;
 		z-index: 10;
 	}
-	@include media(md) {
+	@include media(lg) {
 		flex-direction: row;
 		align-items: flex-start;
 		.flexible-content {
@@ -73,6 +73,9 @@ z-index: 10;
     color: $white!important;
     font-weight: 700;
     margin: 2rem 0 1.3rem;
+	@include media(lg){
+		font-size: 3rem;
+	}
  }
  p {
     line-height: 160%;
@@ -100,6 +103,9 @@ z-index: 10;
 }
 
 .resources-sidebar {
+	a {
+		text-decoration: none;
+	}
     padding-left: 2.2rem;
     h3{
       color:#3674D9;

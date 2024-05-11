@@ -7,7 +7,7 @@
       "uuidString" : "7B93E7BA-CE86-4E15-96FB-55BF1C2C076A"
     }
   ],
-  "creatorBuild" : "34564",
+  "creatorBuild" : "34576",
   "files" : {
     "\/.vscode\/settings.json" : {
       "ft" : 524288,
@@ -249,6 +249,22 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/build\/components\/home-search.php",
+      "oF" : 0
+    },
+    "\/components\/nav-primary.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/components\/nav-primary.php",
+      "oF" : 0
+    },
+    "\/components\/old-nav.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/components\/old-nav.php",
       "oF" : 0
     },
     "\/components\/questions-block.php" : {
@@ -829,11 +845,51 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/images\/svg\/nav-down-arrow.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/build\/images\/svg\/nav-down-arrow.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/images\/svg\/nav-up-arrow.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/build\/images\/svg\/nav-up-arrow.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/images\/svg\/quote.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/build\/images\/svg\/quote.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/images\/svg\/select-arrow-down-purple.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/build\/images\/svg\/select-arrow-down-purple.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/images\/svg\/select-arrow-down.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/build\/images\/svg\/select-arrow-down.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -1040,6 +1096,17 @@
       "oAP" : "\/build\/index.php",
       "oF" : 0
     },
+    "\/js\/_navigation-min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/js\/_navigation-min-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/js\/bootstrap.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -1223,6 +1290,17 @@
       "mi" : 1,
       "oA" : 0,
       "oAP" : "\/build\/js\/multi-filter-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/js\/navigation-min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/build\/js\/navigation-min-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -1888,6 +1966,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/style\/_nav-primary.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 0,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/build\/style\/_nav-primary.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/style\/_nav.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -2167,6 +2260,18 @@
       "ma" : 0,
       "oA" : 0,
       "oAP" : "\/build\/style\/css\/font-awesome-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/style\/style.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/style\/style-min.css",
       "oF" : 0,
       "pg" : 0
     },

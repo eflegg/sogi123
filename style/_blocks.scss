@@ -566,6 +566,7 @@ ul.card--categories {
 }
 
 .update-card {
+	display: block;
 	cursor: pointer;
 	position: relative;
 	list-style: none;
@@ -577,7 +578,9 @@ ul.card--categories {
 	height: 100%;
 	z-index: 10;
 	transition: left .4s cubic-bezier(.47,.13,.15,.89);
-	
+	h4 {
+		white-space: normal;
+	}
 	.inner {
 		display: flex;
 		flex-direction: column;
@@ -617,6 +620,7 @@ ul.card--categories {
 			text-transform: uppercase;
 			position: absolute;
 			bottom: 4rem;
+			margin-bottom: 0;
 		}
 	}
 	.tab {
@@ -866,14 +870,18 @@ ul.card--categories {
 		margin-bottom: 80px;
 	}
 
-	h4, p {
+	h4, p, ul, ol {
 		color: $white;
 	}
 	ul {
+		list-style-type: disc;
+		list-style: disc!important;
+	}
+	ul.tab-nav {
 	  list-style: none;
 	  padding: 0;
 	  height: 100px;
-	  li {
+	  li.tab-color {
 		cursor: pointer;
 		path {
 			&:focus {
@@ -891,7 +899,7 @@ ul.card--categories {
 		 }
 		width: 7rem;
 		height: 5.6rem;
-		top: 5.25rem;
+		top: 6.25rem;
 		width: calc(100% / 4 + 1.3rem)!important;
 		max-width: 13.2rem;
 		 @include media(md){
@@ -926,7 +934,9 @@ ul.card--categories {
 		display: none;
 	  visibility: hidden;
 	  padding: 6rem 5rem 5rem 5rem;
-
+		// ul {
+		// 	border: 2px solid yellow;
+		// }
 	}
 	
 	.tab-pane.active-tab { 
