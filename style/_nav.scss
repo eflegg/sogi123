@@ -518,6 +518,7 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
+	
 }
 
 .header-buttons .button {
@@ -536,6 +537,7 @@ header {
 @media(max-width: 1099px) {
 	.header-buttons {
 		justify-content: flex-end;
+		display: none;
 	}
 
 	.header-buttons-small-screens {

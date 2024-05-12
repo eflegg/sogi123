@@ -185,7 +185,7 @@ nav ul {
 	.main-navigation ul ul li:hover > ul,
 	.main-navigation ul ul li.focus > ul {
 		display: block;
-		left: 100%;
+		// left: 100%;
 	}
 
 	.main-navigation li.menu-item-has-children.focus > a::after {

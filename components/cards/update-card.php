@@ -1,5 +1,5 @@
 <li class="update-card-container  update-color  single-slide">
-<a class="card-link" href="<?php the_permalink(); ?>">
+    <a class="card-link" href="<?php the_permalink(); ?>">
     <div class="update-card">
           
             <div class="tab"></div>
@@ -15,5 +15,5 @@
             </div>  
 
         </div>
-</a>
-    </li>
+    </a>
+</li>

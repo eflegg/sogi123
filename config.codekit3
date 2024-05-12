@@ -530,7 +530,7 @@
       "oAP" : "\/build\/images\/banner_asexflag.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -543,7 +543,7 @@
       "oAP" : "\/build\/images\/banner_cool.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -556,7 +556,7 @@
       "oAP" : "\/build\/images\/banner_hot.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -569,7 +569,7 @@
       "oAP" : "\/build\/images\/banner_poc.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -582,7 +582,7 @@
       "oAP" : "\/build\/images\/banner_transflag.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -595,7 +595,7 @@
       "oAP" : "\/build\/images\/footer.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -607,7 +607,7 @@
       "oAP" : "\/build\/images\/svg\/2x\/Asset 1@2x.png",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -620,7 +620,7 @@
       "oAP" : "\/build\/images\/svg\/2x\/Asset 2@2x.png",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -633,7 +633,7 @@
       "oAP" : "\/build\/images\/svg\/2x\/Asset 3@2x.png",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -646,7 +646,7 @@
       "oAP" : "\/build\/images\/svg\/3x\/Asset 1@3x.png",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -1892,6 +1892,14 @@
       "oAP" : "\/build\/single-question.php",
       "oF" : 0
     },
+    "\/single-resource.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/single-resource.php",
+      "oF" : 0
+    },
     "\/style-min.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -2476,7 +2484,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets_purple",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 727209162.19182706
+    "lastBuiltDate" : 737241046.22088206
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
@@ -3738,7 +3746,7 @@
       }
     },
     "esLintSourceType" : 0,
-    "externalServerAddress" : "http:\/\/sogi123.local\/",
+    "externalServerAddress" : "http:\/\/sogi123.local",
     "gitIgnoreBuildFolder" : 1,
     "hideConfigFile" : 0,
     "jsCheckerReservedNamesString" : "",
