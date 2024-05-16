@@ -14,21 +14,14 @@
 		    <?php endwhile; ?>
 		</ul>
 <?php
-		$total_pages = $loop->max_num_pages;
-
-if ($total_pages > 1){
-
-	$current_page = max(1, get_query_var('paged'));
-
-	echo paginate_links(array(
-		'base' => get_pagenum_link(1) . '%_%',
-		'format' => '/page/%#%',
-		'current' => $current_page,
-		'total' => $total_pages,
-		'prev_text'    => __('« prev'),
-		'next_text'    => __('next »'),
-	));
-} ?>
+$big = 999999999; // need an unlikely integer
+echo paginate_links( array(
+   'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+   'format' => '?paged=%#%',
+   'current' => max( 1, get_query_var('paged') ),
+   'total' => $the_query->max_num_pages
+) );
+ ?>
 		
 		<?php wp_reset_postdata(); ?>
 	<?php endif; ?>	 			    

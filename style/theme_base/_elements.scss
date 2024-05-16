@@ -515,3 +515,11 @@ button.header-search {
 		}		
 	}
 }
+
+
+.page-numbers {
+	color: $yellow;
+	&.current {
+		border-bottom: 1px solid $yellow;
+	}
+}
