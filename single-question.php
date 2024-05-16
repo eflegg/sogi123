@@ -37,7 +37,7 @@ $heroContent = get_field('hero_content');
       </aside>
 
         <div class="flexible-content">
-			<h2>Our Answer</h2>
+			<h2>Our Answer:</h2>
 				<?php echo the_content(); ?>
 				<?php include 'components/flexible-content/flexible-content.php';?>
           </div>

@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Single Resource
+Template Name: Single Question
 */
 
 

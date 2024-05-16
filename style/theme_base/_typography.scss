@@ -51,7 +51,6 @@ p {
 }
 
 h1, .h1 {
-	white-space: nowrap;
 	@include heading;
 	font-weight: 800;
 	line-height:105%;
@@ -65,7 +64,6 @@ h1, .h1 {
 }
 
 h2, .h2 {
-	white-space: nowrap;
 	@include heading;
 	font-size: 3.6rem;
 	@include media(xs){
@@ -89,7 +87,6 @@ h3, .h3 {
 }
 
 h4, .h4 {
-
 	@include heading;
 	font-size: 2rem;
 	@include media(xs){
@@ -114,10 +111,8 @@ h5, .h5 {
 
 .default-type {
 	ol, ul {
+	
 		margin: 2rem 0;
-		li {
-			margin: 1rem 0;
-		}
 	}
 	color: $graphite;
 	&.resources, &.blue {
@@ -128,7 +123,6 @@ h5, .h5 {
 	}
 	h1, h2, h3, h4, h5, h6 {
 		color: $fandango;
-		margin: 2rem 0;
 	}
 	// h2 {
 	// 	margin: 1.3rem 0;
@@ -153,11 +147,14 @@ h5, .h5 {
 	p {
 		color: $graphite;
 		margin: 2rem 0;
+		a {
+			color: $yellow;
+		}
 	}
 	a {
-		color: $yellow;
-		text-decoration: underline;
 		margin: 2rem 0;
+		color: $yellow;
+	border-bottom: 2px solid $yellow;
 	}
 	hr {
 		background-color: $fandango;
@@ -209,7 +206,8 @@ h5, .h5 {
 		p, ul, ol {
 			margin-bottom: 1em;
 			a {
-				color: inherit;
+				color: $yellow;
+		
 				font-weight: 700;
 				text-decoration: underline;
 				&:hover {

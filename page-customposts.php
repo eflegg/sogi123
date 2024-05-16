@@ -39,6 +39,11 @@ get_header(); ?>
 		 include 'components/resource-filtersOLD.php';
          include 'components/resources-block.php';?>
 
+<?php get_the_posts_pagination( array(
+    'mid_size'  => 2,
+    'prev_text' => __( 'Back', 'textdomain' ),
+    'next_text' => __( 'Onward', 'textdomain' ),
+) ); ?>
 		 </section>
 
     <?php endif; ?>

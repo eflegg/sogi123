@@ -44,6 +44,6 @@ endif;
 // No value.
 else :
     // Do something...
-	echo '<p>no blocks</p>';
+	null;
 endif;
 ?>

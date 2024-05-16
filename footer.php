@@ -95,7 +95,7 @@ $bgImage = get_field('footer_image', 'options');
 					<div class="legal-inner">
 
 						<p class="">&copy; SOGI 123 <?php the_time('Y'); ?> </p>
-						<a href="https://harccreative.com/" target="_blank"><p class="harc-attribution">Site Design by Harc Creative</p></a>
+						<p ><a class="harc-attribution" href="https://harccreative.com/" target="_blank">Site Design by Harc Creative</a></p>
 					</div>
 				
 				</div>
