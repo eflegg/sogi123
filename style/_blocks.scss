@@ -394,6 +394,7 @@ ul.card--categories {
 .card.question-card {
 	height: auto;
 	width: 100%;
+	min-width: 25rem;
 	aspect-ratio: 1;
 	margin-bottom: 20px;
 
@@ -467,9 +468,11 @@ ul.card--categories {
 		visibility: hidden;
 		opacity: 0;
 		transition: all 0.15s ease-in-out;
-		font-size: 2.4rem;
-		line-height: 2.88rem;
+		
+		
+		
 		transition: all 0.2s cubic-bezier(0.34, 0.01, 0.45, 1.02);
+	
 	}
 	// transition: all 0.15s ease-in-out;
 	.continue-reading {
