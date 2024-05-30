@@ -14,8 +14,7 @@ $featured_resources = $sidebarSettings['featured_resources'];?>
         // Setup this post for WP functions (variable must be named $post).
         setup_postdata($post); ?>
         <li>
-            <a href="<?php the_permalink(); ?>">&mdash;&nbsp;&nbsp; <?php the_title(); ?></a>
-          
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </li>
     <?php endforeach; ?>
     </ul>

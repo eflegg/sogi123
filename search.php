@@ -22,14 +22,8 @@ $searchTermHeader = get_search_query();
 <?php include 'components/hero.php'; ?>
 
 	<section id="primary" class="section-container search-results default-type">
-		<?php if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : 
 
-		
-				<h2 class="page-title"><?php printf( __( 'Search Results for: %s', 'davedeveau' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
-	
-
-
-			<?php
 				global $query_string;
 				$query_args = explode("&", $query_string);
 				$search_query = array();
@@ -47,9 +41,9 @@ $searchTermHeader = get_search_query();
 				<ol class="results-list">    
 				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 					<li >
-						<a class="h3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					<?php the_excerpt();?>
-						<a class="" href="<?php the_permalink(); ?>"><p class="continue-reading">Continue reading...</p></a>
+						<a class="continue-reading" href="<?php the_permalink(); ?>"><p class="continue-reading">Continue reading...</p></a>
 					</li>   
 				<?php endwhile; ?>
 				</ol>
@@ -76,7 +70,6 @@ $searchTermHeader = get_search_query();
 
 		<?php endif; ?>
 	<section class="new-search">
-		<hr>
 		<h4>Try another search?</h4>
 		<div class="header-search-container search-visible">
 				<?php get_search_form(); ?>

@@ -1,7 +1,10 @@
-		
-		<?php 
-$bgImage = get_field('footer_image', 'options');
-
+<?php 
+// vars
+$bgImage = get_field('footer_image') ?: get_field('footer_image', 'options');
+$overline = get_field('impact_overline') ?: 'Our Impact';
+$testimonial = get_field('our_impact_testimonial') ?: get_field('our_impact_testimonial', 'options');
+$attribution = get_field('attribution') ?: get_field('attribution', 'options');
+$attribution_title = get_field('attribution_title') ?: get_field('attribution_title', 'options');
 ?>
 		
 		<footer>
@@ -9,9 +12,9 @@ $bgImage = get_field('footer_image', 'options');
 			<section class="our-impact" style="background-image: url('<?php echo $bgImage;?>'); background-size: cover;" class="our-impact">
 				<div class="blue-triangle"></div>
 				<div class="text">
-					<h4 class="eyebrow fade-me">our impact</h4>
-					<p class="testimonial fade-me">“<?php echo the_field('our_impact_testimonial', 'options');?>”</p>
-					<h4 class="attribution fade-me"><span class="name"><?php echo the_field('attribution', 'options');?></span>, <?php echo the_field('attribution_title', 'options');?></h4>
+					<h4 class="eyebrow fade-me"><?php echo $overline; ?></h4>
+					<p class="testimonial fade-me">“<?php echo $testimonial; ?>”</p>
+					<h4 class="attribution fade-me"><span class="name"><?php echo $attribution; ?></span>, <?php echo $attribution_title; ?></h4>
 				</div>
 			
 			</section>
@@ -29,7 +32,7 @@ $bgImage = get_field('footer_image', 'options');
 							<div class="fade-me">
 
 						
-						<h4 class="">Support Our Work</h4>
+						<h4 class=""><?php _e('Support Our Work', 'themename'); ?></h4>
 						<p><?php echo the_field('support_our_work_text', 'options');?></p>
 						<a class="button btn--skinny" href='<?php echo home_url('/donate'); ?>'>Donate</a>
 						</div>
@@ -84,7 +87,11 @@ $bgImage = get_field('footer_image', 'options');
 								<?php endif;?>
 							</div>
 						</div>
+
 				</div>
+					<div class="land-acknowledgement">
+							<?php echo get_field('land_acknowledgement', 'options'); ?>
+						</div>
 			</div>
 		</div>
 				<div class="decorative">
