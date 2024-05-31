@@ -48,31 +48,7 @@ get_header(); ?>
     </div>
 
     <div class="right">
-    <ul class="subpages--list">
-
-        <?php
-        global $post;
-        $args = array(
-            'parent'      => $post->ID,
-            'post_type'   => 'page',
-            'post_status' => 'publish'
-        ); 
-        $children = get_pages( $args );
-
-        if ( ! empty( $children ) ) :
-            ?>
-            <div class="childcells"> 
-                <?php
-                foreach ( $children as $post ) : setup_postdata( $post );
-                ?>
-                <?php include 'components/child-page-block.php';?>
-                <?php
-            endforeach;
-                wp_reset_postdata();
-                ?>
-            </div>
-        <?php endif; ?>
-    </ul>
+        <?php include 'components/page-links.php'; ?>
     </div>
     </div>
     </div>
