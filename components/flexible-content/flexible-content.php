@@ -9,7 +9,7 @@ if( have_rows('flexible_content_picker') ):
 
         // Case: tabs layout.
         if( get_row_layout() == 'tabs_block' ):
-
+            $i = 1;
 			if( have_rows('tab') ):
 				include 'tabs.php';	
 			endif;

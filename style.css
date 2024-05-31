@@ -3465,12 +3465,16 @@ h5, .h5 {
   margin: 2rem 0;
 }
 .default-type p a {
-  color: #FFC700;
+  color: #A428A3;
 }
 .default-type a {
   margin: 2rem 0;
   color: #FFC700;
-  border-bottom: 2px solid #FFC700;
+  border-bottom: 2px solid #A428A3;
+  transition: all 0.2s ease-out;
+}
+.default-type a:hover {
+  border-bottom-color: transparent;
 }
 .default-type hr {
   background-color: #A428A3;
@@ -3645,6 +3649,10 @@ h5, .h5 {
 
 .text-center {
   text-align: center;
+}
+
+ul.no-bullets {
+  list-style: none !important;
 }
 
 .left-auto {
@@ -4255,10 +4263,7 @@ form ::placeholder {
 }
 
 .new-search {
-  box-sizing: border-box;
-  margin: 40px 0 0;
-  padding-top: 40px;
-  border-top: 2px solid #A428A3;
+  margin: 0;
 }
 .new-search h4 {
   color: #333333;
@@ -4266,9 +4271,6 @@ form ::placeholder {
 }
 .new-search .header-search-container {
   display: table;
-  width: 100%;
-  max-width: 640px;
-  margin-top: 20px;
 }
 .new-search .custom-searchform {
   display: flex;
@@ -4277,6 +4279,19 @@ form ::placeholder {
   transform: translateY(0%);
   bottom: 0;
   margin: 3rem 0;
+}
+.search-results .new-search {
+  box-sizing: border-box;
+  margin: 40px 0 0;
+  padding-top: 40px;
+  border-top: 2px solid #A428A3;
+}
+.search-results .new-search .header-search-container {
+  width: 100%;
+  max-width: 640px;
+  margin-top: 20px;
+}
+.search-results .new-search .custom-searchform {
   width: 100%;
 }
 
@@ -4362,7 +4377,7 @@ footer .our-impact .text .attribution {
 footer .our-impact .text .testimonial {
   font-size: 2rem;
   line-height: 150%;
-  text-transform: capitalize;
+  text-transform: none;
   font-weight: 800;
   color: #fff;
 }

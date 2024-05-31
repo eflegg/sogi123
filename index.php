@@ -21,7 +21,7 @@ $heroContent = get_field('hero_content');
     <div class="updates--inner custom-container">
 
  
-        <ul class="card-container">
+        <ul class="card-container no-bullets">
 	 				<?php
 					$args = array(
 					    'post_type' => 'post',

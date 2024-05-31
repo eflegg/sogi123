@@ -14,7 +14,7 @@ $attribution_title = get_field('attribution_title') ?: get_field('attribution_ti
 				<div class="text">
 					<h4 class="eyebrow fade-me"><?php echo $overline; ?></h4>
 					<p class="testimonial fade-me">“<?php echo $testimonial; ?>”</p>
-					<h4 class="attribution fade-me"><span class="name"><?php echo $attribution; ?></span>, <?php echo $attribution_title; ?></h4>
+					<h4 class="attribution fade-me"><span class="name"><?php echo $attribution; ?></span><?php if($attribution_title): ?>, <?php echo $attribution_title; ?><?php endif; ?></h4>
 				</div>
 			
 			</section>

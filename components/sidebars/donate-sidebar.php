@@ -8,7 +8,7 @@ $sidebarText = $sidebarSettings['donate_text'];
     <div class="share--inner">
         <h3>Donate</h3>
         <p><?php echo $sidebarText;?></p>
-        <a href='<?php echo home_url('/our-work/donate'); ?>' class="text-center button btn--fat">
+        <a href="https://www.arcfoundation.ca/donate/#donation-links" target="_blank" class="text-center button btn--fat">
         <span class="text-center">
    Donate
 					

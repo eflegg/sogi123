@@ -47,8 +47,9 @@
 .text-center {
     text-align: center;
 }
-ul {
-    // list-style: none!important;
+
+ul.no-bullets {
+    list-style: none!important;
 }
 .left-auto {
     margin-left: auto;

@@ -31,14 +31,14 @@ Template Name: Updates Page
     <div class="updates--inner">
 
  
-        <ul class="card-container">
+        <ul class="card-container no-bullets">
 			
 	 				<?php
 						$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 					$args = array(
 					    'post_type' => 'post',
-					    'orderby' => 'menu_order',
-					    'order' => 'ASC',
+					    'orderby' => 'date',
+					    'order' => 'DESC',
 						'posts_per_page' => -1,
 
 					);
