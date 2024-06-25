@@ -384,6 +384,7 @@ ul.card--categories {
 	align-items: stretch;
 	padding-left: 0rem;
 	margin-top: 40px;
+	color: black; 
 
 	//pseudo element to fix layout if only two items in row.
 	&::after {

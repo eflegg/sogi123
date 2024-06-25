@@ -5527,6 +5527,7 @@ ul.card--categories {
   align-items: stretch;
   padding-left: 0rem;
   margin-top: 40px;
+  color: black;
 }
 .card-container::after {
   content: "";

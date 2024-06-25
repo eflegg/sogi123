@@ -49,7 +49,7 @@ get_header(); ?>
 									</span>
 								</div>
 									<?php $image = get_field('thumbnail_image'); ?>
-								<div class="project-image" style="background-image: url('<?php echo $image ?>"></div>
+								<div class="project-image" style="background-image: url('<?php echo $image ?>')"></div>
 								<a class="click-link" href="<?php the_permalink(); ?>"></a>
 							</div>
 

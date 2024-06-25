@@ -56,9 +56,9 @@ endif;
 				$defaultButtonText = "Learn More";
 				$defaultButtonLink = home_url('/updates'); ?>
 			 
-				<a href="<?php if(!$heroButtonLink): echo $defaultButtonLink; else: echo $heroButtonLink; endif; ?>">
+				<a href="<?php echo $heroButtonLink ? $heroButtonLink : $defaultButtonLink; ?>">
 					<span class="button btn--skinny fade-me">
-						<?php if(!$heroButtonText): echo $defaultButtonText; else: echo $heroButtonText; endif; ?>
+						<?php echo $heroButtonText ? $heroButtonText : $defaultButtonText; ?>
 				</span>
 				</a>
 			<?php endif;?>

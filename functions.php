@@ -104,7 +104,7 @@ function themename_scripts() {
 	}
 
 
-	if(is_page('resources') ) {
+	if(is_page('resources') || is_page('fr-teaching-resources') ) {
 		wp_enqueue_script('multi-filter', get_template_directory_uri() . '/js/multi-filter.js');
 	}
 
@@ -502,9 +502,8 @@ function rudr_ajax_search_filter() {
 	$filtered_form_data = array_filter($form_data);
 	$imploded_cat_names = implode( '+', $filtered_form_data);
 
-
+	// print_r($filtered_form_data);
 	// print_r($imploded_cat_names);
-	
 	
   
 	$ajaxpostsMulti = new WP_Query(array(
@@ -515,7 +514,6 @@ function rudr_ajax_search_filter() {
 	  'order' => 'desc',
 	));
 	$response = '';
-
 
 	
 	if($ajaxpostsMulti->have_posts()) {

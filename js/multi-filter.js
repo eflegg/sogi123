@@ -11,6 +11,7 @@ const ajaxFilterMulti = document.getElementById( 'ajax-filter-multi' );
 
 		const formData = new FormData( ajaxFilterMulti ) // similar to jQuery's serialize()
 	  // console.log('form data: ', Array.from(formData) );
+	  // console.log(ajaxurl +'?action=ajaxfilter2');
 
 		fetch(  ajaxurl +'?action=ajaxfilter2', {
 			method: 'POST',

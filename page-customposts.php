@@ -41,7 +41,7 @@ get_header(); ?>
 		 ?>
 		 <ul class="card-container">
 			 <?php
-			 echo do_shortcode('[ajax_load_more id="alm_4165885267" loading_style="grey" container_type="ul" css_classes="card-container" post_type="resource" posts_per_page="12" scroll="false"]');
+			 echo do_shortcode('[ajax_load_more id="alm_4165885267" loading_style="grey" container_type="ul" css_classes="card-container" post_type="resource" posts_per_page="12" scroll="false" orderby="menu_order"]');
 	         //include 'components/resources-block.php';
 	         ?>
 	     </ul>

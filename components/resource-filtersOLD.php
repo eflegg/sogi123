@@ -8,7 +8,14 @@
 	<form id="ajax-filter-multi" class="ajax-filter-multi ">
 		<?php
 		$parent_cat_arg = array('hide_empty' => false, 'parent' => 0 );
-		$parent_cat = get_terms(['taxonomy'=>'category','parent'=> 12]);?>  
+		$lang = pll_current_language();
+
+		if($lang === 'en'):
+			$parent_cat = get_terms(['taxonomy'=>'category','parent'=> 12, 'lang'=>'en']);
+		else: 
+			$parent_cat = get_terms(['taxonomy'=>'category','parent'=> 99, 'lang'=>'fr', 'hide_empty' => false]);
+		endif;
+		?>  
 
 		<?php foreach ($parent_cat as $catVal) :?> 
 
