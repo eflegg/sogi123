@@ -4647,11 +4647,13 @@ footer .main-footer .footer-nav--section .socials .social:hover svg path {
   }
 }
 
-.page-template-page-customposts .section-container.has-filter-container.resources-page {
+.page-template-page-customposts .section-container.has-filter-container.resources-page,
+.page-template-page-resource-template .section-container.has-filter-container.resources-page {
   padding-top: 4px;
 }
 @media screen and (min-width: 1000px) {
-  .page-template-page-customposts .section-container.has-filter-container.resources-page {
+  .page-template-page-customposts .section-container.has-filter-container.resources-page,
+.page-template-page-resource-template .section-container.has-filter-container.resources-page {
     padding: 4rem 8.25rem;
   }
 }
@@ -5196,6 +5198,7 @@ body {
   padding: 15rem 2rem 2rem 4rem;
   position: relative;
   background-position: center;
+  background-color: #A428A3;
   min-height: 80vh;
 }
 @media screen and (min-width: 1000px) {
@@ -6084,7 +6087,7 @@ ul.card--categories {
 .custom-select {
   display: inline-block;
   line-height: 1.5;
-  margin: 20px 8px 0 4px;
+  margin: 0 8px 0 4px;
   position: relative;
   width: auto;
 }

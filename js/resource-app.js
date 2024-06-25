@@ -19,7 +19,7 @@ new Vue({
       loading: true,
       showFilters: false,
       perPage: 9, 
-      totalItems: null,
+      totalItems: null
     }
   },
   mounted () {
@@ -79,7 +79,7 @@ new Vue({
         program_region, 
         program_grade, 
         program_lang, 
-        program_type, 
+        program_type 
       ].join('');
 
       // console.log(filters);
@@ -130,7 +130,7 @@ new Vue({
 
         this.refreshTotalPages()
       }
-    },
+    }
   },
   filters: {
     capitalize: function (value) {
@@ -138,7 +138,7 @@ new Vue({
       value = value.toString();
       value = value.replaceAll('program_', '');
       return value.charAt(0).toUpperCase() + value.slice(1);
-    },
+    }
   }
 })
 

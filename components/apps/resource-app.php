@@ -1,6 +1,11 @@
 <?php 
 $current_lang = pll_current_language();
 ?> 
+<section class="new-search">
+		<div class="header-search-container search-visible resource-search">
+				<?php get_search_form(); ?>
+		</div>
+	</section>
 <div id="resourceApp" data-filter="<?php echo get_field('active_category'); ?>">
 	<div class="filters flex">
 		<div class="ajax-filter-multi">
