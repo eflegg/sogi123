@@ -1,0 +1,118 @@
+.loader {
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid black;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  animation: spin 2s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.filters {
+  position: relative;
+}
+
+.custom-select {
+  display: inline-block;
+  line-height: 1.5;
+  margin: 20px 8px 0 4px;
+  position: relative;
+  width: auto;
+}
+
+.custom-select select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid $fandango;
+  border-radius: 100px;
+  color: $fandango;
+  font-weight: 500;
+  padding: 1.5rem 6rem 1.5rem 2.6rem;
+  width: auto;
+  background-image: url(images/svg/select-arrow-down-purple.svg);
+  background-position: center right 16px;
+  background-repeat: no-repeat;
+  background-size: 22px;
+}
+
+.custom-select select:focus {
+  outline: thin dotted;
+  outline-offset: 2px;
+}
+
+.custom-select select:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.custom-select select:focus-visible {
+  outline: thin dotted;
+  outline-offset: 2px;
+}
+
+.custom-select select:after {
+  position: absolute;
+  content: url(images/svg/select-arrow-down-purple.svg);
+  top: 10px; 
+  right: 12px;
+  width: 0;
+  height: 0;
+  width: 22px;
+  height: 22px;
+  transform-origin: center;
+  transform: rotate(-180deg) translateY(-9px);
+}
+
+.custom-select.selected select {
+  border-color: $fandango;
+  background-color: $fandango;
+  color: white;
+  background-image: url(images/svg/select-arrow-down-white.svg);
+
+  &:after {
+    content: url(images/svg/select-arrow-down-white.svg);
+  }
+} 
+
+.load-more {
+  text-align: center;
+  margin-bottom: 100px;
+  font-weight: 700;
+} 
+
+.load-more .btn--skinny {
+  margin: 20px auto;
+}
+
+.clear-filters,
+.load-more .btn--skinny {
+  &:hover {
+    background-color: $graphite;
+    color: white;
+    border-color: $graphite;
+  }
+
+  &:active,
+  &:focus {
+    outline: thin dotted $fandango;
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: thin dotted $fandango;
+    outline-offset: 2px;
+  }
+}
+
+[v-cloak] { 
+  display: none; 
+}

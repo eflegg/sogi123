@@ -105,7 +105,14 @@ function themename_scripts() {
 
 
 	if(is_page('resources') || is_page('fr-teaching-resources') ) {
-		wp_enqueue_script('multi-filter', get_template_directory_uri() . '/js/multi-filter.js');
+		// wp_enqueue_script('multi-filter', get_template_directory_uri() . '/js/multi-filter.js');
+	}
+
+		// resource app filter
+	if(is_page_template('page-resource-template.php') ) {
+		wp_enqueue_script( 'vue', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js', array(), 1, true);
+		wp_enqueue_script( 'axios', 'https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js', array(), 1, true);
+		wp_enqueue_script('resource-app', get_template_directory_uri() . '/js/resource-app.js', array('vue', 'axios'), 1, true);
 	}
 
 	if(is_page('questions-answered') ) {
@@ -588,3 +595,57 @@ function rudr_ajax_filter_by_category() {
 }
 add_action( 'wp_ajax_ajaxfilter', 'rudr_ajax_filter_by_category' );
 add_action( 'wp_ajax_nopriv_ajaxfilter', 'rudr_ajax_filter_by_category' );
+
+
+	
+// pll_get_post_language( $post_id, $field );
+
+/**
+ * Add post language to the WordPress REST API JSON Post Object
+ */
+/**
+ * https://developer.wordpress.org/reference/hooks/rest_this-post_type_query
+ *
+ * Query language specific posts via "lang" parameter: /wp-json/wp/v2/posts?lang=en
+ */
+
+function my_theme_filter_rest_post_query( $args, $request ) {
+	$lang_parameter = $request->get_param('lang');
+
+	if ( isset( $lang_parameter ) ) {
+		$args['lang'] = $lang_parameter; // https://polylang.pro/doc/developpers-how-to/#query
+	}
+
+	return $args;
+}
+add_filter( 'rest_resource_query', 'my_theme_filter_rest_post_query', 10, 2 );
+//add_filter( 'rest_{my_custom_posttype}_query', 'my_theme_filter_rest_post_query', 10, 2 ); // Custom posttype
+
+
+/**
+ * https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints
+ *
+ * Register a new REST field "language" and add it to the post data
+ * 
+ */
+
+add_action( 'rest_api_init', function () {
+
+	register_rest_field( 'resource', 'language', my_theme_register_postlanguage_function() );
+	//register_rest_field( '{my_custom_posttype}', 'language', my_theme_register_postlanguage_function() ); // Optional: Custom posttype
+
+});
+
+function my_theme_register_postlanguage_function() {
+	return array(
+		'methods'         => 'GET',
+		'get_callback'    => 'my_theme_get_postlanguage_function',
+		'schema'          => null,
+	);
+}
+
+function my_theme_get_postlanguage_function( $data ) {
+	$post_id = $data['id'];
+
+	return ( function_exists( 'pll_get_post_language' ) ? pll_get_post_language( $post_id ) : null );
+}

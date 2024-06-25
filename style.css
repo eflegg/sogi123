@@ -6059,6 +6059,125 @@ ul.card--categories {
   height: 100%;
 }
 
+.loader {
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid black;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  animation: spin 2s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.filters {
+  position: relative;
+}
+
+.custom-select {
+  display: inline-block;
+  line-height: 1.5;
+  margin: 20px 8px 0 4px;
+  position: relative;
+  width: auto;
+}
+
+.custom-select select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #A428A3;
+  border-radius: 100px;
+  color: #A428A3;
+  font-weight: 500;
+  padding: 1.5rem 6rem 1.5rem 2.6rem;
+  width: auto;
+  background-image: url(images/svg/select-arrow-down-purple.svg);
+  background-position: center right 16px;
+  background-repeat: no-repeat;
+  background-size: 22px;
+}
+
+.custom-select select:focus {
+  outline: thin dotted;
+  outline-offset: 2px;
+}
+
+.custom-select select:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.custom-select select:focus-visible {
+  outline: thin dotted;
+  outline-offset: 2px;
+}
+
+.custom-select select:after {
+  position: absolute;
+  content: url(images/svg/select-arrow-down-purple.svg);
+  top: 10px;
+  right: 12px;
+  width: 0;
+  height: 0;
+  width: 22px;
+  height: 22px;
+  transform-origin: center;
+  transform: rotate(-180deg) translateY(-9px);
+}
+
+.custom-select.selected select {
+  border-color: #A428A3;
+  background-color: #A428A3;
+  color: white;
+  background-image: url(images/svg/select-arrow-down-white.svg);
+}
+.custom-select.selected select:after {
+  content: url(images/svg/select-arrow-down-white.svg);
+}
+
+.load-more {
+  text-align: center;
+  margin-bottom: 100px;
+  font-weight: 700;
+}
+
+.load-more .btn--skinny {
+  margin: 20px auto;
+}
+
+.clear-filters:hover,
+.load-more .btn--skinny:hover {
+  background-color: #333333;
+  color: white;
+  border-color: #333333;
+}
+.clear-filters:active, .clear-filters:focus,
+.load-more .btn--skinny:active,
+.load-more .btn--skinny:focus {
+  outline: thin dotted #A428A3;
+  outline-offset: 2px;
+}
+.clear-filters:focus:not(:focus-visible),
+.load-more .btn--skinny:focus:not(:focus-visible) {
+  outline: none;
+}
+.clear-filters:focus-visible,
+.load-more .btn--skinny:focus-visible {
+  outline: thin dotted #A428A3;
+  outline-offset: 2px;
+}
+
+[v-cloak] {
+  display: none;
+}
+
 .container-with-sidebar {
   max-width: 140rem;
   margin: 0 auto;

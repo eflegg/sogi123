@@ -5,7 +5,7 @@ $bgImage = get_field('hero_image');
 $heroHeadline = get_field('hero_headline');
 $heroContent = get_field('hero_content');
 
-if(is_page_template('page-customposts.php')):
+if(is_page_template('page-customposts.php') || is_page_template('page-resource-template.php')):
 	$defaultImage = '/wp-content/uploads/2024/02/banner_hot.jpg';
 elseif(is_page_template('page-toplevel.php')):
 	$defaultImage = '/wp-content/uploads/2024/02/banner_hot.jpg';
