@@ -1,3 +1,4 @@
+<?php $current_lang = pll_current_language(); ?>
 <li class="update-card-container  update-color  single-slide">
     <a class="" href="<?php the_permalink(); ?>">
 
@@ -10,7 +11,7 @@
             </h4>
             <?php the_excerpt(); ?>
             <div class="content">
-               <p class="learn-button" href="<?php the_permalink(); ?>">Learn More</p>
+               <p class="learn-button" href="<?php the_permalink(); ?>"><?php echo $current_lang === 'fr' ? 'En savoir plus' : 'Learn More'; ?></p>
             </div>
         </div>  
     </div>

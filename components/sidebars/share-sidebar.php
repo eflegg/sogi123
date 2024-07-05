@@ -1,5 +1,5 @@
-
 <?php
+$current_lang = pll_current_language(); 
 $sidebarTitle = $sidebarSettings['share_title'];
 $sidebarText = $sidebarSettings['share_text'];
 ;?>
@@ -9,7 +9,7 @@ $sidebarText = $sidebarSettings['share_text'];
     <div class="share--inner">
         <h3 class=""><?php echo $sidebarTitle;?></h3>
         <p class=""><?php echo $sidebarText;?></p>
-        <p class="share-this ">Share this with your network:</p>
+        <p class="share-this "><?php if($current_lang == 'fr'): echo 'Partagez avec votre reseau:'; else: echo 'Share this with your network:'; endif; ?></p>
 
 
 <div class="socials display-flex a2a_kit a2a_kit_size_32 a2a_default_style">

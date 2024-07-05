@@ -83,7 +83,7 @@ button, .button {
 		// padding: 1rem;
 		padding: 1.6rem 3.8rem;
 		@include media(sm){
-			width: 13rem;
+			// width: 13rem;
 			// padding: 0.75rem;
 		}
 		@include media(md){
@@ -94,7 +94,7 @@ button, .button {
 		
 		}
 		@include media(xl){
-			padding: 3rem 7.8rem;
+			padding: 3rem 4rem;
 		}
 		background-color: $mint;
 		border: 2px solid $mint;

@@ -1,3 +1,4 @@
+<?php $current_lang = pll_current_language(); ?>
 <?php $the_question = get_field('questions');
 	if($the_question):?>
 <?php $question = $the_question['question'];?>
@@ -12,7 +13,7 @@
        <span class="the-answer">
        <?php echo $answer;?>
        </span>
-        <span class="continue-reading">Continue reading &#10142;</span>
+        <span class="continue-reading"><?php echo $current_lang === 'fr' ? 'Lire la suite' : 'Continue reading' ?> &#10142;</span>
     </div>  
     </a>  
 </li>

@@ -2,6 +2,7 @@
 /*
 Template Name: Our Work
 */
+$current_lang = pll_current_language(); 
 
 get_header(); ?>
 	<?php while ( have_posts() ) : the_post();
@@ -45,7 +46,7 @@ get_header(); ?>
 								<div class="content">
 									<h3><?php echo the_field('high_value'); ?></h3>
 									<span class="button">
-										<a href="<?php the_permalink(); ?>">Learn More</a>
+										<a href="<?php the_permalink(); ?>"><?php if($current_lang == 'fr'): echo 'En savoir plus'; else: echo 'Learn More'; endif; ?></a>
 									</span>
 								</div>
 									<?php $image = get_field('thumbnail_image'); ?>

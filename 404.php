@@ -6,6 +6,7 @@
  *
  * @package Julie_Starter
  */
+$current_lang = pll_current_language(); 
 
 get_header();
 ?>
@@ -21,7 +22,14 @@ get_header();
 
 		<section class="error-404 not-found section-container default-type">
 			<div class="page-content">
+				<?php if($current_lang === 'fr-CA'): ?>
 				<p><?php esc_html_e( 'Page Not Found. Please return to the', 'themename' ); ?> <a href="/"><?php esc_html_e( 'home page.', 'themename' ); ?> </a></p>
+				<?php else: ?>
+				<p><?php esc_html_e( 'Page non disponible. Veuillez retourner à la', 'themename' ); ?> <a href="/"><?php esc_html_e( "page d'accueil.", "themename" ); ?> </a></p>
+			<?php endif; ?>
+				
+
+
 			</div><!-- .page-content -->
 		</section><!-- .error-404 -->
 

@@ -1,7 +1,8 @@
+<?php $current_lang = pll_current_language(); ?>
 
 <div class="ajax-filters filter-by-category <?php echo $filterClass;?>">
 	<form class="category-form" id="ajax-filter">
-		<h2 class="h3">Filter by Category</h2>
+		<h2 class="h3"><?php echo $current_lang === 'fr' ? 'Filtrer par catégorie' : 'Filter by Category'; ?></h2>
 
 <?php
 	$parent_cat_arg = array('hide_empty' => false, 'parent' => 0 ); // get all categories that are parents, even the empty ones
@@ -19,7 +20,7 @@
 		$child_cat = get_terms( 'category', $child_arg );?>
 		<select data-type=<?php echo $dataType;?> class="cat-select" name="categories" id="cat-select">
 		<!-- <option data-slug="" data-type=<?php echo $dataType;?> class="cat-list_item" value="Choose a category">Category</option> -->
-		<option data-slug="" data-type=<?php echo $dataType;?> class="cat-list_item active" value="<?php echo $catVal->slug; ?>">All categories</option>
+		<option data-slug="" data-type=<?php echo $dataType;?> class="cat-list_item active" value="<?php echo $catVal->slug; ?>"><?php echo $current_lang === 'fr' ? 'Toutes les catégories' : 'All categories'; ?></option>
 		<?php foreach($child_cat as $child_term):?>
 			<option data-type=<?php echo $dataType;?> data-slug="<?= $child_term->slug; ?>" class="cat-list_item"  value="<?php echo $child_term->slug; ?>"><?php echo $child_term->name; ?></option>
 		<?php endforeach ;?>

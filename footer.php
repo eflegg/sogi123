@@ -1,10 +1,29 @@
 <?php 
 // vars
+$current_lang = pll_current_language(); 
 $bgImage = get_field('footer_image') ?: get_field('footer_image', 'options');
-$overline = get_field('impact_overline') ?: 'Our Impact';
-$testimonial = get_field('our_impact_testimonial') ?: get_field('our_impact_testimonial', 'options');
-$attribution = get_field('attribution') ?: get_field('attribution', 'options');
-$attribution_title = get_field('attribution_title') ?: get_field('attribution_title', 'options');
+
+if($current_lang === 'fr'): 
+	$overline = get_field('impact_overline') ?: 'FR Our Impact';
+	$testimonial = get_field('our_impact_testimonial') ?: get_field('fr_our_impact_testimonial', 'options');
+	$attribution = get_field('attribution') ?: get_field('fr_attribution', 'options');
+	$attribution_title = get_field('attribution_title') ?: get_field('fr_attribution_title', 'options');
+	$land_acknowledgement = get_field('fr_land_acknowledgement', 'options');
+	$support_title = 'FRENCH Support Our Work';
+	$support_text = get_field('fr_support_our_work_text', 'options');
+	$site_credit = 'Site conçu par Harc Creative';
+	$donate_label = 'Faire un don';
+else: 
+	$overline = get_field('impact_overline') ?: 'Our Impact';
+	$testimonial = get_field('our_impact_testimonial') ?: get_field('our_impact_testimonial', 'options');
+	$attribution = get_field('attribution') ?: get_field('attribution', 'options');
+	$attribution_title = get_field('attribution_title') ?: get_field('attribution_title', 'options');
+	$land_acknowledgement = get_field('land_acknowledgement', 'options');
+	$support_title = 'Support Our Work';
+	$support_text = get_field('support_our_work_text', 'options');
+	$site_credit = 'Site design by Harc Creative';
+	$donate_label = 'Donate';
+endif; 
 ?>
 		
 		<footer>
@@ -32,9 +51,9 @@ $attribution_title = get_field('attribution_title') ?: get_field('attribution_ti
 							<div class="fade-me">
 
 						
-						<h4 class=""><?php _e('Support Our Work', 'themename'); ?></h4>
-						<p><?php echo the_field('support_our_work_text', 'options');?></p>
-						<a class="button btn--skinny" href='<?php echo home_url('/donate'); ?>'>Donate</a>
+						<h4 class=""><?php echo $support_title; ?></h4>
+						<p><?php echo $support_text; ?></p>
+						<a class="button btn--skinny" href='<?php echo home_url('/donate'); ?>'><?php echo $donate_label; ?></a>
 						</div>
 						</div>
 
@@ -90,7 +109,7 @@ $attribution_title = get_field('attribution_title') ?: get_field('attribution_ti
 
 				</div>
 					<div class="land-acknowledgement">
-							<?php echo get_field('land_acknowledgement', 'options'); ?>
+							<?php echo $land_acknowledgement; ?>
 						</div>
 			</div>
 		</div>
@@ -102,7 +121,7 @@ $attribution_title = get_field('attribution_title') ?: get_field('attribution_ti
 					<div class="legal-inner">
 
 						<p class="">&copy; SOGI 123 <?php the_time('Y'); ?> </p>
-						<p ><a class="harc-attribution" href="https://harccreative.com/" target="_blank">Site Design by Harc Creative</a></p>
+						<p ><a class="harc-attribution" href="https://harccreative.com/" target="_blank"><?php echo $site_credit; ?></a></p>
 					</div>
 				
 				</div>

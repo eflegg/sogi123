@@ -1,4 +1,5 @@
 <?php
+$current_lang = pll_current_language(); 
 $searchTermHeader = get_search_query();
 // $defaultImage = get_field('hero_default_image', 'options');
 $bgImage = get_field('hero_image');
@@ -20,8 +21,8 @@ endif;
 if(is_search()):
 	$bgImage = get_field('hero_image');
 	$defaultImage = get_field('hero_default_image', 'options');
-	$heroHeadline = 'Search Results for: ';
-	$heroContent = get_field('hero_content');
+	$heroHeadline = $current_lang == 'fr' ? 'Vos résultats de recherche pour: ' : 'Search Results for: ';
+	$heroContent = '';
 	$searchTermHeader = get_search_query();
 endif; 
 
@@ -58,7 +59,7 @@ endif;
 			 
 				<a href="<?php echo $heroButtonLink ? $heroButtonLink : $defaultButtonLink; ?>">
 					<span class="button btn--skinny fade-me">
-						<?php echo $heroButtonText ? $heroButtonText : $defaultButtonText; ?>
+						<?php if($heroButtonText): echo $heroButtonText; else: echo $defaultButtonText; endif; ?>
 				</span>
 				</a>
 			<?php endif;?>

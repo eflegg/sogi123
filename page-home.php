@@ -13,6 +13,11 @@ get_header(); ?>
 ?>
 <?php include 'components/hero.php'; ?>
 
+<?php
+
+$page_links = get_field('page_links'); 
+if( $page_links ) { ?>
+
 <section class="at-a-glance section-container ">
     <div class="custom-container">
     <div class="search-circle">
@@ -21,7 +26,7 @@ get_header(); ?>
         </div>
     </div>
 
-    <h2 class="h3 fade-me">SOGI 123 <br>At a Glance</h2>
+    <h2 class="h3 fade-me"><?php echo get_field('at_a_glance_section_heading'); ?></h2>
     <div class="inner">
     <div class="left">
         <div class="image--at-a-glace">
@@ -49,11 +54,11 @@ get_header(); ?>
 
     </div> 
 </section>
-
+<?php } ?> <!--end page links check-->
 <section class="questions-getting section-container">
     <div class="inner custom-container">
         <div class="left fade-me">
-            <h3 class="">Questions <br />We're <br />Getting</h3>
+            <h3 class=""><?php echo get_field('questions_section_heading'); ?></h3>
             <a href='<?php echo home_url('/our-work/questions-answered'); ?>' class="view-all fade-me">View all <span class="arrow">&rarr;</span></a>
         </div>
         <div class="right">

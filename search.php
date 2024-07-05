@@ -4,6 +4,7 @@
  *
  * @package davedeveau
  */
+$current_lang = pll_current_language(); 
 
 get_header(); ?>
 
@@ -14,7 +15,7 @@ get_header(); ?>
 <?php 
 $bgImage = get_field('hero_image');
 $defaultImage = 'https://picsum.photos/seed/picsum/1000';
-$heroHeadline = 'Search Results for: ';
+$heroHeadline = $current_lang == 'fr-CA' ? 'Vos résultats de recherche pour:' : 'Search Results for: ';
 $heroContent = get_field('hero_content');
 $searchTermHeader = get_search_query();
 ?>
@@ -43,7 +44,7 @@ $searchTermHeader = get_search_query();
 					<li >
 						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					<?php the_excerpt();?>
-						<a class="continue-reading" href="<?php the_permalink(); ?>"><p class="continue-reading">Continue reading...</p></a>
+						<a class="continue-reading" href="<?php the_permalink(); ?>"><p class="continue-reading"><?php if($current_lang == 'fr'): echo "Lire la suite..."; else: echo "Continue reading..."; endif; ?></p></a>
 					</li>   
 				<?php endwhile; ?>
 				</ol>
@@ -52,7 +53,7 @@ $searchTermHeader = get_search_query();
 				<?php wp_reset_postdata(); ?>
 
 			<?php else : ?>
-				<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+				<p><?php if($current_lang == 'fr'): echo "Désolé, aucun article ne correspond à vos critères."; else: echo "Sorry, no posts matched your criteria."; endif; ?></p>
 			<?php endif; ?>
 
 			<?php /* Start the Loop */ ?>
@@ -65,12 +66,14 @@ $searchTermHeader = get_search_query();
 			<?php davedeveau_content_nav( 'nav-below' ); ?>
 
 		<?php else : ?>
-<h2 class="h3">Sorry, we can't seem to find anything that matches your search</h2>
+<h2 class="h3">
+<?php if($current_lang == 'fr'): echo "Désolé, nous n'avons rien trouvé qui corresponde à votre recherche."; else: echo "Sorry, we can't seem to find anything that matches your search"; endif; ?>
+</h2>
 			<?php get_template_part( 'no-results', 'search' ); ?>
 
 		<?php endif; ?>
 	<section class="new-search">
-		<h4>Try another search?</h4>
+		<h4><?php if($current_lang == 'fr'): echo "Essayez une autre recherche ?"; else: echo "Try another search?"; endif; ?></h4>
 		<div class="header-search-container search-visible">
 				<?php get_search_form(); ?>
 			</div>

@@ -6,13 +6,11 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 
 <?php wp_head(); ?>
-
 </head>
 
 <?php 
-
+$current_lang = pll_current_language();
 $colour = '#3857a2';
-
 if(get_field('sig_colour') ):
 	$colour = get_field('sig_colour');
 	
@@ -26,7 +24,7 @@ endif;
         <![endif]-->
 	<div class="site">
 		<header id="header">
-		<a href="#main"class="skiplink">Skip to content</a>
+		<a href="#main" class="skiplink"><?php if($current_lang == 'fr'): echo 'Passer au contenu'; else: echo 'Skip to content'; endif; ?></a>
 			<a class="home-logo" href=<?php echo home_url();?>>
 				<?php
 				$pageTitle = get_the_title();

@@ -3747,14 +3747,9 @@ button.btn--fat, .button.btn--fat {
   border: 2px solid #1EBB8A;
   color: #fff;
 }
-@media screen and (min-width: 600px) {
-  button.btn--fat, .button.btn--fat {
-    width: 13rem;
-  }
-}
 @media screen and (min-width: 1200px) {
   button.btn--fat, .button.btn--fat {
-    padding: 3rem 7.8rem;
+    padding: 3rem 4rem;
   }
 }
 button.btn--fat a, .button.btn--fat a {

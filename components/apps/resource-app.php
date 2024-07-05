@@ -100,7 +100,7 @@ $current_lang = pll_current_language();
 		      <option value="all"><?php echo $label; ?></option>
 		    </select>
 		  </div>
-	<div><button class="clear-filters btn--skinny" v-if="selected !== 'all'" v-on:click="clearFilters()">Clear Filters</button>
+	<div><button class="clear-filters btn--skinny" v-if="selected !== 'all'" v-on:click="clearFilters()"><?php echo $current_lang === 'fr' ? 'Effacer les filtres de recherche' : 'Clear Filters'; ?></button>
 	</div>
 </div>
 </div>
