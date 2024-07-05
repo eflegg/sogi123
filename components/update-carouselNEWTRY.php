@@ -6,6 +6,15 @@ $parent = get_the_title( $post->post_parent ); ?>
             <?php $bgColor = '#6f46c3';?>   
       <?php endif;?>
 
+<?php 
+$arguments = array(
+'post_type' => 'post',  
+'orderby' => 'menu_order',
+'order' => 'ASC',
+'posts_per_page' => 3,
+);
+$custom_query = get_posts($arguments); 
+if($custom_query): ?>
 
 <section style="background-color: <?php echo $bgColor;?>" class="updates-section carousel-container">
       <div class="custom-container">
@@ -17,20 +26,11 @@ $parent = get_the_title( $post->post_parent ); ?>
                         </button> -->
                         <ul class="image-list">
                               <?php
-                                    $arguments = array(
-                                    'post_type' => 'post',  
-                                    'orderby' => 'menu_order',
-                                    'order' => 'ASC',
-                                    'posts_per_page' => 3,
-                                    );
-                                    $custom_query = get_posts($arguments);
                                     foreach ($custom_query as $post) {
                                           setup_postdata($post);
                                           include 'cards/update-card.php';
                                     
                                     }
-                                    wp_reset_postdata();
-
                                     ?>
                         </ul>
                         <div class="more-updates">
@@ -47,5 +47,7 @@ $parent = get_the_title( $post->post_parent ); ?>
       </div>
 
 </section>
+<?php wp_reset_postdata();
+endif; ?>
 
 

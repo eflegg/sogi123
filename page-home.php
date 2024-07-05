@@ -55,6 +55,9 @@ if( $page_links ) { ?>
     </div> 
 </section>
 <?php } ?> <!--end page links check-->
+<?php
+$questions_getting = get_field('questions_were_getting');
+if($questions_getting):?>
 <section class="questions-getting section-container">
     <div class="inner custom-container">
         <div class="left fade-me">
@@ -65,16 +68,14 @@ if( $page_links ) { ?>
         <?php
             $postsPerPage = 3;
             ?>
-        <?php 
-        $questions_getting = get_field('questions_were_getting');
-        if($questions_getting):?>
+        
         <ul class="card-container">
             <?php foreach( $questions_getting as $post ): 
             	$the_question = get_field('questions');
                 if($the_question):?>
                     <?php $question = $the_question['question'];?>
                     <?php $answer = $the_question['answer'];
-                    endif;
+                endif;
 
                 // Setup this post for WP functions (variable must be named $post).
                 setup_postdata($post); ?>
@@ -85,21 +86,14 @@ if( $page_links ) { ?>
             // Reset the global post object so that the rest of the page works correctly.
             wp_reset_postdata(); ?>
 
-          <?php else:?>  
-            <?php include 'components/questions-block.php';?>
-        <?php endif;?>
-
         </div>
     </div>
 </section>
-
+<?php endif; ?> <!-- end questions check -->
 
 <?php include 'components/update-carouselNEWTRY.php';?>
 
-
-
-
-          </main>
+</main>
 
 <?php			
 	endwhile;
