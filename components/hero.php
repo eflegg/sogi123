@@ -28,6 +28,9 @@ endif;
 
 if(is_404()):
 	$heroHeadline = '404 Page Not Found';
+	if($current_lang === 'fr') {
+		$heroHeadline = '404 Page non disponible';
+	}
 	$heroContent = '';
 endif; 
 
