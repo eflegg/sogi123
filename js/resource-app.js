@@ -18,8 +18,10 @@ new Vue({
       totalPages: 1,
       loading: true,
       showFilters: false,
-      perPage: 9, 
-      totalItems: null
+      perPage: 12, 
+      totalItems: null,
+      orderBy: 'title',
+      order: 'asc'
     }
   },
   mounted () {
@@ -27,7 +29,7 @@ new Vue({
     // const preFilter = '&program_age=' + this.selected;
     // this.selected = preFilter !== '&program_age=all' ? preFilter : 'all';
     // const url = this.selected !== 'all' ? '/wp-json/wp/v2/resource?_embed&per_page=' + this.perPage + '&acf_format=standard' + preFilter : '/wp-json/wp/v2/resource?_embed&per_page=' + this.perPage + '&acf_format=standard';
-    const url = '/wp-json/wp/v2/resource?acf_format=standard&per_page=' + this.perPage;
+    const url = '/wp-json/wp/v2/resource?acf_format=standard&orderby=' + this.orderBy + '&order=' + this.order + '&per_page=' + this.perPage;
     // // console.log(url);
     axios
       .get(url)
@@ -89,7 +91,7 @@ new Vue({
       this.getFilteredProjects(filters);
     },
     getFilteredProjects(filters) {
-      const url = '/wp-json/wp/v2/resource?_embed&per_page=' + this.perPage + '&acf_format=standard' + filters;
+      const url = '/wp-json/wp/v2/resource?_embed&orderby=' + this.orderBy + '&order=' + this.order + '&per_page=' + this.perPage + '&acf_format=standard' + filters;
       // console.log(url);
         axios
         .get(url)
@@ -112,7 +114,7 @@ new Vue({
         this.loading = true;
         this.currentPage = this.currentPage + 1;
         const currentPage = this.currentPage;
-        const url = this.selected !== 'all' ? '/wp-json/wp/v2/resource?_embed&per_page=' + this.perPage + '&acf_format=standard' + this.selected + '&page=' + currentPage : '/wp-json/wp/v2/resource?_embed&per_page=' + this.perPage + '&acf_format=standard&page=' + currentPage ;
+        const url = this.selected !== 'all' ? '/wp-json/wp/v2/resource?_embed&orderby=' + this.orderBy + '&order=' + this.order + '&per_page=' + this.perPage + '&acf_format=standard' + this.selected + '&page=' + currentPage : '/wp-json/wp/v2/resource?_embed&orderby=' + this.orderBy + '&order=' + this.order + '&per_page=' + this.perPage + '&acf_format=standard&page=' + currentPage ;
         axios
         .get(url)
         .then(response => {
