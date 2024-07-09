@@ -649,21 +649,3 @@ function my_theme_get_postlanguage_function( $data ) {
 
 	return ( function_exists( 'pll_get_post_language' ) ? pll_get_post_language( $post_id ) : null );
 }
-
-//filter search form placeholder
-function replace_placeholder_search_text( $form ) { 
-	$current_lang = pll_current_language();
-	if($current_lang == 'fr'):
-	 $pattern = '/(placeholder=)".*"/';
-	 $replacement = "$1" . "'Recherche...'";
-         $form = preg_replace($pattern, $replacement, $form); 
-         return $form;
-  else:
-  	$pattern = '/(placeholder=)".*"/';
-	 	$replacement = "$1" . "'Search...'";
-         $form = preg_replace($pattern, $replacement, $form); 
-         return $form;
-  endif;
-}
-
- add_filter( 'get_search_form', 'replace_placeholder_search_text' );
