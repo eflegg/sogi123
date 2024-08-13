@@ -4,12 +4,12 @@ $current_lang = pll_current_language();
 $bgImage = get_field('footer_image') ?: get_field('footer_image', 'options');
 
 if($current_lang === 'fr'): 
-	$overline = get_field('impact_overline') ?: 'FR Our Impact';
+	$overline = get_field('impact_overline') ?: 'Notre impact';
 	$testimonial = get_field('our_impact_testimonial') ?: get_field('fr_our_impact_testimonial', 'options');
 	$attribution = get_field('attribution') ?: get_field('fr_attribution', 'options');
 	$attribution_title = get_field('attribution_title') ?: get_field('fr_attribution_title', 'options');
 	$land_acknowledgement = get_field('fr_land_acknowledgement', 'options');
-	$support_title = 'FRENCH Support Our Work';
+	$support_title = 'Faites un don';
 	$support_text = get_field('fr_support_our_work_text', 'options');
 	$site_credit = 'Site conçu par Harc Creative';
 	$donate_label = 'Faire un don';
@@ -32,7 +32,7 @@ endif;
 				<div class="blue-triangle"></div>
 				<div class="text">
 					<h4 class="eyebrow fade-me"><?php echo $overline; ?></h4>
-					<p class="testimonial fade-me">“<?php echo $testimonial; ?>”</p>
+					<p class="testimonial fade-me"><?php echo $testimonial; ?></p>
 					<h4 class="attribution fade-me"><span class="name"><?php echo $attribution; ?></span><?php if($attribution_title): ?>, <?php echo $attribution_title; ?><?php endif; ?></h4>
 				</div>
 			

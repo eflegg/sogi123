@@ -890,13 +890,16 @@ ul.card--categories {
 	  height: 100px;
 	  li.tab-color {
 		cursor: pointer;
+		// background-color: $vividBlue;
+		margin-right: 2px;
+		border-radius: 10px 10px 0 0;
 		path {
 			&:focus {
 				outline: 4px solid $vividBlue;
 			}
 		}
 		overflow: hidden;
-		margin-right: -2.1rem;
+		// margin-right: -2.1rem;
 		display: inline-flex;
 		position: relative;
 		@for $i from 1 through 10 {
@@ -904,32 +907,33 @@ ul.card--categories {
 			  z-index: #{10 - $i};
 			}
 		 }
-		width: 7rem;
-		height: 5.6rem;
+		// width: 7rem;
+		height: 7rem;
 		top: 6.25rem;
 		width: calc(100% / 4 + 1.3rem)!important;
-		max-width: 13.2rem;
+		// max-width: 13.2rem;
 		 @include media(md){
-			width: 13.2rem;
+			// width: 13.2rem;
 			height: 7.2rem;
-		
 		 }
 
 		 span {
-			top: 1.5rem;
+			top: 0.5rem;
 			position: absolute;
 			text-align: center;
 			color: $white;
+			// background-color: $vividBlue;
 			padding-top: .5rem;
 			width: 95%;
 			line-height: 100%;
 			font-size: 1.4rem;
 			@include media(sm){
-				top: 0.5rem;
+				top: 1rem;
 			}
 		 }
 		&.active-tab {
 			z-index: 10;
+			// background-color: $vividBlue;
 		}
 	  }
 	}
@@ -941,6 +945,15 @@ ul.card--categories {
 		display: none;
 	  visibility: hidden;
 	  padding: 6rem 5rem 5rem 5rem;
+
+	  a {
+	  	color: white;
+	  	border-bottom-color: white;
+	  }
+
+	  a:hover {
+	  	border-bottom-color: transparent;
+	  }
 
 	}
 	

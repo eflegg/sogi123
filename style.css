@@ -3296,10 +3296,16 @@ ul.ff_coupon_responses .ff_success {
 .tab-color:nth-of-type(5n+1).tab-pane {
   background-color: #3D52B9;
 }
+.tab-color:nth-of-type(5n+1).tab-item {
+  background-color: #3D52B9;
+}
 .tab-color:nth-of-type(5n+1) svg path {
   fill: #3D52B9;
 }
 .tab-color:nth-of-type(5n+2).tab-pane {
+  background-color: #3674D9;
+}
+.tab-color:nth-of-type(5n+2).tab-item {
   background-color: #3674D9;
 }
 .tab-color:nth-of-type(5n+2) svg path {
@@ -3308,16 +3314,25 @@ ul.ff_coupon_responses .ff_success {
 .tab-color:nth-of-type(5n+3).tab-pane {
   background-color: #2F96F8;
 }
+.tab-color:nth-of-type(5n+3).tab-item {
+  background-color: #2F96F8;
+}
 .tab-color:nth-of-type(5n+3) svg path {
   fill: #2F96F8;
 }
 .tab-color:nth-of-type(5n+4).tab-pane {
   background-color: #1CC5C4;
 }
+.tab-color:nth-of-type(5n+4).tab-item {
+  background-color: #1CC5C4;
+}
 .tab-color:nth-of-type(5n+4) svg path {
   fill: #1CC5C4;
 }
 .tab-color:nth-of-type(5n+5).tab-pane {
+  background-color: #1EBB8A;
+}
+.tab-color:nth-of-type(5n+5).tab-item {
   background-color: #1EBB8A;
 }
 .tab-color:nth-of-type(5n+5) svg path {
@@ -3475,6 +3490,9 @@ h5, .h5 {
 }
 .default-type a:hover {
   border-bottom-color: transparent;
+}
+.default-type a.button:hover {
+  border-bottom-color: white;
 }
 .default-type hr {
   background-color: #A428A3;
@@ -4451,6 +4469,7 @@ footer .main-footer .support-our-work .button {
 footer .main-footer .support-our-work .button:hover {
   transition: all 0.15s ease-in-out;
   background-color: #333333;
+  border-bottom-color: white;
   border: 2px solid #fff;
 }
 footer .main-footer .support-our-work .button:hover a {
@@ -5962,15 +5981,14 @@ ul.card--categories {
 }
 .tab-container ul.tab-nav li.tab-color {
   cursor: pointer;
+  margin-right: 2px;
+  border-radius: 10px 10px 0 0;
   overflow: hidden;
-  margin-right: -2.1rem;
   display: inline-flex;
   position: relative;
-  width: 7rem;
-  height: 5.6rem;
+  height: 7rem;
   top: 6.25rem;
   width: calc(25% + 1.3rem) !important;
-  max-width: 13.2rem;
 }
 .tab-container ul.tab-nav li.tab-color path:focus {
   outline: 4px solid #0394DD;
@@ -6007,12 +6025,11 @@ ul.card--categories {
 }
 @media screen and (min-width: 800px) {
   .tab-container ul.tab-nav li.tab-color {
-    width: 13.2rem;
     height: 7.2rem;
   }
 }
 .tab-container ul.tab-nav li.tab-color span {
-  top: 1.5rem;
+  top: 0.5rem;
   position: absolute;
   text-align: center;
   color: #fff;
@@ -6023,7 +6040,7 @@ ul.card--categories {
 }
 @media screen and (min-width: 600px) {
   .tab-container ul.tab-nav li.tab-color span {
-    top: 0.5rem;
+    top: 1rem;
   }
 }
 .tab-container ul.tab-nav li.tab-color.active-tab {
@@ -6035,6 +6052,13 @@ ul.card--categories {
   display: none;
   visibility: hidden;
   padding: 6rem 5rem 5rem 5rem;
+}
+.tab-container .tab-pane a {
+  color: white;
+  border-bottom-color: white;
+}
+.tab-container .tab-pane a:hover {
+  border-bottom-color: transparent;
 }
 .tab-container .tab-pane.active-tab {
   display: block;

@@ -1,11 +1,21 @@
-<?php $current_lang = pll_current_language(); ?>
+<?php $current_lang = pll_current_language(); 
+
+$post_date = get_the_date();
+
+?>
 <li class="update-card-container  update-color  single-slide">
     <a class="" href="<?php the_permalink(); ?>">
 
     <div class="update-card">
         <div class="tab"></div>
         <div class="inner">
-            <p class="post-date"><?php echo get_the_date();?></p>
+            <p class="post-date">
+                <?php if($current_lang == 'fr'): ?>
+                    <?php the_date('F j, Y'); ?>
+                <?php else: ?>
+                    <?php echo $post_date; ?>
+                <?php endif; ?>
+            </p>
             <h4 class="post-title">
                 <?php the_title(); ?>
             </h4>

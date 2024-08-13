@@ -37,7 +37,11 @@ $heroContent = get_field('hero_content');
       </aside>
 
         <div class="flexible-content">
+        	<?php if($current_lang === 'fr'): ?>
+			<h2>Notre réponse</h2>
+		<?php else: ?>
 			<h2>Our Answer:</h2>
+		<?php endif; ?>
 				<?php echo the_content(); ?>
 				<?php include 'components/flexible-content/flexible-content.php';?>
           </div>

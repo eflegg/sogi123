@@ -160,6 +160,9 @@ h5, .h5 {
 	a:hover {
 		border-bottom-color: transparent;
 	}
+	a.button:hover {
+		border-bottom-color: white;
+	}
 	hr {
 		background-color: $fandango;
 		height: .2rem;

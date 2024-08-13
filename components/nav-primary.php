@@ -23,7 +23,7 @@ $current_lang = pll_current_language(); ?>
 			<?php include(get_template_directory() . "/components/svg/globe-logo.php");?>
 			<?php pll_the_languages( array( 'dropdown' => 1 ) ); ?>
 		</div>
-		<a href='<?php echo home_url('/donate'); ?>' class="btn--fat button  text-center"><span><?php if($current_lang == 'fr'): echo 'Faire un don'; else: echo 'Donate'; endif; ?></span></a>
+		<a href='<?php if($current_lang == 'fr'): echo home_url('/faites-un-don'); else: echo home_url('/donate'); endif; ?>' class="btn--fat button  text-center"><span><?php if($current_lang == 'fr'): echo 'Faites un don'; else: echo 'Donate'; endif; ?></span></a>
 		<button id="header-search" class="header-search no-btn"><?php include(get_template_directory() . "/components/svg/header-search-icon.php"); ?></button>
 		<div class="header-search-container">
 			<?php get_search_form(); ?>

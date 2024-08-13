@@ -9,6 +9,19 @@ $sidebarText = $sidebarSettings['share_text'];
     <div class="share--inner">
         <h3 class=""><?php echo $sidebarTitle;?></h3>
         <p class=""><?php echo $sidebarText;?></p>
+
+<?php $link = $sidebarSettings['external_link'];
+
+if( $link ): 
+  $link_url = $link['url'];
+  $link_title = $link['title'];
+  $link_target = $link['target'] ? $link['target'] : '_self';
+  ?>
+  <a class="text-center button btn--fat" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?>
+  </a>
+<?php endif; ?>
+
+
         <p class="share-this "><?php if($current_lang == 'fr'): echo 'Partagez avec votre reseau:'; else: echo 'Share this with your network:'; endif; ?></p>
 
 

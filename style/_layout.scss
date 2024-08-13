@@ -269,6 +269,7 @@ footer {
 				&:hover {
 					transition: all .15s ease-in-out;
 					background-color: $graphite;
+					border-bottom-color: white;
 					a {
 						color: $white;
 					}

@@ -80,6 +80,9 @@ $cardColorsLength: length($cardColors);
         &.tab-pane{
           background-color: nth($tabColors, $i);
         }
+        &.tab-item {
+          background-color: nth($tabColors, $i);
+        }
         svg {
           path{
             fill: nth($tabColors, $i);
