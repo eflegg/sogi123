@@ -63,7 +63,7 @@ if($questions_getting):?>
         <div class="left fade-me">
             <h3 class=""><?php echo get_field('questions_section_heading'); ?></h3>
             <?php if($current_lang == 'fr'): ?>
-                <a href='<?php echo home_url('/notre-travail/les-reponses-a-vos-questions/'); ?>' class="view-all fade-me">French View all <span class="arrow">&rarr;</span></a>
+                <a href='<?php echo home_url('/notre-travail/les-reponses-a-vos-questions/'); ?>' class="view-all fade-me">Voir tout <span class="arrow">&rarr;</span></a>
              <?php else: ?>
                 <a href='<?php echo home_url('/our-work/questions-answered'); ?>' class="view-all fade-me">View all <span class="arrow">&rarr;</span></a>
              <?php endif; ?>

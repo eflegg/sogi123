@@ -8,7 +8,7 @@ $sidebarText = $sidebarSettings['share_text'];
 <div class="share-sidebar <?php echo $sidebarType;?>">
     <div class="share--inner">
         <h3 class=""><?php echo $sidebarTitle;?></h3>
-        <p class=""><?php echo $sidebarText;?></p>
+        <?php echo $sidebarText;?>
 
 <?php $link = $sidebarSettings['external_link'];
 

@@ -1,7 +1,8 @@
 <?php $current_lang = pll_current_language(); 
 
-$post_date = get_the_date();
-
+$post_date = get_the_date('F j, Y');
+$formatter = new IntlDateFormatter('fr_CA', IntlDateFormatter::LONG, IntlDateFormatter::NONE);
+ 
 ?>
 <li class="update-card-container  update-color  single-slide">
     <a class="" href="<?php the_permalink(); ?>">
@@ -10,10 +11,10 @@ $post_date = get_the_date();
         <div class="tab"></div>
         <div class="inner">
             <p class="post-date">
-                <?php if($current_lang == 'fr'): ?>
-                    <?php the_date('F j, Y'); ?>
-                <?php else: ?>
-                    <?php echo $post_date; ?>
+                <?php if($current_lang == 'fr'): 
+                    echo $formatter->format(get_post_timestamp());
+               else: 
+                   echo $post_date; ?>
                 <?php endif; ?>
             </p>
             <h4 class="post-title">

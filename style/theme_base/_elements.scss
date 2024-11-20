@@ -264,6 +264,14 @@ form > button {
 		}
 	}
 }
+
+html:lang(fr), html:lang(fr-CA) {
+	.search-circle {
+		background-image: url('images/french_circletext.png');
+	}
+}
+
+
 .header-search-container .custom-search__submit {
 	display: none!important;
 }

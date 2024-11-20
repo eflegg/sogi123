@@ -12,7 +12,7 @@ if($current_lang === 'fr'):
 	$support_title = 'Faites un don';
 	$support_text = get_field('fr_support_our_work_text', 'options');
 	$site_credit = 'Site conçu par Harc Creative';
-	$donate_label = 'Faire un don';
+	$donate_label = 'Faites un don';
 else: 
 	$overline = get_field('impact_overline') ?: 'Our Impact';
 	$testimonial = get_field('our_impact_testimonial') ?: get_field('our_impact_testimonial', 'options');
@@ -53,7 +53,7 @@ endif;
 						
 						<h4 class=""><?php echo $support_title; ?></h4>
 						<p><?php echo $support_text; ?></p>
-						<a class="button btn--skinny" href='<?php echo home_url('/donate'); ?>'><?php echo $donate_label; ?></a>
+						<a class="button btn--skinny" href='<?php if($current_lang == 'fr'): echo home_url('/faites-un-don'); else: echo home_url('/donate'); endif; ?>'><?php echo $donate_label; ?></a>
 						</div>
 						</div>
 

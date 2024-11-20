@@ -11,7 +11,11 @@
 
 <!-- don't really need the foreach, it's just one category i need -->
 <!-- <?php foreach ($parent_cat as $catVal) :?>  -->
-
+	<?php if($current_lang === 'fr'):
+		$category = 'Actualités';
+	else:
+		$category = 'Updates';
+	endif;?>
 	<?php if($catVal->name == $category) :?>
 
 		<!-- echo '<h2>'.$catVal->name.'</h2>'; // Parent Category to display if i want it -->

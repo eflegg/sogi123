@@ -3455,8 +3455,19 @@ h5, .h5 {
   line-height: 22px;
 }
 
-.white {
+.white,
+.white p,
+.white a {
   color: #fff;
+}
+
+.white a {
+  border-bottom: 2px solid white;
+  transition: all 0.2s ease-out;
+}
+
+.white a:hover {
+  border-bottom: 2px solid transparent;
 }
 
 .graphite {
@@ -3484,7 +3495,7 @@ h5, .h5 {
 }
 .default-type a {
   margin: 2rem 0;
-  color: #FFC700;
+  color: #A428A3;
   border-bottom: 2px solid #A428A3;
   transition: all 0.2s ease-out;
 }
@@ -3923,6 +3934,10 @@ form > button:hover {
   position: relative;
   left: 14%;
   animation: cursorBlink 1.25s steps(2) infinite;
+}
+
+html:lang(fr) .search-circle, html:lang(fr-CA) .search-circle {
+  background-image: url("images/french_circletext.png");
 }
 
 .header-search-container .custom-search__submit {
@@ -5978,6 +5993,12 @@ ul.card--categories {
   list-style: none !important;
   padding: 0;
   height: 100px;
+  white-space: nowrap;
+  overflow-x: scroll;
+  margin: 0;
+}
+.tab-container ul.tab-nav::-webkit-scrollbar {
+  display: none;
 }
 .tab-container ul.tab-nav li.tab-color {
   cursor: pointer;
@@ -5985,10 +6006,12 @@ ul.card--categories {
   border-radius: 10px 10px 0 0;
   overflow: hidden;
   display: inline-flex;
+  align-items: center;
   position: relative;
-  height: 7rem;
-  top: 6.25rem;
-  width: calc(25% + 1.3rem) !important;
+  height: 6.5rem;
+  top: 2.5rem;
+  margin-bottom: 0;
+  width: calc(50% + 1.3rem) !important;
 }
 .tab-container ul.tab-nav li.tab-color path:focus {
   outline: 4px solid #0394DD;
@@ -6023,25 +6046,22 @@ ul.card--categories {
 .tab-container ul.tab-nav li.tab-color:nth-child(10) {
   z-index: 0;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
   .tab-container ul.tab-nav li.tab-color {
-    height: 7.2rem;
+    width: calc(25% + 1.3rem) !important;
   }
 }
 .tab-container ul.tab-nav li.tab-color span {
-  top: 0.5rem;
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   text-align: center;
   color: #fff;
-  padding-top: 0.5rem;
+  padding: 4px;
   width: 95%;
   line-height: 100%;
   font-size: 1.4rem;
-}
-@media screen and (min-width: 600px) {
-  .tab-container ul.tab-nav li.tab-color span {
-    top: 1rem;
-  }
+  white-space: normal;
 }
 .tab-container ul.tab-nav li.tab-color.active-tab {
   z-index: 10;
@@ -6051,7 +6071,12 @@ ul.card--categories {
   position: relative;
   display: none;
   visibility: hidden;
-  padding: 6rem 5rem 5rem 5rem;
+  padding: 3rem;
+}
+@media screen and (min-width: 1000px) {
+  .tab-container .tab-pane {
+    padding: 3rem 5rem;
+  }
 }
 .tab-container .tab-pane a {
   color: white;

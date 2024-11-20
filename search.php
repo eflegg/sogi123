@@ -12,6 +12,9 @@ get_header(); ?>
 
 <main id="main" class="site-main" role="main">
 
+
+
+
 <?php 
 $bgImage = get_field('hero_image');
 $defaultImage = 'https://picsum.photos/seed/picsum/1000';
@@ -41,7 +44,7 @@ $searchTermHeader = get_search_query();
 
 				<ol class="results-list">    
 				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-					<li >
+					<li>
 						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					<?php the_excerpt();?>
 						<a class="continue-reading" href="<?php the_permalink(); ?>"><p class="continue-reading"><?php if($current_lang == 'fr'): echo "Lire la suite..."; else: echo "Continue reading..."; endif; ?></p></a>

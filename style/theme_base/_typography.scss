@@ -102,14 +102,24 @@ h5, .h5 {
 	font-size: 1.13rem;
 	line-height: 22px;
 }
-.white {
+.white,
+.white p,
+.white a {
 	color: $white;
+}
+
+.white a {
+	border-bottom: 2px solid white;
+	transition: all 0.2s ease-out;
+}
+.white a:hover {
+	border-bottom: 2px solid transparent;
 }
 .graphite {
 	color: $graphite;
 }
 
-.default-type {
+.default-type { 
 	ol, ul {
 		margin: 2rem 0;
 	}
@@ -153,7 +163,7 @@ h5, .h5 {
 	}
 	a {
 		margin: 2rem 0;
-		color: $yellow;
+		color: $fandango;
 	  border-bottom: 2px solid $fandango;
 	  transition: all 0.2s ease-out;
 	}

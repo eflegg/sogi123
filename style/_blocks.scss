@@ -888,6 +888,12 @@ ul.card--categories {
 	  list-style: none!important;
 	  padding: 0;
 	  height: 100px;
+	  white-space: nowrap;
+    overflow-x: scroll;
+    margin: 0;
+    &::-webkit-scrollbar {
+    	display: none;
+    }
 	  li.tab-color {
 		cursor: pointer;
 		// background-color: $vividBlue;
@@ -901,6 +907,7 @@ ul.card--categories {
 		overflow: hidden;
 		// margin-right: -2.1rem;
 		display: inline-flex;
+		align-items: center;
 		position: relative;
 		@for $i from 1 through 10 {
 			&:nth-child(#{$i}) {
@@ -908,28 +915,33 @@ ul.card--categories {
 			}
 		 }
 		// width: 7rem;
-		height: 7rem;
-		top: 6.25rem;
-		width: calc(100% / 4 + 1.3rem)!important;
+		height: 6.5rem;
+		top: 2.5rem;
+		margin-bottom: 0;
+		width: calc(100% / 2 + 1.3rem)!important;
 		// max-width: 13.2rem;
-		 @include media(md){
+		 @include media(sm){
 			// width: 13.2rem;
-			height: 7.2rem;
+			width: calc(100% / 4 + 1.3rem)!important;
+			// height: 7.2rem;
 		 }
 
 		 span {
-			top: 0.5rem;
+			// top: 0.5rem;
 			position: absolute;
+			top: 50%;
+      transform: translateY(-50%);
 			text-align: center;
 			color: $white;
 			// background-color: $vividBlue;
-			padding-top: .5rem;
+			padding: 4px;
 			width: 95%;
 			line-height: 100%;
 			font-size: 1.4rem;
-			@include media(sm){
-				top: 1rem;
-			}
+			white-space: normal;
+			// @include media(sm){
+			// 	top: 1rem;
+			// }
 		 }
 		&.active-tab {
 			z-index: 10;
@@ -944,7 +956,11 @@ ul.card--categories {
 	
 		display: none;
 	  visibility: hidden;
-	  padding: 6rem 5rem 5rem 5rem;
+	  padding: 3rem;
+
+	  @include media(lg) {
+	  	padding: 3rem 5rem;
+	  }
 
 	  a {
 	  	color: white;

@@ -12,7 +12,7 @@ elseif(is_page_template('page-toplevel.php')):
 	$defaultImage = '/wp-content/uploads/2024/02/banner_hot.jpg';
 elseif(is_page_template('page-updates.php')):
 	$defaultImage = '/wp-content/uploads/2024/02/banner_hot.jpg';
-elseif(is_page_template('page-secondlevel.php')): 
+elseif(is_page_template('page-secondlevel.php') || is_page_template('page-parentlevel.php')): 
 	$defaultImage = '/wp-content/uploads/2024/02/banner_cool.jpg';
 else:
 	$defaultImage = get_field('hero_default_image', 'options');

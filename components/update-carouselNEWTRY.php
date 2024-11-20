@@ -29,7 +29,12 @@ if($custom_query): ?>
                   ?>
       </ul>
       <div class="more-updates">
-      <a href='<?php echo home_url('/updates'); ?>' class="view-all fade-me">View all <span class="arrow">&rarr;</span></a>
+            <?php if($current_lang == 'fr'): ?>
+            <a href='<?php echo home_url('/actualites'); ?>' class="view-all fade-me">Voir tout <span class="arrow">&rarr;</span></a>
+             <?php else: ?>
+               <a href='<?php echo home_url('/updates'); ?>' class="view-all fade-me">View all <span class="arrow">&rarr;</span></a>
+             <?php endif; ?>
+      
       </div>
     </div>
   </div>
