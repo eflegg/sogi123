@@ -3339,7 +3339,8 @@ ul.ff_coupon_responses .ff_success {
   fill: #1EBB8A;
 }
 
-html, body {
+html,
+body {
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
@@ -3377,80 +3378,98 @@ p {
   color: #FFFCE3;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   line-height: 1.19em;
   font-weight: 700;
   hyphens: auto;
   font-weight: 800;
   line-height: 105%;
   font-size: 5rem;
+  hyphens: manual;
 }
 @media screen and (min-width: 400px) {
-  h1, .h1 {
+  h1,
+.h1 {
     font-size: calc(5rem + 22 * (100vw - 320px) / 680);
   }
 }
 @media screen and (min-width: 1000px) {
-  h1, .h1 {
-    font-size: 7.2rem;
+  h1,
+.h1 {
+    font-size: 6.8rem;
   }
 }
 
-h2, .h2 {
+h2,
+.h2 {
   line-height: 1.19em;
   font-weight: 700;
   hyphens: auto;
   font-size: 3.6rem;
+  hyphens: manual;
 }
 @media screen and (min-width: 400px) {
-  h2, .h2 {
+  h2,
+.h2 {
     font-size: calc(3.6rem + 22 * (100vw - 320px) / 680);
   }
 }
 @media screen and (min-width: 1000px) {
-  h2, .h2 {
+  h2,
+.h2 {
     font-size: 5.8rem;
   }
 }
 
-h3, .h3 {
+h3,
+.h3 {
   line-height: 1.19em;
   font-weight: 700;
   hyphens: auto;
   font-size: 2.8rem;
+  hyphens: manual;
 }
 @media screen and (min-width: 400px) {
-  h3, .h3 {
+  h3,
+.h3 {
     font-size: calc(2.8rem + 12 * (100vw - 320px) / 680);
   }
 }
 @media screen and (min-width: 1000px) {
-  h3, .h3 {
+  h3,
+.h3 {
     font-size: 4rem;
   }
 }
 
-h4, .h4 {
+h4,
+.h4 {
   line-height: 1.19em;
   font-weight: 700;
   hyphens: auto;
   font-size: 2rem;
+  hyphens: manual;
 }
 @media screen and (min-width: 400px) {
-  h4, .h4 {
+  h4,
+.h4 {
     font-size: calc(2rem + 10 * (100vw - 320px) / 680);
   }
 }
 @media screen and (min-width: 1000px) {
-  h4, .h4 {
+  h4,
+.h4 {
     font-size: 2.8rem;
   }
 }
 
-h5, .h5 {
+h5,
+.h5 {
   line-height: 1.19em;
   font-weight: 700;
   hyphens: auto;
+  hyphens: manual;
   font-size: 1.13rem;
   line-height: 22px;
 }
@@ -3477,13 +3496,29 @@ h5, .h5 {
 .default-type {
   color: #333333;
 }
-.default-type ol, .default-type ul {
+.default-type ol,
+.default-type ul {
   margin: 2rem 0;
 }
-.default-type.resources h1, .default-type.resources h2, .default-type.resources h3, .default-type.resources h4, .default-type.resources h5, .default-type.resources h6, .default-type.blue h1, .default-type.blue h2, .default-type.blue h3, .default-type.blue h4, .default-type.blue h5, .default-type.blue h6 {
-  color: #3674D9;
+.default-type.resources h1,
+.default-type.resources h2,
+.default-type.resources h3,
+.default-type.resources h4,
+.default-type.resources h5,
+.default-type.resources h6, .default-type.blue h1,
+.default-type.blue h2,
+.default-type.blue h3,
+.default-type.blue h4,
+.default-type.blue h5,
+.default-type.blue h6 {
+  color: #3674d9;
 }
-.default-type h1, .default-type h2, .default-type h3, .default-type h4, .default-type h5, .default-type h6 {
+.default-type h1,
+.default-type h2,
+.default-type h3,
+.default-type h4,
+.default-type h5,
+.default-type h6 {
   color: #A428A3;
 }
 .default-type p {
@@ -3529,10 +3564,24 @@ h5, .h5 {
   margin: 22px 0;
 }
 
-.content .text h1, .content .text h2, .content .text h3, .content .text h4, .content .text h5, .content .text .h1, .content .text .h2, .content .text .h3, .content .text .h4, .content .text .h5 {
+.content .text h1,
+.content .text h2,
+.content .text h3,
+.content .text h4,
+.content .text h5,
+.content .text .h1,
+.content .text .h2,
+.content .text .h3,
+.content .text .h4,
+.content .text .h5 {
   margin-top: 1rem;
 }
-.content .text h1, .content .text h2, .content .text h3, .content .text .h1, .content .text .h2, .content .text .h3 {
+.content .text h1,
+.content .text h2,
+.content .text h3,
+.content .text .h1,
+.content .text .h2,
+.content .text .h3 {
   margin-bottom: 0.6rem;
 }
 .content .text strong {
@@ -3541,15 +3590,21 @@ h5, .h5 {
 .content .text em {
   font-style: italic;
 }
-.content .text p, .content .text ul, .content .text ol {
+.content .text p,
+.content .text ul,
+.content .text ol {
   margin-bottom: 1em;
 }
-.content .text p a, .content .text ul a, .content .text ol a {
+.content .text p a,
+.content .text ul a,
+.content .text ol a {
   color: #FFC700;
   font-weight: 700;
   text-decoration: underline;
 }
-.content .text p a:hover, .content .text ul a:hover, .content .text ol a:hover {
+.content .text p a:hover,
+.content .text ul a:hover,
+.content .text ol a:hover {
   color: var(--sigcolor);
 }
 .content .text hr {
@@ -3695,7 +3750,8 @@ img {
   object-fit: cover;
 }
 
-a, button {
+a,
+button {
   cursor: pointer !important;
 }
 
@@ -3709,6 +3765,13 @@ a, button {
   color: #fff;
   text-transform: uppercase;
   border: 0px;
+}
+.lang-switcher option {
+  color: black;
+}
+.lang-switcher option::selection {
+  background-color: #FFC700;
+  color: #121212;
 }
 
 .circle-chevron {
@@ -3756,7 +3819,8 @@ a, button {
   fill: #333333;
 }
 
-button, .button {
+button,
+.button {
   cursor: pointer;
   display: table;
   text-transform: uppercase;
@@ -3765,7 +3829,8 @@ button, .button {
   font-weight: 700;
   transition: all 0.15s ease-in-out;
 }
-button.btn--fat, .button.btn--fat {
+button.btn--fat,
+.button.btn--fat {
   letter-spacing: 0.05rem;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.05);
   display: flex;
@@ -3777,30 +3842,36 @@ button.btn--fat, .button.btn--fat {
   color: #fff;
 }
 @media screen and (min-width: 1200px) {
-  button.btn--fat, .button.btn--fat {
+  button.btn--fat,
+.button.btn--fat {
     padding: 3rem 4rem;
   }
 }
-button.btn--fat a, .button.btn--fat a {
+button.btn--fat a,
+.button.btn--fat a {
   color: #fff;
 }
-button.btn--round, .button.btn--round {
+button.btn--round,
+.button.btn--round {
   height: 9.4rem;
   width: 9.4rem;
   border-radius: 100%;
   background-color: #0394DD;
 }
-button.no-btn, .button.no-btn {
+button.no-btn,
+.button.no-btn {
   background-color: transparent;
   border: 0px;
   display: table;
   margin: 0;
 }
-button.no-btn:hover, .button.no-btn:hover {
+button.no-btn:hover,
+.button.no-btn:hover {
   background-color: transparent;
   border: 0px;
 }
-button.btn--skinny, .button.btn--skinny {
+button.btn--skinny,
+.button.btn--skinny {
   line-height: 1;
   background-color: #E1125C;
   border: 2px solid #E1125C;
@@ -3811,13 +3882,15 @@ button.btn--skinny, .button.btn--skinny {
   justify-content: center;
   align-items: center;
 }
-button.clear-filters, .button.clear-filters {
+button.clear-filters,
+.button.clear-filters {
   margin: 0px;
   position: absolute;
   bottom: 0;
   left: 0;
 }
-button.btn--category, .button.btn--category {
+button.btn--category,
+.button.btn--category {
   border: 2px solid #fff;
   background: transparent;
   font-size: 12px;
@@ -3826,22 +3899,26 @@ button.btn--category, .button.btn--category {
   padding: 2px 5px;
   display: inline-block;
 }
-button.lg, .button.lg {
+button.lg,
+.button.lg {
   font-size: 1.6rem;
   padding: 0.8rem 1.8rem;
   color: #A428A3;
   border: 2px solid #A428A3;
   color: #A428A3;
 }
-button.lg a, .button.lg a {
+button.lg a,
+.button.lg a {
   color: #A428A3;
 }
-button:hover, .button:hover {
+button:hover,
+.button:hover {
   transition: all 0.15s ease-in-out;
   background-color: transparent;
   border: 2px solid #fff;
 }
-button:hover a, .button:hover a {
+button:hover a,
+.button:hover a {
   color: #fff;
 }
 
@@ -3936,7 +4013,8 @@ form > button:hover {
   animation: cursorBlink 1.25s steps(2) infinite;
 }
 
-html:lang(fr) .search-circle, html:lang(fr-CA) .search-circle {
+html:lang(fr) .search-circle,
+html:lang(fr-CA) .search-circle {
   background-image: url("images/french_circletext.png");
 }
 
@@ -5248,6 +5326,7 @@ body {
 }
 .hero .content h1 {
   max-width: 740px;
+  hyphens: manual;
 }
 .hero .btn--skinny {
   margin-left: 0;
@@ -5257,7 +5336,7 @@ body {
 }
 
 .top-level-section {
-  background: linear-gradient(180deg, #E1125C 0%, #CF004A 100%);
+  background: linear-gradient(180deg, #e1125c 0%, #cf004a 100%);
 }
 @media screen and (min-width: 1000px) {
   .top-level-section {
@@ -5328,7 +5407,7 @@ body {
 
 .at-a-glance {
   z-index: 2;
-  background: linear-gradient(180deg, #2F9BF8 0%, #3674D9 100%);
+  background: linear-gradient(180deg, #2f9bf8 0%, #3674d9 100%);
 }
 @media screen and (min-width: 1000px) {
   .at-a-glance {
@@ -5759,7 +5838,8 @@ ul.card--categories {
 .update-card .inner .content {
   margin-top: auto;
 }
-.update-card .inner .content a, .update-card .inner .content p {
+.update-card .inner .content a,
+.update-card .inner .content p {
   font-size: 1.4rem;
   line-height: 115%;
 }
@@ -5977,13 +6057,16 @@ ul.card--categories {
     margin-bottom: 80px;
   }
 }
-.tab-container h4, .tab-container p {
+.tab-container h4,
+.tab-container p {
   color: #fff;
 }
-.tab-container ol, .tab-container ul {
+.tab-container ol,
+.tab-container ul {
   color: white;
 }
-.tab-container ol li, .tab-container ul li {
+.tab-container ol li,
+.tab-container ul li {
   margin: 1rem 0;
 }
 .tab-container ul {
@@ -6098,7 +6181,9 @@ ul.card--categories {
   max-width: 100%;
   height: auto;
 }
-.embed-container iframe, .embed-container object, .embed-container embed {
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
   position: absolute;
   top: 0;
   left: 0;
