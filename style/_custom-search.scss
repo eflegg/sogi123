@@ -1,0 +1,87 @@
+.app-search {
+  width: 35rem;
+  position: relative;
+  z-index: 11;
+
+  &.header-search-container.search-visible.resource-search {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  input {
+    all: unset;
+    box-shadow: none;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 2px solid black !important;
+    color: black !important;
+    width: 100%;
+    padding: 6px 0;
+
+    &::placeholder {
+      color: black;
+    }
+
+    &:focus {
+      outline: dotted 1px white;
+      outline-offset: 2px;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
+
+  .custom-search-btn {
+    position: absolute;
+    right: 0;
+    bottom: 6px;
+    margin: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .custom-search-btn svg {
+    stroke: black;
+  }
+
+  .custom-search-btn:hover svg {
+    stroke: $yellow;
+  }
+}
+
+@include media(lg) {
+  .app-search {
+    &.header-search-container.search-visible.resource-search {
+      margin-bottom: 180px;
+      margin-top: -180px;
+      margin-left: auto;
+    }
+
+    input {
+      border-bottom: 2px solid white !important;
+      color: white !important;
+
+      &::placeholder {
+        color: white;
+      }
+
+      &:focus {
+        outline: dotted 1px white;
+      }
+    }
+
+    .custom-search-btn svg {
+      stroke: white;
+    }
+  }
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $fandango inset !important;
+  -webkit-text-fill-color: white !important;
+}

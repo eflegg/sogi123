@@ -4275,25 +4275,31 @@ button.header-search svg {
 form label {
   display: none !important;
 }
-form input, form textarea {
+form input,
+form textarea {
   border-radius: 0 !important;
   background-color: transparent;
   box-shadow: none;
   border: 1px solid #868585 !important;
   color: white !important;
 }
-form input:focus, form textarea:focus {
+form input:focus,
+form textarea:focus {
   background-color: transparent !important;
   outline: thin dotted;
 }
-form input:focus:not(:focus-visible), form textarea:focus:not(:focus-visible) {
+form input:focus:not(:focus-visible),
+form textarea:focus:not(:focus-visible) {
   outline: none;
 }
-form input:focus-visible, form textarea:focus-visible {
+form input:focus-visible,
+form textarea:focus-visible {
   outline: thin dotted;
   color: var(--color-text-link-hover);
 }
-form button, form .ff-btn, form .ff-btn-submit {
+form button,
+form .ff-btn,
+form .ff-btn-submit {
   background-color: #FFC700;
   border-radius: 30px !important;
   font-weight: 700 !important;
@@ -4305,9 +4311,14 @@ form button, form .ff-btn, form .ff-btn-submit {
   transition-timing-function: cubic-bezier(0.34, 0.01, 0.45, 1.02);
   -webkit-backface-visibility: hidden;
 }
-form button:hover, form .ff-btn:hover, form .ff-btn-submit:hover {
+form button:hover,
+form .ff-btn:hover,
+form .ff-btn-submit:hover {
   background-color: #fff;
   opacity: 1 !important;
+}
+form button.no-btn:hover {
+  background-color: transparent !important;
 }
 form ::placeholder {
   color: #333333;
@@ -4531,7 +4542,8 @@ footer .main-footer .support-our-work {
   right: 0;
   width: 100%;
 }
-footer .main-footer .support-our-work h4, footer .main-footer .support-our-work p {
+footer .main-footer .support-our-work h4,
+footer .main-footer .support-our-work p {
   color: #fff;
 }
 @media screen and (min-width: 800px) {
@@ -5880,6 +5892,11 @@ ul.card--categories {
   margin-bottom: 3rem;
   padding-bottom: 66px;
   position: relative;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.ajax-filter-multi::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 @media screen and (min-width: 800px) {
   .ajax-filter-multi {
@@ -6193,12 +6210,12 @@ ul.card--categories {
 
 .loader {
   border: 4px solid #f3f3f3; /* Light grey */
-  border-top: 4px solid black;
+  border-top: 4px solid #A428A3;
   border-radius: 50%;
   width: 45px;
   height: 45px;
   animation: spin 2s linear infinite;
-  margin: 0 auto;
+  margin: 0 auto 40px;
 }
 
 @keyframes spin {
@@ -6308,6 +6325,79 @@ ul.card--categories {
 
 [v-cloak] {
   display: none;
+}
+
+.app-search {
+  width: 35rem;
+  position: relative;
+  z-index: 11;
+}
+.app-search.header-search-container.search-visible.resource-search {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.app-search input {
+  all: unset;
+  box-shadow: none;
+  border: 0;
+  background-color: transparent;
+  border-bottom: 2px solid black !important;
+  color: black !important;
+  width: 100%;
+  padding: 6px 0;
+}
+.app-search input::placeholder {
+  color: black;
+}
+.app-search input:focus {
+  outline: dotted 1px white;
+  outline-offset: 2px;
+}
+.app-search input:focus::placeholder {
+  color: transparent;
+}
+.app-search .custom-search-btn {
+  position: absolute;
+  right: 0;
+  bottom: 6px;
+  margin: 0;
+  border: 0;
+  background: transparent;
+}
+.app-search .custom-search-btn svg {
+  stroke: black;
+}
+.app-search .custom-search-btn:hover svg {
+  stroke: #FFC700;
+}
+
+@media screen and (min-width: 1000px) {
+  .app-search.header-search-container.search-visible.resource-search {
+    margin-bottom: 180px;
+    margin-top: -180px;
+    margin-left: auto;
+  }
+  .app-search input {
+    border-bottom: 2px solid white !important;
+    color: white !important;
+  }
+  .app-search input::placeholder {
+    color: white;
+  }
+  .app-search input:focus {
+    outline: dotted 1px white;
+  }
+  .app-search .custom-search-btn svg {
+    stroke: white;
+  }
+}
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #A428A3 inset !important;
+  -webkit-text-fill-color: white !important;
 }
 
 .container-with-sidebar {
