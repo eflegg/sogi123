@@ -5,13 +5,19 @@ $current_lang = pll_current_language();
 <div id="updatesApp" data-filter="<?php echo get_field('active_category'); ?>">
   <div class="filters flex">
     <div class="ajax-filters-single">
-      <h2 class="h3"><?php echo $current_lang === 'fr' ? 'Filtrer par catégorie' : 'Filter by Category'; ?></h2>
+      <h2 class="h4"><?php echo $current_lang === 'fr' ? 'Filtrer par catégorie' : 'Filter by Category'; ?></h2>
 
       <!--Updates Category Filter -->
       <?php
+      if ($current_lang === 'fr'):
+        $category = 259;
+      else:
+        $category = 6;
+      endif;
       $filters = get_terms(array(
         'taxonomy'   => 'category',
-        'hide_empty' => true,
+        'hide_empty' => false,
+        'parent' => $category,
       ));
 
       $label = $current_lang === 'fr' ? 'Filtrer par catégorie' : 'Filter by Category';
@@ -24,7 +30,7 @@ $current_lang = pll_current_language();
           v-on:change="filterProjects">
           <option disabled value="all"><?php echo $label; ?></option>
           <?php foreach ($filters as $filter): ?>
-            <option value="<?php echo $filter->term_id; ?>"><?php echo $current_lang === 'fr' ? get_field('french_translation', $filter) : $filter->name; ?></option>
+            <option value="<?php echo $filter->term_id; ?>"><?php echo $filter->name; ?></option>
           <?php endforeach; ?>
           <option value="all">All Categories</option>
         </select>

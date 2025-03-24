@@ -657,6 +657,7 @@ add_action('rest_api_init', function () {
 	register_rest_field('resource', 'language', my_theme_register_postlanguage_function());
 	register_rest_field('question', 'language', my_theme_register_postlanguage_function());
 	register_rest_field('post', 'language', my_theme_register_postlanguage_function());
+	register_rest_field('post', 'formatted_date', sogi_register_date_function());
 	//register_rest_field( '{my_custom_posttype}', 'language', my_theme_register_postlanguage_function() ); // Optional: Custom posttype
 
 });
@@ -675,4 +676,28 @@ function my_theme_get_postlanguage_function($data)
 	$post_id = $data['id'];
 
 	return (function_exists('pll_get_post_language') ? pll_get_post_language($post_id) : null);
+}
+
+function sogi_register_date_function()
+{
+	return array(
+		'methods'         => 'GET',
+		'get_callback'    => 'sogi_get_date_function',
+		'schema'          => null,
+	);
+}
+
+function sogi_get_date_function($data)
+{
+	$post_id = $data['id'];
+	$current_lang = function_exists('pll_get_post_language') ? pll_get_post_language($post_id) : null;
+
+	$post_date = get_the_date('F j, Y');
+	$formatter = new IntlDateFormatter('fr_CA', IntlDateFormatter::LONG, IntlDateFormatter::NONE);
+
+	if ($current_lang == 'fr'):
+		return $formatter->format(get_post_timestamp());
+	else:
+		return $post_date;
+	endif;
 }

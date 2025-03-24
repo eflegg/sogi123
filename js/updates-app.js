@@ -74,7 +74,7 @@ new Vue({
       // console.log('selected: ' + this.selected);
       let post_category =
         this.selectedCat !== "all"
-          ? "&category=" + Number(this.selectedCat)
+          ? "&categories=" + Number(this.selectedCat)
           : "";
 
       let filters = post_category;
@@ -116,7 +116,7 @@ new Vue({
 
       let post_category =
         this.selectedCat !== "all"
-          ? "&category=" + Number(this.selectedCat)
+          ? "&categories=" + Number(this.selectedCat)
           : "";
 
       let filters = post_category;

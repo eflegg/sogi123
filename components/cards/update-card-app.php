@@ -13,7 +13,7 @@ $current_lang = pll_current_language();
         <div class="tab"></div>
         <div class="inner">
           <p class="post-date">
-            date
+            {{item.formatted_date}}
           </p>
           <h4 class="post-title" v-html="item.title.rendered">
           </h4>
