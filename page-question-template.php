@@ -14,16 +14,8 @@ get_header(); ?>
 		<?php
 		$pageTitle = get_the_title(); ?>
 
-		<section style="background-color: #FFFCE3; position: relative;" class="has-filter-container section-container custom-container">
-			<!-- list of questions -->
-			<?php
-			$dataType = "question";
-			$category = "Questions";
-			$path = "components/cards/question-card.php";
-			$postsPerPage = -1;
-
-			include 'components/reusable-filter-questions.php';
-			include 'components/questions-block.php'; ?>
+		<section style="background-color: #FFFCE3; position: relative;" class="has-filter-container section-container custom-container resources-page">
+			<?php get_template_part('components/apps/question-app'); ?>
 		</section>
 
 		<?php include 'components/update-carouselNEWTRY.php'; ?>

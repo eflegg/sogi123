@@ -1,4 +1,5 @@
 <?php
+
 /**
  * themename functions and definitions
  *
@@ -8,80 +9,82 @@
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
-if ( ! isset( $content_width ) )
+if (! isset($content_width))
 	$content_width = 640; /* pixels */
 
-if ( ! function_exists( 'themename_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which runs
- * before the init hook. The init hook is too late for some features, such as indicating
- * support post thumbnails.
- */
-function themename_setup() {
-
+if (! function_exists('themename_setup')) :
 	/**
-	 * Make theme available for translation
-	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on themename, use a find and replace
-	 * to change 'themename' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( 'themename', get_template_directory() . '/languages' );
-
-	/**
-	 * Add default posts and comments RSS feed links to head
-	 */
-	add_theme_support( 'automatic-feed-links' );
-
-	/**
-	 * Enable support for Post Thumbnails on posts and pages
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 * Note that this function is hooked into the after_setup_theme hook, which runs
+	 * before the init hook. The init hook is too late for some features, such as indicating
+	 * support post thumbnails.
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	function themename_setup()
+	{
 
-	/**
-	 * This theme uses wp_nav_menu() in one location.
-	 */
-	register_nav_menus( array(
-		'main' => __( 'Header: Main Menu', 'themename' ),
-		'super' => __( 'Header: Super Menu', 'themename' ),
-		'footfirst' => __( 'Footer: Primary', 'themename' ),
-		'footsecond' => __( 'Footer: Secondary', 'themename' ),
-		
-	) );
+		/**
+		 * Make theme available for translation
+		 * Translations can be filed in the /languages/ directory
+		 * If you're building a theme based on themename, use a find and replace
+		 * to change 'themename' to the name of your theme in all the template files
+		 */
+		load_theme_textdomain('themename', get_template_directory() . '/languages');
 
-	/**
-	 * Enable support for Post Formats
-	 */
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+		/**
+		 * Add default posts and comments RSS feed links to head
+		 */
+		add_theme_support('automatic-feed-links');
 
-	/**
-	 * Setup the WordPress core custom background feature.
-	 */
-	add_theme_support( 'custom-background', apply_filters( 'themename_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
-}
+		/**
+		 * Enable support for Post Thumbnails on posts and pages
+		 *
+		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+		 */
+		//add_theme_support( 'post-thumbnails' );
+
+		/**
+		 * This theme uses wp_nav_menu() in one location.
+		 */
+		register_nav_menus(array(
+			'main' => __('Header: Main Menu', 'themename'),
+			'super' => __('Header: Super Menu', 'themename'),
+			'footfirst' => __('Footer: Primary', 'themename'),
+			'footsecond' => __('Footer: Secondary', 'themename'),
+
+		));
+
+		/**
+		 * Enable support for Post Formats
+		 */
+		add_theme_support('post-formats', array('aside', 'image', 'video', 'quote', 'link'));
+
+		/**
+		 * Setup the WordPress core custom background feature.
+		 */
+		add_theme_support('custom-background', apply_filters('themename_custom_background_args', array(
+			'default-color' => 'ffffff',
+			'default-image' => '',
+		)));
+	}
 endif; // themename_setup
-add_action( 'after_setup_theme', 'themename_setup' );
+add_action('after_setup_theme', 'themename_setup');
 
 /**
  * Register widgetized area and update sidebar with default widgets
  */
-function themename_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'themename' ),
+function themename_widgets_init()
+{
+	register_sidebar(array(
+		'name'          => __('Sidebar', 'themename'),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
-	) );
+	));
 }
-add_action( 'widgets_init', 'themename_widgets_init' );
+add_action('widgets_init', 'themename_widgets_init');
 
 /**
  * Enqueue scripts and styles
@@ -89,65 +92,79 @@ add_action( 'widgets_init', 'themename_widgets_init' );
 
 
 
-function themename_scripts() {
+function themename_scripts()
+{
 
-	wp_enqueue_script( 'sogi-navigation', get_template_directory_uri() . '/js/navigation.js', array(), 1.1, true );
+	wp_enqueue_script('sogi-navigation', get_template_directory_uri() . '/js/navigation.js', array(), 1.1, true);
 
-	if(is_page_template('page-secondlevel.php') ) {
+	if (is_page_template('page-secondlevel.php')) {
 		wp_enqueue_script('tab-block-func', get_template_directory_uri() . '/js/tab-block-func.js', 1.1);
 	}
-	if(is_page_template('single-post.php') ) {
+	if (is_page_template('single-post.php')) {
 		wp_enqueue_script('tab-block-func', get_template_directory_uri() . '/js/tab-block-func.js');
 	}
-	if(is_page_template('single-question.php') ) {
+	if (is_page_template('single-question.php')) {
 		wp_enqueue_script('tab-block-func', get_template_directory_uri() . '/js/tab-block-func.js');
 	}
 
 
-	if(is_page('resources') || is_page('fr-teaching-resources') ) {
+	if (is_page('resources') || is_page('fr-teaching-resources')) {
 		// wp_enqueue_script('multi-filter', get_template_directory_uri() . '/js/multi-filter.js');
 	}
 
-		// resource app filter
-	if(is_page_template('page-resource-template.php') ) {
-		wp_enqueue_script( 'vue', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js', array(), 1, true);
-		wp_enqueue_script( 'axios', 'https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js', array(), 1, true);
+	// resource app filter
+	if (is_page_template('page-resource-template.php')) {
+		wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js', array(), 1, true);
+		wp_enqueue_script('axios', 'https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js', array(), 1, true);
 		wp_enqueue_script('resource-app', get_template_directory_uri() . '/js/resource-app.js', array('vue', 'axios'), 1, true);
 	}
 
-	if(is_page('questions-answered') ) {
-		wp_enqueue_script('single-filter', get_template_directory_uri() . '/js/single-filter.js');
+	if (is_page_template('page-question-template.php')) {
+		wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js', array(), 1, true);
+		wp_enqueue_script('axios', 'https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js', array(), 1, true);
+		wp_enqueue_script('question-app', get_template_directory_uri() . '/js/question-app.js', array('vue', 'axios'), 1, true);
 	}
+
+	if (is_page_template('page-updates.php')) {
+		wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js', array(), 1, true);
+		wp_enqueue_script('axios', 'https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js', array(), 1, true);
+		wp_enqueue_script('updates-app', get_template_directory_uri() . '/js/updates-app.js', array('vue', 'axios'), 1, true);
+	}
+
+	// if(is_page('questions-answered') ) {
+	// 	wp_enqueue_script('single-filter', get_template_directory_uri() . '/js/single-filter.js');
+	// }
 	// if(is_home()) {
 	// 	wp_enqueue_script('single-filter', get_template_directory_uri() . '/js/single-filter.js');
 	//}
-	if(is_page_template('page-updates.php') ) {
-		wp_enqueue_script('single-filter', get_template_directory_uri() . '/js/single-filter.js');
+	// if (is_page_template('page-updates.php')) {
+	// 	wp_enqueue_script('single-filter', get_template_directory_uri() . '/js/single-filter.js');
+	// }
+
+	wp_enqueue_style('themename-style', get_stylesheet_uri(), 1.11);
+
+	wp_register_script('addToAny', 'https://static.addtoany.com/menu/page.js', null, null, true);
+	wp_enqueue_script('slick-js', get_template_directory_uri() . '/js/lazysizes.min.js', array('jquery'));
+	wp_enqueue_script('lity-js', get_template_directory_uri() . '/js/jquery.waypoints.min.js', array('jquery'));
+
+	wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', 1.3, array('jquery'));
+
+	if (is_singular() && comments_open() && get_option('thread_comments')) {
+		wp_enqueue_script('comment-reply');
 	}
 
-	wp_enqueue_style( 'themename-style', get_stylesheet_uri(), 1.11 );
-	
-	wp_register_script( 'addToAny', 'https://static.addtoany.com/menu/page.js', null, null, true );
-	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/js/lazysizes.min.js', array('jquery') );
-	wp_enqueue_script( 'lity-js', get_template_directory_uri() . '/js/jquery.waypoints.min.js', array('jquery') );
-
-	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', 1.3, array('jquery') );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
-	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'themename-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+	if (is_singular() && wp_attachment_is_image()) {
+		wp_enqueue_script('themename-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array('jquery'), '20120202');
 	}
 }
-add_action( 'wp_enqueue_scripts', 'themename_scripts' );
+add_action('wp_enqueue_scripts', 'themename_scripts');
 
 if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
-function my_jquery_enqueue() {
-   wp_deregister_script('jquery');
-   wp_register_script('jquery', "https" . "://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js", false, null);
-   wp_enqueue_script('jquery');
+function my_jquery_enqueue()
+{
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', "https" . "://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js", false, null);
+	wp_enqueue_script('jquery');
 }
 
 
@@ -176,22 +193,24 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-function my_scripts_method() {
-    wp_enqueue_script(
-        'bootstrap-js',
-        get_template_directory_uri() . '/js/bootstrap.min.js',
-        array('jquery')
-    );
+function my_scripts_method()
+{
+	wp_enqueue_script(
+		'bootstrap-js',
+		get_template_directory_uri() . '/js/bootstrap.min.js',
+		array('jquery')
+	);
 }
 add_action('wp_enqueue_scripts', 'my_scripts_method');
 
-function remove_menus(){
-  
-  remove_menu_page( 'index.php' );                  //Dashboard
-  remove_menu_page( 'edit-comments.php' );          //Comments
-  
+function remove_menus()
+{
+
+	remove_menu_page('index.php');                  //Dashboard
+	remove_menu_page('edit-comments.php');          //Comments
+
 }
-add_action( 'admin_menu', 'remove_menus' );
+add_action('admin_menu', 'remove_menus');
 
 /*
 function menu_item_post_type() {
@@ -381,53 +400,56 @@ add_action( 'init', 'installation_post_type', 0 );
 
 //Register Fonts:
 
-function excerpt($limit) {
-  $excerpt = explode(' ', get_the_excerpt(), $limit);
-  if (count($excerpt)>=$limit) {
-    array_pop($excerpt);
-    $excerpt = implode(" ",$excerpt).'...';
-  } else {
-    $excerpt = implode(" ",$excerpt);
-  }	
-  $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
-  return $excerpt;
-}
- 
-function content($limit) {
-  $content = explode(' ', get_the_content(), $limit);
-  if (count($content)>=$limit) {
-    array_pop($content);
-    $content = implode(" ",$content).'...';
-  } else {
-    $content = implode(" ",$content);
-  }	
-  $content = preg_replace('/\[.+\]/','', $content);
-  $content = apply_filters('the_content', $content); 
-  $content = str_replace(']]>', ']]&gt;', $content);
-  return $content;
+function excerpt($limit)
+{
+	$excerpt = explode(' ', get_the_excerpt(), $limit);
+	if (count($excerpt) >= $limit) {
+		array_pop($excerpt);
+		$excerpt = implode(" ", $excerpt) . '...';
+	} else {
+		$excerpt = implode(" ", $excerpt);
+	}
+	$excerpt = preg_replace('`\[[^\]]*\]`', '', $excerpt);
+	return $excerpt;
 }
 
-add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
-function wpdocs_theme_setup() {
-    add_image_size( 'background-image', 2000 );
-    add_image_size( 'gngc-thumbnail', 355, 355, true );
+function content($limit)
+{
+	$content = explode(' ', get_the_content(), $limit);
+	if (count($content) >= $limit) {
+		array_pop($content);
+		$content = implode(" ", $content) . '...';
+	} else {
+		$content = implode(" ", $content);
+	}
+	$content = preg_replace('/\[.+\]/', '', $content);
+	$content = apply_filters('the_content', $content);
+	$content = str_replace(']]>', ']]&gt;', $content);
+	return $content;
+}
+
+add_action('after_setup_theme', 'wpdocs_theme_setup');
+function wpdocs_theme_setup()
+{
+	add_image_size('background-image', 2000);
+	add_image_size('gngc-thumbnail', 355, 355, true);
 }
 
 // Filter except length to 35 words.
 // tn custom excerpt length
-function tn_custom_excerpt_length( $length ) {
-return 23;
+function tn_custom_excerpt_length($length)
+{
+	return 23;
 }
-add_filter( 'excerpt_length', 'tn_custom_excerpt_length', 999 );
+add_filter('excerpt_length', 'tn_custom_excerpt_length', 999);
 
-if( function_exists('acf_add_options_page') ) {
-	
+if (function_exists('acf_add_options_page')) {
+
 	acf_add_options_page();
-	
 }
 
 //theme support for post excerpts
-add_post_type_support( 'page', 'excerpt' );
+add_post_type_support('page', 'excerpt');
 
 //use one single template for resources and questions custom post types
 // add_filter( 'template_include', function( $template ) 
@@ -450,7 +472,7 @@ add_post_type_support( 'page', 'excerpt' );
 //   function filter_projects() {
 // 	$catSlug = $_POST['category'];
 // 	$postType = $_POST['type'];
-  
+
 // 	$ajaxposts = new WP_Query([
 // 	  'post_type' => $postType,
 // 	  'posts_per_page' => -1,
@@ -459,7 +481,7 @@ add_post_type_support( 'page', 'excerpt' );
 // 	  'order' => 'desc',
 // 	]);
 // 	$response = '';
-  
+
 // 	if($ajaxposts->have_posts()) {
 // 	  while($ajaxposts->have_posts()) : $ajaxposts->the_post();
 // 		$response .= include 'components/cards/question-card.php';
@@ -467,7 +489,7 @@ add_post_type_support( 'page', 'excerpt' );
 // 	} else {
 // 	  $response = 'empty';
 // 	}
-  
+
 // 	echo $response;
 // 	exit;
 //   }
@@ -478,8 +500,9 @@ add_post_type_support( 'page', 'excerpt' );
 
 //this is what makes the ajaxurl variable available site wide
 add_action('wp_head', 'myplugin_ajaxurl');
-function myplugin_ajaxurl() {
-    echo '<script type="text/javascript">
+function myplugin_ajaxurl()
+{
+	echo '<script type="text/javascript">
            var ajaxurl = "' . admin_url('admin-ajax.php') . '";
          </script>';
 }
@@ -489,7 +512,10 @@ function myplugin_ajaxurl() {
 
 
 //ensures languages are displayed in short form (en, fr)
-add_filter( 'pll_the_languages_args', function( $args ) { $args['display_names_as'] = 'slug'; return $args; } );
+add_filter('pll_the_languages_args', function ($args) {
+	$args['display_names_as'] = 'slug';
+	return $args;
+});
 
 
 
@@ -497,9 +523,10 @@ add_filter( 'pll_the_languages_args', function( $args ) { $args['display_names_a
 
 
 
-function rudr_ajax_search_filter() {
+function rudr_ajax_search_filter()
+{
 
-	$form_data = json_decode( file_get_contents( "php://input" ), true );
+	$form_data = json_decode(file_get_contents("php://input"), true);
 	// print_r($form_data);
 
 	//this is how you implode an array with numerical values
@@ -507,97 +534,92 @@ function rudr_ajax_search_filter() {
 
 	//removes empty values
 	$filtered_form_data = array_filter($form_data);
-	$imploded_cat_names = implode( '+', $filtered_form_data);
+	$imploded_cat_names = implode('+', $filtered_form_data);
 
 	// print_r($filtered_form_data);
 	// print_r($imploded_cat_names);
-	
-  
+
+
 	$ajaxpostsMulti = new WP_Query(array(
-	  'post_type' => "resource",
- 	  'posts_per_page' => -1,
-	  'category_name' => $imploded_cat_names,
-	  'orderby' => 'menu_order', 
-	  'order' => 'desc',
+		'post_type' => "resource",
+		'posts_per_page' => -1,
+		'category_name' => $imploded_cat_names,
+		'orderby' => 'menu_order',
+		'order' => 'desc',
 	));
 	$response = '';
 
-	
-	if($ajaxpostsMulti->have_posts()) {
-	  while($ajaxpostsMulti->have_posts()) : $ajaxpostsMulti->the_post();
-	
-	  $response .= include 'components/cards/resource-card.php';
 
-	  endwhile;
-	  wp_reset_postdata();
-	}  
-	else {
-	  $response = 'empty multi';
+	if ($ajaxpostsMulti->have_posts()) {
+		while ($ajaxpostsMulti->have_posts()) : $ajaxpostsMulti->the_post();
+
+			$response .= include 'components/cards/resource-card.php';
+
+		endwhile;
+		wp_reset_postdata();
+	} else {
+		$response = 'empty multi';
 	}
-  
+
 	// echo $response;
 
 
 	die;
-
 }
 
-add_action( 'wp_ajax_ajaxfilter2', 'rudr_ajax_search_filter' );
-add_action( 'wp_ajax_nopriv_ajaxfilter2', 'rudr_ajax_search_filter' );
+add_action('wp_ajax_ajaxfilter2', 'rudr_ajax_search_filter');
+add_action('wp_ajax_nopriv_ajaxfilter2', 'rudr_ajax_search_filter');
 
 
-function rudr_ajax_filter_by_category() {
+function rudr_ajax_filter_by_category()
+{
 
-	$obj = json_decode( file_get_contents( "php://input" ), true );
+	$obj = json_decode(file_get_contents("php://input"), true);
 	$catSlug = $obj['cat'];
-	$postType =$obj['dataType'];
+	$postType = $obj['dataType'];
 	// print_r($obj);
 	// print_r($catSlug);
 	// print_r($postType);
-  
+
 	$ajaxposts = new WP_Query([
-	  'post_type' => $postType,
-	  'posts_per_page' => -1,
-	  'category_name' => $catSlug,
-	  'orderby' => 'menu_order', 
-	  'order' => 'desc',
+		'post_type' => $postType,
+		'posts_per_page' => -1,
+		'category_name' => $catSlug,
+		'orderby' => 'menu_order',
+		'order' => 'desc',
 	]);
 	$response = '';
-  
 
-	
-	if($ajaxposts->have_posts()) {
-	  while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-	  if($postType == 'question'){
-		  $response .= include 'components/cards/question-card.php';
-	  } else if($postType == 'resource'){
-		$response .= include 'components/cards/resource-card.php';
-	  } else if ($postType == 'post') {
-		$response .= include 'components/cards/update-card.php';
-	  } else null;
-	  
-		
-		
-	  endwhile;
-	  wp_reset_postdata();
-	}  
-	else {
-	  $response = 'empty';
+
+
+	if ($ajaxposts->have_posts()) {
+		while ($ajaxposts->have_posts()) : $ajaxposts->the_post();
+			if ($postType == 'question') {
+				$response .= include 'components/cards/question-card.php';
+			} else if ($postType == 'resource') {
+				$response .= include 'components/cards/resource-card.php';
+			} else if ($postType == 'post') {
+				$response .= include 'components/cards/update-card.php';
+			} else null;
+
+
+
+		endwhile;
+		wp_reset_postdata();
+	} else {
+		$response = 'empty';
 	}
-  
+
 	// echo $response;
 
 	// exit;
 	die;
-
-
-
 }
-add_action( 'wp_ajax_ajaxfilter', 'rudr_ajax_filter_by_category' );
-add_action( 'wp_ajax_nopriv_ajaxfilter', 'rudr_ajax_filter_by_category' );
+add_action('wp_ajax_ajaxfilter', 'rudr_ajax_filter_by_category');
+add_action('wp_ajax_nopriv_ajaxfilter', 'rudr_ajax_filter_by_category');
 
 
-	
+
 // pll_get_post_language( $post_id, $field );
 
 /**
@@ -609,16 +631,17 @@ add_action( 'wp_ajax_nopriv_ajaxfilter', 'rudr_ajax_filter_by_category' );
  * Query language specific posts via "lang" parameter: /wp-json/wp/v2/posts?lang=en
  */
 
-function my_theme_filter_rest_post_query( $args, $request ) {
+function my_theme_filter_rest_post_query($args, $request)
+{
 	$lang_parameter = $request->get_param('lang');
 
-	if ( isset( $lang_parameter ) ) {
+	if (isset($lang_parameter)) {
 		$args['lang'] = $lang_parameter; // https://polylang.pro/doc/developpers-how-to/#query
 	}
 
 	return $args;
 }
-add_filter( 'rest_resource_query', 'my_theme_filter_rest_post_query', 10, 2 );
+add_filter('rest_resource_query', 'my_theme_filter_rest_post_query', 10, 2);
 //add_filter( 'rest_{my_custom_posttype}_query', 'my_theme_filter_rest_post_query', 10, 2 ); // Custom posttype
 
 
@@ -629,14 +652,17 @@ add_filter( 'rest_resource_query', 'my_theme_filter_rest_post_query', 10, 2 );
  * 
  */
 
-add_action( 'rest_api_init', function () {
+add_action('rest_api_init', function () {
 
-	register_rest_field( 'resource', 'language', my_theme_register_postlanguage_function() );
+	register_rest_field('resource', 'language', my_theme_register_postlanguage_function());
+	register_rest_field('question', 'language', my_theme_register_postlanguage_function());
+	register_rest_field('post', 'language', my_theme_register_postlanguage_function());
 	//register_rest_field( '{my_custom_posttype}', 'language', my_theme_register_postlanguage_function() ); // Optional: Custom posttype
 
 });
 
-function my_theme_register_postlanguage_function() {
+function my_theme_register_postlanguage_function()
+{
 	return array(
 		'methods'         => 'GET',
 		'get_callback'    => 'my_theme_get_postlanguage_function',
@@ -644,8 +670,9 @@ function my_theme_register_postlanguage_function() {
 	);
 }
 
-function my_theme_get_postlanguage_function( $data ) {
+function my_theme_get_postlanguage_function($data)
+{
 	$post_id = $data['id'];
 
-	return ( function_exists( 'pll_get_post_language' ) ? pll_get_post_language( $post_id ) : null );
+	return (function_exists('pll_get_post_language') ? pll_get_post_language($post_id) : null);
 }

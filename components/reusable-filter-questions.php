@@ -12,7 +12,7 @@
     <!-- don't really need the foreach, it's just one category i need -->
     <!-- <?php foreach ($parent_cat as $catVal) : ?>  -->
     <?php if ($current_lang === 'fr'):
-              $category = 'Questions fr';
+              $category = 'Actualités';
             else:
               $category = 'Questions';
             endif; ?>

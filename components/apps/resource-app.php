@@ -126,4 +126,4 @@ $current_lang = pll_current_language();
 	<div v-show="loading" class="loader"></div>
 	<?php get_template_part('components/elements/load-more'); ?>
 
-</div><!-- #newsApp-->
+</div><!-- #resourceApp-->

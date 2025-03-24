@@ -48,22 +48,7 @@ get_header(); ?>
 
 
 			</section>
-			<section class="questions-getting section-container">
-				<div class="inner custom-container">
-					<div class="left fade-me">
-						<h3 class="">Related Questions</h3>
-						<?php if ($current_lang == 'fr'): ?>
-							<a href='<?php echo home_url('/notre-travail/les-reponses-a-vos-questions/'); ?>' class="view-all fade-me">Voir tout <span class="arrow">&rarr;</span></a>
-						<?php else: ?>
-							<a href='<?php echo home_url('/our-work/questions-answered'); ?>' class="view-all fade-me">View all <span class="arrow">&rarr;</span></a>
-						<?php endif; ?>
-
-					</div>
-					<div class="right">
-						<?php include 'components/related-questions.php'; ?>
-					</div>
-				</div>
-			</section>
+			<?php include 'components/related-questions.php'; ?>
 
 			<?php include 'components/update-carouselNEWTRY.php'; ?>
 
