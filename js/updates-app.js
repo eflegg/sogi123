@@ -21,8 +21,8 @@ new Vue({
       showFilters: false,
       perPage: 32,
       totalItems: null,
-      orderBy: "title",
-      order: "asc",
+      orderBy: "date",
+      order: "desc",
     };
   },
   mounted() {
@@ -71,7 +71,6 @@ new Vue({
       this.getFilters();
     },
     getFilters() {
-      // console.log('selected: ' + this.selected);
       let post_category =
         this.selectedCat !== "all"
           ? "&categories=" + Number(this.selectedCat)
@@ -80,7 +79,6 @@ new Vue({
       let filters = post_category;
 
       this.selected = filters !== "" ? filters : "all";
-      // console.log(filters);
       this.getFilteredProjects(filters);
     },
     getFilteredProjects(filters) {
@@ -93,7 +91,6 @@ new Vue({
         this.perPage +
         "&acf_format=standard" +
         filters;
-      // console.log(url);
       axios
         .get(url)
         .then((response) => {
@@ -120,9 +117,6 @@ new Vue({
           : "";
 
       let filters = post_category;
-
-      // console.log(filters);
-
       this.selected = filters !== "" ? filters : "all";
 
       const url =
@@ -141,7 +135,6 @@ new Vue({
           this.filteredItems = this.items;
           this.totalPages = Number(response.headers["x-wp-totalpages"]);
           this.totalItems = Number(response.headers["x-wp-total"]);
-          // console.log(this.totalPages);
           this.refreshTotalPages();
         })
         .catch((error) => {
@@ -151,7 +144,6 @@ new Vue({
         .finally(() => ((this.loading = false), (this.loadResults = true)));
     },
     loadMore() {
-      console.log(this.selected);
       if (this.loading === false) {
         this.loading = true;
         this.currentPage = this.currentPage + 1;

@@ -16,11 +16,12 @@ $current_lang = pll_current_language();
       endif;
       $filters = get_terms(array(
         'taxonomy'   => 'category',
-        'hide_empty' => false,
+        'hide_empty' => true,
         'parent' => $category,
       ));
 
       $label = $current_lang === 'fr' ? 'Filtrer par catégorie' : 'Filter by Category';
+      $allLabel = $current_lang === 'fr' ? 'Toutes les catégories' : 'All Categories';
       ?>
 
       <div class="custom-select custom-select-single" :class="{ selected: selectedCat !== 'all' }">
@@ -32,7 +33,7 @@ $current_lang = pll_current_language();
           <?php foreach ($filters as $filter): ?>
             <option value="<?php echo $filter->term_id; ?>"><?php echo $filter->name; ?></option>
           <?php endforeach; ?>
-          <option value="all">All Categories</option>
+          <option value="all"><?php echo $allLabel; ?></option>
         </select>
       </div>
     </div>

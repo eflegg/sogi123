@@ -114,19 +114,19 @@ function themename_scripts()
 
 	// resource app filter
 	if (is_page_template('page-resource-template.php')) {
-		wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js', array(), 1, true);
+		wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js', array(), 1, true);
 		wp_enqueue_script('axios', 'https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js', array(), 1, true);
 		wp_enqueue_script('resource-app', get_template_directory_uri() . '/js/resource-app.js', array('vue', 'axios'), 1, true);
 	}
 
 	if (is_page_template('page-question-template.php')) {
-		wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js', array(), 1, true);
+		wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js', array(), 1, true);
 		wp_enqueue_script('axios', 'https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js', array(), 1, true);
 		wp_enqueue_script('question-app', get_template_directory_uri() . '/js/question-app.js', array('vue', 'axios'), 1, true);
 	}
 
 	if (is_page_template('page-updates.php')) {
-		wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js', array(), 1, true);
+		wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js', array(), 1, true);
 		wp_enqueue_script('axios', 'https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js', array(), 1, true);
 		wp_enqueue_script('updates-app', get_template_directory_uri() . '/js/updates-app.js', array('vue', 'axios'), 1, true);
 	}

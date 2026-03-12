@@ -78,8 +78,6 @@ new Vue({
       this.getFilters();
     },
     getFilters() {
-      console.log(this.searchTerm);
-      // console.log('selected: ' + this.selected);
       let program_region =
         this.selectedRegion !== "all"
           ? "&region=" + Number(this.selectedRegion)
@@ -108,10 +106,7 @@ new Vue({
         search_term,
       ].join("");
 
-      console.log(filters);
-
       this.selected = filters !== "" ? filters : "all";
-      // console.log(filters);
       this.getFilteredProjects(filters);
     },
     getFilteredProjects(filters) {
@@ -124,7 +119,6 @@ new Vue({
         this.perPage +
         "&acf_format=standard" +
         filters;
-      // console.log(url);
       axios
         .get(url)
         .then((response) => {
@@ -175,8 +169,6 @@ new Vue({
         search_term,
       ].join("");
 
-      // console.log(filters);
-
       this.selected = filters !== "" ? filters : "all";
 
       const url =
@@ -195,7 +187,6 @@ new Vue({
           this.filteredItems = this.items;
           this.totalPages = Number(response.headers["x-wp-totalpages"]);
           this.totalItems = Number(response.headers["x-wp-total"]);
-          // console.log(this.totalPages);
           this.refreshTotalPages();
         })
         .catch((error) => {
@@ -205,7 +196,6 @@ new Vue({
         .finally(() => ((this.loading = false), (this.loadResults = true)));
     },
     loadMore() {
-      console.log(this.selected);
       if (this.loading === false) {
         this.loading = true;
         this.currentPage = this.currentPage + 1;

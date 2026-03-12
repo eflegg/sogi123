@@ -126,7 +126,7 @@ endif;
 		<div class="legal">
 			<div class="legal-inner">
 
-				<p class="">&copy; SOGI 123 <?php the_time('Y'); ?> </p>
+				<p class="">&copy; SOGI 123 <?php echo date('Y'); ?> </p>
 				<p><a class="harc-attribution" href="https://harccreative.com/" target="_blank"><?php echo $site_credit; ?></a></p>
 			</div>
 

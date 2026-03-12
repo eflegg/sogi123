@@ -466,13 +466,15 @@ footer {
 
 .page-template-page-customposts,
 .page-template-page-resource-template,
-.page-template-page-question-template {
+.page-template-page-question-template,
+.page-template-page-updates {
   .section-container {
-    &.has-filter-container.resources-page {
+    &.has-filter-container.resources-page,
+    &.has-filter-container.updates-page {
       padding-top: 4px;
 
       @include media(lg) {
-        padding: 4rem 8.25rem;
+        padding: 4rem 8.25rem 12rem;
       }
     }
   }

@@ -4766,16 +4766,24 @@ footer .main-footer .footer-nav--section .socials .social:hover svg path {
   }
 }
 
-.page-template-page-customposts .section-container.has-filter-container.resources-page,
+.page-template-page-customposts .section-container.has-filter-container.resources-page, .page-template-page-customposts .section-container.has-filter-container.updates-page,
 .page-template-page-resource-template .section-container.has-filter-container.resources-page,
-.page-template-page-question-template .section-container.has-filter-container.resources-page {
+.page-template-page-resource-template .section-container.has-filter-container.updates-page,
+.page-template-page-question-template .section-container.has-filter-container.resources-page,
+.page-template-page-question-template .section-container.has-filter-container.updates-page,
+.page-template-page-updates .section-container.has-filter-container.resources-page,
+.page-template-page-updates .section-container.has-filter-container.updates-page {
   padding-top: 4px;
 }
 @media screen and (min-width: 1000px) {
-  .page-template-page-customposts .section-container.has-filter-container.resources-page,
+  .page-template-page-customposts .section-container.has-filter-container.resources-page, .page-template-page-customposts .section-container.has-filter-container.updates-page,
 .page-template-page-resource-template .section-container.has-filter-container.resources-page,
-.page-template-page-question-template .section-container.has-filter-container.resources-page {
-    padding: 4rem 8.25rem;
+.page-template-page-resource-template .section-container.has-filter-container.updates-page,
+.page-template-page-question-template .section-container.has-filter-container.resources-page,
+.page-template-page-question-template .section-container.has-filter-container.updates-page,
+.page-template-page-updates .section-container.has-filter-container.resources-page,
+.page-template-page-updates .section-container.has-filter-container.updates-page {
+    padding: 4rem 8.25rem 12rem;
   }
 }
 
@@ -6377,7 +6385,7 @@ ul.card--categories {
     padding: 6rem 4rem 4rem;
     margin-left: auto;
     margin-right: 0;
-    margin-top: -240px;
+    margin-top: -200px;
     margin-bottom: 60px;
   }
 }

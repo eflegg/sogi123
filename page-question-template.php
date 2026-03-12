@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Questions Page Template
+Template Name: Questions Page Template 
 */
 
 get_header(); ?>

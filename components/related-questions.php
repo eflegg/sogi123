@@ -1,14 +1,15 @@
 <?php
-$categories = get_the_category();
-if (count($categories) > 1):
-  $category_id = $categories[1]->cat_ID;
+$categories = get_terms('question-category');
+
+if (count($categories)):
+  $category_id = $categories[0]->term_id;
   $args = array(
     'post_type' => 'question',
     'posts_per_page' => 3,
     'ignore_sticky_posts' => 1,
+    'orderby' => 'rand',
     'category' => $category_id,
     'post__not_in' => array($post->ID),
-    'orderby' => 'rand',
   );
 else:
   $args = array(

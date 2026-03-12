@@ -11,12 +11,12 @@ get_header();
 	<?php include 'components/hero.php'; ?>
 	<section style="background-color: #FFFCE3; position: relative;" class="has-filter-container section-container custom-container resources-page">
 
-		<?php get_template_part('components/apps/resource-app'); 
+		<?php get_template_part('components/apps/resource-app');
 		?>
 	</section>
 
 
-<?php include 'components/update-carouselNEWTRY.php';?>
+	<?php include 'components/update-carouselNEWTRY.php'; ?>
 </main><!-- #main -->
 
 <?php
